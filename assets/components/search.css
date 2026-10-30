@@ -219,7 +219,7 @@
 .suggest-item:hover .suggest-icon {
   background: var(--panel);
 }
-.suggest-item .suggest-strong {
+.suggest-item .suggest-bold {
   display: block;
   font-weight: 800;
   font-size: 15.5px;
@@ -399,7 +399,7 @@
     height: 46px;
     border-radius: var(--r-pill);
   }
-  :where(.search-small[data-variant="caption"]) .search-caption:focus-visible {
+  .search-small:where([data-variant="caption"]) .search-caption:focus-visible {
     outline: 3px solid var(--brand);
     outline-offset: 2px;
   }
@@ -443,7 +443,7 @@
   height: 56px;
   margin: 0 -4px 8px 4px;
 }
-.sheet-head .sheet-strong {
+.sheet-head .sheet-bold {
   font-family: var(--fh);
   font-size: 20px;
 }

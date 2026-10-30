@@ -26,7 +26,7 @@
   object-fit: cover;
   transition: transform .3s;
 }
-:where(.expedition-photo[data-as="a"]:hover) img {
+.expedition-photo:where([data-as="a"]):hover img {
   transform: scale(1.03);
 }
 .expedition-body {

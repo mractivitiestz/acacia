@@ -9,16 +9,19 @@
   color: var(--muted);
   line-height: 1.3;
 }
-.price .price-strong {
+.price .price-bold {
   font-size: 17px;
   font-weight: 800;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
+.price[data-variant="request"] .price-bold {
+  font-size: 15px;
+}
 .price-label {
   font-weight: 700;
 }
-.price[data-size="lg"] .price-strong {
+.price[data-size="lg"] .price-bold {
   font-size: 28px;
   font-family: var(--fh);
 }
@@ -48,7 +51,7 @@
   margin: 0;
   font-size: 13.5px;
 }
-.mapcard-foot .price .price-strong {
+.mapcard-foot .price .price-bold {
   font-size: 16px;
 }
 [data-booking="on"]:not([data-booking-portrait]) :where(.aside) .price-ind {

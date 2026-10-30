@@ -500,7 +500,7 @@
   "ta-accs": "days-accs",
   "ta-df": "days-df",
   "ta-left": "days-left",
-  "mosaic": "heromosaic",
+  "mosaic": "pagehead-media[data-variant=\"mosaic\"]",
   "bk-on": "[data-booking=\"on\"]",
   "bk-por": "[data-booking-portrait]",
   "ob-row": "offbeat",
@@ -527,6 +527,10 @@
   },
   "link": {
    "see": ".nw"
+  },
+  "mega-group": {
+   "c2": "[data-columns=\"2\"]",
+   "c3": "[data-columns=\"3\"]"
   },
   "mega-places": {
    "wide": "[data-variant=\"wide\"]"
@@ -673,7 +677,10 @@
   },
   "pin-label": {
    "off": "[data-state=\"off\"]",
-   "at-r": "[data-side=\"r\"]"
+   "at-r": "[data-side=\"r\"]",
+   "at-l": "[data-side=\"l\"]",
+   "at-t": "[data-side=\"t\"]",
+   "at-b": "[data-side=\"b\"]"
   },
   "map-keyitem": {
    "xk-road": "[data-mode=\"road\"]",
@@ -711,6 +718,18 @@
   },
   "expedition": {
    "on": "[data-state=\"on\"]"
+  },
+  "pin": {
+   "k-focus": "[data-kind=\"focus\"]",
+   "k-near": "[data-kind=\"near\"]",
+   "k-off": "[data-kind=\"off\"]",
+   "mk-near": "[data-role=\"near\"]"
+  },
+  "map-item": {
+   "k-here": "[data-kind=\"here\"]",
+   "k-focus": "[data-kind=\"focus\"]",
+   "k-off": "[data-kind=\"off\"]",
+   "k-near": "[data-kind=\"near\"]"
   }
  },
  "parts": [
@@ -762,7 +781,7 @@
   {
    "in": ".bk-cal-t",
    "el": "b",
-   "add": "calendar-strong"
+   "add": "calendar-bold"
   },
   {
    "in": ".bk-cal-t",
@@ -797,7 +816,7 @@
   {
    "in": ".bk-df",
    "el": "b",
-   "add": "datefield-strong"
+   "add": "datefield-bold"
   },
   {
    "in": ".bk-df",
@@ -822,7 +841,7 @@
   {
    "in": ".bk-gp",
    "el": "b",
-   "add": "wallet-strong"
+   "add": "wallet-bold"
   },
   {
    "in": ".bk-hs-f",
@@ -832,12 +851,12 @@
   {
    "in": ".bk-hs-h",
    "el": "b",
-   "add": "-strong"
+   "add": "-bold"
   },
   {
    "in": ".bk-hs-m",
    "el": "b",
-   "add": "-strong"
+   "add": "-bold"
   },
   {
    "in": ".bk-key",
@@ -852,7 +871,7 @@
   {
    "in": ".bk-li",
    "el": "b",
-   "add": "booking-strong"
+   "add": "booking-bold"
   },
   {
    "in": ".bk-li",
@@ -867,7 +886,7 @@
   {
    "in": ".bk-opt",
    "el": "b",
-   "add": "option-strong"
+   "add": "option-bold"
   },
   {
    "in": ".bk-opt",
@@ -897,7 +916,7 @@
   {
    "in": ".bk-sent",
    "el": "b",
-   "add": "booking-strong"
+   "add": "booking-bold"
   },
   {
    "in": ".bk-sent",
@@ -912,7 +931,7 @@
   {
    "in": ".bk-trip-r",
    "el": "b",
-   "add": "trip-strong"
+   "add": "trip-bold"
   },
   {
    "in": ".bk-trip-r",
@@ -927,7 +946,7 @@
   {
    "in": ".bk-tt",
    "el": "b",
-   "add": "booking-strong"
+   "add": "booking-bold"
   },
   {
    "in": ".bk-tt",
@@ -952,7 +971,7 @@
   {
    "in": ".cr-cl",
    "el": "b",
-   "add": "credits-strong"
+   "add": "credits-bold"
   },
   {
    "in": ".cr-cl",
@@ -1022,7 +1041,7 @@
   {
    "in": ".ct",
    "el": "b",
-   "add": "kind-strong"
+   "add": "kind-bold"
   },
   {
    "in": ".ct",
@@ -1037,7 +1056,7 @@
   {
    "in": ".dt-bar",
    "el": "b",
-   "add": "bar-strong"
+   "add": "bar-bold"
   },
   {
    "in": ".dt-bar",
@@ -1067,7 +1086,7 @@
   {
    "in": ".facts",
    "el": "b",
-   "add": "facts-strong"
+   "add": "facts-bold"
   },
   {
    "in": ".facts",
@@ -1127,7 +1146,7 @@
   {
    "in": ".ft-s",
    "el": "b",
-   "add": "footer-strong"
+   "add": "footer-bold"
   },
   {
    "in": ".gm-c",
@@ -1202,7 +1221,7 @@
   {
    "in": ".how",
    "el": "b",
-   "add": "steps-strong"
+   "add": "steps-bold"
   },
   {
    "in": ".how",
@@ -1222,12 +1241,12 @@
   {
    "in": ".how-i",
    "el": "b",
-   "add": "steps-strong"
+   "add": "steps-bold"
   },
   {
    "in": ".lb-f",
    "el": "b",
-   "add": "lightbox-strong"
+   "add": "lightbox-bold"
   },
   {
    "in": ".lb-f",
@@ -1252,7 +1271,7 @@
   {
    "in": ".lc4",
    "el": "b",
-   "add": "activity-strong"
+   "add": "activity-bold"
   },
   {
    "in": ".lc4",
@@ -1292,7 +1311,7 @@
   {
    "in": ".lgo-p",
    "el": "b",
-   "add": "logo-strong"
+   "add": "logo-bold"
   },
   {
    "in": ".lh-m",
@@ -1307,12 +1326,12 @@
   {
    "in": ".lm-v",
    "el": "b",
-   "add": "lang-strong"
+   "add": "lang-bold"
   },
   {
    "in": ".loc",
    "el": "b",
-   "add": "location-strong"
+   "add": "location-bold"
   },
   {
    "in": ".loc",
@@ -1352,7 +1371,7 @@
   {
    "in": ".mk",
    "el": "i",
-   "add": "pin-dot"
+   "add": "pin-inner"
   },
   {
    "in": ".mk-lb",
@@ -1362,7 +1381,7 @@
   {
    "in": ".mm-p",
    "el": "b",
-   "add": "mega-strong"
+   "add": "mega-bold"
   },
   {
    "in": ".mm-p",
@@ -1392,7 +1411,7 @@
   {
    "in": ".pair-h",
    "el": "b",
-   "add": "pair-strong"
+   "add": "pair-bold"
   },
   {
    "in": ".pair-h",
@@ -1402,7 +1421,7 @@
   {
    "in": ".pc-t",
    "el": "b",
-   "add": "region-strong"
+   "add": "region-bold"
   },
   {
    "in": ".pc-t",
@@ -1472,7 +1491,7 @@
   {
    "in": ".plr-pt",
    "el": "b",
-   "add": "place-strong"
+   "add": "place-bold"
   },
   {
    "in": ".plr-pt",
@@ -1482,12 +1501,12 @@
   {
    "in": ".plr-pv",
    "el": "b",
-   "add": "place-strong"
+   "add": "place-bold"
   },
   {
    "in": ".pr",
    "el": "b",
-   "add": "price-strong"
+   "add": "price-bold"
   },
   {
    "in": ".pr",
@@ -1497,7 +1516,7 @@
   {
    "in": ".promise-t",
    "el": "b",
-   "add": "promise-strong"
+   "add": "promise-bold"
   },
   {
    "in": ".promise-t",
@@ -1547,7 +1566,7 @@
   {
    "in": ".sg",
    "el": "b",
-   "add": "suggest-strong"
+   "add": "suggest-bold"
   },
   {
    "in": ".sg",
@@ -1582,7 +1601,7 @@
   {
    "in": ".smd",
    "el": "b",
-   "add": "twodays-strong"
+   "add": "twodays-bold"
   },
   {
    "in": ".smd-day",
@@ -1592,7 +1611,7 @@
   {
    "in": ".smd-day",
    "el": "b",
-   "add": "twodays-strong"
+   "add": "twodays-bold"
   },
   {
    "in": ".smd-m",
@@ -1607,7 +1626,7 @@
   {
    "in": ".sp-h",
    "el": "b",
-   "add": "sheet-strong"
+   "add": "sheet-bold"
   },
   {
    "in": ".srcs",
@@ -1617,7 +1636,7 @@
   {
    "in": ".srcs",
    "el": "b",
-   "add": "sources-strong"
+   "add": "sources-bold"
   },
   {
    "in": ".srcs",
@@ -1627,7 +1646,7 @@
   {
    "in": ".st",
    "el": "b",
-   "add": "month-strong"
+   "add": "month-bold"
   },
   {
    "in": ".st",
@@ -1642,7 +1661,7 @@
   {
    "in": ".stay",
    "el": "b",
-   "add": "stay-strong"
+   "add": "stay-bold"
   },
   {
    "in": ".stay",
@@ -1667,7 +1686,7 @@
   {
    "in": ".sv-p",
    "el": "b",
-   "add": "saved-strong"
+   "add": "saved-bold"
   },
   {
    "in": ".sv-p",
@@ -1702,7 +1721,7 @@
   {
    "in": ".ta-df",
    "el": "b",
-   "add": "days-strong"
+   "add": "days-bold"
   },
   {
    "in": ".ta-df",
@@ -1727,7 +1746,7 @@
   {
    "in": ".ta-hl",
    "el": "b",
-   "add": "days-strong"
+   "add": "days-bold"
   },
   {
    "in": ".ta-ph",
@@ -1737,7 +1756,7 @@
   {
    "in": ".ta-st",
    "el": "b",
-   "add": "days-strong"
+   "add": "days-bold"
   },
   {
    "in": ".ta-st",
@@ -1752,7 +1771,7 @@
   {
    "in": ".ta-tli",
    "el": "b",
-   "add": "days-strong"
+   "add": "days-bold"
   },
   {
    "in": ".ta-tli",
@@ -1777,7 +1796,7 @@
   {
    "in": ".v5-f",
    "el": "b",
-   "add": "pass-strong"
+   "add": "pass-bold"
   },
   {
    "in": ".v5-f",
@@ -1787,7 +1806,7 @@
   {
    "in": ".v5-foot",
    "el": "b",
-   "add": "pass-strong"
+   "add": "pass-bold"
   },
   {
    "in": ".v5-foot",
@@ -1859,10 +1878,6 @@
   "bk-both": "booking-both"
  },
  "dropped": [
-  "at-b",
-  "at-l",
-  "at-r",
-  "at-t",
   "bar-u",
   "biz-h",
   "bk-dsg",
@@ -1874,8 +1889,6 @@
   "bk-hs-m",
   "bk-hs-pay",
   "bk-hs-r",
-  "c2",
-  "c3",
   "exp",
   "fbar",
   "flash",
@@ -1888,10 +1901,6 @@
   "j1",
   "join",
   "join-i",
-  "k-focus",
-  "k-here",
-  "k-near",
-  "k-off",
   "lc4-f",
   "lg-m",
   "lg-s",
@@ -1904,7 +1913,6 @@
   "lmeta-l",
   "lnb",
   "mine",
-  "mk-near",
   "mo-1",
   "mo-2",
   "mo-3",
@@ -1930,7 +1938,6 @@
   "ph-x",
   "qlist",
   "qvb",
-  "req",
   "sm-k",
   "sres",
   "stitch",

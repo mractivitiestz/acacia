@@ -30,7 +30,7 @@
   font-weight: 700;
   color: var(--muted);
 }
-.datefield-btn .datefield-strong {
+.datefield-btn .datefield-bold {
   font-weight: 800;
   font-size: 15.5px;
 }
@@ -68,7 +68,7 @@
   gap: 2px;
   text-align: center;
 }
-.calendar-title .calendar-strong {
+.calendar-title .calendar-bold {
   font-family: var(--fh);
   font-size: 17px;
   font-weight: 800;

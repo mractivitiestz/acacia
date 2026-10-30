@@ -51,7 +51,7 @@
   background: none;
   box-shadow: none;
 }
-:where(.rows.days) > .day[hidden] {
+.rows.days > .day:where([hidden]) {
   display: none;
 }
 .rows.days > :where(.day) + .day {
@@ -181,7 +181,7 @@
   font-size: 15px;
   color: var(--muted);
 }
-.days-hl .days-strong {
+.days-hl .days-bold {
   display: block;
 }
 .days-photo {
@@ -281,7 +281,7 @@
 .days-tli > .days-summary::-webkit-details-marker {
   display: none;
 }
-.days-tli > :where(.days-summary:hover) .days-st .days-strong {
+.days-tli > :where(.days-summary:hover) .days-st .days-bold {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -298,7 +298,7 @@
 .days-tli[open] .days-dot {
   background: var(--brand);
 }
-.days-tli .days-strong {
+.days-tli .days-bold {
   font-size: 17px;
   font-weight: 800;
 }
@@ -351,6 +351,6 @@
 .days-left {
   margin-top: -6px;
 }
-.days-df .days-strong .days-label {
+.days-df .days-bold .days-label {
   display: inline;
 }

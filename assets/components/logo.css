@@ -67,7 +67,7 @@
   border-radius: var(--r-pill);
   white-space: nowrap;
 }
-.logo-pill .logo-strong {
+.logo-pill .logo-bold {
   display: inline-block;
   font-family: var(--fh);
   font-weight: 800;
@@ -114,7 +114,7 @@
   .logo-pill {
     padding-right: 16px;
   }
-  .logo-pill .logo-strong {
+  .logo-pill .logo-bold {
     font-size: 12.5px;
   }
 }

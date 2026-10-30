@@ -14,12 +14,12 @@
   gap: 5px;
   min-height: 22px;
 }
-.twodays-day .twodays-link .twodays-strong {
+.twodays-day .twodays-link .twodays-bold {
   font-weight: 800;
   font-size: 17px;
   line-height: 1.3;
 }
-:where(.twodays) .twodays-link:hover .twodays-strong {
+:where(.twodays) .twodays-link:hover .twodays-bold {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -42,7 +42,7 @@
   border-radius: var(--r-s);
   background: var(--bg);
 }
-.twodays-day > .twodays-strong {
+.twodays-day > .twodays-bold {
   font-weight: 800;
   font-size: 17px;
   line-height: 1.3;

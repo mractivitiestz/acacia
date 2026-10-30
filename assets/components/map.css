@@ -149,6 +149,22 @@
   font: 800 12px var(--f);
   transform: translateY(-1px);
 }
+.map-item[data-kind="here"] {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.map-item[data-kind="focus"] {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.map-item[data-kind="off"] {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.map-item[data-kind="near"] {
+  border: 2px solid var(--muted);
+  color: var(--ink);
+}
 .heromap .map-canvas {
   aspect-ratio: auto;
   height: 400px;

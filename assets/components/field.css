@@ -45,7 +45,7 @@
 .facet-select .select select {
   font-weight: 600;
 }
-:where(.facet-select) .select:where(:not([value=""])):has(option:checked) {
+.facet-select .select:has(option:checked:not([value=""])) {
   background: var(--tint);
   border-color: var(--brand);
   color: var(--brand-text);
@@ -200,7 +200,7 @@
   display: flex;
   flex-direction: column;
 }
-.option .option-strong {
+.option .option-bold {
   font-weight: 800;
   font-size: 15px;
   line-height: 1.3;

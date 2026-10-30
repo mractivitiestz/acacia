@@ -24,7 +24,7 @@
   text-transform: uppercase;
   color: var(--muted);
 }
-.location .location-strong {
+.location .location-bold {
   display: block;
   font-size: 18px;
   font-weight: 800;

@@ -42,6 +42,7 @@
 @import url('components/footer.css') layer(components);
 @import url('components/fact-list.css') layer(components);
 @import url('components/place-card.css') layer(components);
+@import url('components/booking-card.css') layer(components);
 @import url('components/result-row.css') layer(components);
 @import url('components/detail-tabs.css') layer(components);
 @import url('components/gallery.css') layer(components);
@@ -61,7 +62,6 @@
 @import url('components/stay-kinds.css') layer(components);
 @import url('components/two-days.css') layer(components);
 @import url('components/language-menu.css') layer(components);
-@import url('components/booking-card.css') layer(components);
 @import url('components/calendar.css') layer(components);
 @import url('components/payment.css') layer(components);
 @import url('components/voucher-pass.css') layer(components);

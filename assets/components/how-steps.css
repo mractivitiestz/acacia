@@ -11,7 +11,7 @@
   gap: 14px;
   align-items: flex-start;
 }
-.steps .steps-item > .steps-strong {
+.steps .steps-item > .steps-bold {
   display: grid;
   place-items: center;
   flex: none;
@@ -63,7 +63,7 @@
   color: var(--brand-text);
   margin-bottom: 8px;
 }
-.steps-icon .steps-strong {
+.steps-icon .steps-bold {
   position: absolute;
   right: -8px;
   top: -8px;

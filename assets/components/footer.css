@@ -274,7 +274,7 @@
     border-bottom: 2px solid var(--muted);
     transform: rotate(45deg) translateY(-3px);
   }
-  :where(.footer-zone[open]) .footer-zonehead::after {
+  .footer-zone:where([open]) .footer-zonehead::after {
     transform: rotate(-135deg) translateY(-3px);
   }
   .footer-zonename {
@@ -352,7 +352,7 @@
   color: var(--muted);
   max-width: 30em;
 }
-.footer-small .footer-strong {
+.footer-small .footer-bold {
   color: var(--ink);
   font-weight: 700;
 }

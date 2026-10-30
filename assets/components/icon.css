@@ -145,6 +145,9 @@
   flex: none;
   stroke-width: 2.2;
 }
+.k-off .pin-label .icon {
+  color: var(--accent);
+}
 .pin-type .icon {
   color: var(--brand);
 }
@@ -185,7 +188,7 @@
   margin-top: 2px;
   color: var(--brand-text);
 }
-:where(.datefield-btn[aria-expanded="true"]) .icon:last-child {
+.datefield-btn:where([aria-expanded="true"]) .icon:last-child {
   transform: rotate(180deg);
 }
 .booking-sent .icon {

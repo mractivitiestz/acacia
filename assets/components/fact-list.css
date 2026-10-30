@@ -4,7 +4,7 @@
   .facts .facts-item {
     grid-template-columns: 138px 1fr;
   }
-  .facts .facts-strong {
+  .facts .facts-bold {
     font-size: 16px;
   }
 }
@@ -73,7 +73,7 @@
 .sources .sources-link:hover {
   border-color: var(--ink);
 }
-.sources .sources-strong {
+.sources .sources-bold {
   display: block;
   font-weight: 800;
 }

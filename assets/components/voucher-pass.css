@@ -137,7 +137,7 @@
   text-transform: uppercase;
   opacity: .85;
 }
-.pass-fields .pass-strong {
+.pass-fields .pass-bold {
   font-size: 15px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
@@ -180,7 +180,7 @@
   color: var(--muted);
   opacity: 1;
 }
-.pass-foot2 .pass-strong {
+.pass-foot2 .pass-bold {
   font-size: 15px;
   font-weight: 800;
 }

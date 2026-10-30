@@ -35,7 +35,7 @@
   padding: 20px 22px;
   color: var(--white);
 }
-.region-text .region-strong {
+.region-text .region-bold {
   display: block;
   font-size: 20px;
   font-weight: 800;
@@ -65,9 +65,9 @@
   outline: 3px solid var(--brand);
   outline-offset: -3px;
 }
-.region-text .region-strong {
+.region-text .region-bold {
   font-family: var(--fh);
 }
-.region-text .region-strong {
+.region-text .region-bold {
   font-weight: 800;
 }

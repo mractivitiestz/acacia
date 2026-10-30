@@ -142,7 +142,7 @@
   text-transform: none;
   color: var(--muted);
 }
-:where(.facet[data-state="shut"]) .facet-value:not(:empty) {
+.facet[data-state="shut"] .facet-value:where(:not(:empty)) {
   display: block;
 }
 .facet-body {
@@ -264,7 +264,7 @@
   background: var(--line);
   box-shadow: none;
 }
-:where(.choice[aria-pressed="true"][data-v=""]) .choice-count {
+.choice[aria-pressed="true"]:where([data-v=""]) .choice-count {
   color: var(--muted);
 }
 .choice[aria-pressed="true"]:where([data-v=""]):hover {

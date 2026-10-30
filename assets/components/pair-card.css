@@ -23,7 +23,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.pair-head .pair-strong {
+.pair-head .pair-bold {
   color: var(--ink);
 }
 .pair-head:hover {
