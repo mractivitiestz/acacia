@@ -1,0 +1,132 @@
+/* components/detail-tabs.css: .headline, .tabs, .share */
+.headline {
+  padding-top: 22px;
+}
+.headline-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 6px 0 18px;
+}
+.headline-title {
+  min-width: 0;
+}
+.headline .headline-h1 {
+  font-size: clamp(30px,3.6vw,46px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin: 6px 0 10px;
+}
+.headline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: none;
+}
+.share {
+  margin-top: 10px;
+  font-weight: 700;
+}
+.tabs {
+  position: sticky;
+  z-index: var(--z-tabs);
+  margin-top: 26px;
+  background: var(--panel);
+}
+.tabs .tabs-list {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs .tabs-list::-webkit-scrollbar {
+  display: none;
+}
+.tabs .tabs-link {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 14px;
+  font-weight: 800;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.tabs .tabs-link:hover {
+  color: var(--ink);
+}
+.tabs .tabs-link[aria-current="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+@media (max-width:700px) {
+  .headline {
+    padding-top: 12px;
+  }
+  .headline-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .headline .headline-h1 {
+    font-size: 30px;
+  }
+  .headline-actions {
+    width: 100%;
+  }
+  .tabs {
+    margin-top: 20px;
+  }
+  .tabs .tabs-list {
+    padding: 0 var(--gut);
+  }
+  .tabs .tabs-link {
+    padding: 0 10px;
+    min-height: 48px;
+  }
+}
+
+.headline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 18px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.headline-meta .headline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+}
+.headline-meta .headline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+}
+.headline-meta .headline-link {
+  min-height: 44px;
+}
+.headline-meta .headline-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+.headline .headline-h1 {
+  overflow-wrap: anywhere;
+}
+.tabs {
+  top: var(--st);
+}
+.tabs {
+  transition: top .25s ease;
+}

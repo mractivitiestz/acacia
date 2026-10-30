@@ -1,0 +1,221 @@
+/* components/result-row.css: .result */
+.result {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px,300px) 1fr;
+  gap: 22px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  transition: box-shadow .2s,border-color .2s;
+}
+.result:hover {
+  box-shadow: var(--sh-h);
+  border-color: transparent;
+}
+.result-photo {
+  position: relative;
+  align-self: start;
+  aspect-ratio: 4/3;
+  border-radius: var(--r-s);
+  overflow: hidden;
+  background: var(--soft);
+}
+.result-slides {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.result-slides::-webkit-scrollbar {
+  display: none;
+}
+.result-slides img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+.result-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.result-arrow .result-label {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-pill);
+  background: var(--white);
+  color: var(--dark);
+  box-shadow: 0 2px 8px var(--shade-25);
+}
+.result-arrow[data-dir="prev"] {
+  left: 2px;
+}
+.result-arrow[data-dir="next"] {
+  right: 2px;
+}
+.result-photo:hover .result-arrow {
+  opacity: 1;
+}
+.result-arrow:focus-visible {
+  opacity: 1;
+}
+
+@media (hover:none) {
+  .result-arrow {
+    opacity: 1;
+  }
+}
+
+.result-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  pointer-events: none;
+}
+.result-dots .result-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: var(--light-55);
+  box-shadow: 0 0 3px var(--shade-40);
+  transition: transform .2s;
+}
+.result-dots .result-dot[aria-current="true"] {
+  background: var(--white);
+  transform: scale(1.25);
+}
+.result-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 4px 4px 0 0;
+}
+.result .result-name {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 4px 0 8px;
+}
+:where(.result) .result-name .result-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.result-text {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width:1240px) {
+  .result {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width:700px) {
+  .result {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 0 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+  .result:hover {
+    box-shadow: none;
+  }
+  .result-photo {
+    aspect-ratio: 16/10;
+  }
+  .result .result-name {
+    font-size: 18px;
+  }
+}
+
+.result .result-name {
+  margin: 0 0 2px;
+}
+.result .result-name .result-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.result .result-name {
+  overflow-wrap: anywhere;
+}
+.result-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+@media (max-width:700px) {
+  .result-foot {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.day-head .result-photo {
+  grid-column: 2;
+  grid-row: 1;
+  width: var(--ta-t);
+  height: var(--ta-t);
+  aspect-ratio: auto;
+  border-radius: var(--r-s);
+}
+.day .result-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.day-body > .result-photo {
+  width: 100%;
+  aspect-ratio: 2/1;
+  margin: 0 0 14px;
+  border-radius: var(--r-s);
+}
+.day-head .result-body {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0;
+}
+
+@media (max-width:700px) {
+  .day-body > .result-photo {
+    aspect-ratio: 16/10;
+  }
+}

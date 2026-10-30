@@ -1,0 +1,135 @@
+/* pages/plan.css: .plan, .toc, .seasons, .season */
+.plan-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0,1fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 44px;
+}
+.toc {
+  position: sticky;
+}
+.toc .toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.toc .toc-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: var(--r-s);
+  font-weight: 700;
+}
+.toc .toc-link:hover {
+  background: var(--soft);
+}
+.plan-sec {
+  padding: 0 0 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: calc(var(--row-h) + 28px);
+}
+.plan-sec:last-child {
+  border-bottom: 0;
+}
+.plan-sec .plan-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(24px,2.4vw,30px);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.plan-sec > .plan-text:not(.prose) {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.plan-sec .plan-ext {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+@media (max-width:1080px) {
+  .plan-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .toc {
+    position: static;
+  }
+  .toc .toc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .toc .toc-link {
+    border: 1.5px solid var(--line);
+    border-radius: var(--r-pill);
+    padding: 0 14px;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width:700px) {
+  .plan-sec .plan-heading .plan-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.seasons {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+.season {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 20px;
+}
+.season .season-name {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.season .season-text {
+  color: var(--muted);
+  font-size: 15.5px;
+}
+.plan-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.plan-sec > .plan-text {
+  color: var(--ink);
+  margin-bottom: 12px;
+  max-width: 72ch;
+  font-size: 16.5px;
+}
+
+@media (max-width:700px) {
+  .season {
+    padding: 16px;
+  }
+}
+
+.toc {
+  top: calc(var(--st) + 20px);
+}
+.toc {
+  transition: top .25s ease;
+}

@@ -1,0 +1,38 @@
+/* pages/suggest.css: .business */
+.business {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  padding: 48px;
+  border-radius: var(--r);
+  background: var(--soft);
+}
+.business .business-heading {
+  font-size: clamp(26px,2.6vw,36px);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  margin: 12px 0 14px;
+}
+.business-lead > .business-text {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 560px;
+}
+
+@media (max-width:1080px) {
+  .business {
+    grid-template-columns: 1fr;
+    padding: 32px;
+    gap: 28px;
+  }
+}
+
+.business {
+  grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+}
+
+@media (max-width:1080px) {
+  .business {
+    grid-template-columns: minmax(0,1fr);
+  }
+}

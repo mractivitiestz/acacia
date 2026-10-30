@@ -1,0 +1,107 @@
+/* utilities/utilities.css: .vh, .nw, .muted, .dot */
+html[data-lang=sw] .en {
+  display: none;
+}
+html:not([data-lang=sw]) .sw {
+  display: none;
+}
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+[hidden] {
+  display: none;
+}
+.nw {
+  white-space: nowrap;
+}
+.muted {
+  color: var(--muted);
+  font-size: 15px;
+}
+.place .nw {
+  white-space: nowrap;
+}
+.place .dot {
+  flex: none;
+  margin: 0 6px;
+  color: var(--muted);
+}
+.place-meta > .nw {
+  flex: none;
+}
+.place-previewtext .place-note .dot {
+  margin: 0 5px;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none;
+    transition: none;
+  }
+  *::before {
+    animation: none;
+    transition: none;
+  }
+  *::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+.bar .bar-note .dot {
+  opacity: .6;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+  *::before {
+    animation: none;
+    transition: none;
+  }
+  *::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media print {
+  html:has(.pass) {
+    margin: 0;
+    padding: 0;
+    background: var(--panel);
+  }
+  body:has(.pass) {
+    margin: 0;
+    padding: 0;
+    background: var(--panel);
+  }
+  body:has(.pass) *:not(:has(.pass),.pass,.pass *) {
+    display: none;
+  }
+  body:has(.pass) :has(.pass) {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: auto;
+    max-width: none;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.expeditions-card .place-meta .nw {
+  white-space: normal;
+}

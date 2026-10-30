@@ -1,0 +1,11 @@
+/* tokens/z.css: the stacking order, map panes < sticky bars < header < menus and sheets < skip link; the lightbox is a dialog in the top layer */
+:root {
+  --z-tabs: 900;
+  --z-header: 1000;
+  --z-map-cards: 1100;
+  --z-bottom-bar: 1500;
+  --z-drawer: 2000;
+  --z-sheet: 2100;
+  --z-filters: 2600;
+  --z-skip: 4000;
+}

@@ -1,0 +1,158 @@
+/* components/mega-menu.css: .mega */
+
+@keyframes mm {from{opacity:0;transform:translateY(-6px)}}
+.mega-inner {
+  display: flex;
+  gap: 36px;
+}
+.mega-heading {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.mega-group + .mega-group .mega-heading {
+  margin-top: 0;
+}
+.mega-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 6px 10px;
+  margin-left: -10px;
+  border-radius: var(--r-s);
+  font-weight: 700;
+  font-size: 15.5px;
+}
+.mega-link:hover {
+  background: var(--soft);
+}
+.mega-places {
+  flex: 1;
+  min-width: 0;
+}
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--n,3),minmax(0,1fr));
+  gap: 16px;
+  max-width: calc(var(--n,3) * 250px);
+}
+.mega-places[data-variant="wide"] .mega-grid {
+  grid-template-columns: repeat(3,1fr);
+  max-width: none;
+}
+.mega-place {
+  display: block;
+  border-radius: var(--r-s);
+}
+.mega-place img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--r-s);
+  transition: transform .3s;
+}
+.mega-place:hover img {
+  transform: scale(1.02);
+}
+.mega-place .mega-label {
+  display: block;
+  padding-top: 8px;
+}
+.mega-place .mega-strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.mega-place .mega-note {
+  display: block;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+.mega-place:hover .mega-strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.mega-places[data-variant="wide"] :where(.mega-place) img {
+  aspect-ratio: 12/5;
+}
+.mega-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  font-weight: 800;
+  color: var(--brand-text);
+  min-height: 44px;
+}
+.accordion-body .mega-heading {
+  margin: 14px 0 4px;
+}
+.accordion-body .mega-link {
+  margin-left: -10px;
+}
+.mega-link[aria-current] {
+  background: var(--soft);
+}
+.mega-all[aria-current] {
+  background: var(--soft);
+}
+.mega-place .mega-strong {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.mega-photo {
+  display: block;
+  aspect-ratio: 16/10;
+  border-radius: var(--r-s);
+  overflow: hidden;
+}
+.mega-photo img {
+  aspect-ratio: auto;
+  height: 100%;
+}
+.mega {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 14px 28px var(--shade-8);
+  padding: 26px 0 16px;
+  animation: mm .15s ease-out;
+}
+.mega-inner {
+  display: flex;
+  gap: 40px;
+}
+.mega-group {
+  min-width: 200px;
+}
+.mega-grid {
+  max-width: calc(var(--n,3) * 230px);
+}
+.mega-all {
+  border-top: 1px solid var(--line);
+  width: 100%;
+  padding-top: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width:1080px) {
+  .mega {
+    display: none;
+  }
+}

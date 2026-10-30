@@ -1,0 +1,237 @@
+/* components/activity-card.css: .activity */
+.activity-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--brand-text);
+}
+.activity {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: var(--r);
+}
+.activity-media {
+  position: relative;
+  border-radius: var(--r);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--soft);
+}
+.activity-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.activity:hover :where(.activity-media) img {
+  transform: scale(1.04);
+}
+.activity-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.activity .activity-name {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 4px 0 6px;
+}
+:where(.activity) .activity-name .activity-a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.activity:hover :where(.activity-name) .activity-a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.activity-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.activity-view {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 0 20px;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--r-pill);
+  font-weight: 800;
+  font-size: 14.5px;
+  transition: background .15s,color .15s;
+}
+.activity:hover .activity-view {
+  background: var(--ink);
+  color: var(--panel);
+}
+
+@media (max-width:700px) {
+  .grid .activity[data-id] {
+    flex-direction: row;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  :where(.grid) .activity[data-id]:first-child {
+    padding-top: 0;
+  }
+  .grid .activity-media {
+    flex: 0 0 124px;
+    height: 124px;
+    aspect-ratio: auto;
+    border-radius: var(--r-s);
+  }
+  .grid .activity-type {
+    margin-top: 0;
+  }
+  .grid .activity .activity-name {
+    font-size: 17px;
+    margin: 2px 0 4px;
+  }
+  .grid .activity-view {
+    margin-top: 8px;
+    padding: 0 14px;
+    font-size: 13.5px;
+  }
+}
+
+.activity-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--r);
+}
+.activity:focus-within .activity-view {
+  background: var(--ink);
+  color: var(--panel);
+}
+.carousel[data-variant="cards"] .activity-media {
+  aspect-ratio: 4/3;
+}
+[data-variant="preview"] .activity {
+  max-width: 340px;
+  cursor: default;
+}
+
+@media (max-width:700px) {
+  .carousel[data-variant="cards"] .activity {
+    flex-direction: column;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.result-body .activity-type {
+  margin-top: 0;
+}
+.result .activity-view {
+  min-height: 44px;
+}
+.result .activity-view:hover {
+  background: var(--ink);
+  color: var(--panel);
+}
+.activity-meta {
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.activity-meta .activity-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.activity .activity-name {
+  overflow-wrap: anywhere;
+}
+.result-foot .activity-view {
+  margin: 0;
+}
+.activity-meta {
+  flex-wrap: wrap;
+}
+.result .activity-meta {
+  flex-wrap: wrap;
+}
+.pair .activity {
+  flex: 1;
+}
+.mapcard .activity-type {
+  margin: 0;
+}
+.mapcard .activity-meta {
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  margin: 0;
+  font-size: 13.5px;
+}
+.mapcard .activity-meta > .activity-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.mapcard .activity-view {
+  flex: none;
+  margin: 0;
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+.mapcard .activity-view:hover {
+  background: var(--ink);
+  color: var(--panel);
+}
+.mapcard .activity-view:focus-visible {
+  background: var(--ink);
+  color: var(--panel);
+}
+
+@media (max-width:600px) {
+  .popup .activity-type {
+    padding-right: 30px;
+  }
+}
+
+.day-head .activity-type {
+  margin: 0;
+  font-size: 12.5px;
+}
+.day-head .activity-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.day-head .activity-meta .activity-label {
+  display: inline;
+  gap: 0;
+}
+
+@media (max-width:700px) {
+  .day-head .activity-meta {
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+  .day-head .activity-type {
+    font-size: 12px;
+  }
+}
+
+.expedition-foot .activity-view {
+  margin: 0;
+}

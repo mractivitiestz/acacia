@@ -1,0 +1,68 @@
+/* components/empty.css: .empty, .nothing, .none, .soon */
+.empty {
+  padding: 34px;
+  text-align: center;
+  border: 1.5px dashed var(--line);
+  border-radius: var(--r);
+  margin-top: 8px;
+}
+.empty .empty-text {
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+.soon {
+  margin-top: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.none {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  padding: 22px;
+  border: 1.5px dashed var(--line);
+  border-radius: var(--r);
+  color: var(--muted);
+  font-weight: 700;
+}
+.nothing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1.5px dashed var(--line);
+  border-radius: var(--r);
+}
+.nothing-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.nothing .nothing-text {
+  font-weight: 700;
+  max-width: 420px;
+}
+.aside .soon {
+  margin: 0;
+}
+.soon {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  font-weight: 700;
+  color: var(--ink);
+}
+.soon:focus {
+  outline: none;
+}

@@ -1,0 +1,98 @@
+/* components/two-days.css: .twodays */
+.twodays-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.twodays-meta > .twodays-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 22px;
+}
+.twodays-day .twodays-link .twodays-strong {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.3;
+}
+:where(.twodays) .twodays-link:hover .twodays-strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.twodays-box {
+  padding: 28px;
+}
+.twodays-days {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+  align-items: stretch;
+  gap: 14px;
+}
+.twodays-day {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--bg);
+}
+.twodays-day > .twodays-strong {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.3;
+}
+.twodays-num {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.twodays-plus {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.twodays-pick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 0;
+  margin: 18px 0 20px;
+  padding: 0;
+}
+.twodays-pick input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width:720px) {
+  .twodays-box {
+    padding: 20px 18px;
+  }
+  .twodays-days {
+    grid-template-columns: 1fr;
+  }
+  .twodays-plus {
+    width: 32px;
+    height: 32px;
+    justify-self: center;
+  }
+}
+
+.booking-bb .twodays-ask {
+  margin-right: 8px;
+  margin-top: 4px;
+}

@@ -1,0 +1,93 @@
+/* components/carousel.css: .carousel */
+.carousel-controls {
+  display: flex;
+  gap: 8px;
+  flex: none;
+}
+.carousel-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--sh);
+  transition: background .15s,opacity .15s;
+}
+.carousel-btn:hover:not(:disabled) {
+  background: var(--soft);
+  border-color: var(--ink);
+}
+.carousel-btn:disabled {
+  opacity: .35;
+  cursor: default;
+  box-shadow: none;
+}
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 60px)/4);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  overscroll-behavior-x: contain;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel > * {
+  scroll-snap-align: start;
+}
+.carousel[data-variant="places"] {
+  grid-auto-columns: calc((100% - 40px)/3);
+  grid-auto-flow: column;
+  grid-template-rows: auto;
+}
+
+@media (max-width:1080px) {
+  .carousel {
+    grid-auto-columns: calc((100% - 40px)/3);
+  }
+  .carousel[data-variant="places"] {
+    grid-auto-columns: calc((100% - 20px)/2);
+  }
+}
+
+@media (max-width:700px) {
+  .carousel {
+    grid-auto-columns: 78%;
+    gap: 12px;
+    margin: 0 calc(-1 * var(--gut));
+    padding: 0 var(--gut) 4px;
+    scroll-padding-inline: var(--gut);
+  }
+  .carousel[data-variant="places"] {
+    grid-auto-columns: 78%;
+    gap: 12px;
+    margin: 0 calc(-1 * var(--gut));
+    padding: 0 var(--gut) 4px;
+    scroll-padding-inline: var(--gut);
+  }
+  .carousel-controls {
+    display: none;
+  }
+}
+
+.carousel[data-variant="cards"] {
+  grid-auto-columns: calc((100% - 60px)/4);
+}
+
+@media (max-width:1080px) {
+  .carousel[data-variant="cards"] {
+    grid-auto-columns: calc((100% - 40px)/3);
+  }
+}
+
+@media (max-width:700px) {
+  .carousel[data-variant="cards"] {
+    grid-auto-columns: 78%;
+  }
+}

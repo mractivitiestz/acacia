@@ -1,0 +1,105 @@
+/* components/ask-question.css: .ask, .otp, .enquiry */
+.ask-p {
+  width: 100%;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.ask-who {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 14.5px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.enquiry {
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 12px;
+}
+
+@media (max-width:700px) {
+  .enquiry {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.aside .ask {
+  width: 100%;
+}
+.ask > .ask-summary {
+  list-style: none;
+  cursor: pointer;
+}
+.ask > .ask-summary::-webkit-details-marker {
+  display: none;
+}
+.ask[open] > .ask-summary {
+  margin-bottom: 12px;
+}
+.ask .ask-fine {
+  margin-bottom: 12px;
+}
+.ask-fine {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.aside .ask-fine {
+  color: var(--muted);
+}
+.otp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+.otp .otp-name {
+  font-size: 18px;
+  font-weight: 800;
+}
+.otp .otp-name:focus {
+  outline: none;
+}
+.aside .otp .otp-text {
+  color: var(--ink);
+}
+.otp-boxes {
+  display: grid;
+  grid-template-columns: repeat(6,minmax(0,44px));
+  gap: 8px;
+}
+.otp-input {
+  width: 100%;
+  height: 52px;
+  padding: 0;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+  text-align: center;
+  font: 800 22px/1 var(--f);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.otp-input:focus {
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
+  border-color: var(--brand);
+}
+.otp-input[aria-invalid="true"] {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+.otp-status:empty {
+  display: none;
+}
+.otp-status {
+  font-size: 14.5px;
+  font-weight: 700;
+}
+.otp-again {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}

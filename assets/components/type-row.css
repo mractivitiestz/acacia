@@ -1,0 +1,86 @@
+/* components/type-row.css: .types */
+.types {
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+}
+.types-inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+.types .types-list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.types .types-item {
+  flex: none;
+  display: flex;
+}
+.types-all {
+  flex: none;
+}
+.types-scroll {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.types-scroll::-webkit-scrollbar {
+  display: none;
+}
+.types-scroll[data-s=start] {
+  -webkit-mask-image: linear-gradient(to right,var(--ink) calc(100% - 64px),transparent);
+  mask-image: linear-gradient(to right,var(--ink) calc(100% - 64px),transparent);
+}
+.types-scroll[data-s=mid] {
+  -webkit-mask-image: linear-gradient(to right,transparent,var(--ink) 48px,var(--ink) calc(100% - 64px),transparent);
+  mask-image: linear-gradient(to right,transparent,var(--ink) 48px,var(--ink) calc(100% - 64px),transparent);
+}
+.types-scroll[data-s=end] {
+  -webkit-mask-image: linear-gradient(to right,transparent,var(--ink) 48px);
+  mask-image: linear-gradient(to right,transparent,var(--ink) 48px);
+}
+.types .types-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 12px;
+  border-bottom: 3px solid transparent;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.types .types-link .types-label {
+  display: block;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.types .types-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
+.types .types-link[aria-current] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+@media (max-width:1080px) {
+  .types .types-link {
+    min-height: 48px;
+    padding: 0 10px;
+    font-size: 14.5px;
+  }
+  .types .types-link .types-label {
+    max-width: 180px;
+  }
+}

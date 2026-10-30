@@ -1,0 +1,81 @@
+/* components/type-tile.css: .kind */
+.kind {
+  display: block;
+  text-align: center;
+  border-radius: var(--r-s);
+}
+.kind-media {
+  position: relative;
+  display: block;
+  border-radius: var(--r);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.kind-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.kind:hover :where(.kind-media) img {
+  transform: scale(1.05);
+}
+.kind-icon {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-pill);
+  background: var(--white);
+  color: var(--dark);
+  box-shadow: 0 2px 8px var(--shade-20);
+}
+.kind .kind-strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.kind:hover .kind-strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width:700px) {
+  .kind {
+    flex: 0 0 108px;
+    scroll-snap-align: start;
+  }
+  .kind .kind-strong {
+    font-size: 14px;
+  }
+}
+
+.kind-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--brand-text);
+  background: radial-gradient(circle at 30% 20%,var(--tint),transparent 62%),var(--soft);
+}
+.kind .kind-note {
+  display: block;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.kind .kind-strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width:700px) {
+  .kind {
+    flex: 0 0 116px;
+  }
+}

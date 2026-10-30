@@ -1,0 +1,67 @@
+/* components/photo-placeholder.css: .placeholder */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  color: var(--brand-text);
+  text-align: center;
+  padding: 10px;
+  background: radial-gradient(circle at 30% 20%,var(--tint),transparent 60%),var(--soft);
+}
+.placeholder .placeholder-note {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.placeholder-thumb {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.saved-panel .placeholder-thumb {
+  width: 56px;
+  height: 56px;
+}
+.result-slides .placeholder {
+  flex: 0 0 100%;
+}
+.region > .placeholder {
+  position: absolute;
+  inset: 0;
+}
+.gallery .placeholder[data-size="big"] {
+  border-radius: 0;
+}
+.gallery[data-n="1"] :where(.gallery-grid) > .placeholder {
+  grid-row: 1/-1;
+}
+.gallery-grid > .placeholder {
+  grid-row: 1/-1;
+}
+.gallery-slide .placeholder {
+  border-radius: 0;
+}
+.heromosaic-tile .placeholder .placeholder-note {
+  display: none;
+}
+.mapcard-media .placeholder {
+  gap: 4px;
+}
+
+@media (max-width:600px) {
+  :where(.popup) .mapcard-media .placeholder .placeholder-note {
+    display: none;
+  }
+}

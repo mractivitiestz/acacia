@@ -1,0 +1,43 @@
+/* layout/cluster.css: .btns, .pills, .typelinks, .cluster */
+.pills {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px;
+  margin: -2px;
+  -webkit-mask-image: linear-gradient(to right,var(--opaque) calc(100% - 48px),transparent);
+  mask-image: linear-gradient(to right,var(--opaque) calc(100% - 48px),transparent);
+}
+.pills::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width:700px) {
+  .pills {
+    margin: 0 calc(-1 * var(--gut));
+    padding: 2px var(--gut);
+    scroll-padding-inline: var(--gut);
+  }
+  .pills::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.typelinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.btns[data-align="center"] {
+  justify-content: center;
+}

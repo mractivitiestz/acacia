@@ -1,0 +1,127 @@
+/* components/logo.css: .logo, .wordmark, .mark */
+.wordmark {
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+  color: var(--ink);
+  line-height: 1;
+}
+.drawer-head .wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+.mark {
+  display: block;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  background: var(--ink);
+  -webkit-mask: url(../img/logo-mark.svg) center/contain no-repeat;
+  mask: url(../img/logo-mark.svg) center/contain no-repeat;
+}
+.wordmark {
+  flex: none;
+}
+
+@media (min-width:1081px) {
+  .header .header-inner > .logo {
+    display: none;
+  }
+}
+
+@media (max-width:1080px) {
+  .mark {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.logo {
+  position: relative;
+  flex: none;
+  height: 46px;
+  min-height: 0;
+  padding: 0;
+  gap: 0;
+  width: 46px;
+}
+.logo-pill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+.logo-pill .logo-strong {
+  display: inline-block;
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .22em;
+  line-height: 1;
+}
+.logo-seal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  overflow: visible;
+  color: var(--brand);
+  --seal-mr: var(--on-brand);
+}
+.logo-disc {
+  fill: currentColor;
+}
+.logo-stitch text {
+  fill: var(--seal-mr);
+}
+.drawer-head .logo {
+  display: block;
+}
+.logo-footer {
+  display: block;
+  width: 88px;
+  height: 88px;
+  color: var(--brand);
+  --seal-mr: var(--on-brand);
+}
+
+@media (max-width:1080px) {
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+  .logo-seal {
+    width: 40px;
+    height: 40px;
+  }
+  .logo-pill {
+    padding-right: 16px;
+  }
+  .logo-pill .logo-strong {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width:700px) {
+  .logo-footer {
+    width: 72px;
+    height: 72px;
+  }
+}

@@ -1,0 +1,35 @@
+/* components/language-menu.css: .lang */
+.lang {
+  flex: none;
+  gap: 6px;
+  padding: 0 10px 0 12px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+}
+.lang-value {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.lang-value .lang-strong {
+  font-weight: inherit;
+}
+.lang .lang-code {
+  display: none;
+}
+.lang select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  opacity: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+.lang:has(select:focus-visible) {
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
+}

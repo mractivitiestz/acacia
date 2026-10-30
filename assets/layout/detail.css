@@ -1,0 +1,125 @@
+/* layout/detail.css: .detail, .aside, .results */
+.results {
+  display: grid;
+  grid-template-columns: 272px minmax(0,1fr);
+  gap: 40px;
+  align-items: start;
+}
+.results-main {
+  min-width: 0;
+}
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 360px;
+  gap: 48px;
+  align-items: start;
+  margin-top: 36px;
+}
+.detail-sec {
+  margin-top: 34px;
+}
+.detail-sec .detail-heading {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.aside .aside-heading {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.aside {
+  position: sticky;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  box-shadow: var(--sh);
+}
+.aside .aside-text {
+  color: var(--muted);
+}
+.aside > .aside-note {
+  color: var(--muted);
+  font-size: 13.5px;
+  margin-top: -4px;
+}
+.aside-extra {
+  width: 100%;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width:1080px) {
+  .results {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .detail {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .aside {
+    position: static;
+  }
+}
+
+@media (max-width:700px) {
+  .aside {
+    padding: 20px 18px;
+  }
+}
+
+.headline ~ .detail {
+  margin-top: 32px;
+}
+.detail-sec {
+  scroll-margin-top: calc(var(--row-h) + var(--tabs-h) + 30px);
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+.detail-main > .detail-sec:first-child {
+  margin-top: 0;
+}
+.detail-main > .detail-sec:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width:700px) {
+  .detail-sec {
+    scroll-margin-top: calc(var(--row-h) + var(--tabs-h) + 26px);
+  }
+}
+
+.aside {
+  gap: 12px;
+}
+.aside .aside-heading {
+  margin: 6px 0 0;
+}
+.aside {
+  top: calc(var(--st) + 20px);
+}
+.tabs ~ .detail > .aside {
+  top: calc(var(--st) + var(--tabs-h) + 16px);
+}
+.aside {
+  transition: top .25s ease;
+}
+.detail {
+  grid-template-columns: minmax(0,1fr) 360px;
+}
+.detail > * {
+  min-width: 0;
+}
+
+@media (max-width:1080px) {
+  .detail {
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+
+[data-booking="on"] .aside {
+  scroll-margin-top: calc(var(--row-h) + var(--tabs-h) + 16px);
+}

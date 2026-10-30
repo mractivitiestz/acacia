@@ -1,0 +1,71 @@
+/* components/promise.css: .promise */
+.promise-text .promise-strong {
+  font-family: var(--fh);
+}
+.promise {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px 32px;
+  border-radius: var(--r);
+  background: var(--brand);
+  color: var(--on-brand);
+  transition: box-shadow .2s;
+}
+.promise:hover {
+  box-shadow: var(--sh-h);
+}
+.promise-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-s);
+  background: var(--panel);
+  color: var(--brand-text);
+}
+.promise-text {
+  flex: 1;
+  min-width: 0;
+}
+.promise-text .promise-strong {
+  display: block;
+  font-size: clamp(22px,2.4vw,30px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+.promise-text .promise-label {
+  display: block;
+  font-size: 17px;
+  margin-top: 4px;
+  opacity: .92;
+}
+
+@media (max-width:700px) {
+  .promise {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 20px;
+  }
+}
+
+.promise {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh);
+}
+.promise:hover {
+  box-shadow: var(--sh-h);
+}
+.promise-icon {
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.promise-text .promise-label {
+  color: var(--muted);
+  opacity: 1;
+}

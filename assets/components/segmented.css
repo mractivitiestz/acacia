@@ -1,0 +1,52 @@
+/* components/segmented.css: .segmented */
+.segmented {
+  display: inline-flex;
+  gap: 1.5px;
+  padding: 1.5px;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+}
+.segmented-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 18px 0 15px;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  background: var(--panel);
+  color: var(--ink);
+  font: 700 15px/1.15 var(--f);
+  cursor: pointer;
+  transition: background .15s,color .15s;
+}
+.segmented-btn:not(:has(.icon)) {
+  padding-inline: 16px;
+}
+.segmented-btn:first-child {
+  border-radius: var(--r-pill) 0 0 var(--r-pill);
+}
+.segmented-btn:last-child {
+  border-radius: 0 var(--r-pill) var(--r-pill) 0;
+}
+.segmented-btn:hover {
+  background: var(--soft);
+}
+.segmented-btn[aria-pressed="true"] {
+  background: transparent;
+  color: var(--on-brand);
+}
+.segmented-btn[aria-pressed="true"]:hover {
+  background: transparent;
+  color: var(--on-brand);
+}
+.segmented[data-variant="region"] {
+  margin-bottom: 18px;
+  flex: none;
+}
+.booking-length .segmented {
+  align-self: flex-start;
+  max-width: 100%;
+}

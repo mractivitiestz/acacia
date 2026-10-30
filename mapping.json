@@ -1,0 +1,1953 @@
+{
+ "classes": {
+  "skip": "skip",
+  "wrap": "wrap",
+  "sec": "sec",
+  "sub": "subsec",
+  "sub-h": "subsec-heading",
+  "vh": "vh",
+  "nw": "nw",
+  "muted": "muted",
+  "dot": "dot",
+  "see": "nw",
+  "ic": "icon",
+  "btn": "btn",
+  "lnk": "link",
+  "ib": "iconbtn",
+  "cb": "carousel-btn",
+  "pill": "pill",
+  "pills": "pills",
+  "btns": "btns",
+  "cat-links": "typelinks",
+  "qchip": "chip",
+  "achips": "chips",
+  "qclear": "chips-clear",
+  "ob": "badge",
+  "xg-chip": "grade",
+  "dist": "distance",
+  "bk-chip": "status",
+  "labs": "tags",
+  "lab": "tag",
+  "sample": "sample",
+  "note": "note",
+  "hv-seg": "segmented",
+  "hv-sb": "segmented-btn",
+  "card": "card",
+  "fld": "field",
+  "form": "form",
+  "full": "form-full",
+  "dsel": "select",
+  "bk-fs": "fieldset",
+  "bk-chk": "check",
+  "bk-opt": "option",
+  "bk-opts": "options",
+  "bk-mm": "option-mark",
+  "bk-e": "error",
+  "hd": "header",
+  "hd-wrap": "header-wrap",
+  "hd-in": "header-inner",
+  "hd-s": "header-search",
+  "hd-r": "header-actions",
+  "xnav": "header-pill",
+  "enq-b": "header-enquire",
+  "sp-b": "header-searchbtn",
+  "menu-b": "header-menubtn",
+  "nav": "nav",
+  "nav-a": "nav-link",
+  "sv": "saved",
+  "sv-p": "saved-panel",
+  "heart": "heart",
+  "save": "save",
+  "lgo": "logo",
+  "lgo-p": "logo-pill",
+  "lgo-s": "logo-seal",
+  "lgo-disc": "logo-disc",
+  "lgo-st": "logo-stitch",
+  "ft-seal": "logo-footer",
+  "word": "wordmark",
+  "mark": "mark",
+  "mm": "mega",
+  "mm-in": "mega-inner",
+  "mm-h": "mega-heading",
+  "mm-g": "mega-group",
+  "mm-l": "mega-link",
+  "mm-ls": "mega-links",
+  "mm-ph": "mega-places",
+  "mm-ps": "mega-grid",
+  "mm-p": "mega-place",
+  "mm-pi": "mega-photo",
+  "mm-all": "mega-all",
+  "cstrip": "types",
+  "cs-in": "types-inner",
+  "cs-all": "types-all",
+  "cs-sc": "types-scroll",
+  "mob": "drawer",
+  "mob-h": "drawer-head",
+  "mob-b": "drawer-body",
+  "mob-r": "drawer-row",
+  "mob-enq": "drawer-enquire",
+  "acc": "accordion",
+  "acc-b": "accordion-body",
+  "sbox": "search",
+  "sbox-s": "search-small",
+  "sq": "search-query",
+  "sm": "search-month",
+  "sgo": "search-go",
+  "smsg": "search-msg",
+  "hcap-p": "search-caption",
+  "sugg": "suggest",
+  "sg": "suggest-item",
+  "sg-h": "suggest-heading",
+  "sg-ic": "suggest-icon",
+  "sg-none": "suggest-none",
+  "scopes": "scopes",
+  "scope": "scopes-tab",
+  "sp-p": "sheet",
+  "sp-h": "sheet-head",
+  "lm": "lang",
+  "lm-v": "lang-value",
+  "lm-c": "lang-code",
+  "lm-n": "lang-name",
+  "ft": "footer",
+  "ft-word": "footer-word",
+  "ft-h": "footer-heading",
+  "ft-st": "footer-strap",
+  "ft-tc": "footer-contact",
+  "ft-ls": "footer-links",
+  "ft-bot": "footer-bottom",
+  "ft-bl": "footer-legal",
+  "ft-leg": "footer-legalrow",
+  "ft-cr": "footer-copy",
+  "ft-band": "footer-band",
+  "ft-al": "footer-about",
+  "ft-mega": "footer-mega",
+  "ft-zg": "footer-zones",
+  "ft-col": "footer-col",
+  "ft-zh": "footer-zonehead",
+  "ft-zn": "footer-zonename",
+  "ft-z": "footer-zone",
+  "ft-types": "footer-types",
+  "ft-chips": "footer-chips",
+  "ft-pk": "footer-pack",
+  "ft-mt": "footer-main",
+  "ft-lm": "footer-lang",
+  "ft-s": "footer-small",
+  "ft-badges": "footer-badges",
+  "ft-sb": "footer-storebadge",
+  "ph": "pagehead",
+  "ph-g": "pagehead-grid",
+  "ph-i": "pagehead-media",
+  "ph-t": "pagehead-text",
+  "crumb": "crumbs",
+  "crumb-up": "crumbs-up",
+  "eyebrow": "eyebrow",
+  "lead": "lead",
+  "cap": "caption",
+  "sh": "sechead",
+  "sh-r": "sechead-actions",
+  "car": "carousel",
+  "car-ctl": "carousel-controls",
+  "lc4": "activity",
+  "lc4-i": "activity-media",
+  "lc4-b": "activity-body",
+  "lc4-m": "activity-meta",
+  "lc4-v": "activity-view",
+  "lc4-c": "activity-type",
+  "lc4-a": "activity-link",
+  "rc": "result",
+  "rc-ph": "result-photo",
+  "rc-s": "result-slides",
+  "rc-a": "result-arrow",
+  "rc-d": "result-dots",
+  "rc-b": "result-body",
+  "rc-t": "result-text",
+  "rc-f": "result-foot",
+  "pc": "region",
+  "pc-t": "region-text",
+  "pc-go": "region-go",
+  "cats": "kinds",
+  "ct": "kind",
+  "ct-i": "kind-media",
+  "ct-ic": "kind-icon",
+  "ct-ph": "kind-placeholder",
+  "pls": "places",
+  "plr": "place",
+  "plr-ph": "place-photo",
+  "plr-pa": "place-photolink",
+  "plr-ob": "place-badge",
+  "plr-e": "place-empty",
+  "plr-b": "place-body",
+  "plr-h": "place-title",
+  "plr-d": "place-desc",
+  "plr-m": "place-meta",
+  "plr-g": "place-region",
+  "plr-l": "place-list",
+  "plr-pv": "place-preview",
+  "plr-th": "place-thumb",
+  "plr-pt": "place-previewtext",
+  "plr-x": "place-more",
+  "plr-map": "place-map",
+  "plr-mt": "place-maptag",
+  "plr-fb": "place-fallback",
+  "nomap": "[data-map=\"none\"]",
+  "pr": "price",
+  "pr-k": "price-label",
+  "ind": "price-ind",
+  "ph0": "placeholder",
+  "mc-ph": "placeholder-thumb",
+  "loc-ph": "location-placeholder",
+  "gal": "gallery",
+  "gal-g": "gallery-grid",
+  "gal-i": "gallery-item",
+  "gal-s": "gallery-strip",
+  "gal-si": "gallery-slide",
+  "gal-c": "gallery-count",
+  "gal-all": "gallery-all",
+  "gal-l": "gallery-label",
+  "lb": "lightbox",
+  "lb-top": "lightbox-top",
+  "lb-n": "lightbox-count",
+  "lb-l": "lightbox-label",
+  "lb-st": "lightbox-stage",
+  "lb-f": "lightbox-figure",
+  "lb-a": "lightbox-arrow",
+  "lb-p": "lightbox-prev",
+  "lb-nx": "lightbox-next",
+  "lb-th": "lightbox-thumbs",
+  "hv": "view",
+  "hv-v": "view-pane",
+  "hv-mv": "view-map",
+  "hv-pv": "view-photos",
+  "hv-fig": "view-figure",
+  "hv-key": "view-key",
+  "hv-sw": "view-switch",
+  "hv-ln": "view-line",
+  "hero-map": "heromap",
+  "dt": "headline",
+  "dt-h": "headline-head",
+  "dt-t": "headline-title",
+  "dt-a": "headline-actions",
+  "dt-tabs": "tabs",
+  "share-msg": "share",
+  "dt-bar": "bar",
+  "dt-bar-t": "bar-text",
+  "ldl": "deflist",
+  "facts": "facts",
+  "hl": "checks",
+  "srcs": "sources",
+  "lp": "prose",
+  "sl": "srclink",
+  "lnote": "lnote",
+  "strip": "months",
+  "st": "month",
+  "st-d": "month-dot",
+  "st-c": "month-bar",
+  "strip-k": "months-key",
+  "k-good": "months-good",
+  "k-now": "months-now",
+  "strip-c": "months-caption",
+  "mon": "[data-section=\"months\"]",
+  "lh-m": "headline-meta",
+  "ta": "itinerary",
+  "ta-sum": "days-summary",
+  "ta-b": "days-blurb",
+  "ta-r": "days-row",
+  "ta-t": "day-text",
+  "ta-more": "days-more",
+  "ta-rt": "day-toggle",
+  "ta-rcb": "day-body",
+  "ta-rows": "days",
+  "ta-rc": "day",
+  "ta-rail": "days-rail",
+  "ta-dn": "day-disc",
+  "ta-fl": "day-travel",
+  "ta-hd": "day-head",
+  "ta-tr": "day-modes",
+  "ta-nt": "day-night",
+  "ta-sep": "day-sep",
+  "rows": "rows",
+  "gmap": "map",
+  "gm-c": "map-canvas",
+  "gm-k": "map-key",
+  "gm-kk": "map-keyitem",
+  "gm-note": "map-note",
+  "gm-l": "map-list",
+  "gm-i": "map-item",
+  "gm-pop": "popup",
+  "gm-cd": "mapcard",
+  "gm-cd-i": "mapcard-media",
+  "gm-cd-b": "mapcard-body",
+  "gm-cd-f": "mapcard-foot",
+  "gm-m": "marker",
+  "mk": "pin",
+  "mk-d": "pin-dot",
+  "mk-lb": "pin-label",
+  "mk-kk": "pin-key",
+  "mk-sw": "pin-swatch",
+  "mk-kt": "pin-keytext",
+  "mk-ty": "pin-type",
+  "mk-li": "pin-list",
+  "loc": "location",
+  "stays": "stays",
+  "stay": "stay",
+  "stay-i": "stay-icon",
+  "pairc": "pair",
+  "pair-h": "pair-head",
+  "smd": "twodays",
+  "smd-m": "twodays-meta",
+  "smd-day": "twodays-day",
+  "smd-db": "twodays-box",
+  "smd-days": "twodays-days",
+  "smd-dn": "twodays-num",
+  "smd-plus": "twodays-plus",
+  "smd-pick": "twodays-pick",
+  "empty": "empty",
+  "emp": "nothing",
+  "emp-i": "nothing-icon",
+  "none": "none",
+  "soon": "soon",
+  "promise": "promise",
+  "promise-i": "promise-icon",
+  "promise-t": "promise-text",
+  "how": "steps",
+  "how-i": "steps-icon",
+  "fs": "filters",
+  "fs-hd": "filters-head",
+  "fs-ft": "filters-foot",
+  "fs-bd": "filters-body",
+  "fs-b": "filters-btn",
+  "fq": "filters-query",
+  "fg": "facet",
+  "fg-h": "facet-heading",
+  "fg-t": "facet-toggle",
+  "fg-v": "facet-value",
+  "fg-b": "facet-body",
+  "fg-in": "facet-inner",
+  "fg-o": "facet-options",
+  "fg-more": "facet-more",
+  "fg-mf": "facet-morelabel",
+  "fg-ma": "facet-lesslabel",
+  "fg-s": "facet-select",
+  "fo": "choice",
+  "rs": "results",
+  "rs-m": "results-main",
+  "rs-pills": "resultsbar-pills",
+  "rs-top": "resultsbar",
+  "rs-tr": "resultsbar-tools",
+  "sortc": "resultsbar-sort",
+  "count": "resultsbar-count",
+  "xres": "resultsbar-more",
+  "lbody": "detail",
+  "lmain": "detail-main",
+  "lsec": "detail-sec",
+  "lside": "aside",
+  "aside-x": "aside-extra",
+  "bk-w": "booking",
+  "bk-ask": "ask",
+  "bk-fine": "ask-fine",
+  "bk-facts": "booking-facts",
+  "bk-lab": "booking-label",
+  "bk-lab2": "booking-label2",
+  "bk-hint": "booking-hint",
+  "bk-one": "booking-one",
+  "bk-why": "booking-why",
+  "bk-dw": "datefield",
+  "bk-df": "datefield-btn",
+  "bk-pop": "datefield-pop",
+  "bk-cal": "calendar",
+  "bk-cal-h": "calendar-head",
+  "bk-cal-t": "calendar-title",
+  "bk-ib": "calendar-nav",
+  "bk-cal-g": "calendar-grid",
+  "bk-dow": "calendar-dow",
+  "bk-d": "calendar-day",
+  "bk-key": "calendar-key",
+  "k-d": "calendar-dep",
+  "bk-asum": "booking-asum",
+  "bk-me": "booking-me",
+  "bk-otp": "otp",
+  "bk-otp-b": "otp-boxes",
+  "bk-otp-i": "otp-input",
+  "bk-otp-s": "otp-status",
+  "bk-otp-a": "otp-again",
+  "bk-sent": "booking-sent",
+  "bk-pp": "booking-people",
+  "bk-st": "booking-stepper",
+  "bk-sb": "booking-step",
+  "bk-len": "booking-length",
+  "bk-sum": "booking-sum",
+  "bk-li": "booking-line",
+  "bk-am": "booking-amount",
+  "bk-dn": "booking-down",
+  "bk-rm": "booking-remove",
+  "bk-tt": "booking-total",
+  "bk-o": "booking-or",
+  "bk-al": "booking-alert",
+  "bk-start": "booking-start",
+  "bk-sl": "booking-sl",
+  "bk-pay": "pay",
+  "bk-xp": "pay-express",
+  "bk-wal": "wallet",
+  "bk-gp-w": "wallet-gpw",
+  "bk-gp": "wallet-gp",
+  "bk-or": "pay-or",
+  "bk-pm": "pay-methods",
+  "bk-sec": "pay-secure",
+  "bk-vc": "checkout-confirm",
+  "bk-vc-top": "checkout-top",
+  "bk-okc": "checkout-ok",
+  "bk-pass": "pass",
+  "bk-pass-ft": "pass-foot",
+  "bk-pass-m": "pass-mail",
+  "vcw": "voucher-wrap",
+  "vc": "voucher",
+  "vc-mark": "voucher-mark",
+  "vc-mk": "voucher-mk",
+  "vc-mk-d": "voucher-mkdisc",
+  "vc-mk-s": "voucher-mkseal",
+  "vc-lab": "voucher-label",
+  "vc-act": "voucher-act",
+  "vc-qr": "voucher-qr",
+  "vc-qr-b": "voucher-qrbox",
+  "vc-qr-m": "voucher-qrmark",
+  "vc-show": "voucher-show",
+  "vc-help": "voucher-help",
+  "v5": "pass-card",
+  "v5-top": "pass-top",
+  "v5-what": "pass-what",
+  "v5-f": "pass-fields",
+  "v5-foot": "pass-foot2",
+  "v5-q": "pass-qr",
+  "v5-ref": "pass-ref",
+  "bk-trip": "trip",
+  "bk-trip-r": "trip-row",
+  "bk-vc-a": "checkout-actions",
+  "bk-co": "checkout",
+  "bk-back": "checkout-back",
+  "bk-co-a": "checkout-aside",
+  "bk-co-g": "checkout-grid",
+  "bk-co-m": "checkout-main",
+  "bk-blk": "checkout-block",
+  "bk-co-s": "checkout-summary",
+  "bk-co-sb": "checkout-sumbody",
+  "bk-co-dl": "checkout-dl",
+  "bk-bb": "booking-bb",
+  "enq": "enquiry",
+  "sc-p": "ask-p",
+  "sc-who": "ask-who",
+  "xcap": "capacity",
+  "xb-pl": "capacity-places",
+  "hero": "hero",
+  "hero-t": "hero-text",
+  "hero-g": "hero-grid",
+  "hero-l": "hero-lead",
+  "hmo": "heromosaic",
+  "hmo-t": "heromosaic-tile",
+  "hmo-l": "heromosaic-label",
+  "quick": "quick",
+  "quick-k": "quick-label",
+  "quick-l": "quick-list",
+  "cr-cp": "credits",
+  "cr-back": "credits-back",
+  "cr-lead": "credits-lead",
+  "cr-p": "credits-p",
+  "cr-cs": "credits-section",
+  "cr-n": "credits-num",
+  "cr-si": "credits-sites",
+  "cr-cl": "credits-list",
+  "cr-cm": "credits-cm",
+  "cr-src": "credits-src",
+  "toc": "toc",
+  "psec": "plan-sec",
+  "pl-l": "plan-layout",
+  "ext": "plan-ext",
+  "svc4-i": "plan-icon",
+  "seas": "seasons",
+  "sea": "season",
+  "ab3": "about",
+  "ab": "about-item",
+  "contact": "contact",
+  "biz": "business",
+  "biz-l": "business-lead",
+  "when": "[data-section=\"when\"]",
+  "xe-grid": "expeditions-grid",
+  "xe-card": "expeditions-card",
+  "xe-no": "expeditions-none",
+  "xe-g": "expeditions-g",
+  "xe-soon": "expeditions-soon",
+  "xe2": "expedition",
+  "xe2-ph": "expedition-photo",
+  "xe2-b": "expedition-body",
+  "xe2-h": "expedition-head",
+  "xe2-r": "expedition-row",
+  "xe2-m": "expedition-meta",
+  "xe2-cap": "expedition-cap",
+  "xe2-f": "expedition-foot",
+  "ta-n": "days-n",
+  "ta-hl": "days-hl",
+  "ta-ph": "days-photo",
+  "ta-acc": "days-acc",
+  "ta-k": "days-k",
+  "ta-st": "days-st",
+  "ta-dt": "days-dt",
+  "ta-tl": "days-tl",
+  "ta-tli": "days-tli",
+  "ta-dot": "days-dot",
+  "ta-v": "days-view",
+  "ta-vm": "days-vm",
+  "ta-vd": "days-vd",
+  "ta-grp": "days-grp",
+  "ta-accs": "days-accs",
+  "ta-df": "days-df",
+  "ta-left": "days-left",
+  "mosaic": "heromosaic",
+  "bk-on": "[data-booking=\"on\"]",
+  "bk-por": "[data-booking-portrait]",
+  "ob-row": "offbeat",
+  "grid": "grid",
+  "rg-f": "segmented[data-variant=\"region\"]",
+  "hcap": "search-small[data-variant=\"caption\"]",
+  "xg-gal": "gallery[data-variant=\"expedition\"]",
+  "xg-lb": "lightbox[data-variant=\"expedition\"]",
+  "prev": "[data-variant=\"preview\"]",
+  "locked": "[data-locked]",
+  "has-bar": "[data-bar]",
+  "scrolled": "[data-scrolled]",
+  "hd-up": "[data-header=\"up\"]",
+  "fs-open": "[data-filters=\"open\"]",
+  "en": "en",
+  "sw": "sw"
+ },
+ "states": {
+  "btn": {
+   "brand": "[data-variant=\"brand\"]",
+   "ghost": "[data-variant=\"ghost\"]",
+   "wide": "[data-width=\"full\"]",
+   "bk-off": "[data-variant=\"off\"]"
+  },
+  "link": {
+   "see": ".nw"
+  },
+  "mega-places": {
+   "wide": "[data-variant=\"wide\"]"
+  },
+  "pill": {
+   "on": "[aria-pressed=\"true\"]"
+  },
+  "scopes-tab": {
+   "on": "[aria-selected=\"true\"]"
+  },
+  "suggest-item": {
+   "on": "[aria-selected=\"true\"]"
+  },
+  "heart": {
+   "on": "[aria-pressed=\"true\"]"
+  },
+  "save": {
+   "on": "[aria-pressed=\"true\"]"
+  },
+  "choice": {
+   "on": "[aria-pressed=\"true\"]",
+   "zero": "[data-count=\"0\"]",
+   "more": "[data-variant=\"more\"]"
+  },
+  "facet": {
+   "shut": "[data-state=\"shut\"]",
+   "all": "[data-state=\"all\"]"
+  },
+  "accordion": {
+   "cur": "[aria-current=\"true\"]",
+   "days-grp": ".days-grp"
+  },
+  "nav-link": {
+   "cur": "[aria-current=\"true\"]"
+  },
+  "drawer-row": {
+   "cur": "[aria-current=\"true\"]"
+  },
+  "tabs-link": {
+   "on": "[aria-current=\"true\"]"
+  },
+  "result-dot": {
+   "on": "[aria-current=\"true\"]"
+  },
+  "lightbox-thumb": {
+   "on": "[aria-current=\"true\"]"
+  },
+  "option": {
+   "on": "[aria-checked=\"true\"]"
+  },
+  "calendar-day": {
+   "on": "[aria-pressed=\"true\"]",
+   "rng": "[data-state=\"range\"]",
+   "dep": "[data-state=\"departure\"]",
+   "full": "[data-state=\"full\"]"
+  },
+  "calendar": {
+   "bad": "[data-state=\"invalid\"]"
+  },
+  "datefield-btn": {
+   "set": "[data-state=\"set\"]",
+   "bad": "[aria-invalid=\"true\"]"
+  },
+  "voucher-mark": {
+   "on": "[data-state=\"on\"]"
+  },
+  "booking-why": {
+   "sm": "[data-size=\"sm\"]"
+  },
+  "region": {
+   "hit": "[data-state=\"hit\"]"
+  },
+  "place": {
+   "hit": "[data-state=\"hit\"]"
+  },
+  "result-arrow": {
+   "prev": "[data-dir=\"prev\"]",
+   "next": "[data-dir=\"next\"]"
+  },
+  "gallery-item": {
+   "big": "[data-size=\"big\"]"
+  },
+  "placeholder": {
+   "big": "[data-size=\"big\"]"
+  },
+  "gallery": {
+   "nopic": "[data-variant=\"nophoto\"]",
+   "xg-gal": "[data-variant=\"expedition\"]"
+  },
+  "lightbox": {
+   "xg-lb": "[data-variant=\"expedition\"]"
+  },
+  "day": {
+   "nopic": "[data-variant=\"nophoto\"]",
+   "on": ":has([aria-expanded=\"true\"])"
+  },
+  "pagehead": {
+   "noimg": "[data-variant=\"text\"]",
+   "wm": "[data-variant=\"watermark\"]"
+  },
+  "pagehead-media": {
+   "mosaic": "[data-variant=\"mosaic\"]"
+  },
+  "btns": {
+   "c": "[data-align=\"center\"]"
+  },
+  "sec": {
+   "tight": "[data-size=\"tight\"]"
+  },
+  "carousel": {
+   "cards": "[data-variant=\"cards\"]",
+   "places": "[data-variant=\"places\"]"
+  },
+  "kinds": {
+   "row": "[data-variant=\"row\"]"
+  },
+  "badge": {
+   "on-ph": "[data-variant=\"photo\"]"
+  },
+  "price": {
+   "req": "[data-variant=\"request\"]",
+   "big": "[data-size=\"lg\"]"
+  },
+  "steps": {
+   "three": "[data-variant=\"three\"]"
+  },
+  "months": {
+   "bars": "[data-variant=\"bars\"]"
+  },
+  "month": {
+   "good": "[data-state=\"good\"]",
+   "now": "[aria-current=\"true\"]"
+  },
+  "place-photo": {
+   "map": "[data-variant=\"map\"]"
+  },
+  "map": {
+   "small": "[data-size=\"sm\"]"
+  },
+  "marker": {
+   "hl": "[data-state=\"hl\"]",
+   "cur": "[aria-current=\"true\"]",
+   "fut": "[data-state=\"future\"]"
+  },
+  "pin-label": {
+   "off": "[data-state=\"off\"]",
+   "at-r": "[data-side=\"r\"]"
+  },
+  "map-keyitem": {
+   "xk-road": "[data-mode=\"road\"]",
+   "xk-water": "[data-mode=\"water\"]"
+  },
+  "view": {
+   "no-fade": "[data-motion=\"off\"]"
+  },
+  "search-small": {
+   "hcap": "[data-variant=\"caption\"]"
+  },
+  "segmented": {
+   "rg-f": "[data-variant=\"region\"]"
+  },
+  "grade": {
+   "opt": "[data-variant=\"optional\"]"
+  },
+  "expeditions-grid": {
+   "four": "[data-variant=\"four\"]"
+  },
+  "tag": {
+   "mine": "[data-variant=\"mine\"]"
+  },
+  "field": {
+   "full": ".form-full"
+  },
+  "days": {
+   "rows": ".rows"
+  },
+  "capacity-seat": {
+   "on": "[data-state=\"on\"]"
+  },
+  "expeditions-card": {
+   "on": "[data-state=\"on\"]"
+  },
+  "expedition": {
+   "on": "[data-state=\"on\"]"
+  }
+ },
+ "parts": [
+  {
+   "in": ".ab",
+   "el": "h3",
+   "add": "about-name"
+  },
+  {
+   "in": ".ab",
+   "el": "p",
+   "add": "about-text"
+  },
+  {
+   "in": ".acc",
+   "el": "span",
+   "add": "accordion-label"
+  },
+  {
+   "in": ".acc",
+   "el": "summary",
+   "add": "accordion-summary"
+  },
+  {
+   "in": ".biz",
+   "el": "h2",
+   "add": "business-heading"
+  },
+  {
+   "in": ".biz-l",
+   "el": "p",
+   "add": "business-text"
+  },
+  {
+   "in": ".bk-ask",
+   "el": "summary",
+   "add": "ask-summary"
+  },
+  {
+   "in": ".bk-blk",
+   "el": "h2",
+   "add": "checkout-heading"
+  },
+  {
+   "in": ".bk-blk",
+   "el": "i",
+   "add": "checkout-mark"
+  },
+  {
+   "in": ".bk-cal-t",
+   "el": "b",
+   "add": "calendar-strong"
+  },
+  {
+   "in": ".bk-cal-t",
+   "el": "em",
+   "add": "calendar-emph"
+  },
+  {
+   "in": ".bk-co",
+   "el": "h1",
+   "add": "checkout-title"
+  },
+  {
+   "in": ".bk-co-dl",
+   "el": "dd",
+   "add": "checkout-value"
+  },
+  {
+   "in": ".bk-co-dl",
+   "el": "div",
+   "add": "checkout-row"
+  },
+  {
+   "in": ".bk-co-dl",
+   "el": "dt",
+   "add": "checkout-term"
+  },
+  {
+   "in": ".bk-d",
+   "el": "span",
+   "add": "calendar-label"
+  },
+  {
+   "in": ".bk-df",
+   "el": "b",
+   "add": "datefield-strong"
+  },
+  {
+   "in": ".bk-df",
+   "el": "small",
+   "add": "datefield-note"
+  },
+  {
+   "in": ".bk-df",
+   "el": "span",
+   "add": "datefield-label"
+  },
+  {
+   "in": ".bk-facts",
+   "el": "a",
+   "add": "booking-link"
+  },
+  {
+   "in": ".bk-facts",
+   "el": "li",
+   "add": "booking-item"
+  },
+  {
+   "in": ".bk-gp",
+   "el": "b",
+   "add": "wallet-strong"
+  },
+  {
+   "in": ".bk-hs-f",
+   "el": "i",
+   "add": "-mark"
+  },
+  {
+   "in": ".bk-hs-h",
+   "el": "b",
+   "add": "-strong"
+  },
+  {
+   "in": ".bk-hs-m",
+   "el": "b",
+   "add": "-strong"
+  },
+  {
+   "in": ".bk-key",
+   "el": "span",
+   "add": "calendar-label"
+  },
+  {
+   "in": ".bk-lab",
+   "el": "small",
+   "add": "booking-note"
+  },
+  {
+   "in": ".bk-li",
+   "el": "b",
+   "add": "booking-strong"
+  },
+  {
+   "in": ".bk-li",
+   "el": "small",
+   "add": "booking-note"
+  },
+  {
+   "in": ".bk-li",
+   "el": "span",
+   "add": "booking-span"
+  },
+  {
+   "in": ".bk-opt",
+   "el": "b",
+   "add": "option-strong"
+  },
+  {
+   "in": ".bk-opt",
+   "el": "small",
+   "add": "option-note"
+  },
+  {
+   "in": ".bk-opt",
+   "el": "span",
+   "add": "option-label"
+  },
+  {
+   "in": ".bk-opts",
+   "el": "legend",
+   "add": "options-legend"
+  },
+  {
+   "in": ".bk-otp",
+   "el": "h3",
+   "add": "otp-name"
+  },
+  {
+   "in": ".bk-otp",
+   "el": "p",
+   "add": "otp-text"
+  },
+  {
+   "in": ".bk-sent",
+   "el": "b",
+   "add": "booking-strong"
+  },
+  {
+   "in": ".bk-sent",
+   "el": "span",
+   "add": "booking-span"
+  },
+  {
+   "in": ".bk-st",
+   "el": "output",
+   "add": "booking-output"
+  },
+  {
+   "in": ".bk-trip-r",
+   "el": "b",
+   "add": "trip-strong"
+  },
+  {
+   "in": ".bk-trip-r",
+   "el": "small",
+   "add": "trip-note"
+  },
+  {
+   "in": ".bk-trip-r",
+   "el": "span",
+   "add": "trip-label"
+  },
+  {
+   "in": ".bk-tt",
+   "el": "b",
+   "add": "booking-strong"
+  },
+  {
+   "in": ".bk-tt",
+   "el": "small",
+   "add": "booking-note"
+  },
+  {
+   "in": ".bk-tt",
+   "el": "span",
+   "add": "booking-span"
+  },
+  {
+   "in": ".bk-vc-top",
+   "el": "h2",
+   "add": "checkout-heading"
+  },
+  {
+   "in": ".bk-vc-top",
+   "el": "p",
+   "add": "checkout-text"
+  },
+  {
+   "in": ".cr-cl",
+   "el": "b",
+   "add": "credits-strong"
+  },
+  {
+   "in": ".cr-cl",
+   "el": "li",
+   "add": "credits-item"
+  },
+  {
+   "in": ".cr-cp",
+   "el": "h1",
+   "add": "credits-title"
+  },
+  {
+   "in": ".cr-cs",
+   "el": "h2",
+   "add": "credits-heading"
+  },
+  {
+   "in": ".cr-si",
+   "el": "a",
+   "add": "credits-link"
+  },
+  {
+   "in": ".cr-si",
+   "el": "li",
+   "add": "credits-item"
+  },
+  {
+   "in": ".cr-si",
+   "el": "span",
+   "add": "credits-label"
+  },
+  {
+   "in": ".crumb",
+   "el": "a",
+   "add": "crumbs-link"
+  },
+  {
+   "in": ".crumb",
+   "el": "li",
+   "add": "crumbs-item"
+  },
+  {
+   "in": ".crumb",
+   "el": "ol",
+   "add": "crumbs-list"
+  },
+  {
+   "in": ".cstrip",
+   "el": "a",
+   "add": "types-link"
+  },
+  {
+   "in": ".cstrip",
+   "el": "li",
+   "add": "types-item"
+  },
+  {
+   "in": ".cstrip",
+   "el": "span",
+   "add": "types-label"
+  },
+  {
+   "in": ".cstrip",
+   "el": "ul",
+   "add": "types-list"
+  },
+  {
+   "in": ".ct",
+   "el": "b",
+   "add": "kind-strong"
+  },
+  {
+   "in": ".ct",
+   "el": "small",
+   "add": "kind-note"
+  },
+  {
+   "in": ".dt",
+   "el": "h1",
+   "add": "headline-h1"
+  },
+  {
+   "in": ".dt-bar",
+   "el": "b",
+   "add": "bar-strong"
+  },
+  {
+   "in": ".dt-bar",
+   "el": "small",
+   "add": "bar-note"
+  },
+  {
+   "in": ".dt-tabs",
+   "el": "a",
+   "add": "tabs-link"
+  },
+  {
+   "in": ".dt-tabs",
+   "el": "ul",
+   "add": "tabs-list"
+  },
+  {
+   "in": ".emp",
+   "el": "p",
+   "add": "nothing-text"
+  },
+  {
+   "in": ".empty",
+   "el": "p",
+   "add": "empty-text"
+  },
+  {
+   "in": ".facts",
+   "el": "b",
+   "add": "facts-strong"
+  },
+  {
+   "in": ".facts",
+   "el": "li",
+   "add": "facts-item"
+  },
+  {
+   "in": ".fg-t",
+   "el": "span",
+   "add": "facet-label"
+  },
+  {
+   "in": ".fo",
+   "el": "i",
+   "add": "choice-count"
+  },
+  {
+   "in": ".fo",
+   "el": "span",
+   "add": "choice-label"
+  },
+  {
+   "in": ".fs-b",
+   "el": "i",
+   "add": "filters-count"
+  },
+  {
+   "in": ".fs-hd",
+   "el": "h2",
+   "add": "filters-heading"
+  },
+  {
+   "in": ".ft",
+   "el": "a",
+   "add": "footer-link"
+  },
+  {
+   "in": ".ft-bl",
+   "el": "span",
+   "add": "footer-label"
+  },
+  {
+   "in": ".ft-ls",
+   "el": "a",
+   "add": "footer-link"
+  },
+  {
+   "in": ".ft-ls",
+   "el": "i",
+   "add": "footer-mark"
+  },
+  {
+   "in": ".ft-mega",
+   "el": "div",
+   "add": "footer-row"
+  },
+  {
+   "in": ".ft-s",
+   "el": "b",
+   "add": "footer-strong"
+  },
+  {
+   "in": ".gm-c",
+   "el": "a",
+   "add": "map-link"
+  },
+  {
+   "in": ".gm-cd",
+   "el": "a",
+   "add": "mapcard-link"
+  },
+  {
+   "in": ".gm-cd",
+   "el": "h3",
+   "add": "mapcard-name"
+  },
+  {
+   "in": ".gm-kk",
+   "el": "i",
+   "add": "map-swatch"
+  },
+  {
+   "in": ".gm-l",
+   "el": "a",
+   "add": "map-link"
+  },
+  {
+   "in": ".gm-l",
+   "el": "li",
+   "add": "map-li"
+  },
+  {
+   "in": ".gm-l",
+   "el": "small",
+   "add": "map-small"
+  },
+  {
+   "in": ".gm-pop",
+   "el": "a",
+   "add": "popup-link"
+  },
+  {
+   "in": ".gm-pop",
+   "el": "span",
+   "add": "popup-label"
+  },
+  {
+   "in": ".grid",
+   "el": "p",
+   "add": "grid-text"
+  },
+  {
+   "in": ".hero",
+   "el": "em",
+   "add": "hero-emph"
+  },
+  {
+   "in": ".hero",
+   "el": "h1",
+   "add": "hero-title"
+  },
+  {
+   "in": ".hl",
+   "el": "li",
+   "add": "checks-item"
+  },
+  {
+   "in": ".hl",
+   "el": "span",
+   "add": "checks-label"
+  },
+  {
+   "in": ".how",
+   "el": "b",
+   "add": "steps-strong"
+  },
+  {
+   "in": ".how",
+   "el": "li",
+   "add": "steps-item"
+  },
+  {
+   "in": ".how",
+   "el": "span",
+   "add": "steps-label"
+  },
+  {
+   "in": ".how",
+   "el": "strong",
+   "add": "steps-strong"
+  },
+  {
+   "in": ".how-i",
+   "el": "b",
+   "add": "steps-strong"
+  },
+  {
+   "in": ".lb-f",
+   "el": "b",
+   "add": "lightbox-strong"
+  },
+  {
+   "in": ".lb-f",
+   "el": "figcaption",
+   "add": "lightbox-caption"
+  },
+  {
+   "in": ".lb-f",
+   "el": "span",
+   "add": "lightbox-span"
+  },
+  {
+   "in": ".lb-th",
+   "el": "button",
+   "add": "lightbox-thumb"
+  },
+  {
+   "in": ".lc4",
+   "el": "a",
+   "add": "activity-a"
+  },
+  {
+   "in": ".lc4",
+   "el": "b",
+   "add": "activity-strong"
+  },
+  {
+   "in": ".lc4",
+   "el": "h3",
+   "add": "activity-name"
+  },
+  {
+   "in": ".lc4",
+   "el": "span",
+   "add": "activity-label"
+  },
+  {
+   "in": ".lc4-m",
+   "el": "span",
+   "add": "activity-label"
+  },
+  {
+   "in": ".ldl",
+   "el": "a",
+   "add": "deflist-link"
+  },
+  {
+   "in": ".ldl",
+   "el": "dd",
+   "add": "deflist-value"
+  },
+  {
+   "in": ".ldl",
+   "el": "div",
+   "add": "deflist-row"
+  },
+  {
+   "in": ".ldl",
+   "el": "dt",
+   "add": "deflist-term"
+  },
+  {
+   "in": ".lgo-p",
+   "el": "b",
+   "add": "logo-strong"
+  },
+  {
+   "in": ".lh-m",
+   "el": "a",
+   "add": "headline-link"
+  },
+  {
+   "in": ".lh-m",
+   "el": "span",
+   "add": "headline-label"
+  },
+  {
+   "in": ".lm-v",
+   "el": "b",
+   "add": "lang-strong"
+  },
+  {
+   "in": ".loc",
+   "el": "b",
+   "add": "location-strong"
+  },
+  {
+   "in": ".loc",
+   "el": "small",
+   "add": "location-note"
+  },
+  {
+   "in": ".loc",
+   "el": "span",
+   "add": "location-label"
+  },
+  {
+   "in": ".lsec",
+   "el": "h2",
+   "add": "detail-heading"
+  },
+  {
+   "in": ".lside",
+   "el": "h2",
+   "add": "aside-heading"
+  },
+  {
+   "in": ".lside",
+   "el": "p",
+   "add": "aside-text"
+  },
+  {
+   "in": ".lside",
+   "el": "small",
+   "add": "aside-note"
+  },
+  {
+   "in": ".menu-b",
+   "el": "span",
+   "add": "header-line"
+  },
+  {
+   "in": ".mk",
+   "el": "i",
+   "add": "pin-dot"
+  },
+  {
+   "in": ".mk-lb",
+   "el": "i",
+   "add": "pin-glyph"
+  },
+  {
+   "in": ".mm-p",
+   "el": "b",
+   "add": "mega-strong"
+  },
+  {
+   "in": ".mm-p",
+   "el": "small",
+   "add": "mega-note"
+  },
+  {
+   "in": ".mm-p",
+   "el": "span",
+   "add": "mega-label"
+  },
+  {
+   "in": ".mob-r",
+   "el": "i",
+   "add": "drawer-count"
+  },
+  {
+   "in": ".mob-r",
+   "el": "span",
+   "add": "drawer-label"
+  },
+  {
+   "in": ".nav",
+   "el": "ul",
+   "add": "nav-list"
+  },
+  {
+   "in": ".pair-h",
+   "el": "b",
+   "add": "pair-strong"
+  },
+  {
+   "in": ".pair-h",
+   "el": "span",
+   "add": "pair-label"
+  },
+  {
+   "in": ".pc-t",
+   "el": "b",
+   "add": "region-strong"
+  },
+  {
+   "in": ".pc-t",
+   "el": "small",
+   "add": "region-note"
+  },
+  {
+   "in": ".ph",
+   "el": "h1",
+   "add": "pagehead-title"
+  },
+  {
+   "in": ".ph0",
+   "el": "small",
+   "add": "placeholder-note"
+  },
+  {
+   "in": ".pill",
+   "el": "i",
+   "add": "pill-count"
+  },
+  {
+   "in": ".pill",
+   "el": "span",
+   "add": "pill-label"
+  },
+  {
+   "in": ".plr",
+   "el": "a",
+   "add": "place-link"
+  },
+  {
+   "in": ".plr",
+   "el": "h2",
+   "add": "place-heading"
+  },
+  {
+   "in": ".plr-e",
+   "el": "small",
+   "add": "place-note"
+  },
+  {
+   "in": ".plr-g",
+   "el": "span",
+   "add": "place-label"
+  },
+  {
+   "in": ".plr-h",
+   "el": "a",
+   "add": "place-link"
+  },
+  {
+   "in": ".plr-h",
+   "el": "span",
+   "add": "place-label"
+  },
+  {
+   "in": ".plr-l",
+   "el": "li",
+   "add": "place-item"
+  },
+  {
+   "in": ".plr-ph",
+   "el": "a",
+   "add": "place-link"
+  },
+  {
+   "in": ".plr-pt",
+   "el": "b",
+   "add": "place-strong"
+  },
+  {
+   "in": ".plr-pt",
+   "el": "small",
+   "add": "place-note"
+  },
+  {
+   "in": ".plr-pv",
+   "el": "b",
+   "add": "place-strong"
+  },
+  {
+   "in": ".pr",
+   "el": "b",
+   "add": "price-strong"
+  },
+  {
+   "in": ".pr",
+   "el": "small",
+   "add": "price-note"
+  },
+  {
+   "in": ".promise-t",
+   "el": "b",
+   "add": "promise-strong"
+  },
+  {
+   "in": ".promise-t",
+   "el": "span",
+   "add": "promise-label"
+  },
+  {
+   "in": ".psec",
+   "el": "h2",
+   "add": "plan-heading"
+  },
+  {
+   "in": ".psec",
+   "el": "p",
+   "add": "plan-text"
+  },
+  {
+   "in": ".rc",
+   "el": "a",
+   "add": "result-link"
+  },
+  {
+   "in": ".rc",
+   "el": "h3",
+   "add": "result-name"
+  },
+  {
+   "in": ".rc-a",
+   "el": "span",
+   "add": "result-label"
+  },
+  {
+   "in": ".rc-d",
+   "el": "i",
+   "add": "result-dot"
+  },
+  {
+   "in": ".sea",
+   "el": "h3",
+   "add": "season-name"
+  },
+  {
+   "in": ".sea",
+   "el": "p",
+   "add": "season-text"
+  },
+  {
+   "in": ".sg",
+   "el": "b",
+   "add": "suggest-strong"
+  },
+  {
+   "in": ".sg",
+   "el": "small",
+   "add": "suggest-note"
+  },
+  {
+   "in": ".sg-none",
+   "el": "a",
+   "add": "suggest-link"
+  },
+  {
+   "in": ".sgo",
+   "el": "span",
+   "add": "search-label"
+  },
+  {
+   "in": ".sh",
+   "el": "h2",
+   "add": "sechead-heading"
+  },
+  {
+   "in": ".sh",
+   "el": "p",
+   "add": "sechead-text"
+  },
+  {
+   "in": ".smd",
+   "el": "a",
+   "add": "twodays-link"
+  },
+  {
+   "in": ".smd",
+   "el": "b",
+   "add": "twodays-strong"
+  },
+  {
+   "in": ".smd-day",
+   "el": "a",
+   "add": "twodays-link"
+  },
+  {
+   "in": ".smd-day",
+   "el": "b",
+   "add": "twodays-strong"
+  },
+  {
+   "in": ".smd-m",
+   "el": "span",
+   "add": "twodays-label"
+  },
+  {
+   "in": ".smsg",
+   "el": "a",
+   "add": "search-link"
+  },
+  {
+   "in": ".sp-h",
+   "el": "b",
+   "add": "sheet-strong"
+  },
+  {
+   "in": ".srcs",
+   "el": "a",
+   "add": "sources-link"
+  },
+  {
+   "in": ".srcs",
+   "el": "b",
+   "add": "sources-strong"
+  },
+  {
+   "in": ".srcs",
+   "el": "small",
+   "add": "sources-note"
+  },
+  {
+   "in": ".st",
+   "el": "b",
+   "add": "month-strong"
+  },
+  {
+   "in": ".st",
+   "el": "small",
+   "add": "month-note"
+  },
+  {
+   "in": ".st-c",
+   "el": "i",
+   "add": "month-mark"
+  },
+  {
+   "in": ".stay",
+   "el": "b",
+   "add": "stay-strong"
+  },
+  {
+   "in": ".stay",
+   "el": "span",
+   "add": "stay-label"
+  },
+  {
+   "in": ".strip-k",
+   "el": "span",
+   "add": "months-label"
+  },
+  {
+   "in": ".sv",
+   "el": "i",
+   "add": "saved-count"
+  },
+  {
+   "in": ".sv-p",
+   "el": "a",
+   "add": "saved-link"
+  },
+  {
+   "in": ".sv-p",
+   "el": "b",
+   "add": "saved-strong"
+  },
+  {
+   "in": ".sv-p",
+   "el": "h3",
+   "add": "saved-name"
+  },
+  {
+   "in": ".sv-p",
+   "el": "li",
+   "add": "saved-item"
+  },
+  {
+   "in": ".sv-p",
+   "el": "p",
+   "add": "saved-text"
+  },
+  {
+   "in": ".sv-p",
+   "el": "small",
+   "add": "saved-note"
+  },
+  {
+   "in": ".sv-p",
+   "el": "ul",
+   "add": "saved-list"
+  },
+  {
+   "in": ".ta-acc",
+   "el": "summary",
+   "add": "days-summary"
+  },
+  {
+   "in": ".ta-df",
+   "el": "b",
+   "add": "days-strong"
+  },
+  {
+   "in": ".ta-df",
+   "el": "span",
+   "add": "days-label"
+  },
+  {
+   "in": ".ta-grp",
+   "el": "small",
+   "add": "days-note"
+  },
+  {
+   "in": ".ta-grp",
+   "el": "summary",
+   "add": "days-summary"
+  },
+  {
+   "in": ".ta-hd",
+   "el": "h3",
+   "add": "day-name"
+  },
+  {
+   "in": ".ta-hl",
+   "el": "b",
+   "add": "days-strong"
+  },
+  {
+   "in": ".ta-ph",
+   "el": "button",
+   "add": "days-button"
+  },
+  {
+   "in": ".ta-st",
+   "el": "b",
+   "add": "days-strong"
+  },
+  {
+   "in": ".ta-st",
+   "el": "small",
+   "add": "days-note"
+  },
+  {
+   "in": ".ta-tl",
+   "el": "li",
+   "add": "days-item"
+  },
+  {
+   "in": ".ta-tli",
+   "el": "b",
+   "add": "days-strong"
+  },
+  {
+   "in": ".ta-tli",
+   "el": "summary",
+   "add": "days-summary"
+  },
+  {
+   "in": ".toc",
+   "el": "a",
+   "add": "toc-link"
+  },
+  {
+   "in": ".toc",
+   "el": "ul",
+   "add": "toc-list"
+  },
+  {
+   "in": ".v5",
+   "el": "small",
+   "add": "pass-note"
+  },
+  {
+   "in": ".v5-f",
+   "el": "b",
+   "add": "pass-strong"
+  },
+  {
+   "in": ".v5-f",
+   "el": "p",
+   "add": "pass-text"
+  },
+  {
+   "in": ".v5-foot",
+   "el": "b",
+   "add": "pass-strong"
+  },
+  {
+   "in": ".v5-foot",
+   "el": "p",
+   "add": "pass-text"
+  },
+  {
+   "in": ".v5-foot",
+   "el": "small",
+   "add": "pass-note"
+  },
+  {
+   "in": ".v5-foot",
+   "el": "span",
+   "add": "pass-label"
+  },
+  {
+   "in": ".vc",
+   "el": "h3",
+   "add": "voucher-name"
+  },
+  {
+   "in": ".vc",
+   "el": "p",
+   "add": "voucher-text"
+  },
+  {
+   "in": ".xcap",
+   "el": "i",
+   "add": "capacity-seat"
+  },
+  {
+   "in": ".xe2-h",
+   "el": "a",
+   "add": "expedition-link"
+  },
+  {
+   "in": ".xe2-m",
+   "el": "span",
+   "add": "expedition-label"
+  },
+  {
+   "in": ".xres",
+   "el": "a",
+   "add": "resultsbar-link"
+  }
+ ],
+ "as": [
+  {
+   "el": "a",
+   "class": "xe2-ph"
+  },
+  {
+   "el": "button",
+   "class": "lnk"
+  },
+  {
+   "el": "legend",
+   "class": "fg-h"
+  },
+  {
+   "el": "ol",
+   "class": "how"
+  }
+ ],
+ "ids": {
+  "hd": "header",
+  "smd-ask": "twodays-ask",
+  "bk-both": "booking-both"
+ },
+ "dropped": [
+  "at-b",
+  "at-l",
+  "at-r",
+  "at-t",
+  "bar-u",
+  "biz-h",
+  "bk-dsg",
+  "bk-dsg-b",
+  "bk-hs",
+  "bk-hs-b",
+  "bk-hs-f",
+  "bk-hs-h",
+  "bk-hs-m",
+  "bk-hs-pay",
+  "bk-hs-r",
+  "c2",
+  "c3",
+  "exp",
+  "fbar",
+  "flash",
+  "four-x",
+  "g3",
+  "hd-lm",
+  "hi",
+  "how-g",
+  "how3",
+  "j1",
+  "join",
+  "join-i",
+  "k-focus",
+  "k-here",
+  "k-near",
+  "k-off",
+  "lc4-f",
+  "lg-m",
+  "lg-s",
+  "lgal",
+  "lgo-mini",
+  "lh",
+  "lh-t",
+  "lm-s",
+  "lmeta",
+  "lmeta-l",
+  "lnb",
+  "mine",
+  "mk-near",
+  "mo-1",
+  "mo-2",
+  "mo-3",
+  "mo-go",
+  "mo-t",
+  "mob-ps",
+  "mob-sv",
+  "mob-x",
+  "mon-k",
+  "op",
+  "op-do",
+  "op-note",
+  "opb",
+  "own",
+  "own-i",
+  "own-l",
+  "own-p",
+  "own-tag",
+  "pal-h",
+  "pal-menu",
+  "pal-n",
+  "pal-sw",
+  "ph-x",
+  "qlist",
+  "qvb",
+  "req",
+  "sm-k",
+  "sres",
+  "stitch",
+  "tier",
+  "tiers",
+  "tiers3",
+  "trial",
+  "trial-k",
+  "trial-logo",
+  "trial-t",
+  "who",
+  "who-c",
+  "who-g",
+  "word-t",
+  "xc",
+  "xc-c",
+  "xc-i",
+  "xc-t"
+ ]
+}

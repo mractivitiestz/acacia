@@ -1,0 +1,302 @@
+/* components/field.css: .field, .form, .select, .fieldset, .check, .option, .options, .error */
+.select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 6px 0 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+}
+.select:hover {
+  border-color: var(--ink);
+}
+.select:focus-within {
+  border-color: var(--brand);
+}
+.select select {
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  font-size: 15px;
+  height: 42px;
+  padding-right: 6px;
+  outline: 0;
+  cursor: pointer;
+}
+.select select option {
+  background: var(--panel);
+  color: var(--ink);
+}
+
+@media (max-width:700px) {
+  .select {
+    justify-self: start;
+  }
+}
+
+.facet-select .select {
+  display: flex;
+  width: 100%;
+  border-width: 1.5px;
+  transition: border-color .15s,background .15s,box-shadow .15s;
+}
+.facet-select .select select {
+  font-weight: 600;
+}
+:where(.facet-select) .select:where(:not([value=""])):has(option:checked) {
+  background: var(--tint);
+  border-color: var(--brand);
+  color: var(--brand-text);
+}
+.facet-select :where(.select:has(option:checked:not([value=""]))) select {
+  font-weight: 800;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+  align-content: start;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 800;
+  font-size: 14.5px;
+}
+.field input {
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+  font-size: 16px;
+  font-weight: 600;
+}
+.field textarea {
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+  font-size: 16px;
+  font-weight: 600;
+}
+.field input:focus {
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
+  border-color: var(--brand);
+}
+.field textarea:focus {
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
+  border-color: var(--brand);
+}
+.field .select {
+  border-radius: var(--r-s);
+  background: var(--panel);
+  min-height: 48px;
+}
+.field .select select {
+  flex: 1;
+  height: 46px;
+}
+.form .form-full {
+  grid-column: 1/-1;
+}
+
+@media (max-width:700px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resultsbar-sort .select {
+  color: var(--ink);
+}
+.form {
+  min-width: 0;
+}
+.field {
+  min-width: 0;
+}
+.field .select select {
+  min-width: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+.field input {
+  width: 100%;
+}
+.field textarea {
+  width: 100%;
+}
+.field .select {
+  width: 100%;
+}
+.enquiry .field:nth-of-type(1) {
+  grid-column: 1/-1;
+}
+.enquiry .field:nth-of-type(2) {
+  grid-column: 1/-1;
+}
+.field input {
+  color: var(--ink);
+}
+.field textarea {
+  color: var(--ink);
+}
+.field select {
+  color: var(--ink);
+}
+.aside .otp .error {
+  color: var(--error);
+}
+.options {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+.options .options-legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+  cursor: pointer;
+  transition: border-color .15s,background .15s;
+}
+.option:hover {
+  border-color: var(--ink);
+}
+.option input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--brand);
+}
+.option > .option-label:not(.option-mark) {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.option .option-strong {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.option .option-note {
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.option[aria-checked="true"] {
+  background: var(--tint);
+  border-color: var(--brand);
+  color: var(--brand-text);
+}
+.option[aria-checked="true"] .option-note {
+  color: var(--brand-text);
+}
+.option:has(input:focus-visible) {
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
+}
+.option input:focus-visible {
+  outline: none;
+}
+.fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  width: 100%;
+}
+.fieldset .field {
+  min-width: 0;
+}
+.fieldset .field.form-full {
+  grid-column: 1/-1;
+}
+.field input[aria-invalid="true"] {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+.field textarea[aria-invalid="true"] {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+.error {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  margin-top: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--error);
+  line-height: 1.35;
+}
+.aside .error {
+  color: var(--error);
+}
+.option-mark {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  height: 26px;
+  padding: 0 7px;
+  border: 1.5px solid var(--mark-line);
+  border-radius: var(--r-s);
+  background: var(--white);
+  color: var(--mark-ink);
+  font: 800 11px/1 var(--f);
+  letter-spacing: .03em;
+}
+.check {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-height: 44px;
+  padding: 4px 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  cursor: pointer;
+}
+.check input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--brand);
+}
+.check input[aria-invalid="true"] {
+  outline: 2px solid var(--error);
+  outline-offset: 2px;
+}
+
+@media (max-width:700px) {
+  .fieldset {
+    grid-template-columns: 1fr;
+  }
+}

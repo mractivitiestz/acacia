@@ -1,0 +1,14 @@
+/* tokens/motion.css: durations and easing; zero under reduced motion */
+:root {
+  --d-fast: .15s;
+  --d: .2s;
+  --d-slow: .4s;
+  --ease: ease;
+}
+@media (prefers-reduced-motion:reduce) {
+  :root {
+    --d-fast: 0s;
+    --d: 0s;
+    --d-slow: 0s;
+  }
+}

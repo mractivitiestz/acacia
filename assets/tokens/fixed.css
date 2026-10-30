@@ -1,0 +1,28 @@
+/* tokens/fixed.css: colours that do not follow the palette: white and the shades over photographs, the error red, the card mark */
+:root {
+  color-scheme: light;
+  --error: #b42318;
+  --error-bg: #fdf1ef;
+  --dark: #141414;
+  --light-14: rgba(255,255,255,.14);
+  --light-26: rgba(255,255,255,.26);
+  --light-55: rgba(255,255,255,.55);
+  --mark-ink: #111;
+  --mark-line: #333;
+  --opaque: #000;
+  --shade-0: rgba(0,0,0,0);
+  --shade-16: rgba(0,0,0,.16);
+  --shade-18: rgba(0,0,0,.18);
+  --shade-20: rgba(0,0,0,.2);
+  --shade-22: rgba(0,0,0,.22);
+  --shade-25: rgba(0,0,0,.25);
+  --shade-35: rgba(0,0,0,.35);
+  --shade-40: rgba(0,0,0,.4);
+  --shade-45: rgba(0,0,0,.45);
+  --shade-60: rgba(0,0,0,.6);
+  --shade-8: rgba(0,0,0,.08);
+  --shade-82: rgba(0,0,0,.82);
+  --shade-95: rgba(0,0,0,.95);
+  --white: #fff;
+  --white-hover: #f2f2f2;
+}

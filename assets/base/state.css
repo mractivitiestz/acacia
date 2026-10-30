@@ -1,0 +1,17 @@
+/* base/state.css */
+body[data-locked] {
+  overflow: hidden;
+}
+
+@media (max-width:1080px) {
+  [data-section="when"] {
+    grid-template-columns: 1fr;
+  }
+  body[data-bar] {
+    padding-bottom: 84px;
+  }
+}
+
+[data-header="up"] {
+  --st: calc(var(--row-h) + var(--hd-h));
+}

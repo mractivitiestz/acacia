@@ -1,0 +1,116 @@
+/* components/month-strip.css: .months, .month */
+.months {
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  gap: 4px;
+  align-items: end;
+}
+.month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0 6px;
+  border-radius: var(--r-s);
+  min-width: 0;
+}
+.month-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--r-pill);
+  border: 2px solid var(--line);
+}
+.month[data-state="good"] {
+  background: var(--soft);
+}
+.month[data-state="good"] .month-dot {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+.month .month-strong {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.month[data-state="good"] .month-strong {
+  color: var(--ink);
+}
+.month .month-note {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.month[aria-current="true"] .month-strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 3px;
+}
+.months[data-variant="bars"] .month-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+}
+.months[data-variant="bars"] :where(.month-bar) .month-mark {
+  display: block;
+  width: min(70%,26px);
+  border-radius: var(--r-s) var(--r-s) 0 0;
+  background: var(--brand);
+  opacity: .35;
+}
+:where(.months[data-variant="bars"]) .month[data-state="good"] :where(.month-bar) .month-mark {
+  opacity: 1;
+  background: var(--brand);
+}
+.months-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.months-key .months-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.months-key .months-good::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+}
+.months-key .months-now::before {
+  content: "";
+  width: 14px;
+  height: 3px;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+}
+.months-caption {
+  padding: 18px 20px 14px;
+  max-width: 760px;
+}
+
+@media (max-width:700px) {
+  .months {
+    gap: 2px;
+  }
+  .month .month-strong {
+    font-size: 11.5px;
+  }
+  .month-dot {
+    width: 12px;
+    height: 12px;
+  }
+  .months[data-variant="bars"] .month-bar {
+    height: 60px;
+  }
+  .months-caption {
+    padding: 14px 10px 12px;
+  }
+}

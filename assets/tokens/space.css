@@ -1,0 +1,29 @@
+/* tokens/space.css: the gutter, the page width, the bars' heights, the spacing scale */
+:root {
+  --gut: 32px;
+  --max: 1344px;
+  --hd-h: 68px;
+  --row-h: 54px;
+  --tabs-h: 52px;
+  --st: var(--row-h);
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 48px;
+}
+@media (max-width:700px) {
+  :root {
+    --gut: 16px;
+    --tabs-h: 48px;
+  }
+}
+@media (max-width:1080px) {
+  :root {
+    --hd-h: 56px;
+    --row-h: 50px;
+  }
+}

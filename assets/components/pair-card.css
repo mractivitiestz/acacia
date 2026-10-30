@@ -1,0 +1,31 @@
+/* components/pair-card.css: .pair */
+.pair {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.pair-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--panel);
+  font-size: 14.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.pair-head .pair-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pair-head .pair-strong {
+  color: var(--ink);
+}
+.pair-head:hover {
+  border-color: var(--ink);
+}

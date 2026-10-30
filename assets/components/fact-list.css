@@ -1,0 +1,142 @@
+/* components/fact-list.css: .deflist, .facts, .checks, .sources, .prose, .srclink, .lnote */
+
+@media (max-width:700px) {
+  .facts .facts-item {
+    grid-template-columns: 138px 1fr;
+  }
+  .facts .facts-strong {
+    font-size: 16px;
+  }
+}
+
+.lnote {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.prose {
+  font-size: 17.5px;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin-bottom: 18px;
+}
+.deflist {
+  margin: 0;
+  display: grid;
+}
+.deflist .deflist-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.deflist .deflist-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.deflist .deflist-term {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.deflist .deflist-value {
+  margin: 0;
+  font-weight: 800;
+}
+.deflist .deflist-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+.deflist .deflist-link:hover {
+  text-decoration-color: currentColor;
+}
+.sources {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.sources .sources-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+}
+.sources .sources-link:hover {
+  border-color: var(--ink);
+}
+.sources .sources-strong {
+  display: block;
+  font-weight: 800;
+}
+.sources .sources-note {
+  display: block;
+  color: var(--muted);
+  font-size: 13.5px;
+  word-break: break-all;
+}
+
+@media (max-width:700px) {
+  .deflist .deflist-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .prose {
+    font-size: 16.5px;
+  }
+}
+
+.checks {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+.checks .checks-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 700;
+}
+.srclink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 800;
+}
+.srclink:last-child {
+  border-bottom: 0;
+}
+.srclink:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width:1080px) {
+  .checks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checks .checks-item .checks-label {
+  min-width: 0;
+}
+:where(.contact) .deflist .deflist-row:first-child {
+  border-top: 0;
+}
+:where(.contact) .deflist .deflist-row:last-child {
+  border-bottom: 0;
+}

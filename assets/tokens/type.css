@@ -1,0 +1,17 @@
+/* tokens/type.css: the two families, the size scale measured on the components, line heights */
+:root {
+  --f: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fh: 'Bricolage Grotesque','Figtree',system-ui,sans-serif;
+  --t-xs: 12px;
+  --t-sm: 13.5px;
+  --t-base-sm: 14px;
+  --t-md: 15px;
+  --t-base: 16px;
+  --t-lg: 18px;
+  --t-xl: 20px;
+  --t-2xl: 24px;
+  --t-3xl: 30px;
+  --t-4xl: 40px;
+  --lh: 1.5;
+  --lh-tight: 1.15;
+}

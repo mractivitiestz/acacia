@@ -1,0 +1,247 @@
+/* components/icon.css: .icon */
+.icon {
+  flex: none;
+}
+.link .icon {
+  transition: transform .2s;
+}
+.btn .icon {
+  transition: transform .2s;
+}
+.link:hover .icon {
+  transform: translateX(3px);
+}
+.btn:hover .icon {
+  transform: translateX(3px);
+}
+.segmented-btn .icon {
+  flex: none;
+}
+.mega-link .icon {
+  color: var(--brand-text);
+}
+.mega-all:hover .icon {
+  transform: translateX(3px);
+}
+.mega-all .icon {
+  transition: transform .2s;
+}
+.accordion .accordion-summary .icon {
+  transform: rotate(90deg);
+  transition: transform .2s;
+}
+.accordion[open] :where(.accordion-summary) .icon {
+  transform: rotate(-90deg);
+}
+.search-query .icon {
+  color: var(--ink);
+}
+.carousel-btn:first-child .icon {
+  transform: rotate(180deg);
+}
+.kind-icon .icon {
+  width: 18px;
+  height: 18px;
+}
+.pill[aria-pressed="true"] .icon {
+  color: var(--brand-text);
+}
+.crumbs .icon {
+  opacity: .6;
+}
+.facet-toggle .icon {
+  transform: rotate(-90deg);
+  transition: transform .2s;
+}
+.facet[data-state="shut"] :where(.facet-toggle) .icon {
+  transform: rotate(90deg);
+}
+.choice .icon {
+  color: var(--brand-text);
+}
+.choice[aria-pressed="true"] .icon {
+  color: var(--brand-text);
+}
+.choice[data-count="0"] .icon {
+  color: var(--muted);
+  opacity: .62;
+}
+.facet-select .select .icon {
+  color: var(--muted);
+}
+.facet-select :where(.select:has(option:checked:not([value=""]))) .icon {
+  color: var(--brand-text);
+}
+:where(.resultsbar-pills) .pill[aria-pressed="true"] .icon {
+  color: var(--brand-text);
+}
+.place-meta .icon {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  color: var(--brand-text);
+}
+.place-more .icon {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+.sources .icon {
+  color: var(--brand-text);
+}
+.toc .icon {
+  color: var(--brand-text);
+}
+.result-arrow[data-dir="prev"] .icon {
+  transform: rotate(180deg);
+}
+.checks .icon {
+  color: var(--brand-text);
+  margin-top: 2px;
+}
+.srclink .icon {
+  color: var(--brand-text);
+}
+.lightbox-prev .icon {
+  transform: rotate(180deg);
+}
+.ask-who .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+.soon .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+
+@media (min-width:1081px) {
+  .search-small[data-variant="caption"] :where(.search-query) > .icon {
+    display: none;
+  }
+}
+
+:where(.accordion) .accordion-summary .icon:first-child {
+  color: var(--brand-text);
+  transform: none;
+}
+:where(.accordion) .accordion-summary > .icon:last-child {
+  transform: rotate(90deg);
+}
+:where(.accordion[open]) .accordion-summary > .icon:last-child {
+  transform: rotate(-90deg);
+}
+.drawer-row .icon {
+  color: var(--brand-text);
+}
+.types .types-link .icon {
+  flex: none;
+  color: var(--brand-text);
+}
+.pin .icon {
+  display: block;
+}
+.pin-label .icon {
+  flex: none;
+  stroke-width: 2.2;
+}
+.pin-type .icon {
+  color: var(--brand);
+}
+
+@media (max-width:640px) {
+  .view-figure .pin-type .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.footer .icon {
+  flex: none;
+}
+.footer-chips .pill .icon {
+  color: var(--brand-text);
+}
+.lang .icon {
+  flex: none;
+  color: var(--muted);
+}
+.lang > .icon:last-of-type {
+  transform: rotate(90deg);
+}
+.booking-facts .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+.booking-hint .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+.booking-one .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+.booking-why .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+:where(.datefield-btn[aria-expanded="true"]) .icon:last-child {
+  transform: rotate(180deg);
+}
+.booking-sent .icon {
+  flex: none;
+}
+.error .icon {
+  margin-top: 1px;
+}
+.pay-methods .option .icon {
+  color: var(--muted);
+}
+:where(.pay-methods) .option[aria-checked="true"] .icon {
+  color: var(--brand-text);
+}
+.voucher-help .icon {
+  margin-top: 1px;
+  color: var(--brand-text);
+}
+.header-actions .header-pill .icon {
+  color: var(--brand-text);
+}
+.days-row .icon {
+  flex: none;
+  margin-top: 3px;
+  color: var(--brand-text);
+}
+.day-travel .icon {
+  width: 10px;
+  height: 10px;
+}
+.day-head .activity-meta .icon {
+  display: inline-block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: -3px;
+  color: var(--muted);
+}
+.day-modes .icon + .icon {
+  margin-left: 2px;
+}
+.grade .icon {
+  color: var(--brand-text);
+}
+.capacity-places .icon {
+  color: var(--brand-text);
+}
+.expedition-meta .icon {
+  color: var(--brand-text);
+}
+.days-tli > .days-summary > .icon {
+  flex: none;
+  transform: rotate(90deg);
+  transition: transform .2s;
+}
+.days-tli[open] > :where(.days-summary) > .icon {
+  transform: rotate(-90deg);
+}

@@ -1,0 +1,31 @@
+/* components/stay-kinds.css: .stays, .stay */
+.stays {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 14px;
+  margin: 6px 0 16px;
+}
+.stay {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+}
+.stay-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+  margin-bottom: 4px;
+}
+.stay .stay-strong {
+  font-size: 17px;
+  line-height: 1.3;
+}
+.stay > .stay-label:last-child {
+  color: var(--muted);
+  font-size: 15px;
+}

@@ -1,0 +1,312 @@
+/* components/place-card.css: .place */
+.place {
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+  grid-template-columns: minmax(0,1fr);
+  row-gap: 0;
+  min-width: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.place[data-state="hit"] {
+  outline: 3px solid var(--brand);
+  outline-offset: -3px;
+}
+.place-photo {
+  position: relative;
+  justify-self: stretch;
+  aspect-ratio: 16/10;
+  background: var(--soft);
+  overflow: hidden;
+}
+.place-photolink {
+  display: block;
+  height: 100%;
+}
+.place-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+:where(.place-photo) .place-link:hover img {
+  transform: scale(1.03);
+}
+.place-badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 3;
+  max-width: calc(100% - 24px);
+}
+.place-empty {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+  padding: 10px;
+  background: color-mix(in srgb,var(--soft) 60%,var(--panel));
+  color: var(--brand-text);
+}
+.place-empty::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  bottom: -34px;
+  width: 150px;
+  aspect-ratio: 1;
+  background: var(--brand-text);
+  opacity: .07;
+  pointer-events: none;
+  -webkit-mask: url(../img/logo-badge4.svg) center/contain no-repeat;
+  mask: url(../img/logo-badge4.svg) center/contain no-repeat;
+}
+.place-empty svg {
+  width: 22px;
+  height: 22px;
+  opacity: .75;
+}
+.place-empty .place-note {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.2;
+}
+.place-body {
+  display: contents;
+}
+.place-body > * {
+  margin-inline: 18px;
+}
+.place .place-title {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+.place-title .place-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.place-title .place-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.place-desc {
+  margin-block: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.place-meta {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-block: 10px 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.place-region {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.place-region > .place-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.place-list {
+  list-style: none;
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  margin-block: 14px 16px;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--line);
+}
+.place-list:empty {
+  border: 0;
+  padding: 0;
+}
+.place-list .place-item {
+  min-width: 0;
+}
+.place-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  border-radius: var(--r-s);
+}
+.place-preview:hover .place-strong {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.place-thumb {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-s);
+  overflow: hidden;
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.place-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.place-thumb svg {
+  width: 20px;
+  height: 20px;
+}
+.place-previewtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.place-previewtext .place-strong {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.place-previewtext .place-note {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.place-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: end;
+  margin-block: auto 18px;
+  min-height: 44px;
+  padding: 6px 18px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.25;
+  color: var(--ink);
+  text-align: center;
+  transition: border-color .15s,background .15s;
+}
+.place-more:hover {
+  border-color: var(--ink);
+  background: var(--soft);
+}
+.place-photo[data-variant="map"] {
+  isolation: isolate;
+  background: var(--soft);
+}
+.place-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--soft);
+}
+.place-map .leaflet-control-attribution {
+  pointer-events: auto;
+  font-size: 10px;
+  line-height: 1.4;
+  padding: 0 5px;
+  background: color-mix(in srgb,var(--panel) 80%,transparent);
+}
+.place-photo[data-variant="map"] > .place-photolink {
+  position: absolute;
+  inset: 0;
+  z-index: 500;
+}
+.place-photo[data-variant="map"] > .place-badge {
+  z-index: 1001;
+}
+.place-maptag {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1001;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--panel);
+  box-shadow: 0 1px 3px var(--shade-18);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  pointer-events: none;
+}
+.place-maptag svg {
+  width: 14px;
+  height: 14px;
+  color: var(--brand-text);
+}
+.place-fallback {
+  display: none;
+}
+[data-map="none"] .place-fallback {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+[data-map="none"] .place-maptag {
+  display: none;
+}
+
+@media (max-width:700px) {
+  .place-body > * {
+    margin-inline: 16px;
+  }
+  .place-photo[data-variant="map"] {
+    aspect-ratio: 2/1;
+  }
+}
+
+.place .place-heading .place-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.expeditions-card .place-title .place-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.expeditions-card .place-title > .place-label {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}

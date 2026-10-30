@@ -18,7 +18,7 @@ final class ConformanceTest extends TestCase
     private const string ASSETS = __DIR__.'/../../assets';
     private const string ENTRY = 'mractivities.css';
 
-    /** Elements a component may still select by tag: replaced elements, form controls and SVG internals, which carry no part class of ours. */
+    /** Elements a component may still select by tag: replaced elements, form controls and SVG internals, which carry no part class of ours; and any element of Leaflet's own markup (inside or on a leaflet- class). */
     private const array ALLOWED_ELEMENTS = ['img', 'svg', 'path', 'text', 'input', 'select', 'option', 'textarea'];
 
     /** Attributes besides data-* and aria-*: native states the browser itself sets or reads (details/dialog open, hidden, an empty option value). */
@@ -99,7 +99,7 @@ final class ConformanceTest extends TestCase
         self::assertSame([], $violations);
     }
 
-    public function testOnlyTokensHoldLiteralColours(): void
+    public function testOnlyTokensHoldLiteralColoursAndOnlyTokensSetColourTokens(): void
     {
         $violations = [];
         foreach ($this->reader->files() as $file) {
@@ -113,8 +113,8 @@ final class ConformanceTest extends TestCase
                 if (preg_match('/#[0-9a-fA-F]{3,8}\b|\b(rgba?|hsla?)\(|(?<![\w-])(white|black)(?![\w-])/', $rule['body'])) {
                     $violations[] = $file.': '.$rule['selector'];
                 }
-                if (preg_match('/(^|;)\s*--[\w-]+\s*:/', $rule['body'])) {
-                    $violations[] = $file.': '.$rule['selector'].' declares a custom property';
+                if (preg_match('/(?:^|;)\s*--('.implode('|', $this->colourTokens()).')\s*:/', $rule['body'], $m)) {
+                    $violations[] = $file.': '.$rule['selector'].' redefines the colour token --'.$m[1];
                 }
             }
         }
@@ -201,6 +201,18 @@ final class ConformanceTest extends TestCase
         self::assertSame((new StylesheetConcatService())->concat(self::ASSETS), $dist, 'dist/ is stale: run composer build');
     }
 
+    /** @return list<string> the colour custom properties the tokens declare */
+    private function colourTokens(): array
+    {
+        $names = [];
+        foreach (['tokens/palette.css', 'tokens/fixed.css'] as $file) {
+            preg_match_all('/--([\w-]+)\s*:/', $this->reader->source($file), $m);
+            $names += array_flip($m[1]);
+        }
+
+        return array_keys($names);
+    }
+
     /** @return list<string> */
     private function violationsOf(string $selector): array
     {
@@ -226,11 +238,13 @@ final class ConformanceTest extends TestCase
             }
         }
         $compounds = preg_split('/\s*[>+~]\s*|\s+/', trim((string) preg_replace('/\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\)/', '', $bare))) ?: [];
+        $vendor = false;
         foreach ($compounds as $position => $compound) {
+            $vendor = $vendor || str_contains($compound, '.leaflet-');
             if (preg_match('/^([a-z][a-z0-9]*)/', $compound, $t)) {
                 $tag = $t[1];
                 $root = 0 === $position && \in_array($tag, ['html', 'body'], true);
-                if (!$root && !\in_array($tag, self::ALLOWED_ELEMENTS, true)) {
+                if (!$root && !$vendor && !\in_array($tag, self::ALLOWED_ELEMENTS, true)) {
                     $why[] = 'element '.$tag;
                 }
             }
@@ -241,7 +255,8 @@ final class ConformanceTest extends TestCase
 
     private function subjectClass(string $selector): ?string
     {
-        $flat = (string) preg_replace('/\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\)/', '', (string) preg_replace('/\[[^\]]*\]/', '', $selector));
+        $unwrapped = (string) preg_replace('/:where\(((?:[^()]|\((?:[^()]|\([^()]*\))*\))*)\)/', '$1', $selector);
+        $flat = (string) preg_replace('/\((?:[^()]|\((?:[^()]|\([^()]*\))*\))*\)/', '', (string) preg_replace('/\[[^\]]*\]/', '', $unwrapped));
         $compounds = array_reverse(preg_split('/\s*[>+~]\s*|\s+/', trim($flat)) ?: []);
         foreach ($compounds as $compound) {
             if (preg_match_all('/\.((?!leaflet-)[\w-]+)/', $compound, $m)) {

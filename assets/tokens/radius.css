@@ -1,0 +1,6 @@
+/* tokens/radius.css: the only three radii */
+:root {
+  --r: 16px;
+  --r-s: 12px;
+  --r-pill: 999px;
+}
