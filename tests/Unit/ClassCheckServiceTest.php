@@ -44,6 +44,13 @@ final class ClassCheckServiceTest extends TestCase
         self::assertSame(['card-huge'], array_column($this->service->check('a.js', $js), 'name'));
     }
 
+    public function testTheTextAfterAnInterpolatedClassAttributeIsNotReadAsClasses(): void
+    {
+        $js = 'const o = c => `<i class="${c}">${T(\'Hello world\', \'Habari\')}</i>`;';
+
+        self::assertSame([], $this->service->check('a.js', $js));
+    }
+
     public function testTwigExpressionsInsideAClassAttributeAreSkippedButTheirStringsRead(): void
     {
         $twig = '<a class="btn {{ on ? \'btn-on\' : \'\' }} {{ extra }}">';

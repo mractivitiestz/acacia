@@ -193,7 +193,7 @@ final class ClassCheckService
      */
     private function skipExpression(string $source, int $i, array &$strings): int
     {
-        $twig = '{' === $source[$i + 1] || '%' === $source[$i + 1];
+        $twig = '{' === $source[$i];
         $close = $twig ? ('{' === $source[$i + 1] ? '}}' : '%}') : '}';
         $i += 2;
         $depth = 0;
