@@ -523,7 +523,7 @@
    "brand": "[data-variant=\"brand\"]",
    "ghost": "[data-variant=\"ghost\"]",
    "wide": "[data-width=\"full\"]",
-   "bk-off": "[data-variant=\"off\"]"
+   "bk-off": "[data-state=\"off\"]"
   },
   "link": {
    "see": ".nw"

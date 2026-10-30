@@ -555,7 +555,7 @@ Old modifier class on a block → the attribute (or class) that replaces it. ARI
 | `.accordion` | `.days-grp` | `.days-grp` |
 | `.badge` | `.on-ph` | `[data-variant="photo"]` |
 | `.booking-why` | `.sm` | `[data-size="sm"]` |
-| `.btn` | `.bk-off` | `[data-variant="off"]` |
+| `.btn` | `.bk-off` | `[data-state="off"]` |
 | `.btn` | `.brand` | `[data-variant="brand"]` |
 | `.btn` | `.ghost` | `[data-variant="ghost"]` |
 | `.btn` | `.wide` | `[data-width="full"]` |

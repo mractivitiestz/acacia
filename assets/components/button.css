@@ -121,7 +121,7 @@
 .iconbtn:hover {
   background: var(--soft);
 }
-.btn[data-variant="off"] {
+.btn[data-state="off"] {
   opacity: .5;
 }
 .link[data-as="button"] {

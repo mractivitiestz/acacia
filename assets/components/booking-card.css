@@ -152,6 +152,10 @@
   background: var(--soft);
 }
 .booking-why[data-size="sm"] {
+  justify-content: center;
+  height: 44px;
+  min-width: 150px;
+  border-left: 1px solid var(--line);
   margin-top: 12px;
   max-width: 60ch;
 }
