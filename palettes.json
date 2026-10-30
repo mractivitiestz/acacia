@@ -1,0 +1,170 @@
+[
+    {
+        "name": "1 · Forest and cream (the logo)",
+        "ink": "#122620",
+        "accent": "#a8691b",
+        "paper": "#fffef9",
+        "night": "#0b1813"
+    },
+    {
+        "name": "2 · Pine and brass",
+        "ink": "#17462f",
+        "accent": "#b8893a",
+        "paper": "#f5f2ea",
+        "night": "#0f2a1d"
+    },
+    {
+        "name": "3 · Highland green and sun",
+        "ink": "#24573a",
+        "accent": "#d9a405",
+        "paper": "#fbfaf2",
+        "night": "#0d1710"
+    },
+    {
+        "name": "4 · Banana leaf and mango",
+        "ink": "#2e6b30",
+        "accent": "#e0912b",
+        "paper": "#f3faf3",
+        "night": "#0e2a10"
+    },
+    {
+        "name": "5 · Moss and clay",
+        "ink": "#3b5323",
+        "accent": "#b5562f",
+        "paper": "#f7f6ee",
+        "night": "#141c0c"
+    },
+    {
+        "name": "6 · Olive and saffron",
+        "ink": "#4a5a1e",
+        "accent": "#d4a017",
+        "paper": "#faf9f0",
+        "night": "#161a08"
+    },
+    {
+        "name": "7 · Rainforest and coral",
+        "ink": "#0f4a3a",
+        "accent": "#e0664f",
+        "paper": "#f3f8f5",
+        "night": "#071c16"
+    },
+    {
+        "name": "8 · Emerald and gold",
+        "ink": "#0b5d3b",
+        "accent": "#c9a227",
+        "paper": "#f4faf6",
+        "night": "#05241a"
+    },
+    {
+        "name": "9 · Tea estate and terracotta",
+        "ink": "#2f5d3a",
+        "accent": "#c0603a",
+        "paper": "#f6f8f2",
+        "night": "#0f1f13"
+    },
+    {
+        "name": "10 · Eucalyptus and plum",
+        "ink": "#2f5e55",
+        "accent": "#7a3b69",
+        "paper": "#f3f8f6",
+        "night": "#0e1f1c"
+    },
+    {
+        "name": "11 · Jade and copper",
+        "ink": "#1d6b5a",
+        "accent": "#b8693a",
+        "paper": "#f2f9f7",
+        "night": "#082520"
+    },
+    {
+        "name": "12 · Seaweed and sand",
+        "ink": "#28524a",
+        "accent": "#c29a5b",
+        "paper": "#f7f6f0",
+        "night": "#0c1b19"
+    },
+    {
+        "name": "13 · Mangrove and teal",
+        "ink": "#1f4d3f",
+        "accent": "#2a8c8c",
+        "paper": "#f2f7f4",
+        "night": "#091a15"
+    },
+    {
+        "name": "14 · Cardamom and chilli",
+        "ink": "#3e5c2c",
+        "accent": "#c23b22",
+        "paper": "#f8f8f0",
+        "night": "#131d0d"
+    },
+    {
+        "name": "15 · Spruce and ice blue",
+        "ink": "#1b4d3e",
+        "accent": "#4a8fb3",
+        "paper": "#f2f7f6",
+        "night": "#081a15"
+    },
+    {
+        "name": "16 · Avocado and cocoa",
+        "ink": "#4b6a2e",
+        "accent": "#7a4a2a",
+        "paper": "#f7f9f0",
+        "night": "#151f0c"
+    },
+    {
+        "name": "17 · Bamboo and ink",
+        "ink": "#40632f",
+        "accent": "#1f3a5f",
+        "paper": "#f6f9f2",
+        "night": "#111c0b"
+    },
+    {
+        "name": "18 · Lime grove and charcoal",
+        "ink": "#3d6b1f",
+        "accent": "#e3b23c",
+        "paper": "#f5faef",
+        "night": "#0f1d07"
+    },
+    {
+        "name": "19 · Coffee bush and berry",
+        "ink": "#2c4f2f",
+        "accent": "#a8323e",
+        "paper": "#f6f7f1",
+        "night": "#0d190e"
+    },
+    {
+        "name": "20 · Kelp and amber",
+        "ink": "#2d4a3a",
+        "accent": "#d88c1f",
+        "paper": "#f5f6f2",
+        "night": "#0d1812"
+    },
+    {
+        "name": "21 · Sage and rust",
+        "ink": "#4d6b57",
+        "accent": "#b04a2a",
+        "paper": "#f6f8f5",
+        "night": "#141d18"
+    },
+    {
+        "name": "22 · Bottle green and cream",
+        "ink": "#0e3b2e",
+        "accent": "#c79a3e",
+        "paper": "#fffdf6",
+        "night": "#06180f"
+    },
+    {
+        "name": "23 · Malachite and sky",
+        "ink": "#136f4a",
+        "accent": "#3b7dd8",
+        "paper": "#f1f9f5",
+        "night": "#062417"
+    },
+    {
+        "name": "24 · Fern and flame",
+        "ink": "#2f6f3e",
+        "accent": "#f06a2a",
+        "paper": "#f3f9f3",
+        "night": "#0d2213"
+    }
+]
