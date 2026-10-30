@@ -25,7 +25,8 @@
         "cs-fix": "php-cs-fixer fix",
         "stan": "phpstan analyse",
         "test": "phpunit",
-        "check": ["@cs", "@stan", "@test"]
+        "classes": "@php bin/check-classes.php",
+        "check": ["@cs", "@stan", "@test", "@classes"]
     },
     "config": {"sort-packages": true},
     "minimum-stability": "stable"

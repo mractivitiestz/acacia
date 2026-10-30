@@ -106,8 +106,15 @@ through any static server from the package root, for example `php -S 127.0.0.1:8
 ## Tests
 
 ```bash
-composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit
+composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit, bin/check-classes.php
 ```
+
+- `bin/check-classes.php [--engine=<dir>] [file ...]`: every class a page, template or script uses (class attributes,
+  script selectors, `classList` calls, `className` values) must be defined by `dist/mractivities.css`, and every
+  `data-variant`, `data-size`, `data-width`, `data-as`, `data-state` and `data-columns` value must be one a selector
+  names; Leaflet's `leaflet-` classes and the docs' own `docs-` classes are skipped. With no file it checks
+  `docs/index.html`; `--engine` (or `MRACTIVITIES_ENGINE`, which `composer check` passes through) adds the design
+  engine's `app.js`, `expedition.js` and every page under its `site/`. Exits 1 on any undefined hook.
 
 - `tests/Unit/ConformanceTest.php`: the layer order declared once; every file imported once into the layer of its
   directory; C7 selectors with specificity at most 0,3,0; literal colours only in tokens; the three radii; no
@@ -115,6 +122,7 @@ composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit
   `dist/` equal to the concatenation of the sources.
 - `tests/Unit/PaletteServiceTest.php`: palettes 3 and 22 equal the engine's computed tones; the shipped palette file
   is fresh.
+- `tests/Unit/ClassCheckServiceTest.php` and `tests/Functional/CheckClassesScriptTest.php`: the class check above.
 - `tests/Functional/BundleTest.php`: a kernel with FrameworkBundle and this bundle resolves
   `@mractivities/design-system/mractivities.css` through AssetMapper.
 
