@@ -159,6 +159,16 @@
   margin-top: 12px;
   max-width: 60ch;
 }
+
+@media (max-width:700px) {
+  .booking-why[data-size="sm"] {
+    flex: 1;
+    height: 60px;
+    border-left: 0;
+    min-width: 0;
+  }
+}
+
 .booking-asum {
   display: flex;
   gap: 8px;
