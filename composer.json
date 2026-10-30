@@ -1,0 +1,32 @@
+{
+    "name": "mractivities/design-system",
+    "description": "The Mr Activities CSS framework: tokens, base, layout, components, pages and utilities in native cascade layers, exposed to AssetMapper.",
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "authors": [{"name": "Ezekiel Emil Mjema"}],
+    "require": {
+        "php": "^8.4",
+        "symfony/config": "^8.0",
+        "symfony/dependency-injection": "^8.0",
+        "symfony/http-kernel": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^13.0",
+        "symfony/asset-mapper": "^8.0",
+        "symfony/framework-bundle": "^8.0"
+    },
+    "autoload": {"psr-4": {"MrActivities\\DesignSystem\\": "src/"}},
+    "autoload-dev": {"psr-4": {"MrActivities\\DesignSystem\\Tests\\": "tests/"}},
+    "scripts": {
+        "build": ["@php bin/palettes.php", "@php bin/concat.php"],
+        "cs": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix",
+        "stan": "phpstan analyse",
+        "test": "phpunit",
+        "check": ["@cs", "@stan", "@test"]
+    },
+    "config": {"sort-packages": true},
+    "minimum-stability": "stable"
+}
