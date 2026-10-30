@@ -70,7 +70,7 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.credits-sites .credits-label {
+.credits-sites :is(.credits-label, .en, .sw) {
   font-size: 14.5px;
   color: var(--muted);
 }

@@ -55,7 +55,7 @@
   opacity: 0;
   transition: opacity .2s;
 }
-.result-arrow .result-label {
+.result-arrow :is(.result-label, .en, .sw) {
   display: grid;
   place-items: center;
   width: 30px;

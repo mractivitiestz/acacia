@@ -127,7 +127,7 @@
   align-items: center;
   min-width: 0;
 }
-.place-region > .place-label {
+.place-region > :is(.place-label, .en, .sw) {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -304,7 +304,7 @@
   align-items: center;
   min-height: 44px;
 }
-.expeditions-card .place-title > .place-label {
+.expeditions-card .place-title > :is(.place-label, .en, .sw) {
   display: flex;
   align-items: center;
   min-height: 44px;

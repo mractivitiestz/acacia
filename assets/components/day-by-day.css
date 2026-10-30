@@ -351,6 +351,6 @@
 .days-left {
   margin-top: -6px;
 }
-.days-df .days-bold .days-label {
+.days-df .days-bold :is(.days-label, .en, .sw) {
   display: inline;
 }

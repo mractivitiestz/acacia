@@ -19,7 +19,7 @@
   white-space: nowrap;
   overflow: hidden;
 }
-.pair-head .pair-label {
+.pair-head :is(.pair-label, .en, .sw) {
   overflow: hidden;
   text-overflow: ellipsis;
 }

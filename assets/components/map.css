@@ -272,7 +272,7 @@
   font: 400 0/1 var(--f);
   color: var(--ink);
 }
-:where(.popup) a.leaflet-popup-close-button .popup-label {
+:where(.popup) a.leaflet-popup-close-button :is(.popup-label, .en, .sw) {
   display: grid;
   place-items: center;
   width: 32px;
@@ -283,13 +283,13 @@
   font: 500 22px/1 var(--f);
   padding-bottom: 2px;
 }
-.popup :where(a.leaflet-popup-close-button:hover) .popup-label {
+.popup :where(a.leaflet-popup-close-button:hover) :is(.popup-label, .en, .sw) {
   background: var(--soft);
 }
 :where(.popup) a.leaflet-popup-close-button:focus-visible {
   outline: none;
 }
-.popup :where(a.leaflet-popup-close-button:focus-visible) .popup-label {
+.popup :where(a.leaflet-popup-close-button:focus-visible) :is(.popup-label, .en, .sw) {
   outline: 2.5px solid var(--ink);
   outline-offset: 2px;
 }
@@ -328,7 +328,7 @@
     top: 0;
     right: 0;
   }
-  :where(.popup) a.leaflet-popup-close-button .popup-label {
+  :where(.popup) a.leaflet-popup-close-button :is(.popup-label, .en, .sw) {
     box-shadow: none;
     background: transparent;
   }

@@ -74,7 +74,7 @@
   min-height: 60px;
   font-size: 19px;
 }
-.accordion .accordion-summary > .accordion-label {
+.accordion .accordion-summary > :is(.accordion-label, .en, .sw) {
   flex: 1;
 }
 .drawer-row {
@@ -91,7 +91,7 @@
   font-size: 19px;
   text-align: left;
 }
-.drawer-row .drawer-label {
+.drawer-row :is(.drawer-label, .en, .sw) {
   flex: 1;
 }
 .drawer-row[aria-current="true"] {

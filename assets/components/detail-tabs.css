@@ -100,7 +100,7 @@
   color: var(--muted);
   font-weight: 700;
 }
-.headline-meta .headline-label {
+.headline-meta :is(.headline-label, .en, .sw) {
   display: inline-flex;
   align-items: center;
   gap: 6px;

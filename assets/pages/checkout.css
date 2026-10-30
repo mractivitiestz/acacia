@@ -60,7 +60,7 @@
   border-radius: var(--r-s);
   flex: none;
 }
-.trip-row > .trip-label:not(.status) {
+.trip-row > :is(.trip-label, .en, .sw):not(.status) {
   flex: 1;
   min-width: 0;
   display: flex;

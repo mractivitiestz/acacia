@@ -30,7 +30,7 @@
   font-weight: 800;
   margin: 2px 0 4px;
 }
-:where(.location) > .location-label > .location-label:not(.link) {
+:where(.location) > :is(.location-label, .en, .sw) > :is(.location-label, .en, .sw):not(.link) {
   display: block;
   color: var(--muted);
 }

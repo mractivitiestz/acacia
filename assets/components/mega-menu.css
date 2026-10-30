@@ -58,7 +58,7 @@
 .mega-place:hover img {
   transform: scale(1.02);
 }
-.mega-place .mega-label {
+.mega-place :is(.mega-label, .en, .sw) {
   display: block;
   padding-top: 8px;
 }

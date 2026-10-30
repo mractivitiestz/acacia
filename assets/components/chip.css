@@ -208,7 +208,7 @@
   max-width: 100%;
   min-width: 0;
 }
-.twodays-pick .pill > .pill-label {
+.twodays-pick .pill > :is(.pill-label, .en, .sw) {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -230,7 +230,7 @@
   min-width: 0;
   overflow: hidden;
 }
-:where(.footer-chips) .pill .pill-label:first-of-type {
+:where(.footer-chips) .pill :is(.pill-label, .en, .sw):first-of-type {
   overflow: hidden;
   text-overflow: ellipsis;
 }

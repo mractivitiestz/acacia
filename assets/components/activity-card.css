@@ -150,7 +150,7 @@
   flex-wrap: wrap;
   gap: 4px 14px;
 }
-.activity-meta .activity-label {
+.activity-meta :is(.activity-label, .en, .sw) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -179,7 +179,7 @@
   margin: 0;
   font-size: 13.5px;
 }
-.mapcard .activity-meta > .activity-label {
+.mapcard .activity-meta > :is(.activity-label, .en, .sw) {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -217,7 +217,7 @@
   line-height: 1.45;
   color: var(--muted);
 }
-.day-head .activity-meta .activity-label {
+.day-head .activity-meta :is(.activity-label, .en, .sw) {
   display: inline;
   gap: 0;
 }

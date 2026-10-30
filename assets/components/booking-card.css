@@ -197,7 +197,7 @@
 .booking-sent:focus {
   outline: none;
 }
-.booking-sent > .booking-span {
+.booking-sent > :is(.booking-span, .en, .sw) {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -262,7 +262,7 @@
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
 }
-.booking-line > .booking-span:first-child {
+.booking-line > :is(.booking-span, .en, .sw):first-child {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -315,7 +315,7 @@
   gap: 12px;
   padding-top: 12px;
 }
-.booking-total > .booking-span {
+.booking-total > :is(.booking-span, .en, .sw) {
   font-weight: 800;
   font-size: 16px;
   display: flex;

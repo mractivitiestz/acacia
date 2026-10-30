@@ -59,7 +59,7 @@
   white-space: nowrap;
   color: var(--muted);
 }
-.types .types-link .types-label {
+.types .types-link :is(.types-label, .en, .sw) {
   display: block;
   max-width: 240px;
   overflow: hidden;
@@ -80,7 +80,7 @@
     padding: 0 10px;
     font-size: 14.5px;
   }
-  .types .types-link .types-label {
+  .types .types-link :is(.types-label, .en, .sw) {
     max-width: 180px;
   }
 }

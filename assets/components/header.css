@@ -15,7 +15,7 @@
 .saved .saved-count:empty {
   display: none;
 }
-.header-menubtn .header-line {
+.header-menubtn :is(.header-line, .en, .sw) {
   position: absolute;
   left: 12px;
   right: 12px;
@@ -23,13 +23,13 @@
   border-radius: var(--r-pill);
   background: currentColor;
 }
-.header-menubtn .header-line:nth-child(1) {
+.header-menubtn :is(.header-line, .en, .sw):nth-child(1) {
   top: 15px;
 }
-.header-menubtn .header-line:nth-child(2) {
+.header-menubtn :is(.header-line, .en, .sw):nth-child(2) {
   top: 21px;
 }
-.header-menubtn .header-line:nth-child(3) {
+.header-menubtn :is(.header-line, .en, .sw):nth-child(3) {
   top: 27px;
 }
 .saved-panel .saved-name {

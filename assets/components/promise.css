@@ -36,7 +36,7 @@
   letter-spacing: -.02em;
   line-height: 1.15;
 }
-.promise-text .promise-label {
+.promise-text :is(.promise-label, .en, .sw) {
   display: block;
   font-size: 17px;
   margin-top: 4px;
@@ -65,7 +65,7 @@
   background: var(--soft);
   color: var(--brand-text);
 }
-.promise-text .promise-label {
+.promise-text :is(.promise-label, .en, .sw) {
   color: var(--muted);
   opacity: 1;
 }

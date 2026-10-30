@@ -194,7 +194,7 @@
   margin: 0;
   accent-color: var(--brand);
 }
-.option > .option-label:not(.option-mark) {
+.option > :is(.option-label, .en, .sw):not(.option-mark) {
   flex: 1;
   min-width: 0;
   display: flex;

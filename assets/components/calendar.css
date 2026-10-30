@@ -19,7 +19,7 @@
 .datefield-btn:hover {
   border-color: var(--ink);
 }
-.datefield-btn .datefield-label {
+.datefield-btn :is(.datefield-label, .en, .sw) {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -141,7 +141,7 @@
 .calendar-day:disabled::after {
   display: none;
 }
-.calendar-day[data-state="full"] .calendar-label {
+.calendar-day[data-state="full"] :is(.calendar-label, .en, .sw) {
   text-decoration: line-through;
 }
 .calendar-day[data-state="range"] {
@@ -170,7 +170,7 @@
 .aside .calendar-key {
   color: var(--muted);
 }
-.calendar-key .calendar-label {
+.calendar-key :is(.calendar-label, .en, .sw) {
   display: inline-flex;
   align-items: center;
   gap: 6px;

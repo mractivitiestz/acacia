@@ -131,7 +131,7 @@
   }
 }
 
-.checks .checks-item .checks-label {
+.checks .checks-item :is(.checks-label, .en, .sw) {
   min-width: 0;
 }
 :where(.contact) .deflist .deflist-row:first-child {

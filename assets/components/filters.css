@@ -119,7 +119,7 @@
   text-align: left;
   cursor: pointer;
 }
-.facet-toggle > .facet-label {
+.facet-toggle > :is(.facet-label, .en, .sw) {
   flex: 1;
   min-width: 0;
   white-space: nowrap;
@@ -211,7 +211,7 @@
   font-size: 15px;
   transition: background .15s,color .15s;
 }
-.choice .choice-label {
+.choice :is(.choice-label, .en, .sw) {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
@@ -273,7 +273,7 @@
 .choice[data-count="0"] {
   color: var(--muted);
 }
-.choice[data-count="0"] .choice-label {
+.choice[data-count="0"] :is(.choice-label, .en, .sw) {
   opacity: .62;
 }
 .choice[data-count="0"] .choice-count {

@@ -25,7 +25,7 @@
   font-size: 17px;
   line-height: 1.3;
 }
-.stay > .stay-label:last-child {
+.stay > :is(.stay-label, .en, .sw):last-child {
   color: var(--muted);
   font-size: 15px;
 }

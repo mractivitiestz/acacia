@@ -27,11 +27,11 @@
   font-weight: 800;
   font-size: 17px;
 }
-.steps .steps-item > .steps-label {
+.steps .steps-item > :is(.steps-label, .en, .sw) {
   color: var(--muted);
   font-size: 15.5px;
 }
-:where(.steps) .steps-item > .steps-label .steps-strong {
+:where(.steps) .steps-item > :is(.steps-label, .en, .sw) .steps-strong {
   color: var(--ink);
 }
 .steps[data-as="ol"] {
@@ -82,7 +82,7 @@
   font-size: 17px;
   font-weight: 800;
 }
-:where(.steps[data-as="ol"]) .steps-item > .steps-label:not(.steps-icon) {
+:where(.steps[data-as="ol"]) .steps-item > :is(.steps-label, .en, .sw):not(.steps-icon) {
   color: var(--muted);
   font-size: 15.5px;
 }

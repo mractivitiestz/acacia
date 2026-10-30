@@ -314,7 +314,7 @@
     margin: 22px calc(-1 * var(--gut)) 10px;
     padding: 0 var(--gut);
   }
-  .search .search-go .search-label {
+  .search .search-go :is(.search-label, .en, .sw) {
     display: none;
   }
   .search {
@@ -418,7 +418,7 @@
     padding: 0;
     border-radius: 50%;
   }
-  .search-small[data-variant="caption"] :where(.search-go) .search-label {
+  .search-small[data-variant="caption"] :where(.search-go) :is(.search-label, .en, .sw) {
     position: absolute;
     width: 1px;
     height: 1px;

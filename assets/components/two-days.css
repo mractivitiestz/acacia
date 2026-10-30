@@ -8,7 +8,7 @@
   color: var(--muted);
   line-height: 1.4;
 }
-.twodays-meta > .twodays-label {
+.twodays-meta > :is(.twodays-label, .en, .sw) {
   display: inline-flex;
   align-items: center;
   gap: 5px;
