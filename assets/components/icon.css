@@ -69,7 +69,7 @@
 .facet-select .select .icon {
   color: var(--muted);
 }
-.facet-select :where(.select:has(option:checked:not([value=""]))) .icon {
+.facet-select .select:where(:has(option:checked:not([value=""]))) .icon {
   color: var(--brand-text);
 }
 :where(.resultsbar-pills) .pill[aria-pressed="true"] .icon {

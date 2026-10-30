@@ -9,6 +9,7 @@ require __DIR__.'/../vendor/autoload.php';
 const DEFAULT_PALETTE = 3;
 
 $root = dirname(__DIR__);
-$palettes = json_decode((string) file_get_contents($root.'/palettes.json'), true, flags: \JSON_THROW_ON_ERROR);
-file_put_contents($root.'/assets/tokens/palette.css', (new PaletteService())->stylesheet($palettes, DEFAULT_PALETTE));
+$service = new PaletteService();
+$palettes = $service->palettesFromJson((string) file_get_contents($root.'/palettes.json'));
+file_put_contents($root.'/assets/tokens/palette.css', $service->stylesheet($palettes, DEFAULT_PALETTE));
 echo 'assets/tokens/palette.css: '.count($palettes)." palettes\n";

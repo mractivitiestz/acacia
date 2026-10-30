@@ -21,6 +21,9 @@ final class StylesheetReader
         $files = [];
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->assetsDir, \FilesystemIterator::SKIP_DOTS));
         foreach ($iterator as $file) {
+            if (!$file instanceof \SplFileInfo) {
+                continue;
+            }
             $path = substr($file->getPathname(), \strlen($this->assetsDir) + 1);
             if (str_ends_with($path, '.css') && 'mractivities.css' !== $path) {
                 $files[] = $path;
@@ -126,7 +129,9 @@ final class StylesheetReader
                     $depth = 1;
                     $start = $offset;
                     while ($depth > 0 && $offset < \strlen($selector)) {
-                        $depth += match ($selector[$offset]) { '(' => 1, ')' => -1, default => 0 };
+                        $depth += match ($selector[$offset]) {
+                            '(' => 1, ')' => -1, default => 0,
+                        };
                         ++$offset;
                     }
                     $inner = substr($selector, $start, $offset - $start - 1);

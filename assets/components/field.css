@@ -45,12 +45,12 @@
 .facet-select .select select {
   font-weight: 600;
 }
-.facet-select .select:has(option:checked:not([value=""])) {
+.facet-select .select:where(:has(option:checked:not([value=""]))) {
   background: var(--tint);
   border-color: var(--brand);
   color: var(--brand-text);
 }
-.facet-select :where(.select:has(option:checked:not([value=""]))) select {
+.facet-select .select:where(:has(option:checked:not([value=""]))) select {
   font-weight: 800;
 }
 .form {

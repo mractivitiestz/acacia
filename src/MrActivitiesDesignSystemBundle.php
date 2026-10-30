@@ -49,11 +49,12 @@ final class MrActivitiesDesignSystemBundle extends AbstractBundle
         }
 
         $bundles = $builder->getParameter('kernel.bundles_metadata');
-        if (!\is_array($bundles) || !isset($bundles['FrameworkBundle'])) {
+        if (!\is_array($bundles) || !\is_array($bundles['FrameworkBundle'] ?? null)) {
             return false;
         }
+        $frameworkPath = $bundles['FrameworkBundle']['path'] ?? null;
 
         return isset($bundles['AssetMapperBundle'])
-            || is_file($bundles['FrameworkBundle']['path'].'/Resources/config/asset_mapper.php');
+            || (\is_string($frameworkPath) && is_file($frameworkPath.'/Resources/config/asset_mapper.php'));
     }
 }

@@ -1473,9 +1473,33 @@ body[data-locked] {
 }
 }
 
+/* layout/stack.css */
+@layer layout {
+/* layout/stack.css: .stack, .cluster (vertical rhythm and wrapping inline groups; data-gap picks a step of the spacing scale) */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.stack[data-gap="sm"],
+.cluster[data-gap="sm"] {
+  gap: var(--s-2);
+}
+.stack[data-gap="lg"],
+.cluster[data-gap="lg"] {
+  gap: var(--s-6);
+}
+}
+
 /* layout/cluster.css */
 @layer layout {
-/* layout/cluster.css: .btns, .pills, .typelinks, .cluster */
+/* layout/cluster.css: .btns, .pills, .typelinks */
 .pills {
   display: flex;
   gap: 8px;
@@ -1768,7 +1792,7 @@ body[data-locked] {
 .facet-select .select .icon {
   color: var(--muted);
 }
-.facet-select :where(.select:has(option:checked:not([value=""]))) .icon {
+.facet-select .select:where(:has(option:checked:not([value=""]))) .icon {
   color: var(--brand-text);
 }
 :where(.resultsbar-pills) .pill[aria-pressed="true"] .icon {
@@ -4856,12 +4880,12 @@ body[data-locked] {
 .facet-select .select select {
   font-weight: 600;
 }
-.facet-select .select:has(option:checked:not([value=""])) {
+.facet-select .select:where(:has(option:checked:not([value=""]))) {
   background: var(--tint);
   border-color: var(--brand);
   color: var(--brand-text);
 }
-.facet-select :where(.select:has(option:checked:not([value=""]))) select {
+.facet-select .select:where(:has(option:checked:not([value=""]))) select {
   font-weight: 800;
 }
 .form {

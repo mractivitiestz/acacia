@@ -1,0 +1,20 @@
+/* layout/stack.css: .stack, .cluster (vertical rhythm and wrapping inline groups; data-gap picks a step of the spacing scale) */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+}
+.stack[data-gap="sm"],
+.cluster[data-gap="sm"] {
+  gap: var(--s-2);
+}
+.stack[data-gap="lg"],
+.cluster[data-gap="lg"] {
+  gap: var(--s-6);
+}

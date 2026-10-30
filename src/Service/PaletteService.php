@@ -15,6 +15,32 @@ final class PaletteService
     private const string DARK = '#141414';
 
     /**
+     * @return list<array{name: string, ink: string, accent: string, paper: string, night: string}>
+     */
+    public function palettesFromJson(string $json): array
+    {
+        $decoded = json_decode($json, true, flags: \JSON_THROW_ON_ERROR);
+        if (!\is_array($decoded) || !array_is_list($decoded)) {
+            throw new \InvalidArgumentException('palettes.json holds a list of palettes.');
+        }
+        $palettes = [];
+        foreach ($decoded as $palette) {
+            if (!\is_array($palette)) {
+                throw new \InvalidArgumentException('Each palette is an object.');
+            }
+            $palettes[] = [
+                'name' => $this->field($palette, 'name'),
+                'ink' => $this->field($palette, 'ink'),
+                'accent' => $this->field($palette, 'accent'),
+                'paper' => $this->field($palette, 'paper'),
+                'night' => $this->field($palette, 'night'),
+            ];
+        }
+
+        return $palettes;
+    }
+
+    /**
      * @param array{name: string, ink: string, accent: string, paper: string, night: string} $palette
      *
      * @return array<string, string> custom property name (without --) => colour
@@ -62,6 +88,17 @@ final class PaletteService
         }
 
         return $css;
+    }
+
+    /** @param array<mixed> $palette */
+    private function field(array $palette, string $key): string
+    {
+        $value = $palette[$key] ?? null;
+        if (!\is_string($value)) {
+            throw new \InvalidArgumentException(\sprintf('A palette lacks "%s".', $key));
+        }
+
+        return $value;
     }
 
     private function on(string $colour): string

@@ -44,9 +44,10 @@ final class PaletteServiceTest extends TestCase
 
     public function testTheShippedPaletteFileIsGeneratedFromPalettesJson(): void
     {
-        $palettes = json_decode((string) file_get_contents(__DIR__.'/../../palettes.json'), true, flags: \JSON_THROW_ON_ERROR);
+        $service = new PaletteService();
+        $palettes = $service->palettesFromJson((string) file_get_contents(__DIR__.'/../../palettes.json'));
 
         self::assertCount(24, $palettes);
-        self::assertSame((new PaletteService())->stylesheet($palettes, 3), file_get_contents(__DIR__.'/../../assets/tokens/palette.css'), 'tokens/palette.css is stale: run composer build');
+        self::assertSame($service->stylesheet($palettes, 3), file_get_contents(__DIR__.'/../../assets/tokens/palette.css'), 'tokens/palette.css is stale: run composer build');
     }
 }
