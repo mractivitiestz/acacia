@@ -20,5 +20,5 @@ The screens checked are 390, 820 and 1440 px wide.
 ## Strays
 
 Carried over from the engine with the rules that use them, to fold into the three widths when those components are
-next touched: 479 px (language menu), 600 px (map popup), 640 px (map key), 720 px (two days), 1279 px (header
+next touched: 600 px (map popup), 640 px (map key), 720 px (two days), 1279 px (header
 navigation), and `min-width: 1081px` (the desktop-only header search).
