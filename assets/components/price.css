@@ -47,6 +47,11 @@
 .activity-body .price {
   min-height: 66px;
 }
+.grid[data-variant="admin"] .price {
+  min-height: 0;
+  margin-top: 8px;
+  padding-top: 0;
+}
 .mapcard-foot .price {
   margin: 0;
   font-size: 13.5px;

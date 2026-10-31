@@ -2564,10 +2564,10 @@ body[data-locked] {
   width: 46px;
   padding: 0;
 }
-:where(.segmented[data-variant="icons"]) .segmented-btn:first-child {
+.segmented:where([data-variant="icons"]) .segmented-btn:first-child {
   padding-left: 2px;
 }
-:where(.segmented[data-variant="icons"]) .segmented-btn:last-child {
+.segmented:where([data-variant="icons"]) .segmented-btn:last-child {
   padding-right: 2px;
 }
 }
@@ -7960,6 +7960,11 @@ body[data-locked] {
 .activity-body .price {
   min-height: 66px;
 }
+.grid[data-variant="admin"] .price {
+  min-height: 0;
+  margin-top: 8px;
+  padding-top: 0;
+}
 .mapcard-foot .price {
   margin: 0;
   font-size: 13.5px;
@@ -10898,6 +10903,9 @@ body[data-locked] {
   }
   .table-chev {
     display: grid;
+  }
+  .table-cell[data-col="name"] {
+    min-width: 0;
   }
   .table-foot {
     border: 0;
