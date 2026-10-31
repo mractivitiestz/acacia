@@ -370,3 +370,18 @@
     padding: 6px 12px 6px 16px;
   }
 }
+.listbar .filters-query {
+  flex: 1 1 160px;
+  max-width: 340px;
+  margin: 0;
+  background: var(--panel);
+}
+.listbar[data-variant="views"] .filters-query {
+  flex-basis: 280px;
+  max-width: none;
+}
+@media (max-width: 700px) {
+  .listbar .filters-query {
+    flex: 1 1 100%;
+  }
+}

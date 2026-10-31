@@ -1,0 +1,85 @@
+/* components/topbar.css: .topbar, the back office's sticky bar: the menu button (1080px and under), the crumbs, the page title, its meta, its actions and the user menu */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: color-mix(in srgb, var(--panel) 94%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: var(--bo-max);
+  min-height: var(--top-h);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+.topbar-menu {
+  display: none;
+  margin-left: -10px;
+}
+.topbar-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.topbar-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.2;
+}
+.topbar-crumb:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.topbar-title {
+  margin: 0;
+  font: 800 22px/1.2 var(--fh);
+  letter-spacing: -.015em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topbar-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex: none;
+}
+.topbar-sep {
+  width: 1px;
+  height: 28px;
+  margin-inline: 4px;
+  background: var(--line);
+}
+@media (max-width: 1080px) {
+  .topbar-menu {
+    display: grid;
+  }
+}
+@media (max-width: 700px) {
+  .topbar-inner {
+    gap: 6px;
+  }
+  .topbar-title {
+    font-size: 19px;
+  }
+  .topbar-crumbs, .topbar-sep, .topbar-meta {
+    display: none;
+  }
+}

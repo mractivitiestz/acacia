@@ -248,3 +248,38 @@
 .days-tli[open] > :where(.days-summary) > .icon {
   transform: rotate(-90deg);
 }
+.sidenav-head .icon {
+  margin-left: auto;
+  transition: transform var(--d);
+  transform: rotate(90deg);
+}
+.sidenav-head[aria-expanded="false"] .icon {
+  transform: rotate(0deg);
+}
+.shell[data-state="collapsed"] :where(.sidenav-head) .icon {
+  display: none;
+}
+.sidenav-link .icon, .usermenu-item .icon, .listbar-pills .icon, .table-chev .icon {
+  color: var(--muted);
+}
+.sidenav-link[aria-current="page"] .icon {
+  color: var(--brand-text);
+}
+.usermenu-item[aria-checked] > .icon:where(:last-child) {
+  visibility: hidden;
+  color: var(--brand-text);
+}
+.usermenu-item[aria-checked="true"] > .icon:where(:last-child) {
+  visibility: visible;
+}
+.plate-head .icon, .table-type .icon {
+  color: var(--brand-text);
+}
+.usermenu-btn > .icon {
+  color: var(--muted);
+}
+@media (max-width: 700px) {
+  .usermenu-btn > .icon {
+    display: none;
+  }
+}

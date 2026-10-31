@@ -1,0 +1,41 @@
+/* components/listbar.css: .listbar, above a list: the search, the filter pills with their counts, the count, the sort and the view switch */
+.listbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.listbar-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.listbar-end {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+.listbar-count {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.listbar-of {
+  color: var(--muted);
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .listbar-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gut));
+    padding-inline: var(--gut);
+  }
+  .listbar-end {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

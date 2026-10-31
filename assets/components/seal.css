@@ -1,0 +1,14 @@
+/* components/seal.css: .seal, the logo's mark on a brand disc */
+.seal {
+  display: block;
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+.seal-disc {
+  fill: var(--brand);
+}
+.seal-glyph {
+  fill: var(--on-brand);
+  stroke: var(--on-brand);
+}

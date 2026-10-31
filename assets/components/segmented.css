@@ -50,3 +50,16 @@
   align-self: flex-start;
   max-width: 100%;
 }
+.segmented[data-variant="icons"] {
+  flex: none;
+}
+.segmented[data-variant="icons"] .segmented-btn {
+  width: 46px;
+  padding: 0;
+}
+:where(.segmented[data-variant="icons"]) .segmented-btn:first-child {
+  padding-left: 2px;
+}
+:where(.segmented[data-variant="icons"]) .segmented-btn:last-child {
+  padding-right: 2px;
+}

@@ -1,0 +1,229 @@
+/* components/table.css: .table, a data table whose rows open a record; a list of cards at 700px and under */
+.table {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.table-grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.table-th {
+  position: sticky;
+  top: 0;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+  text-align: left;
+  white-space: nowrap;
+  font: 500 12px/1.2 var(--f);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.table-th:first-child {
+  padding-left: 18px;
+}
+.table-th[data-variant="num"] {
+  text-align: right;
+}
+.table-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+.table-sort:hover, .table-sort[aria-sort="ascending"], .table-sort[aria-sort="descending"] {
+  color: var(--ink);
+}
+.table-row {
+  cursor: pointer;
+  transition: background var(--d-fast);
+}
+.table-row:hover {
+  background: color-mix(in srgb, var(--soft) 70%, var(--panel));
+}
+.table-row + .table-row .table-cell {
+  border-top: 1px solid var(--line);
+}
+.table-cell {
+  padding: 10px 14px;
+  vertical-align: middle;
+}
+.table-cell:first-child {
+  padding-left: 18px;
+}
+.table-cell:last-child {
+  padding-right: 12px;
+}
+.table-cell[data-variant="num"] {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.table-cell[data-col="name"] {
+  min-width: 260px;
+}
+.table-cell[data-col="type"] {
+  max-width: 190px;
+}
+.table-cell[data-col="act"] {
+  width: 1%;
+}
+.table-thumb {
+  display: block;
+  flex: none;
+  width: 56px;
+  height: 42px;
+  border-radius: var(--r-s);
+  object-fit: cover;
+  background: var(--soft);
+}
+.table-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.table-title {
+  display: block;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.table-row:hover .table-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.table-sub {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+.table-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.3;
+}
+.table-price {
+  font-weight: 500;
+}
+.table-unit {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.table-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.table-chev {
+  display: none;
+  color: var(--muted);
+}
+.table-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 12px 4px 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14.5px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.views[data-view="grid"] > .table {
+  display: none;
+}
+.views-grid .table-foot {
+  margin-top: 8px;
+  padding-inline: 0;
+  border: 0;
+}
+@media (min-width: 701px) {
+  .table-cell[data-col="meta"] {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .table {
+    border: 0;
+    background: transparent;
+    overflow: visible;
+  }
+  .table-grid, .table-body {
+    display: block;
+  }
+  .table-head {
+    display: none;
+  }
+  .table-row {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) 24px;
+    grid-template-areas: "thumb name chev" "thumb meta chev";
+    column-gap: 12px;
+    row-gap: 6px;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--panel);
+  }
+  .table-row + .table-row .table-cell {
+    border-top: 0;
+  }
+  .table-cell, .table-cell:first-child, .table-cell:last-child {
+    padding: 0;
+  }
+  .table-cell[data-col="name"], .table-cell[data-col="name"] .table-name {
+    display: contents;
+  }
+  .table-cell[data-col="name"] .table-thumb {
+    grid-area: thumb;
+    align-self: start;
+  }
+  .table-cell[data-col="name"] .table-text {
+    grid-area: name;
+    min-width: 0;
+  }
+  .table-cell[data-col="meta"] {
+    grid-area: meta;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+  }
+  .table-cell:not([data-col]), .table-cell[data-col="type"] {
+    display: none;
+  }
+  .table-cell[data-col="act"] {
+    grid-area: chev;
+    width: auto;
+  }
+  .table-cell[data-col="act"] .table-action {
+    display: none;
+  }
+  .table-chev {
+    display: grid;
+  }
+  .table-foot {
+    border: 0;
+    padding: 4px 0;
+  }
+}

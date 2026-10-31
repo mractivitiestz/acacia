@@ -1,0 +1,67 @@
+/* components/shell.css: .shell, the back office's frame: the side navigation and the page; data-state = collapsed (the icon rail, above 1080px) | open (the drawer, 1080px and under) */
+.shell {
+  --side-w: 272px;
+  --top-h: 64px;
+  --bo-max: 1360px;
+  display: grid;
+  grid-template-columns: var(--side-w) minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--bg);
+}
+.shell[data-state="collapsed"] {
+  --side-w: 76px;
+}
+.shell-side {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-drawer);
+  height: 100vh;
+  min-width: 0;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+}
+.shell-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.shell-page {
+  width: 100%;
+  max-width: var(--bo-max);
+  margin-inline: auto;
+  padding: 24px var(--gut) 64px;
+}
+.shell-scrim {
+  display: none;
+}
+@media (max-width: 1080px) {
+  .shell, .shell[data-state="collapsed"] {
+    grid-template-columns: minmax(0, 1fr);
+    --top-h: 60px;
+  }
+  .shell-side {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    transform: translateX(-100%);
+    transition: transform var(--d-slow) var(--ease);
+    visibility: hidden;
+  }
+  .shell[data-state="open"] .shell-side {
+    transform: none;
+    visibility: visible;
+    box-shadow: var(--sh-h);
+  }
+  .shell[data-state="open"] .shell-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-drawer) - 1);
+    background: var(--shade-35);
+  }
+}
+@media (max-width: 700px) {
+  .shell-page {
+    padding-top: 16px;
+  }
+}

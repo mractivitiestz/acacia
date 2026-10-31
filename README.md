@@ -61,7 +61,7 @@ Link `assets/acacia.css` instead while editing the framework, so a change shows 
 | Layer | Holds |
 |---|---|
 | `vendor` | Leaflet's stylesheet |
-| `tokens` | custom properties on `:root` and `[data-palette="N"]` |
+| `tokens` | custom properties on `:root`, `[data-palette="N"]` and the back office's dark theme, `html[data-theme="dark"]` |
 | `base` | reset, element defaults, focus ring, skip link, page states (`data-locked`, `data-header`, …) |
 | `layout` | container, stack and cluster, grids, the detail page's columns |
 | `components` | one file per component |

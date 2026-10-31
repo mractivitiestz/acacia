@@ -1,0 +1,17 @@
+/* components/views.css: .views (one list as a table or as a grid of cards; data-view = table | grid), and the admin card's .cardstate and .cardfoot */
+.views[data-view="table"] > .views-grid {
+  display: none;
+}
+.cardstate {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.cardfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}

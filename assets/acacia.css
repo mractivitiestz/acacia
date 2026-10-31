@@ -2,6 +2,7 @@
 @layer vendor, tokens, base, layout, components, pages, utilities;
 @import url('vendor/leaflet.css') layer(vendor);
 @import url('tokens/palette.css') layer(tokens);
+@import url('tokens/theme.css') layer(tokens);
 @import url('tokens/fixed.css') layer(tokens);
 @import url('tokens/motion.css') layer(tokens);
 @import url('tokens/radius.css') layer(tokens);
@@ -68,6 +69,16 @@
 @import url('components/voucher-pass.css') layer(components);
 @import url('components/day-by-day.css') layer(components);
 @import url('components/capacity-bar.css') layer(components);
+@import url('components/seal.css') layer(components);
+@import url('components/shell.css') layer(components);
+@import url('components/sidenav.css') layer(components);
+@import url('components/topbar.css') layer(components);
+@import url('components/usermenu.css') layer(components);
+@import url('components/listbar.css') layer(components);
+@import url('components/views.css') layer(components);
+@import url('components/table.css') layer(components);
+@import url('components/langs.css') layer(components);
+@import url('components/plate.css') layer(components);
 @import url('pages/home.css') layer(pages);
 @import url('pages/suggest.css') layer(pages);
 @import url('pages/plan.css') layer(pages);

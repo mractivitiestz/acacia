@@ -235,3 +235,18 @@
 .expedition-foot .activity-view {
   margin: 0;
 }
+.grid[data-variant="admin"] .activity {
+  padding: 10px 10px 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  cursor: pointer;
+}
+.grid[data-variant="admin"] .activity-media {
+  border-radius: var(--r-s);
+}
+.grid[data-variant="admin"] .activity-body {
+  padding: 0 6px;
+}
+.grid[data-variant="admin"] .activity-name {
+  font-size: 16.5px;
+}
