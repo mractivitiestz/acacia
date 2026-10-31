@@ -1,0 +1,41 @@
+/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start */
+.listedit {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.listedit-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 44px;
+  gap: 6px;
+  align-items: start;
+  padding: 10px 6px 10px 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+}
+.listedit-row[data-variant="start"] {
+  grid-template-columns: 28px minmax(0, 1fr) 44px;
+}
+.listedit-grip {
+  display: grid;
+  place-items: center;
+  height: 48px;
+  color: var(--muted);
+  cursor: grab;
+}
+.listedit-add {
+  justify-self: start;
+}
+@media (max-width: 700px) {
+  .listedit-row {
+    grid-template-columns: 24px minmax(0, 1fr) 44px;
+    padding-right: 2px;
+  }
+}
+.photoset-meta :where(.listedit-grip) {
+  height: 40px;
+  width: 28px;
+}

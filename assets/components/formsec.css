@@ -1,0 +1,69 @@
+/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot */
+.formsecs {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.formsec {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  scroll-margin-top: calc(var(--top-h) + 16px);
+}
+.editor[data-langs] .formsec {
+  scroll-margin-top: calc(var(--top-h) + 76px);
+}
+.formsec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding: 20px 24px 0;
+}
+.formsec-title {
+  margin: 0;
+  font: 600 20px/1.2 var(--fh);
+  letter-spacing: -.01em;
+}
+.formsec-note {
+  font-size: 14px;
+  color: var(--muted);
+}
+.formsec-body {
+  display: grid;
+  gap: 18px;
+  padding: 16px 24px 24px;
+}
+.formsec-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px;
+  border-top: 1px solid var(--line);
+}
+.formsec-foot .formsec-note {
+  margin-right: auto;
+}
+.formsec-map {
+  height: 300px;
+  border-radius: var(--r-s);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.mapdot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 3px var(--panel), 0 2px 6px var(--shade-35);
+  cursor: grab;
+}
+@media (max-width: 700px) {
+  .formsec-head {
+    padding: 16px 16px 0;
+  }
+}

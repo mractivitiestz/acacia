@@ -219,3 +219,7 @@
     display: none;
   }
 }
+.contents :where(.sidenav-link) {
+  min-height: 40px;
+  font-size: 14.5px;
+}

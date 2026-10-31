@@ -325,3 +325,11 @@
 .tile-flags .status[data-variant="draft"], .tile-flags .status[data-variant="off"] {
   background: var(--panel);
 }
+.photoset-item :where(.status) {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+.pills[data-variant="wrap"] > :where(.pill:last-child) {
+  margin-right: 0;
+}

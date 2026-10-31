@@ -1,0 +1,69 @@
+/* components/langtabs.css: .langtabs, the language a page is edited in, a tab each (aria-selected) with its state: a filled dot complete, an outlined dot and the count missing */
+.langtabs {
+  position: sticky;
+  top: var(--top-h);
+  z-index: var(--z-tabs);
+  display: flex;
+  gap: 4px;
+  margin: -24px 0 0;
+  padding-top: 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.langtabs-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 1px 14px 0;
+  border: 0;
+  border-radius: var(--r-s) var(--r-s) 0 0;
+  background: transparent;
+  font: 500 15px/1 var(--f);
+  color: var(--muted);
+  cursor: pointer;
+}
+.langtabs-tab:hover {
+  color: var(--ink);
+  background: var(--soft);
+}
+.langtabs-tab[aria-selected="true"] {
+  font-weight: 600;
+  color: var(--ink);
+}
+.langtabs-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -1px;
+  height: 3px;
+  border-radius: var(--r-pill) var(--r-pill) 0 0;
+  background: var(--brand);
+}
+.langtabs-code {
+  font: 600 12px/1 var(--f);
+  letter-spacing: .05em;
+  color: var(--muted);
+}
+.langtabs-tab[aria-selected="true"] .langtabs-code {
+  color: var(--brand-text);
+}
+.langtabs-miss {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+}
+@media (max-width: 700px) {
+  .langtabs {
+    margin-top: -16px;
+    padding-top: 8px;
+    margin-inline: calc(-1 * var(--gut));
+    padding-inline: calc(var(--gut) - 6px);
+    gap: 0;
+  }
+  .langtabs-name {
+    display: none;
+  }
+}

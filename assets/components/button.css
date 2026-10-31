@@ -182,3 +182,10 @@
     padding-inline: 12px;
   }
 }
+.formsec-head :where(.link) {
+  margin-left: auto;
+  min-height: 0;
+}
+.listedit-row > :where(.iconbtn) {
+  color: var(--muted);
+}

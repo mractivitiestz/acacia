@@ -41,3 +41,8 @@
 .btns[data-align="center"] {
   justify-content: center;
 }
+.pills[data-variant="wrap"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

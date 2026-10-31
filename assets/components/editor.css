@@ -1,0 +1,15 @@
+/* components/editor.css: .editor, an edit page: the contents column beside the sections (data-variant single for one column) */
+.editor {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.editor[data-variant="single"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (max-width: 1080px) {
+  .editor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

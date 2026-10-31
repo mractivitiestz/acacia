@@ -87,6 +87,13 @@
 @import url('components/picker.css') layer(components);
 @import url('components/inspector.css') layer(components);
 @import url('components/langfield.css') layer(components);
+@import url('components/editor.css') layer(components);
+@import url('components/contents.css') layer(components);
+@import url('components/formsec.css') layer(components);
+@import url('components/langtabs.css') layer(components);
+@import url('components/listedit.css') layer(components);
+@import url('components/switch.css') layer(components);
+@import url('components/photoset.css') layer(components);
 @import url('components/dialog.css') layer(components);
 @import url('components/menu.css') layer(components);
 @import url('pages/home.css') layer(pages);

@@ -67,3 +67,17 @@
     gap: 8px;
   }
 }
+.langfield[data-variant="page"] {
+  min-width: 0;
+}
+.listedit-row :where(.langfield) {
+  gap: 6px;
+}
+.listedit-row :where(.langfield-code),
+.listedit-row :where(.langfield) :is(input, textarea) {
+  min-height: 44px;
+  height: 44px;
+}
+.listedit-row :where(.langfield) input {
+  padding-block: 9px;
+}

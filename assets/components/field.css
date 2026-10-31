@@ -302,3 +302,45 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+.formsec :where(.form) {
+  gap: 18px;
+}
+.formsec :where(.field) {
+  font-size: 14px;
+}
+.formsec :where(.field) textarea {
+  min-height: 96px;
+  line-height: 1.45;
+  resize: vertical;
+}
+.formsec :where(.field-help) {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.formsec :where(.options) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.formsec :where(.options[data-variant="stack"]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.formsec :where(.options-legend) {
+  margin-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}
+.listedit-row :where(.form) {
+  gap: 12px;
+}
+.listedit-row :where(.field) input {
+  min-height: 44px;
+  height: 44px;
+}
+.listedit-row :where(.field .select) {
+  min-height: 44px;
+}
+.listedit-row :where(.select) select {
+  height: 42px;
+}
