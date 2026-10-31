@@ -1,0 +1,97 @@
+/* components/selbar.css: .selbar, what is chosen in the library and where it goes, held at the foot of the screen, its actions' forms (.selbar-form) laid out as the bar itself; .tray, the chosen photos in a row, each with its number */
+.selbar {
+  position: sticky;
+  bottom: 16px;
+  z-index: var(--z-tabs);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 10px 12px 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--raised);
+  box-shadow: var(--sh-h);
+}
+.selbar-end {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.library .selbar-end {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.selbar-to {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.selbar-what {
+  font-size: 15px;
+}
+.selbar-lead {
+  font-weight: 600;
+}
+.selbar-sub {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.selbar-form {
+  display: contents;
+}
+.tray {
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tray::-webkit-scrollbar {
+  display: none;
+}
+.tray-item {
+  position: relative;
+  flex: none;
+  width: 60px;
+  height: 45px;
+  border-radius: var(--r-s);
+  overflow: hidden;
+}
+.tray-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tray-num {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 1px 5px 0;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--on-brand);
+  font: 600 11.5px/1 var(--f);
+}
+@media (max-width: 700px) {
+  .selbar {
+    padding: 10px 12px;
+  }
+  .selbar-sub {
+    display: none;
+  }
+  .selbar .tray {
+    display: none;
+  }
+  .library .selbar-end {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

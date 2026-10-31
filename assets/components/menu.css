@@ -1,0 +1,26 @@
+/* components/menu.css: .menu, a small list of choices under the button that opens it (data-align="end" to its right edge; its items are .usermenu-item), and .popwrap, the anchor that holds the button and its menu */
+.popwrap {
+  position: relative;
+  display: inline-flex;
+}
+.menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: var(--z-sheet);
+  width: 260px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--raised);
+  box-shadow: var(--sh-h);
+}
+.menu[data-align="end"] {
+  left: auto;
+  right: 0;
+}
+@media (max-width: 700px) {
+  .menu {
+    width: min(260px, calc(100vw - 32px));
+  }
+}

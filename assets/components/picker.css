@@ -1,0 +1,9 @@
+/* components/picker.css: .picker-note, a short line with an icon above the photos (the photos just added from the library) */
+.picker-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 12px;
+  font-size: 13.5px;
+  color: var(--muted);
+}

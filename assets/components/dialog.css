@@ -1,0 +1,93 @@
+/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its form (.dialog-form, laid out as the dialog itself), its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint */
+.dialog {
+  width: min(520px, calc(100vw - 32px));
+  max-height: min(720px, calc(100vh - 48px));
+  padding: 0;
+  border: 0;
+  border-radius: var(--r);
+  background: var(--raised);
+  color: var(--ink);
+  box-shadow: var(--sh-h);
+}
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+.dialog-form {
+  display: contents;
+}
+.dialog::backdrop {
+  background: var(--shade-45);
+}
+.dialog-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px 14px 24px;
+  border-bottom: 1px solid var(--line);
+}
+.dialog-title {
+  margin: 0 auto 0 0;
+  font: 600 20px/1.2 var(--fh);
+  letter-spacing: -.01em;
+}
+.dialog-body {
+  display: grid;
+  gap: 14px;
+  min-height: 0;
+  padding: 18px 24px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.dialog-foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 24px;
+  border-top: 1px solid var(--line);
+}
+.dialog-hint {
+  margin-right: auto;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.dialog-folders {
+  display: grid;
+  gap: 2px;
+}
+.dialog-folder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 10px 0 calc(10px + var(--depth, 0) * 22px);
+  border-radius: var(--r-s);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.dialog-folder:hover {
+  background: var(--soft);
+}
+.dialog-folder:has(input:checked) {
+  background: var(--tint);
+  color: var(--brand-text);
+  font-weight: 600;
+}
+.dialog-folder input {
+  accent-color: var(--brand);
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+@media (max-width: 1080px) {
+  .dialog-hint {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .dialog-head, .dialog-foot {
+    padding-inline: 16px;
+  }
+}

@@ -319,3 +319,9 @@
 .pill-text {
   white-space: nowrap;
 }
+.tile-flags .status {
+  box-shadow: var(--sh);
+}
+.tile-flags .status[data-variant="draft"], .tile-flags .status[data-variant="off"] {
+  background: var(--panel);
+}
