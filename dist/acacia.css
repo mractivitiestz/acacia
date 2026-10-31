@@ -1571,10 +1571,14 @@ body[data-locked] {
 .btns[data-align="center"] {
   justify-content: center;
 }
+/* a wrapping row never scrolls sideways, so it keeps neither the scroll nor its fade, and a menu opened from one of its pills is not clipped */
 .pills[data-variant="wrap"] {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  overflow: visible;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 }
 
