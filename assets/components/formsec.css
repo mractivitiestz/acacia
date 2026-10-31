@@ -66,4 +66,10 @@
   .formsec-head {
     padding: 16px 16px 0;
   }
+  .formsec-body {
+    padding: 14px 16px 18px;
+  }
+  .formsec-foot {
+    padding: 12px 16px;
+  }
 }

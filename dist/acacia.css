@@ -5111,6 +5111,10 @@ body[data-locked] {
   left: 8px;
   top: 8px;
 }
+.photoset-item[data-state="new"] :where(.status) {
+  left: auto;
+  right: 8px;
+}
 .pills[data-variant="wrap"] > :where(.pill:last-child) {
   margin-right: 0;
 }
@@ -5444,7 +5448,12 @@ body[data-locked] {
 .formsec :where(.options[data-variant="stack"]) {
   grid-template-columns: minmax(0, 1fr);
 }
-.formsec :where(.options-legend) {
+@media (max-width: 700px) {
+  .formsec .options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.formsec .options-legend {
   margin-bottom: 8px;
   font-size: 14px;
   letter-spacing: 0;
@@ -5458,10 +5467,10 @@ body[data-locked] {
   min-height: 44px;
   height: 44px;
 }
-.listedit-row :where(.field .select) {
+.listedit-row :where(.field) .select {
   min-height: 44px;
 }
-.listedit-row :where(.select) select {
+.listedit-row :where(.field) .select select {
   height: 42px;
 }
 }
@@ -8253,16 +8262,16 @@ body[data-locked] {
 .formsec :where(.months) {
   gap: 4px;
 }
-.formsec :where(.month) {
+.formsec .month {
   cursor: pointer;
   border: 0;
   background: transparent;
   font: inherit;
 }
-.formsec :where(.month):hover {
+.formsec .month:hover {
   background: var(--soft);
 }
-.formsec :where(.month[data-state="good"]):hover {
+.formsec :where(.month)[data-state="good"]:hover {
   background: var(--tint);
 }
 }
@@ -12490,6 +12499,12 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   .formsec-head {
     padding: 16px 16px 0;
   }
+  .formsec-body {
+    padding: 14px 16px 18px;
+  }
+  .formsec-foot {
+    padding: 12px 16px;
+  }
 }
 }
 
@@ -12666,7 +12681,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/photoset.css */
 @layer components {
-/* components/photoset.css: .photoset, an entity's ordered photos, the first the cover (aria-current); each with its grip, name and menu; the add tile */
+/* components/photoset.css: .photoset, an entity's ordered photos, the first the cover (aria-current), one just added from the library marked (data-state="new"); each with its grip, name and menu; the add tile */
 .photoset {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
@@ -12686,6 +12701,10 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   overflow: hidden;
 }
 .photoset-item[aria-current="true"] {
+  border-color: var(--brand);
+  box-shadow: inset 0 0 0 1px var(--brand);
+}
+.photoset-item[data-state="new"] {
   border-color: var(--brand);
   box-shadow: inset 0 0 0 1px var(--brand);
 }

@@ -117,15 +117,15 @@
 .formsec :where(.months) {
   gap: 4px;
 }
-.formsec :where(.month) {
+.formsec .month {
   cursor: pointer;
   border: 0;
   background: transparent;
   font: inherit;
 }
-.formsec :where(.month):hover {
+.formsec .month:hover {
   background: var(--soft);
 }
-.formsec :where(.month[data-state="good"]):hover {
+.formsec :where(.month)[data-state="good"]:hover {
   background: var(--tint);
 }

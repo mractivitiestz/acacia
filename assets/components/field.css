@@ -324,7 +324,12 @@
 .formsec :where(.options[data-variant="stack"]) {
   grid-template-columns: minmax(0, 1fr);
 }
-.formsec :where(.options-legend) {
+@media (max-width: 700px) {
+  .formsec .options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.formsec .options-legend {
   margin-bottom: 8px;
   font-size: 14px;
   letter-spacing: 0;
@@ -338,9 +343,9 @@
   min-height: 44px;
   height: 44px;
 }
-.listedit-row :where(.field .select) {
+.listedit-row :where(.field) .select {
   min-height: 44px;
 }
-.listedit-row :where(.select) select {
+.listedit-row :where(.field) .select select {
   height: 42px;
 }

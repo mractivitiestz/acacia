@@ -330,6 +330,10 @@
   left: 8px;
   top: 8px;
 }
+.photoset-item[data-state="new"] :where(.status) {
+  left: auto;
+  right: 8px;
+}
 .pills[data-variant="wrap"] > :where(.pill:last-child) {
   margin-right: 0;
 }
