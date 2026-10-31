@@ -1,4 +1,4 @@
-/* components/selbar.css: .selbar, what is chosen in the library and where it goes, held at the foot of the screen; .tray, the chosen photos in a row, each with its number */
+/* components/selbar.css: .selbar, what is chosen in the library and where it goes, held at the foot of the screen, its actions' forms (.selbar-form) laid out as the bar itself; .tray, the chosen photos in a row, each with its number */
 .selbar {
   position: sticky;
   bottom: 16px;
@@ -38,6 +38,9 @@
 .selbar-sub {
   font-size: 13.5px;
   color: var(--muted);
+}
+.selbar-form {
+  display: contents;
 }
 .tray {
   display: flex;

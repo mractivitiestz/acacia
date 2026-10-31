@@ -1,4 +1,4 @@
-/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint */
+/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its form (.dialog-form, laid out as the dialog itself), its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint */
 .dialog {
   width: min(520px, calc(100vw - 32px));
   max-height: min(720px, calc(100vh - 48px));
@@ -12,6 +12,9 @@
 .dialog[open] {
   display: flex;
   flex-direction: column;
+}
+.dialog-form {
+  display: contents;
 }
 .dialog::backdrop {
   background: var(--shade-45);

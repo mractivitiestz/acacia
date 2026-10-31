@@ -2639,10 +2639,10 @@ body[data-locked] {
   width: 46px;
   padding: 0;
 }
-:where(.segmented[data-variant="icons"]) .segmented-btn:first-child {
+.segmented[data-variant="icons"] > :first-child {
   padding-left: 2px;
 }
-:where(.segmented[data-variant="icons"]) .segmented-btn:last-child {
+.segmented[data-variant="icons"] > :last-child {
   padding-right: 2px;
 }
 }
@@ -11936,7 +11936,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/selbar.css */
 @layer components {
-/* components/selbar.css: .selbar, what is chosen in the library and where it goes, held at the foot of the screen; .tray, the chosen photos in a row, each with its number */
+/* components/selbar.css: .selbar, what is chosen in the library and where it goes, held at the foot of the screen, its actions' forms (.selbar-form) laid out as the bar itself; .tray, the chosen photos in a row, each with its number */
 .selbar {
   position: sticky;
   bottom: 16px;
@@ -11976,6 +11976,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 .selbar-sub {
   font-size: 13.5px;
   color: var(--muted);
+}
+.selbar-form {
+  display: contents;
 }
 .tray {
   display: flex;
@@ -12244,7 +12247,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/dialog.css */
 @layer components {
-/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint */
+/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its form (.dialog-form, laid out as the dialog itself), its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint */
 .dialog {
   width: min(520px, calc(100vw - 32px));
   max-height: min(720px, calc(100vh - 48px));
@@ -12258,6 +12261,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 .dialog[open] {
   display: flex;
   flex-direction: column;
+}
+.dialog-form {
+  display: contents;
 }
 .dialog::backdrop {
   background: var(--shade-45);
