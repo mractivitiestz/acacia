@@ -1,0 +1,146 @@
+/* components/library.css: .library, the photo library in two modes (data-mode="library" | "pick", data-variant="tree", data-searching): its folders beside the photos, the head, the photos and the drop overlay; .libhead, .libmiss, .libwarn */
+.library {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.library[data-variant="tree"] {
+  grid-template-columns: 264px minmax(0, 1fr);
+}
+.library-nav {
+  position: sticky;
+  top: calc(var(--top-h) + 24px);
+  min-width: 0;
+}
+.library-body {
+  min-width: 0;
+}
+.library-main {
+  position: relative;
+}
+.library[data-mode="pick"] [data-only="library"], .library[data-mode="library"] [data-only="pick"],
+body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-only="pick"] {
+  display: none;
+}
+.library:not([data-searching]) [data-col-folder] {
+  display: none;
+}
+.library-drop {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 320px;
+  padding: 120px 24px 24px;
+  border: 2px dashed var(--brand);
+  border-radius: var(--r);
+  background: color-mix(in srgb, var(--tint) 96%, transparent);
+  color: var(--brand-text);
+  text-align: center;
+}
+.library-droptitle {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+}
+.library-dropnote {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.libhead {
+  display: grid;
+  gap: 0;
+  margin: -6px 0 12px;
+}
+.libhead-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  min-height: 48px;
+}
+.libhead-title {
+  margin: 0;
+  min-width: 0;
+  font: 600 22px/1.2 var(--fh);
+  letter-spacing: -.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.libhead-count {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.libhead-end {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.libhead-toggle {
+  display: none;
+}
+.libmiss {
+  color: var(--muted);
+  font-style: italic;
+}
+.libwarn {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  box-shadow: inset 0 0 0 1.5px var(--line);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.libwarn-title {
+  display: block;
+  font-weight: 600;
+}
+.libwarn-list {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+.libwarn-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 1080px) {
+  .library[data-variant="tree"] {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .library-nav {
+    position: static;
+    display: none;
+    order: -1;
+  }
+  .library-nav[data-open] {
+    display: block;
+    margin-bottom: 16px;
+  }
+  .library-body {
+    display: contents;
+  }
+  .libhead {
+    order: -2;
+  }
+  .libhead-toggle {
+    display: inline-flex;
+  }
+}
+@media (max-width: 700px) {
+  .libhead {
+    margin-top: -4px;
+  }
+  .libhead-title {
+    font-size: 19px;
+  }
+}

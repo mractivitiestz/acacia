@@ -1,4 +1,4 @@
-/* components/plate.css: .plates and .plate, the dashboard of Today: a plate's head (icon, title, its number), its rows, its stats, its empty state and its foot */
+/* components/plate.css: .plates and .plate, the dashboard of Today: a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
 .plates {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -99,6 +99,67 @@
   font-size: 13.5px;
   font-weight: 500;
   color: var(--muted);
+}
+.plate-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.plate-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+.plate-row:first-child {
+  border-top: 0;
+}
+.plate-row:hover .plate-what {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.plate-who {
+  flex: 1;
+  min-width: 0;
+}
+.plate-what {
+  display: block;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plate-note {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plate-when {
+  flex: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.inspector[data-variant="drawer"] .plate-row {
+  min-height: 52px;
+}
+:where(.inspector[data-variant="drawer"]) .plate-who:hover .plate-what {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.inspector[data-variant="drawer"] .plate-empty {
+  border-top: 0;
 }
 @media (max-width: 1080px) {
   .plates {

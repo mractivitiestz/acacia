@@ -1,4 +1,4 @@
-/* components/table.css: .table, a data table whose rows open a record; a list of cards at 700px and under */
+/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset); a list of cards at 700px and under; .table-clip */
 .table {
   overflow-x: auto;
   overflow-y: hidden;
@@ -155,6 +155,55 @@
   padding-inline: 0;
   border: 0;
 }
+.table-clip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.table-cell[data-variant="nowrap"] {
+  white-space: nowrap;
+}
+:where(.table[data-variant="lib"]) .table-th[data-col="check"], :where(.table[data-variant="lib"]) .table-cell[data-col="check"] {
+  width: 1%;
+  padding-right: 0;
+}
+:where(.table[data-variant="lib"]) .table-title {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+:where(.table[data-variant="lib"]) .table-text {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+:where(.table[data-variant="lib"]) .table-row[data-selected], :where(.table[data-variant="lib"]) .table-row[data-open] {
+  background: var(--tint);
+}
+:where(.table[data-variant="lib"]) .table-row[data-inset] {
+  cursor: default;
+}
+:where(.table[data-variant="lib"]) .table-row[data-inset] :is(.table-thumb, .table-title) {
+  opacity: .5;
+}
+:where(.table[data-variant="lib"]) .table-row[data-frow] .table-title {
+  font-weight: 600;
+}
+.table[data-variant="lib"] .table-cell {
+  font-size: 14.5px;
+}
+:where(.table[data-variant="lib"]) .table-cell[data-col="name"] {
+  min-width: 220px;
+}
+:where(.table[data-variant="lib"]) .table-cell[data-col="credit"] {
+  min-width: 150px;
+  max-width: 190px;
+}
 @media (min-width: 701px) {
   .table-cell[data-col="meta"] {
     display: none;
@@ -225,5 +274,14 @@
   .table-foot {
     border: 0;
     padding: 4px 0;
+  }
+  .table-cell[data-col="check"], .table-th[data-col="check"], :where(.table[data-variant="lib"]) .table-cell[data-col="credit"] {
+    display: none;
+  }
+  :where(.table[data-variant="lib"]) .table-cell[data-col="name"] {
+    min-width: 0;
+  }
+  :where(.table[data-variant="lib"]) .table-sub[data-col-folder] {
+    display: none;
   }
 }

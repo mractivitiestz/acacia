@@ -1,4 +1,4 @@
-/* components/field.css: .field, .form, .select, .fieldset, .check, .option, .options, .error */
+/* components/field.css: .field, .field-help, .form, .select, .fieldset, .option, .options, .error */
 .select {
   position: relative;
   display: inline-flex;
@@ -58,6 +58,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px 18px;
   align-content: start;
+}
+.form[data-columns="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.form[data-columns="1"] {
+  grid-template-columns: minmax(0, 1fr);
 }
 .field {
   display: flex;
@@ -272,31 +278,27 @@
   font: 800 11px/1 var(--f);
   letter-spacing: .03em;
 }
-.check {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  min-height: 44px;
-  padding: 4px 0;
-  font-size: 14.5px;
-  font-weight: 600;
-  line-height: 1.45;
-  cursor: pointer;
+.inspector-sec .field, .dialog-body .field {
+  font-size: 14px;
 }
-.check input {
-  flex: none;
-  width: 22px;
-  height: 22px;
-  margin: 0;
-  accent-color: var(--brand);
-}
-.check input[aria-invalid="true"] {
-  outline: 2px solid var(--error);
-  outline-offset: 2px;
+.inspector[data-variant="drawer"] .field-help {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
 }
 
 @media (max-width:700px) {
   .fieldset {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1080px) {
+  .form[data-columns="3"] {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .form[data-columns="3"] {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

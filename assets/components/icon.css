@@ -283,3 +283,40 @@
     display: none;
   }
 }
+.plate-row > .icon {
+  flex: none;
+  color: var(--muted);
+}
+.folders-link > .icon {
+  flex: none;
+  color: var(--muted);
+}
+.folders-link[aria-current="true"] > .icon, .folders-link[data-trail] > .icon {
+  color: var(--brand-text);
+}
+.folders-fold .icon {
+  transition: transform var(--d);
+}
+.folders-fold[aria-expanded="true"] .icon {
+  transform: rotate(90deg);
+}
+.folders-body > .icon {
+  grid-row: span 2;
+  color: var(--brand-text);
+}
+.tile-check .icon {
+  position: relative;
+}
+.check[data-as="button"] .icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.libwarn > .icon {
+  flex: none;
+  margin-top: 1px;
+  color: var(--brand-text);
+}
+.dialog-folder .icon {
+  color: var(--muted);
+}

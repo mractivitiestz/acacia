@@ -79,6 +79,16 @@
 @import url('components/table.css') layer(components);
 @import url('components/langs.css') layer(components);
 @import url('components/plate.css') layer(components);
+@import url('components/check.css') layer(components);
+@import url('components/library.css') layer(components);
+@import url('components/folders.css') layer(components);
+@import url('components/tiles.css') layer(components);
+@import url('components/selbar.css') layer(components);
+@import url('components/picker.css') layer(components);
+@import url('components/inspector.css') layer(components);
+@import url('components/langfield.css') layer(components);
+@import url('components/dialog.css') layer(components);
+@import url('components/menu.css') layer(components);
 @import url('pages/home.css') layer(pages);
 @import url('pages/suggest.css') layer(pages);
 @import url('pages/plan.css') layer(pages);
