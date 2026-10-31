@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use MrActivities\DesignSystem\Service\PaletteService;
+use MrActivities\Acacia\Service\PaletteService;
 
 require __DIR__.'/../vendor/autoload.php';
 

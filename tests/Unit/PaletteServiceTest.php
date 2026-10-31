@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Tests\Unit;
+namespace MrActivities\Acacia\Tests\Unit;
 
-use MrActivities\DesignSystem\Service\PaletteService;
+use MrActivities\Acacia\Service\PaletteService;
 use PHPUnit\Framework\TestCase;
 
 /**

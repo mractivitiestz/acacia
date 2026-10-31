@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Service;
+namespace MrActivities\Acacia\Service;
 
 /**
  * The palette formula of the design engine (site/assets/js/brand.js): the primary (ink) and the accent are used as they are,

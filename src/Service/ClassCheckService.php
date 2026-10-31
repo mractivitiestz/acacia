@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Service;
+namespace MrActivities\Acacia\Service;
 
 /**
  * Finds the hooks a template, page or script uses that the framework does not define: every class (in class

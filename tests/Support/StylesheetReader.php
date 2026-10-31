@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Tests\Support;
+namespace MrActivities\Acacia\Tests\Support;
 
 /**
  * Reads the package's stylesheets into flat rules, so the conformance test can reason about selectors and declarations.
@@ -25,7 +25,7 @@ final class StylesheetReader
                 continue;
             }
             $path = substr($file->getPathname(), \strlen($this->assetsDir) + 1);
-            if (str_ends_with($path, '.css') && 'mractivities.css' !== $path) {
+            if (str_ends_with($path, '.css') && 'acacia.css' !== $path) {
                 $files[] = $path;
             }
         }

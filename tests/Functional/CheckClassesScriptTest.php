@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Tests\Functional;
+namespace MrActivities\Acacia\Tests\Functional;
 
 use PHPUnit\Framework\TestCase;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem;
+namespace MrActivities\Acacia;
 
 use Symfony\Component\AssetMapper\AssetMapperInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,17 +10,17 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
- * Exposes assets/ to AssetMapper under the namespace @mractivities/design-system, so a layout links
- * {{ asset('@mractivities/design-system/mractivities.css') }}. The bundle defines no services.
+ * Exposes assets/ to AssetMapper under the namespace @mractivities/acacia, so a layout links
+ * {{ asset('@mractivities/acacia/acacia.css') }}. The bundle defines no services.
  *
  * Docs: https://symfony.com/doc/current/frontend/create_ux_bundle.html ("Specifics for Asset Mapper": prepend
  * framework.asset_mapper.paths with the bundle's assets directory and a namespace) and
  * https://symfony.com/doc/current/frontend/asset_mapper.html#framework-asset-mapper-paths ("give each path a namespace").
  * Patterned on vendor/symfony/ux-turbo/src/DependencyInjection/TurboExtension.php (prepend() and isAssetMapperAvailable()).
  */
-final class MrActivitiesDesignSystemBundle extends AbstractBundle
+final class MrActivitiesAcaciaBundle extends AbstractBundle
 {
-    public const string ASSET_NAMESPACE = '@mractivities/design-system';
+    public const string ASSET_NAMESPACE = '@mractivities/acacia';
 
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {

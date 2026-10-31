@@ -1,4 +1,4 @@
-# mractivities/design-system
+# mractivities/acacia
 
 The Mr Activities CSS framework: plain CSS in native cascade layers, cut from the design engine's stylesheet, shipped
 as a Composer package that is also a Symfony bundle exposing its files to AssetMapper. No Node, no preprocessor.
@@ -17,28 +17,28 @@ as a Composer package that is also a Symfony bundle exposing its files to AssetM
 
 ## What it is
 
-- `assets/mractivities.css`: the entry. It declares the layer order once and imports every file into its layer.
+- `assets/acacia.css`: the entry. It declares the layer order once and imports every file into its layer.
 - `assets/tokens/`: custom properties only (palette, fixed colours, type, space, radius, shadow, motion, z) and
   `breakpoints.md`.
 - `assets/base/`, `assets/layout/`, `assets/components/` (one file per component, with its states and sizes),
   `assets/pages/` (what belongs to one page kind), `assets/utilities/utilities.css`.
 - `assets/vendor/leaflet.css`: Leaflet 1.9.4's stylesheet (BSD 2-Clause, `assets/vendor/LEAFLET-LICENSE`), in the
   lowest layer so the map skin overrides it without `!important`.
-- `dist/mractivities.css`: every file concatenated in layer order, for production.
+- `dist/acacia.css`: every file concatenated in layer order, for production.
 
 ## Install
 
 **Symfony (AssetMapper).**
 
 ```bash
-composer require mractivities/design-system
+composer require mractivities/acacia
 ```
 
-Register `MrActivities\DesignSystem\MrActivitiesDesignSystemBundle` (Flex does it). Its `prependExtension()` adds
-`assets/` to `framework.asset_mapper.paths` under the namespace `@mractivities/design-system`, so the layout links:
+Register `MrActivities\Acacia\MrActivitiesAcaciaBundle` (Flex does it). Its `prependExtension()` adds
+`assets/` to `framework.asset_mapper.paths` under the namespace `@mractivities/acacia`, so the layout links:
 
 ```twig
-<link rel="stylesheet" href="{{ asset('@mractivities/design-system/mractivities.css') }}">
+<link rel="stylesheet" href="{{ asset('@mractivities/acacia/acacia.css') }}">
 ```
 
 AssetMapper versions the entry and every file it imports. The bundle defines no services.
@@ -47,10 +47,10 @@ AssetMapper versions the entry and every file it imports. The bundle defines no 
 by side) and link the file directly:
 
 ```html
-<link rel="stylesheet" href="{root}../vendor/mractivities/design-system/dist/mractivities.css">
+<link rel="stylesheet" href="{root}../vendor/mractivities/acacia/dist/acacia.css">
 ```
 
-Link `assets/mractivities.css` instead while editing the framework, so a change shows without a build.
+Link `assets/acacia.css` instead while editing the framework, so a change shows without a build.
 
 ## Layers
 
@@ -91,7 +91,7 @@ The C7 scheme:
 ## Adding a component
 
 1. Pick a one-word block name and create `assets/components/<name>.css`; its first line names its blocks.
-2. Import it in `assets/mractivities.css` with `layer(components)`.
+2. Import it in `assets/acacia.css` with `layer(components)`.
 3. Style the block and its parts with classes, variants with `[data-*]`, states with `[aria-*]`, values with tokens.
 4. Add its examples to `docs/index.html`.
 5. Run `composer build`, then `composer check`.
@@ -99,7 +99,7 @@ The C7 scheme:
 ## Docs
 
 `docs/index.html` shows every component the engine's pages render, with its variants and states and the HTML to
-copy, styled by `dist/mractivities.css`; the palette and logo pickers switch `data-palette` and `data-logo`. Open it
+copy, styled by `dist/acacia.css`; the palette and logo pickers switch `data-palette` and `data-logo`. Open it
 through any static server from the package root, for example `php -S 127.0.0.1:8000` and
 `http://127.0.0.1:8000/docs/`. Screenshots at 1440 and 390 px are in `docs/shots/`.
 
@@ -110,7 +110,7 @@ composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit, bin/ch
 ```
 
 - `bin/check-classes.php [--engine=<dir>] [file ...]`: every class a page, template or script uses (class attributes,
-  script selectors, `classList` calls, `className` values) must be defined by `dist/mractivities.css`, and every
+  script selectors, `classList` calls, `className` values) must be defined by `dist/acacia.css`, and every
   `data-variant`, `data-size`, `data-width`, `data-as`, `data-state` and `data-columns` value must be one a selector
   names; Leaflet's `leaflet-` classes and the docs' own `docs-` classes are skipped. With no file it checks
   `docs/index.html`; `--engine` (or `MRACTIVITIES_ENGINE`, which `composer check` passes through) adds the design
@@ -124,7 +124,7 @@ composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit, bin/ch
   is fresh.
 - `tests/Unit/ClassCheckServiceTest.php` and `tests/Functional/CheckClassesScriptTest.php`: the class check above.
 - `tests/Functional/BundleTest.php`: a kernel with FrameworkBundle and this bundle resolves
-  `@mractivities/design-system/mractivities.css` through AssetMapper.
+  `@mractivities/acacia/acacia.css` through AssetMapper.
 
 ## Palettes
 

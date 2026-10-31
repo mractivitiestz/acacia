@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Tests\Unit;
+namespace MrActivities\Acacia\Tests\Unit;
 
-use MrActivities\DesignSystem\Service\ClassCheckService;
+use MrActivities\Acacia\Service\ClassCheckService;
 use PHPUnit\Framework\TestCase;
 
 final class ClassCheckServiceTest extends TestCase

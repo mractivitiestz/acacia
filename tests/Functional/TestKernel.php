@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Tests\Functional;
+namespace MrActivities\Acacia\Tests\Functional;
 
-use MrActivities\DesignSystem\MrActivitiesDesignSystemBundle;
+use MrActivities\Acacia\MrActivitiesAcaciaBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -22,7 +22,7 @@ final class TestKernel extends Kernel
     public function registerBundles(): iterable
     {
         yield new FrameworkBundle();
-        yield new MrActivitiesDesignSystemBundle();
+        yield new MrActivitiesAcaciaBundle();
     }
 
     public function getProjectDir(): string

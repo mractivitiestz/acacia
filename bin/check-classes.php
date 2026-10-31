@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use MrActivities\DesignSystem\Service\ClassCheckService;
+use MrActivities\Acacia\Service\ClassCheckService;
 
 require __DIR__.'/../vendor/autoload.php';
 
 /*
  * Reports every class, and every value of a data-* attribute the framework styles, that a page, template or script
- * uses and dist/mractivities.css does not define. Exits 1 when it finds any.
+ * uses and dist/acacia.css does not define. Exits 1 when it finds any.
  *
  *   php bin/check-classes.php [--engine=<design engine root>] [file ...]
  *
@@ -46,7 +46,7 @@ if (null !== $engine) {
     }
 }
 
-$service = new ClassCheckService((string) file_get_contents($root.'/dist/mractivities.css'), ['leaflet-', 'docs-']);
+$service = new ClassCheckService((string) file_get_contents($root.'/dist/acacia.css'), ['leaflet-', 'docs-']);
 $count = 0;
 foreach ($files as $file) {
     $source = @file_get_contents($file);

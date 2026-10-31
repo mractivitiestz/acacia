@@ -7,7 +7,7 @@
          failOnRisky="true"
          failOnWarning="true">
     <testsuites>
-        <testsuite name="design-system">
+        <testsuite name="acacia">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

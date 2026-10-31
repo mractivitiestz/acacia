@@ -1,4 +1,4 @@
-/* mractivities/design-system: link this file while developing, dist/mractivities.css in production. */
+/* mractivities/acacia: link this file while developing, dist/acacia.css in production. */
 @layer vendor, tokens, base, layout, components, pages, utilities;
 @import url('vendor/leaflet.css') layer(vendor);
 @import url('tokens/palette.css') layer(tokens);

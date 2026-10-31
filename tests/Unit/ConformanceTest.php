@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MrActivities\DesignSystem\Tests\Unit;
+namespace MrActivities\Acacia\Tests\Unit;
 
-use MrActivities\DesignSystem\Service\StylesheetConcatService;
-use MrActivities\DesignSystem\Tests\Support\StylesheetReader;
+use MrActivities\Acacia\Service\StylesheetConcatService;
+use MrActivities\Acacia\Tests\Support\StylesheetReader;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 final class ConformanceTest extends TestCase
 {
     private const string ASSETS = __DIR__.'/../../assets';
-    private const string ENTRY = 'mractivities.css';
+    private const string ENTRY = 'acacia.css';
 
     /** Elements a component may still select by tag: replaced elements, form controls and SVG internals, which carry no part class of ours; and any element of Leaflet's own markup (inside or on a leaflet- class). */
     private const array ALLOWED_ELEMENTS = ['img', 'svg', 'path', 'text', 'input', 'select', 'option', 'textarea'];
@@ -197,7 +197,7 @@ final class ConformanceTest extends TestCase
 
     public function testDistIsTheConcatenationOfTheSources(): void
     {
-        $dist = (string) @file_get_contents(__DIR__.'/../../dist/mractivities.css');
+        $dist = (string) @file_get_contents(__DIR__.'/../../dist/acacia.css');
         self::assertSame((new StylesheetConcatService())->concat(self::ASSETS), $dist, 'dist/ is stale: run composer build');
     }
 

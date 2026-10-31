@@ -1,5 +1,5 @@
 {
-    "name": "mractivities/design-system",
+    "name": "mractivities/acacia",
     "description": "The Mr Activities CSS framework: tokens, base, layout, components, pages and utilities in native cascade layers, exposed to AssetMapper.",
     "type": "symfony-bundle",
     "license": "proprietary",
@@ -17,8 +17,8 @@
         "symfony/asset-mapper": "^8.0",
         "symfony/framework-bundle": "^8.0"
     },
-    "autoload": {"psr-4": {"MrActivities\\DesignSystem\\": "src/"}},
-    "autoload-dev": {"psr-4": {"MrActivities\\DesignSystem\\Tests\\": "tests/"}},
+    "autoload": {"psr-4": {"MrActivities\\Acacia\\": "src/"}},
+    "autoload-dev": {"psr-4": {"MrActivities\\Acacia\\Tests\\": "tests/"}},
     "scripts": {
         "build": ["@php bin/palettes.php", "@php bin/concat.php"],
         "cs": "php-cs-fixer fix --dry-run --diff",
