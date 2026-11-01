@@ -1,4 +1,4 @@
-/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot */
+/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot; .mapdot and .maplabel, a section map's dots and the names of its places */
 .formsecs {
   display: grid;
   gap: 16px;
@@ -76,10 +76,25 @@
 .editor[data-variant="read"] .formsec-body {
   gap: 14px;
 }
+.editor[data-variant="sub"] .formsecs {
+  grid-template-columns: minmax(0, 1fr);
+}
 .mapdot[data-variant="fixed"] {
   width: 14px;
   height: 14px;
   cursor: default;
+}
+.leaflet-container .maplabel {
+  padding: 2px 8px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: var(--sh);
+  font: 600 12px/1.4 var(--f);
+}
+.leaflet-container .maplabel::before {
+  display: none;
 }
 .mapkey .mapdot {
   box-shadow: 0 0 0 2px var(--panel);

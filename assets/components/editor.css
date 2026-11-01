@@ -1,4 +1,4 @@
-/* components/editor.css: .editor, an edit page: the contents column beside the sections (data-variant single for one column) */
+/* components/editor.css: .editor, an edit page: the contents column beside the sections (data-variant single for one column; sub for a record's sub-screen, its contents beside a list) */
 .editor {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
