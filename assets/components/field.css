@@ -349,3 +349,7 @@
 .listedit-row :where(.field) .select select {
   height: 42px;
 }
+:where(.stayedit-texts .form) > .field:has(> .btn) {
+  align-self: end;
+  margin-bottom: 2px;
+}

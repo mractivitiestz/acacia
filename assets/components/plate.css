@@ -177,3 +177,15 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.plate-row[data-variant="static"] {
+  cursor: default;
+}
+.plate-row:where([data-variant="static"]):hover .plate-what {
+  text-decoration: none;
+}
+.formsec .plate-lead {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 400;
+}

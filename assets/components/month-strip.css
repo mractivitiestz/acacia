@@ -129,3 +129,28 @@
 .formsec :where(.month)[data-state="good"]:hover {
   background: var(--tint);
 }
+.months[data-size="sm"] {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 3px;
+  max-width: 420px;
+}
+.months[data-size="sm"] .month {
+  padding: 4px 0 3px;
+}
+.months[data-size="sm"] .month-bold {
+  font-size: 11.5px;
+  font-weight: 500;
+}
+:where(.formsec .months[data-size="sm"]) .month[data-state="good"] {
+  background: var(--tint);
+}
+:where(.formsec .months[data-size="sm"]) .month[data-state="good"] .month-bold {
+  color: var(--brand-text);
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  .months[data-size="sm"] {
+    max-width: none;
+  }
+}

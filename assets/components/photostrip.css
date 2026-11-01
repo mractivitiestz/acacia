@@ -1,0 +1,19 @@
+/* components/photostrip.css: .photostrip, a record's photos in order, read only, the cover marked by its status */
+.photostrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.photostrip-item {
+  position: relative;
+}
+.photostrip-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-s);
+  object-fit: cover;
+}

@@ -70,6 +70,9 @@
 .langfield[data-variant="page"] {
   min-width: 0;
 }
+.langfield[data-variant="page"] .langfield-row {
+  grid-template-columns: minmax(0, 1fr);
+}
 .listedit-row :where(.langfield) {
   gap: 6px;
 }
@@ -80,4 +83,13 @@
 }
 .listedit-row :where(.langfield) input {
   padding-block: 9px;
+}
+:where(.listedit-row[data-variant="stay"]) .langfield :is(input, textarea) {
+  height: auto;
+}
+:where(.listedit-row[data-variant="stay"]) .langfield textarea {
+  min-height: 72px;
+}
+.langfield textarea[data-size="lg"] {
+  min-height: 220px;
 }

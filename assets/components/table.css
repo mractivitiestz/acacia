@@ -1,4 +1,4 @@
-/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset); a list of cards at 700px and under; .table-clip */
+/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under; .table-clip */
 .table {
   overflow-x: auto;
   overflow-y: hidden;
@@ -204,6 +204,60 @@
   min-width: 150px;
   max-width: 190px;
 }
+.table-badge {
+  display: block;
+  margin-top: 6px;
+}
+.table-none {
+  color: var(--muted);
+}
+.table-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.table-stack[data-variant="row"] {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.table-cell[data-col="grip"], .table-th[data-col="grip"] {
+  width: 1%;
+  padding-right: 0;
+}
+.table-grip {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 44px;
+  color: var(--muted);
+  cursor: grab;
+}
+.table-group .table-th {
+  position: static;
+  padding: 18px 14px 10px 18px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  font: 600 16px/1.2 var(--f);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+}
+:where(.table-grid > :first-of-type) .table-group .table-th {
+  border-top: 0;
+}
+.table-groupname {
+  margin-right: 10px;
+}
+.table-note {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+}
+:where(.table[data-variant="grouped"]) .table-group + .table-row .table-cell {
+  border-top: 1px solid var(--line);
+}
 @media (min-width: 701px) {
   .table-cell[data-col="meta"] {
     display: none;
@@ -286,5 +340,17 @@
   }
   :where(.table[data-variant="lib"]) .table-sub[data-col-folder] {
     display: none;
+  }
+  .table-cell[data-col="grip"] {
+    display: none;
+  }
+  .table-group {
+    display: block;
+  }
+  .table-group .table-th {
+    display: block;
+    padding: 14px 4px 8px;
+    border: 0;
+    background: transparent;
   }
 }

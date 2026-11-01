@@ -1,0 +1,30 @@
+/* components/stayedit.css: .stayedit, a destination's kinds of stay: an item (data-variant="read" on a record, its icon beside its texts), its .stayedit-icon and .stayedit-texts, which also hold a list row's fields */
+.stayedit-item {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-width: 0;
+  padding: 12px 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+}
+.stayedit-item[data-variant="read"] {
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 14px;
+}
+.stayedit-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.stayedit-texts {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}

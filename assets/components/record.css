@@ -1,0 +1,35 @@
+/* components/record.css: .record's facts, a record's terms and values read in two columns: .record-facts with .record-term and .record-value, a value's quieter .record-note and its .record-link */
+.record-facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  margin: 0;
+  font-size: 14.5px;
+}
+.record-term, .record-value {
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+}
+.record-term:first-of-type, .record-term:first-of-type + .record-value {
+  border-top: 0;
+  padding-top: 0;
+}
+.record-term {
+  padding-right: 18px;
+  color: var(--muted);
+}
+.record-value {
+  margin: 0;
+  font-weight: 500;
+}
+.record-note {
+  color: var(--muted);
+  font-weight: 400;
+}
+.record-link {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.record-link:hover {
+  text-decoration-color: currentColor;
+}

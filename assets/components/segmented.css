@@ -63,3 +63,7 @@
 .segmented:where([data-variant="icons"]) .segmented-btn:last-child {
   padding-right: 2px;
 }
+.formsec .field > .segmented {
+  align-self: start;
+  margin-top: 2px;
+}

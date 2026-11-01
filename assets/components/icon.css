@@ -320,3 +320,15 @@
 .dialog-folder .icon {
   color: var(--muted);
 }
+.contents-mark .icon {
+  color: inherit;
+}
+.readlist[data-variant="ways"] > * > .icon {
+  grid-row: span 2;
+  align-self: start;
+  margin-top: 1px;
+  color: var(--brand-text);
+}
+:where(.formsec-head > .pill:not([aria-pressed="true"])) .icon {
+  color: var(--muted);
+}

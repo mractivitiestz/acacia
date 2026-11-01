@@ -96,6 +96,13 @@
 @import url('components/photoset.css') layer(components);
 @import url('components/dialog.css') layer(components);
 @import url('components/menu.css') layer(components);
+@import url('components/readout.css') layer(components);
+@import url('components/readlist.css') layer(components);
+@import url('components/record.css') layer(components);
+@import url('components/meter.css') layer(components);
+@import url('components/mapkey.css') layer(components);
+@import url('components/photostrip.css') layer(components);
+@import url('components/stayedit.css') layer(components);
 @import url('pages/home.css') layer(pages);
 @import url('pages/suggest.css') layer(pages);
 @import url('pages/plan.css') layer(pages);

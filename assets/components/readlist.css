@@ -1,0 +1,65 @@
+/* components/readlist.css: .readlist, a list read on a record (places, seasons, ways in, questions): each item a row under a rule, a dot before it when the list has no variant; data-variant seasons | ways (an icon beside each) | faq (.readlist-pair, a question and its answer) | places */
+.readlist {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.readlist > *, .readlist-pair {
+  display: grid;
+  gap: 2px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.readlist > :first-child, .readlist-pair:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.readlist:not([data-variant]) > * {
+  position: relative;
+  padding-left: 18px;
+}
+.readlist:not([data-variant]) > *::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 19px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.readlist:where(:not([data-variant])) > :first-child::before {
+  top: 9px;
+}
+.readlist-what {
+  margin: 0;
+  font-weight: 600;
+}
+.readlist-note {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.readlist-text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.readlist-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+.readlist[data-variant="seasons"] > * {
+  gap: 8px;
+}
+.readlist[data-variant="ways"] > * {
+  grid-template-columns: 20px minmax(0, 1fr);
+  column-gap: 10px;
+  align-items: baseline;
+}
+.readlist[data-variant="faq"] .readlist-text {
+  color: var(--ink);
+}

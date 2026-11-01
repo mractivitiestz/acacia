@@ -1,0 +1,34 @@
+/* components/meter.css: .meter, a count drawn as a bar: its track (.meter-bar), the fill at the width --v, the number; in the contents' progress the bar is wider */
+.meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.meter-bar {
+  position: relative;
+  width: 72px;
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: var(--soft);
+  overflow: hidden;
+}
+.meter-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--v);
+  border-radius: var(--r-pill);
+  background: var(--brand);
+}
+.meter-num {
+  min-width: 2ch;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.contents-progress .meter-bar {
+  width: 120px;
+}
+.contents-progress .meter-num {
+  min-width: 0;
+  font-weight: 600;
+  font-size: 14px;
+}

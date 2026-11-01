@@ -337,3 +337,23 @@
 .pills[data-variant="wrap"] > :where(.pill:last-child) {
   margin-right: 0;
 }
+.table-cell .badge, .record-value .badge {
+  font-weight: 600;
+}
+.table-cell .badge {
+  white-space: nowrap;
+}
+.photostrip-item .status {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  box-shadow: var(--sh);
+  background: var(--panel);
+}
+.formsec-head > .pill {
+  margin-left: auto;
+  align-self: center;
+}
+.formsec-head > .pill[aria-pressed="true"] {
+  color: var(--brand-text);
+}

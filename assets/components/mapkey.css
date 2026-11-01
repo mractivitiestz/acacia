@@ -1,0 +1,14 @@
+/* components/mapkey.css: .mapkey, what a map's dots are: an item per kind, its dot beside its count */
+.mapkey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.mapkey-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
