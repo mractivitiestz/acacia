@@ -1,0 +1,32 @@
+/* components/faq.css: .faq, questions travellers ask, each a details element folding open (its plus turns to a cross) */
+.faq {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 8px 0;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+.faq-question:hover > :not(.icon) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.faq-answer {
+  margin: 0 0 18px;
+  max-width: 68ch;
+  line-height: 1.6;
+}

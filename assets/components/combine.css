@@ -1,0 +1,15 @@
+/* components/combine.css: .combine, the sentence on the usual circuit, with links to the destinations it names */
+.combine {
+  margin-bottom: 22px;
+}
+.combine-text {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 64ch;
+}
+.combine-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

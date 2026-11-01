@@ -1,0 +1,23 @@
+/* components/peoples.css: .peoples, the peoples of a destination, each a name and a paragraph */
+.peoples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 18px 28px;
+  margin-bottom: 8px;
+}
+.peoples-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.peoples-name {
+  font-size: 17px;
+  font-weight: 800;
+}
+.peoples-text {
+  flex-basis: 100%;
+  margin: 0;
+  line-height: 1.55;
+}

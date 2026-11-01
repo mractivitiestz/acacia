@@ -1,0 +1,49 @@
+/* components/periods.css: .periods, the seasons of a place in words above the month bars: an item per season (a .card, data-variant its kind, dry tinting its icon) with its icon, name, months and text */
+.periods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.periods-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  box-shadow: none;
+}
+.periods-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.periods-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.periods-item[data-variant="dry"] .periods-icon {
+  background: var(--tint);
+}
+.periods-name {
+  display: block;
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.periods-months {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+.periods-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}

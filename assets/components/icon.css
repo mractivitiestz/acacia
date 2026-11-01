@@ -332,3 +332,21 @@
 :where(.formsec-head > .pill:not([aria-pressed="true"])) .icon {
   color: var(--muted);
 }
+.waysin-time .icon {
+  color: var(--brand);
+}
+.faq-question .icon {
+  flex: none;
+  color: var(--brand);
+  transition: transform .2s;
+}
+:where(.faq-item[open]) .faq-question .icon {
+  transform: rotate(45deg);
+}
+.closest .icon {
+  flex: none;
+  margin-top: 2px;
+}
+.k-place .pin-label .icon {
+  color: var(--ink);
+}

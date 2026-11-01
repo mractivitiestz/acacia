@@ -1,0 +1,25 @@
+/* components/placecard.css: .placecard, the card a place's marker opens: its letter (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
+.placecard {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font: 400 14.5px/1.45 var(--f);
+  color: var(--ink);
+}
+:where(.popup) .placecard {
+  padding: 14px 16px;
+}
+.placecard-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+}
+.placecard-kind {
+  display: block;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+.placecard-line {
+  margin: 6px 0 0;
+}

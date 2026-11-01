@@ -2110,6 +2110,24 @@ body[data-locked] {
 :where(.formsec-head > .pill:not([aria-pressed="true"])) .icon {
   color: var(--muted);
 }
+.waysin-time .icon {
+  color: var(--brand);
+}
+.faq-question .icon {
+  flex: none;
+  color: var(--brand);
+  transition: transform .2s;
+}
+:where(.faq-item[open]) .faq-question .icon {
+  transform: rotate(45deg);
+}
+.closest .icon {
+  flex: none;
+  margin-top: 2px;
+}
+.k-place .pin-label .icon {
+  color: var(--ink);
+}
 }
 
 /* components/button.css */
@@ -7357,7 +7375,7 @@ body[data-locked] {
 
 /* components/detail-tabs.css */
 @layer components {
-/* components/detail-tabs.css: .headline, .tabs, .share */
+/* components/detail-tabs.css: .headline (with a destination's other places under its title), .tabs, .share */
 .headline {
   padding-top: 22px;
 }
@@ -7423,6 +7441,26 @@ body[data-locked] {
   border-bottom-color: var(--ink);
 }
 
+.headline-places {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: -4px 0 12px;
+  font: 600 clamp(17px, 1.5vw, 20px)/1.35 var(--fh);
+  letter-spacing: -.01em;
+  color: var(--muted);
+}
+.headline-place {
+  color: inherit;
+}
+.headline-place:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.headline-sep {
+  margin: 0 .45em;
+}
 @media (max-width:700px) {
   .headline {
     padding-top: 12px;
@@ -9118,6 +9156,15 @@ body[data-locked] {
 }
 .marker[data-state="future"] .pin {
   opacity: .5;
+}
+.pin[data-kind="place"] .pin-dot {
+  background: var(--panel);
+  box-shadow: inset 0 0 0 3px var(--ink), 0 0 0 2px var(--panel), 0 1px 3px 1px var(--shade-30);
+}
+.k-place .pin-label {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 12.5px;
 }
 }
 
@@ -13387,6 +13434,361 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   display: grid;
   gap: 12px;
   min-width: 0;
+}
+}
+
+/* components/legend.css */
+@layer components {
+/* components/legend.css: .legend, a map's key as lists by kind (a destination's lettered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
+.legend {
+  display: grid;
+  gap: 24px;
+}
+.legend-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+.legend-intro {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--muted);
+}
+.legend-group {
+  min-width: 0;
+}
+.legend-heading {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+.legend-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 14px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.legend-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
+  scroll-margin-top: calc(var(--row-h) + var(--tabs-h) + 30px);
+}
+.legend-mark {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding-top: 1px;
+  border-radius: var(--r-pill);
+  font: 800 12px/1 var(--f);
+  font-variant-numeric: tabular-nums;
+}
+.legend-mark[data-kind="here"] {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.legend-mark[data-kind="off"] {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.legend-mark[data-kind="near"] {
+  box-shadow: inset 0 0 0 2px var(--muted);
+  color: var(--ink);
+}
+.legend-mark[data-kind="place"] {
+  box-shadow: inset 0 0 0 2.5px var(--ink);
+  color: var(--ink);
+  background: var(--panel);
+}
+.legend-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 8px;
+  min-width: 0;
+  padding-top: 2px;
+}
+.legend-name {
+  font-weight: 800;
+}
+.legend-kind {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.legend-link {
+  font-weight: 700;
+}
+.legend-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legend-note {
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.legend-item:target .legend-name {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+}
+
+/* components/periods.css */
+@layer components {
+/* components/periods.css: .periods, the seasons of a place in words above the month bars: an item per season (a .card, data-variant its kind, dry tinting its icon) with its icon, name, months and text */
+.periods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.periods-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  box-shadow: none;
+}
+.periods-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.periods-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.periods-item[data-variant="dry"] .periods-icon {
+  background: var(--tint);
+}
+.periods-name {
+  display: block;
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+.periods-months {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+.periods-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+}
+
+/* components/waysin.css */
+@layer components {
+/* components/waysin.css: .waysin, how one gets to a destination: an item per way with its icon, from where, how and how long; on a phone the time goes under the how */
+.waysin {
+  display: grid;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.waysin-item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  grid-template-areas: "icon from time" "icon how how";
+  gap: 2px 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.waysin-icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  align-self: start;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.waysin-from {
+  grid-area: from;
+  font-weight: 800;
+}
+.waysin-how {
+  grid-area: how;
+  color: var(--muted);
+  font-size: 15px;
+}
+.waysin-time {
+  grid-area: time;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .waysin-item {
+    grid-template-areas: "icon from" "icon how" "icon time";
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+  .waysin-time {
+    white-space: normal;
+  }
+}
+}
+
+/* components/peoples.css */
+@layer components {
+/* components/peoples.css: .peoples, the peoples of a destination, each a name and a paragraph */
+.peoples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 18px 28px;
+  margin-bottom: 8px;
+}
+.peoples-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.peoples-name {
+  font-size: 17px;
+  font-weight: 800;
+}
+.peoples-text {
+  flex-basis: 100%;
+  margin: 0;
+  line-height: 1.55;
+}
+}
+
+/* components/combine.css */
+@layer components {
+/* components/combine.css: .combine, the sentence on the usual circuit, with links to the destinations it names */
+.combine {
+  margin-bottom: 22px;
+}
+.combine-text {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 64ch;
+}
+.combine-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+}
+
+/* components/faq.css */
+@layer components {
+/* components/faq.css: .faq, questions travellers ask, each a details element folding open (its plus turns to a cross) */
+.faq {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 8px 0;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+.faq-question:hover > :not(.icon) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.faq-answer {
+  margin: 0 0 18px;
+  max-width: 68ch;
+  line-height: 1.6;
+}
+}
+
+/* components/closest.css */
+@layer components {
+/* components/closest.css: .closest, the closest destinations as one quiet line, each a link */
+.closest {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.closest-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.closest-link:hover {
+  text-decoration-color: currentColor;
+}
+}
+
+/* components/placecard.css */
+@layer components {
+/* components/placecard.css: .placecard, the card a place's marker opens: its letter (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
+.placecard {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font: 400 14.5px/1.45 var(--f);
+  color: var(--ink);
+}
+:where(.popup) .placecard {
+  padding: 14px 16px;
+}
+.placecard-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+}
+.placecard-kind {
+  display: block;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+.placecard-line {
+  margin: 6px 0 0;
 }
 }
 

@@ -1,0 +1,55 @@
+/* components/waysin.css: .waysin, how one gets to a destination: an item per way with its icon, from where, how and how long; on a phone the time goes under the how */
+.waysin {
+  display: grid;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.waysin-item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  grid-template-areas: "icon from time" "icon how how";
+  gap: 2px 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.waysin-icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  align-self: start;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--brand-text);
+}
+.waysin-from {
+  grid-area: from;
+  font-weight: 800;
+}
+.waysin-how {
+  grid-area: how;
+  color: var(--muted);
+  font-size: 15px;
+}
+.waysin-time {
+  grid-area: time;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .waysin-item {
+    grid-template-areas: "icon from" "icon how" "icon time";
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+  .waysin-time {
+    white-space: normal;
+  }
+}

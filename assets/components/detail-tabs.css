@@ -1,4 +1,4 @@
-/* components/detail-tabs.css: .headline, .tabs, .share */
+/* components/detail-tabs.css: .headline (with a destination's other places under its title), .tabs, .share */
 .headline {
   padding-top: 22px;
 }
@@ -64,6 +64,26 @@
   border-bottom-color: var(--ink);
 }
 
+.headline-places {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: -4px 0 12px;
+  font: 600 clamp(17px, 1.5vw, 20px)/1.35 var(--fh);
+  letter-spacing: -.01em;
+  color: var(--muted);
+}
+.headline-place {
+  color: inherit;
+}
+.headline-place:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.headline-sep {
+  margin: 0 .45em;
+}
 @media (max-width:700px) {
   .headline {
     padding-top: 12px;

@@ -103,6 +103,14 @@
 @import url('components/mapkey.css') layer(components);
 @import url('components/photostrip.css') layer(components);
 @import url('components/stayedit.css') layer(components);
+@import url('components/legend.css') layer(components);
+@import url('components/periods.css') layer(components);
+@import url('components/waysin.css') layer(components);
+@import url('components/peoples.css') layer(components);
+@import url('components/combine.css') layer(components);
+@import url('components/faq.css') layer(components);
+@import url('components/closest.css') layer(components);
+@import url('components/placecard.css') layer(components);
 @import url('pages/home.css') layer(pages);
 @import url('pages/suggest.css') layer(pages);
 @import url('pages/plan.css') layer(pages);

@@ -167,3 +167,12 @@
 .marker[data-state="future"] .pin {
   opacity: .5;
 }
+.pin[data-kind="place"] .pin-dot {
+  background: var(--panel);
+  box-shadow: inset 0 0 0 3px var(--ink), 0 0 0 2px var(--panel), 0 1px 3px 1px var(--shade-30);
+}
+.k-place .pin-label {
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 12.5px;
+}
