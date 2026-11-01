@@ -10,7 +10,6 @@
   color: var(--brand-text);
   font: 600 14px/1 var(--f);
   letter-spacing: .02em;
-  text-shadow: none;
 }
 .avatar[data-variant="pending"] {
   background: transparent;
