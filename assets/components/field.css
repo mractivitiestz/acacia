@@ -353,3 +353,35 @@
   align-self: end;
   margin-bottom: 2px;
 }
+/* the back office's form labels at 600 (its type weights, as for .btn in button.css) */
+:where(.shell, .auth) .field {
+  font-weight: 600;
+}
+/* an invalid field at night: the error tint over the panel, so the typed text stays readable */
+:where(html[data-theme="dark"]) .field :is(input, textarea)[aria-invalid="true"] {
+  background: color-mix(in srgb, var(--error) 22%, var(--panel));
+}
+/* the sign-in card's outline fields (auth.css, data-fields="f5"): a light 1.5px edge over the view, the ink with the
+   card's halo, filling with the panel on focus; the language menu alike */
+:where(.auth[data-fields="f5"]) .field input, :where(.auth[data-fields="f5"]) .select {
+  border-color: color-mix(in srgb, var(--white) 80%, transparent);
+  background: transparent;
+  color: var(--ink);
+  text-shadow: var(--halo);
+}
+:where(html[data-theme="dark"] .auth) .field input, :where(html[data-theme="dark"] .auth) .select {
+  color-scheme: dark;
+}
+:where(.auth[data-fields="f5"]) .select select {
+  color: var(--ink);
+}
+:where(.auth[data-fields="f5"]) .field input::placeholder {
+  color: color-mix(in srgb, var(--ink) 80%, transparent);
+  opacity: 1;
+}
+:where(.auth[data-fields="f5"]) .field input:focus {
+  outline-color: var(--ink);
+  border-color: color-mix(in srgb, var(--white) 80%, transparent);
+  background: var(--panel);
+  text-shadow: none;
+}

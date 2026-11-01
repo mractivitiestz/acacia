@@ -1,0 +1,17 @@
+/* components/invite.css: .invite, the Invite a colleague dialog's own text; the dialog itself is .dialog. Parts: text, optional, cancel, note */
+.invite-text {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.invite-optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+.invite-cancel {
+  margin-left: auto;
+}
+.invite-note {
+  font: 600 16px/1.45 var(--f);
+  resize: vertical;
+}

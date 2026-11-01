@@ -1,0 +1,18 @@
+/* components/avatar.css: .avatar, a person's initials on a tint disc; data-variant="pending" for someone invited who has not joined, or an account not yet opened */
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-pill);
+  background: var(--tint);
+  color: var(--brand-text);
+  font: 600 14px/1 var(--f);
+  letter-spacing: .02em;
+}
+.avatar[data-variant="pending"] {
+  background: transparent;
+  border: 1.5px dashed color-mix(in srgb, var(--muted) 60%, var(--line));
+  color: var(--muted);
+}

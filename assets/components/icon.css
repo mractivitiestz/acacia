@@ -307,7 +307,7 @@
 .tile-check .icon {
   position: relative;
 }
-.check[data-as="button"] .icon {
+.rowcheck .icon {
   position: relative;
   width: 16px;
   height: 16px;
@@ -349,4 +349,20 @@
 }
 .k-place .pin-label .icon {
   color: var(--ink);
+}
+
+/* the icons of the sign-in pages' alerts and password rule (auth.css) */
+.auth-alert > .icon {
+  flex: none;
+  margin-top: 1px;
+  color: var(--auth-error);
+}
+.auth-alert[data-variant="done"] > .icon {
+  color: var(--brand-text);
+}
+.auth-alert[data-variant="stale"] > .icon {
+  color: var(--muted);
+}
+.auth-rule .icon {
+  flex: none;
 }

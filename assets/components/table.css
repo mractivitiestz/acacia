@@ -160,6 +160,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.table-cell[data-variant="muted"] {
+  color: var(--muted);
+}
+.table-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
 .table-cell[data-variant="nowrap"] {
   white-space: nowrap;
 }
