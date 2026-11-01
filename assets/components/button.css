@@ -189,3 +189,17 @@
 .listedit-row > :where(.iconbtn) {
   color: var(--muted);
 }
+/* the back office's buttons at 600, as its type weights rule (the study's build.py, ruled 31 Oct 2026): buttons,
+   row titles and form labels 600, only the page title 800; the signed-out pages are the back office's too */
+:where(.shell, .auth) .btn {
+  font-weight: 600;
+}
+/* on the transparent sign-in card the controls carry no halo, and the link is ink with its underline */
+.auth .btn {
+  text-shadow: none;
+}
+.auth-alt .link {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom-color: currentColor;
+}

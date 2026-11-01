@@ -6,7 +6,11 @@
   --dark: #141414;
   --light-14: rgba(255,255,255,.14);
   --light-26: rgba(255,255,255,.26);
+  --light-45: rgba(255,255,255,.45);
+  --light-51: rgba(255,255,255,.51);
   --light-55: rgba(255,255,255,.55);
+  --light-6: rgba(255,255,255,.06);
+  --light-70: rgba(255,255,255,.7);
   --mark-ink: #111;
   --mark-line: #333;
   --opaque: #000;
@@ -20,7 +24,9 @@
   --shade-35: rgba(0,0,0,.35);
   --shade-40: rgba(0,0,0,.4);
   --shade-45: rgba(0,0,0,.45);
+  --shade-6: rgba(0,0,0,.06);
   --shade-60: rgba(0,0,0,.6);
+  --shade-70: rgba(0,0,0,.7);
   --shade-8: rgba(0,0,0,.08);
   --shade-82: rgba(0,0,0,.82);
   --shade-95: rgba(0,0,0,.95);
