@@ -1,0 +1,20 @@
+/* components/credit.css: .credit, the photos' authors as one quiet line under a gallery, with the link to the photo credits */
+.credit {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.credit-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.credit-link:hover {
+  text-decoration-color: currentColor;
+}

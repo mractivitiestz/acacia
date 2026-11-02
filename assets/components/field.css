@@ -385,3 +385,6 @@
   background: var(--panel);
   text-shadow: none;
 }
+.mapfilters .select {
+  min-width: 0;
+}

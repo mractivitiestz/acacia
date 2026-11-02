@@ -203,3 +203,7 @@
   font-weight: 600;
   border-bottom-color: currentColor;
 }
+.mappop .btn {
+  margin-top: 6px;
+  min-height: 44px;
+}

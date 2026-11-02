@@ -366,3 +366,26 @@
 .auth-rule .icon {
   flex: none;
 }
+.staylist-fact .icon {
+  color: var(--brand);
+}
+.spot[data-variant="fact"] .icon {
+  color: var(--brand-text);
+}
+.credit .icon {
+  margin-top: 2px;
+}
+.glance-term .icon {
+  margin-top: 1px;
+}
+.glance[data-variant="aside"] .icon {
+  color: var(--brand);
+}
+.listing-intro .icon {
+  margin-top: 2px;
+  color: var(--brand-text);
+}
+.listing-meta .icon,
+.listing-dist .icon {
+  color: var(--brand-text);
+}

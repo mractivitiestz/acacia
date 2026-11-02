@@ -67,3 +67,6 @@
     grid-template-columns: minmax(0,1fr);
   }
 }
+.listing[data-view="map"] .results {
+  display: block;
+}

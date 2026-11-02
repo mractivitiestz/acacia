@@ -1,0 +1,113 @@
+/* pages/stays.css: .listing, the stays listing (the stays-list study's L6): the line under its head, a stay's kind, place and altitude, its distance from its destination, the count, the result's text in two lines, Show on map, the List | Map views and the map's empty state */
+.listing-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 62ch;
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.listing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.listing-alt {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.listing-dist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 6px;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.result-foot .listing-dist {
+  margin: 0;
+}
+.listing-destlink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+.listing-destlink:hover {
+  text-decoration-color: currentColor;
+}
+.listing-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-weight: 600;
+}
+.listing-ask {
+  align-self: flex-start;
+  margin-top: -6px;
+}
+.listing-count {
+  font: 700 19px/1.3 var(--fh);
+}
+.listing-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.listing-onmap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--brand-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+}
+.listing-onmap:hover {
+  text-decoration-color: currentColor;
+}
+.listing-view {
+  flex: none;
+}
+.listing[data-view="map"] .listing-rows {
+  display: none;
+}
+.listing-empty {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 24px 16px;
+  border: 1px dashed var(--line);
+  border-radius: var(--r);
+  text-align: center;
+}
+.listing-emptytitle {
+  margin: 6px 0 0;
+  font: 700 19px/1.3 var(--fh);
+}
+
+@media (max-width:640px) {
+  .listing-viewname {
+    display: none;
+  }
+}

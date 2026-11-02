@@ -1,0 +1,63 @@
+/* components/glance.css: .glance, a place at a glance as rows of a term with its icon over its value, hairlines between; the aside variant stacks them in a card, and .glance-note closes a section in a quiet line */
+.glance-list {
+  display: grid;
+  width: 100%;
+  margin: 0;
+}
+.glance-row {
+  display: grid;
+  grid-template-columns: minmax(0,150px) minmax(0,1fr);
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.glance-term {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 14.5px;
+}
+.glance-value {
+  margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.45;
+  min-width: 0;
+}
+.glance-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  max-width: 90ch;
+}
+.glance[data-variant="aside"] {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  margin: 0 0 6px;
+  padding-top: 4px;
+}
+.glance[data-variant="aside"] .glance-list {
+  grid-template-columns: minmax(0,1fr);
+}
+.glance[data-variant="aside"] .glance-row {
+  grid-template-columns: minmax(0,1fr);
+  gap: 3px;
+  padding: 10px 0;
+}
+.glance[data-variant="aside"] .glance-row:where(:first-child) {
+  border-top: 0;
+  padding-top: 4px;
+}
+.glance[data-variant="aside"] .glance-term {
+  font-size: 13px;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+
+@media (max-width:700px) {
+  .glance-row {
+    grid-template-columns: minmax(0,1fr);
+  }
+}

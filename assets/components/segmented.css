@@ -67,3 +67,6 @@
   align-self: start;
   margin-top: 2px;
 }
+.listing-view .segmented-btn {
+  min-height: 44px;
+}

@@ -1,4 +1,4 @@
-/* components/waysin.css: .waysin, how one gets to a destination: an item per way with its icon, from where, how and how long; on a phone the time goes under the how */
+/* components/waysin.css: .waysin, how one gets to a destination: an item per way with its icon, from where, how and how long; on a phone the time goes under the how; the book variant is a site to book on, its Open button where a way in has its time */
 .waysin {
   display: grid;
   margin: 0 0 18px;
@@ -44,6 +44,12 @@
   font-size: 15px;
   white-space: nowrap;
 }
+.waysin[data-variant="book"] .waysin-item {
+  grid-template-areas: "icon from time" "icon how time";
+}
+.waysin[data-variant="book"] .waysin-icon {
+  align-self: center;
+}
 @media (max-width: 700px) {
   .waysin-item {
     grid-template-areas: "icon from" "icon how" "icon time";
@@ -51,5 +57,11 @@
   }
   .waysin-time {
     white-space: normal;
+  }
+  .waysin[data-variant="book"] .waysin-item {
+    grid-template-areas: "icon from" "icon how" "icon time";
+  }
+  .waysin[data-variant="book"] .waysin-time {
+    margin-top: 8px;
   }
 }

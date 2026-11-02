@@ -1,0 +1,21 @@
+/* components/kindrow.css: .kindrow, a row of kind tiles that filter a list, each pressed or not and carrying its count; a scroller on a tablet and a phone */
+.kindrow {
+  display: grid;
+  grid-template-columns: repeat(7,minmax(0,1fr));
+  align-items: start;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+@media (max-width:900px) {
+  .kindrow {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: -6px -16px 14px -6px;
+    padding: 6px 16px 6px 6px;
+  }
+  .kindrow::-webkit-scrollbar {
+    display: none;
+  }
+}

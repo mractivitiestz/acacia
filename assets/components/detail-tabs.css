@@ -74,6 +74,10 @@
   letter-spacing: -.01em;
   color: var(--muted);
 }
+.headline-places[data-variant="line"] {
+  display: block;
+  max-width: 60ch;
+}
 .headline-place {
   color: inherit;
 }
