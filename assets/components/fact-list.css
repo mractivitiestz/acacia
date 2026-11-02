@@ -117,6 +117,9 @@
   border-bottom: 1px solid var(--line);
   font-weight: 800;
 }
+.btn + .srclink {
+  margin-top: 10px;
+}
 .srclink:last-child {
   border-bottom: 0;
 }
