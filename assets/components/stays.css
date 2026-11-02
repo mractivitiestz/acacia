@@ -1,4 +1,4 @@
-/* components/stays.css: .staykind, .staygrid, .staycard, .staymeta, .staypin, .staymap, .staylist, the stays of a destination under their kinds, a stay's pin and key (the stays study's S2), and the compact card of Where to stay and the listing (S4-E): the photo set as one small card, the name, the place, the altitude, the photo count, the line and See the stay */
+/* components/stays.css: .staykind, .staypin, .staymap, .staylist, the stays of a destination under their kinds, a stay's pin and key (the stays study's S2), and the compact card of Where to stay and the listing (S4-E): the photo set as one small card, the name, the place, the altitude, the photo count, the line and See the stay */
 .staykind {
   margin-top: 28px;
 }
@@ -37,100 +37,6 @@
   font-size: 13.5px;
   font-weight: 700;
   white-space: nowrap;
-}
-.staymeta {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 5px 0 0;
-  color: var(--muted);
-  font-size: 14.5px;
-  line-height: 1.45;
-}
-.staymeta-text {
-  min-width: 0;
-  padding-top: 1px;
-}
-.staymeta-alt {
-  white-space: nowrap;
-}
-.staygrid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 16px;
-}
-.staygrid[data-variant="compact"] {
-  grid-template-columns: repeat(4,minmax(0,1fr));
-  gap: 14px;
-}
-.staygrid[data-variant="compact"] .staycard-body {
-  padding: 14px 14px 10px;
-}
-.staygrid[data-variant="compact"] .staycard-name {
-  font-size: 16.5px;
-}
-.staygrid[data-variant="compact"] .staycard-line {
-  font-size: 15px;
-  font-weight: 500;
-}
-.staycard {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-}
-.staycard .staycard-photo {
-  align-self: stretch;
-  border-radius: 0;
-  aspect-ratio: 3/2;
-}
-.staycard-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 16px 18px 18px;
-}
-.staycard-name {
-  margin: 0;
-  font: 800 18px/1.3 var(--fh);
-  letter-spacing: -.01em;
-}
-.staycard-link {
-  color: inherit;
-}
-.staycard-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.staycard[data-variant="link"] {
-  position: relative;
-  cursor: pointer;
-  transition: box-shadow .2s,border-color .2s;
-}
-.staycard[data-variant="link"]:hover {
-  box-shadow: var(--sh-h);
-  border-color: transparent;
-}
-.staycard:hover .staycard-link {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.staycard-line {
-  margin: 10px 0 0;
-  font-weight: 600;
-  line-height: 1.45;
-}
-.staycard-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  padding-top: 12px;
-  min-height: 44px;
-  font-weight: 800;
-  color: var(--brand-text);
 }
 .staymap-key {
   display: flex;
@@ -355,17 +261,7 @@
   }
 }
 
-@media (max-width:1080px) {
-  .staygrid[data-variant="compact"] {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-}
-
 @media (max-width:700px) {
-  .staygrid,
-  .staygrid[data-variant="compact"] {
-    grid-template-columns: minmax(0,1fr);
-  }
   .staykind-head {
     flex-wrap: wrap;
   }
@@ -375,8 +271,5 @@
   .staykind-count {
     order: 3;
     margin-left: 58px;
-  }
-  .staycard-body {
-    padding: 14px 16px 16px;
   }
 }
