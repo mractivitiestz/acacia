@@ -1,4 +1,4 @@
-/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier */
+/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier; the application's controller shows the panel in the top layer (popover) beside its trigger, so margin and padding are set against the popover's own */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -7,7 +7,8 @@
   max-width: 100%;
   vertical-align: middle;
 }
-.dropdown[data-size="form"] {
+.dropdown[data-size="form"],
+:where(.facet-select, .mapfilters) .dropdown {
   display: flex;
   width: 100%;
 }
@@ -91,6 +92,8 @@
   width: max-content;
   max-width: min(360px,calc(100vw - 32px));
   max-height: min(420px,62vh);
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--r);
