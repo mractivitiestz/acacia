@@ -1,4 +1,4 @@
-/* components/field.css: .field, .field-help, .form, .select, .fieldset, .option, .options, .error */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error */
 .select {
   position: relative;
   display: inline-flex;
@@ -71,6 +71,9 @@
   gap: 6px;
   font-weight: 800;
   font-size: 14.5px;
+}
+.field-label {
+  align-self: flex-start;
 }
 .field input {
   min-height: 48px;

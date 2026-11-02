@@ -1,4 +1,4 @@
-/* tokens/theme.css: the back office's dark theme, the mobile app's night palette (Highland night) on palette 3's tokens, set by html[data-theme="dark"]; --raised is the surface of what floats over the page (menus, dialogs, popovers), the panel itself in the light theme */
+/* tokens/theme.css: the back office's dark theme, the mobile app's night palette (Highland night) on palette 3's tokens, set by html[data-theme="dark"]; --raised is the surface of what floats over the page (menus, dialogs, popovers), the panel itself in the light theme; --error and --error-bg are the error red and its ground at night, the red mixed into the ink and into the panel */
 :root {
   --raised: var(--panel);
 }
@@ -22,4 +22,6 @@ html[data-theme="dark"] {
   --on-night: #ffffff;
   --sh: 0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
   --sh-h: 0 2px 6px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.5);
+  --error: #d1938c;
+  --error-bg: #361c16;
 }

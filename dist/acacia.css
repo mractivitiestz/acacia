@@ -1130,7 +1130,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 /* tokens/theme.css */
 @layer tokens {
-/* tokens/theme.css: the back office's dark theme, the mobile app's night palette (Highland night) on palette 3's tokens, set by html[data-theme="dark"]; --raised is the surface of what floats over the page (menus, dialogs, popovers), the panel itself in the light theme */
+/* tokens/theme.css: the back office's dark theme, the mobile app's night palette (Highland night) on palette 3's tokens, set by html[data-theme="dark"]; --raised is the surface of what floats over the page (menus, dialogs, popovers), the panel itself in the light theme; --error and --error-bg are the error red and its ground at night, the red mixed into the ink and into the panel */
 :root {
   --raised: var(--panel);
 }
@@ -1154,6 +1154,8 @@ html[data-theme="dark"] {
   --on-night: #ffffff;
   --sh: 0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
   --sh-h: 0 2px 6px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.5);
+  --error: #d1938c;
+  --error-bg: #361c16;
 }
 }
 
@@ -2178,6 +2180,30 @@ body[data-locked] {
 .listing-meta .icon,
 .listing-dist .icon {
   color: var(--brand-text);
+}
+.dropdown-trigger > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
+.dropdown-trigger:disabled > .icon {
+  color: var(--muted);
+}
+.dropdown-search .icon {
+  flex: none;
+  color: var(--muted);
+}
+.dropdown-option > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
+.dropdown-option[aria-disabled="true"] > .icon {
+  color: var(--muted);
+}
+.dropdown-mark .icon {
+  visibility: hidden;
+}
+:where(.dropdown-option[aria-selected="true"]) .dropdown-mark .icon {
+  visibility: visible;
 }
 }
 
@@ -5297,7 +5323,7 @@ body[data-locked] {
 
 /* components/field.css */
 @layer components {
-/* components/field.css: .field, .field-help, .form, .select, .fieldset, .option, .options, .error */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error */
 .select {
   position: relative;
   display: inline-flex;
@@ -5370,6 +5396,9 @@ body[data-locked] {
   gap: 6px;
   font-weight: 800;
   font-size: 14.5px;
+}
+.field-label {
+  align-self: flex-start;
 }
 .field input {
   min-height: 48px;
@@ -5686,6 +5715,428 @@ body[data-locked] {
 }
 .mapfilters .select {
   min-width: 0;
+}
+}
+
+/* components/dropdown.css */
+@layer components {
+/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.dropdown[data-size="form"] {
+  display: flex;
+  width: 100%;
+}
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 12px 0 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--panel);
+  color: var(--ink);
+  font: 600 15px/1.2 var(--f);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--d-fast),background var(--d-fast);
+}
+.dropdown-trigger:hover {
+  border-color: var(--ink);
+}
+.dropdown-trigger[aria-expanded="true"] {
+  border-color: var(--brand);
+}
+.dropdown-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dropdown[data-empty] .dropdown-value {
+  color: var(--muted);
+  font-weight: 500;
+}
+.dropdown-chev {
+  flex: none;
+  color: var(--ink);
+}
+.dropdown-chev path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform var(--d-fast);
+}
+:where(.dropdown-trigger[aria-expanded="true"]) .dropdown-chev path {
+  transform: rotate(180deg);
+}
+.dropdown-trigger:disabled {
+  border-color: var(--line);
+  background: var(--soft);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.dropdown-trigger:disabled .dropdown-chev {
+  color: var(--muted);
+}
+.dropdown-trigger[aria-busy="true"] .dropdown-value {
+  color: var(--muted);
+  font-weight: 500;
+}
+.dropdown[data-size="form"] .dropdown-trigger {
+  min-height: 48px;
+  border-radius: var(--r-s);
+  font-size: 16px;
+}
+:where(.dropdown:has(> select[aria-invalid="true"])) .dropdown-trigger {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+.dropdown-panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: var(--z-sheet);
+  display: flex;
+  flex-direction: column;
+  min-width: max(100%,280px);
+  width: max-content;
+  max-width: min(360px,calc(100vw - 32px));
+  max-height: min(420px,62vh);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--raised);
+  color: var(--ink);
+  box-shadow: var(--sh-h);
+  text-align: left;
+}
+.dropdown-panel[hidden] {
+  display: none;
+}
+.dropdown[data-placement="top"] .dropdown-panel {
+  top: auto;
+  bottom: calc(100% + 8px);
+}
+.dropdown[data-align="end"] .dropdown-panel {
+  left: auto;
+  right: 0;
+}
+.dropdown-handle {
+  display: none;
+}
+.dropdown-head {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 4px 8px 4px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.dropdown-title {
+  flex: 1;
+  min-width: 0;
+  font: 600 16px/1.2 var(--f);
+}
+.dropdown-clear {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: none;
+  color: var(--brand-text);
+  font: 600 14.5px/1 var(--f);
+  cursor: pointer;
+}
+.dropdown-clear:hover {
+  background: var(--soft);
+}
+:where(.dropdown:not([data-multiple],[data-set])) .dropdown-head .dropdown-clear {
+  display: none;
+}
+.dropdown-search {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  margin: 12px 16px 4px;
+  padding: 0 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--panel);
+}
+.dropdown:not([data-state="sheet"]) .dropdown-search {
+  margin: 0;
+  padding: 0 16px;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  border-color: var(--line);
+  background: transparent;
+}
+.dropdown-search:focus-within {
+  border-color: var(--brand);
+}
+.dropdown-search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 400 16px/1 var(--f);
+  outline: 0;
+}
+.dropdown-search input::-webkit-search-cancel-button {
+  display: none;
+}
+.dropdown-list {
+  flex: 1 1 auto;
+  display: grid;
+  gap: 3px;
+  align-content: start;
+  min-height: 0;
+  padding: 6px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  outline: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.dropdown-group {
+  display: grid;
+  gap: 3px;
+}
+.dropdown-group + .dropdown-group {
+  margin-top: 4px;
+}
+.dropdown-group[hidden] {
+  display: none;
+}
+.dropdown-heading {
+  padding: 12px 12px 6px;
+  color: var(--muted);
+  font: 600 12.5px/1.2 var(--f);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.dropdown-option {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 12px 0 16px;
+  border-radius: var(--r-s);
+  color: var(--ink);
+  font: 500 15px/1.25 var(--f);
+  cursor: pointer;
+  user-select: none;
+}
+.dropdown-option::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  width: 3px;
+  height: 18px;
+  transform: translateY(-50%);
+  border-radius: var(--r-pill);
+  background: transparent;
+}
+.dropdown-option[hidden] {
+  display: none;
+}
+.dropdown-option[data-state="active"]:not([aria-selected="true"]) {
+  background: var(--soft);
+}
+:where(.dropdown-list:focus-visible) .dropdown-option[data-state="active"],
+:where(.dropdown-search:focus-within ~ .dropdown-list) .dropdown-option[data-state="active"] {
+  box-shadow: inset 0 0 0 1.5px var(--brand);
+}
+.dropdown-option[aria-selected="true"] {
+  background: var(--tint);
+  color: var(--brand-text);
+  font-weight: 600;
+}
+.dropdown-option[aria-selected="true"]::before {
+  background: var(--brand);
+}
+.dropdown-option[aria-selected="true"][data-state="active"] {
+  background: color-mix(in srgb,var(--brand) 7%,var(--tint));
+}
+.dropdown-option[aria-disabled="true"] {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.dropdown-option[data-count="0"] :is(.dropdown-text,.dropdown-count,.icon) {
+  opacity: .62;
+}
+.dropdown-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dropdown-count {
+  flex: none;
+  min-width: 24px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.dropdown-option[aria-selected="true"] .dropdown-count {
+  color: var(--brand-text);
+}
+.dropdown-mark {
+  flex: none;
+  order: 3;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  color: var(--brand-text);
+}
+.dropdown-empty {
+  margin: 0;
+  padding: 12px 18px 16px;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+.dropdown-empty[hidden] {
+  display: none;
+}
+.dropdown-loading {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--muted);
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.dropdown-skeleton {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 12px;
+}
+.dropdown-skeleton::before {
+  content: "";
+  width: 60%;
+  height: 12px;
+  border-radius: var(--r-pill);
+  background: var(--soft);
+  animation: dropdown-wait 1.2s ease-in-out infinite alternate;
+}
+.dropdown-skeleton:nth-child(3)::before {
+  width: 45%;
+}
+.dropdown-skeleton:nth-child(4)::before {
+  width: 70%;
+}
+@keyframes dropdown-wait {
+  to {
+    opacity: .45;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .dropdown-skeleton::before {
+    animation: none;
+  }
+}
+
+.dropdown-foot {
+  display: none;
+  flex: none;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px;
+  border-top: 1px solid var(--line);
+}
+.dropdown[data-multiple] .dropdown-foot {
+  display: flex;
+}
+.dropdown-foot .dropdown-clear {
+  margin-right: auto;
+}
+.dropdown-foot .dropdown-done {
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.dropdown-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-filters);
+  background: var(--shade-45);
+}
+.dropdown-scrim[hidden] {
+  display: none;
+}
+.dropdown[data-state="sheet"] .dropdown-panel {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: calc(var(--z-filters) + 1);
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  max-height: min(82vh,680px);
+  border-width: 1px 0 0;
+  border-radius: var(--r) var(--r) 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.dropdown[data-state="sheet"] .dropdown-handle {
+  display: block;
+  flex: none;
+  width: 40px;
+  height: 4px;
+  margin: 8px auto 0;
+  border-radius: var(--r-pill);
+  background: var(--line);
+}
+.dropdown[data-state="sheet"] .dropdown-head {
+  display: flex;
+  min-height: 52px;
+  padding: 0 10px 0 20px;
+}
+.dropdown[data-state="sheet"] .dropdown-title {
+  font: 600 18px/1.2 var(--fh);
+}
+.dropdown[data-state="sheet"] .dropdown-list {
+  padding: 8px 10px;
+}
+.dropdown[data-state="sheet"] .dropdown-foot {
+  display: flex;
+  padding: 12px 16px;
+}
+:where(.dropdown[data-state="sheet"]) .dropdown-foot .dropdown-clear {
+  display: none;
+}
+.dropdown[data-state="sheet"] .dropdown-done {
+  flex: 1;
+  min-height: 48px;
 }
 }
 

@@ -389,3 +389,27 @@
 .listing-dist .icon {
   color: var(--brand-text);
 }
+.dropdown-trigger > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
+.dropdown-trigger:disabled > .icon {
+  color: var(--muted);
+}
+.dropdown-search .icon {
+  flex: none;
+  color: var(--muted);
+}
+.dropdown-option > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
+.dropdown-option[aria-disabled="true"] > .icon {
+  color: var(--muted);
+}
+.dropdown-mark .icon {
+  visibility: hidden;
+}
+:where(.dropdown-option[aria-selected="true"]) .dropdown-mark .icon {
+  visibility: visible;
+}
