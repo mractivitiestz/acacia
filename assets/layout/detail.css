@@ -8,6 +8,9 @@
 .results-main {
   min-width: 0;
 }
+.listing[data-view="map"] .results {
+  display: block;
+}
 .detail {
   display: grid;
   grid-template-columns: minmax(0,1fr) 360px;

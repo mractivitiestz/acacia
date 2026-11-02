@@ -1,4 +1,4 @@
-/* components/mapsplit.css: .mapsplit, .mapfilters, .mappop: a map beside the list of what it shows, the list following the map; the filters as a row of selects above it; the popup a grouped pin opens */
+/* components/mapsplit.css: .mapsplit, .mapfilters, .mappop: a map beside the list of what it shows, the list following the map, the row of the one chosen on the map ringed; the filters as a row of selects above it; the popup a grouped pin opens */
 .mapfilters {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(0,1fr));
@@ -78,6 +78,11 @@
 .mapsplit-row[data-state="hl"] {
   box-shadow: var(--sh-h);
   border-color: transparent;
+}
+.mapsplit-row[data-state="on"] {
+  box-shadow: inset 0 0 0 2px var(--brand),var(--sh-h);
+  border-color: transparent;
+  background: var(--soft);
 }
 .mapsplit-photo img {
   width: 112px;
