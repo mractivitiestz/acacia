@@ -129,6 +129,5 @@
 @import url('pages/credits.css') layer(pages);
 @import url('pages/expeditions.css') layer(pages);
 @import url('pages/expedition.css') layer(pages);
-@import url('pages/stay.css') layer(pages);
 @import url('pages/stays.css') layer(pages);
 @import url('utilities/utilities.css') layer(utilities);

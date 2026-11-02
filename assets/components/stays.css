@@ -1,4 +1,4 @@
-/* components/stays.css: .staykind, .staypin, .staymap, .staylist, the stays of a destination under their kinds, a stay's pin and key (the stays study's S2), and the compact card of Where to stay and the listing (S4-E): the photo set as one small card, the name, the place, the altitude, the photo count, the line and See the stay */
+/* components/stays.css: .staykind, .staypin, .staylist, the stays of a destination under their kinds, a stay's pin (the stays study's S2), and the compact card of Where to stay and the listing (S4-E): the photo set as one small card, the name, the place, the altitude, the photo count, the line and See the stay */
 .staykind {
   margin-top: 28px;
 }
@@ -38,21 +38,6 @@
   font-weight: 700;
   white-space: nowrap;
 }
-.staymap-key {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: var(--muted);
-}
-.staymap-keyitem {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 44px;
-  color: inherit;
-}
 .staypin-wrap {
   background: none;
   border: 0;
@@ -79,11 +64,6 @@
   background: var(--brand);
   color: var(--on-brand);
   box-shadow: 0 0 0 3px var(--panel),0 2px 10px var(--shade-35);
-}
-.staymap-keyitem .staypin[data-variant="stay"] {
-  width: 24px;
-  height: 24px;
-  box-shadow: 0 0 0 2px var(--panel);
 }
 
 .staylist {
