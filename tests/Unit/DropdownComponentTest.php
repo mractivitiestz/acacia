@@ -36,6 +36,15 @@ final class DropdownComponentTest extends TestCase
         self::assertStringNotContainsString('var(--ink)', (string) preg_replace('/\.dropdown-(trigger|chev|title|option|search input|panel)[^{]*\{[^}]*\}/', '', $css), 'no dark glow');
     }
 
+    public function testTheSearchFieldIsNotDrawnAsAFormFieldInsideAField(): void
+    {
+        $css = (new StylesheetReader(self::ASSETS))->source('components/dropdown.css');
+        self::assertMatchesRegularExpression('/\.dropdown-search input \{[^}]*min-height: 0;[^}]*border: 0;[^}]*border-radius: 0;/', $css);
+        self::assertMatchesRegularExpression('/\.dropdown-search input:focus \{\s*outline: 0;/', $css);
+        $entry = (string) file_get_contents(self::ASSETS.'/acacia.css');
+        self::assertGreaterThan(strpos($entry, 'components/field.css'), strpos($entry, 'components/dropdown.css'), 'the dropdown comes after the field it sits in');
+    }
+
     public function testTheDarkThemeHasItsOwnErrorRed(): void
     {
         $theme = (new StylesheetReader(self::ASSETS))->source('tokens/theme.css');
