@@ -24,7 +24,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .3s;
+  transition: transform .3s,opacity var(--d-slow) var(--ease);
 }
 .expedition-photo:where([data-as="a"]):hover img {
   transform: scale(1.03);

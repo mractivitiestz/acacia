@@ -91,6 +91,15 @@
   border: 1px solid var(--line);
   border-radius: var(--r-s);
 }
+.credits-photo {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: var(--r-s);
+  background: var(--soft);
+}
 .credits-list img {
   width: 64px;
   height: 64px;

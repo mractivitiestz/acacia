@@ -53,7 +53,7 @@
   aspect-ratio: 16/10;
   object-fit: cover;
   border-radius: var(--r-s);
-  transition: transform .3s;
+  transition: transform .3s,opacity var(--d-slow) var(--ease);
 }
 .mega-place:hover img {
   transform: scale(1.02);

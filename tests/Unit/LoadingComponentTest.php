@@ -58,7 +58,21 @@ final class LoadingComponentTest extends TestCase
         $css = $this->reader->source('components/photo-placeholder.css');
         self::assertMatchesRegularExpression('/img \{[^}]*transition: opacity var\(--d-slow\) var\(--ease\);/', $css);
         self::assertMatchesRegularExpression('/\[data-state="failed"\]\)+ img \{\s*opacity: 0;/', $css, 'a failed photo is hidden, not removed, so its box keeps its size');
-        self::assertMatchesRegularExpression('/\.placeholder\[data-state\] \.placeholder-note \{\s*display: none;/', $css, 'the words only when it failed');
+        self::assertMatchesRegularExpression('/\.placeholder:is\(\[data-state="hold"\],\[data-state="wait"\],\[data-state="done"\]\) \.placeholder-note \{\s*display: none;/', $css, 'the words only when it failed');
+        self::assertDoesNotMatchRegularExpression('/\[data-state="failed"\] \.placeholder-note \{\s*display: block;/', $css, 'a tile that carries its own label (the hero mosaic) keeps its failed photo without words');
+    }
+
+    public function testAPhotoWithAHoverTransitionStillFadesIn(): void
+    {
+        $missing = [];
+        foreach ($this->reader->files() as $file) {
+            foreach ($this->reader->rules($file) as $rule) {
+                if (str_ends_with($rule['selector'], ' img') && preg_match('/(?:^|;)\s*transition:([^;]*)/', $rule['body'], $m) && !str_contains($m[1], 'opacity')) {
+                    $missing[] = $file.': '.$rule['selector'];
+                }
+            }
+        }
+        self::assertSame([], $missing, 'a photo\'s own transition list carries the fade, or its own opacity transition (a slideshow\'s cross-fade), or it would replace it');
     }
 
     public function testAWaitingListTurnsItsWordsIntoPillsAndHidesItsIcons(): void
@@ -73,6 +87,11 @@ final class LoadingComponentTest extends TestCase
     public function testASuggestionsPhotoHasABoxOfItsOwn(): void
     {
         self::assertMatchesRegularExpression('/\.suggest-thumb \{[^}]*position: relative;[^}]*width: 44px;[^}]*height: 44px;[^}]*overflow: hidden;/', $this->reader->source('components/search.css'));
+    }
+
+    public function testACreditsPhotoHasABoxOfItsOwn(): void
+    {
+        self::assertMatchesRegularExpression('/\.credits-photo \{[^}]*position: relative;[^}]*width: 64px;[^}]*height: 64px;[^}]*overflow: hidden;[^}]*border-radius: var\(--r-s\);/', $this->reader->source('pages/credits.css'));
     }
 
     public function testAMapBreathesOnTheGroundUntilItsFirstTile(): void

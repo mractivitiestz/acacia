@@ -62,7 +62,8 @@
 
 /* A photo on its way: the placeholder laid over its box, data-state set by the page's script.
    hold: the first 300 ms, nothing shows; wait: the ground and the glyph, breathing as the dropdown's loading rows do;
-   done: the photo has come and fades in as the ground fades out; failed: the placeholder at rest with its words. */
+   done: the photo has come and fades in as the ground fades out; failed: the placeholder at rest with its words, unless
+   its tile carries a label of its own. */
 .placeholder[data-state],
 .placeholder-thumb[data-state] {
   position: absolute;
@@ -90,11 +91,8 @@
 .placeholder-thumb[data-state="failed"] {
   opacity: 1;
 }
-.placeholder[data-state] .placeholder-note {
+.placeholder:is([data-state="hold"],[data-state="wait"],[data-state="done"]) .placeholder-note {
   display: none;
-}
-.placeholder[data-state="failed"] .placeholder-note {
-  display: block;
 }
 :where(:has(> :is(.placeholder,.placeholder-thumb)[data-state])) {
   position: relative;

@@ -3308,7 +3308,7 @@ body[data-locked] {
   aspect-ratio: 16/10;
   object-fit: cover;
   border-radius: var(--r-s);
-  transition: transform .3s;
+  transition: transform .3s,opacity var(--d-slow) var(--ease);
 }
 .mega-place:hover img {
   transform: scale(1.02);
@@ -4609,7 +4609,7 @@ body[data-locked] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s;
+  transition: transform .4s,opacity var(--d-slow) var(--ease);
 }
 .kind:hover :where(.kind-media) img {
   transform: scale(1.05);
@@ -4748,7 +4748,7 @@ body[data-locked] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s;
+  transition: transform .4s,opacity var(--d-slow) var(--ease);
 }
 .activity:hover :where(.activity-media) img {
   transform: scale(1.04);
@@ -6337,7 +6337,7 @@ body[data-locked] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .5s;
+  transition: transform .5s,opacity var(--d-slow) var(--ease);
 }
 .region:hover img {
   transform: scale(1.04);
@@ -7098,7 +7098,7 @@ body[data-locked] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .3s;
+  transition: transform .3s,opacity var(--d-slow) var(--ease);
 }
 :where(.place-photo) .place-link:hover img {
   transform: scale(1.03);
@@ -8233,7 +8233,7 @@ body[data-locked] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s,filter .2s;
+  transition: transform .4s,filter .2s,opacity var(--d-slow) var(--ease);
 }
 .gallery-item:hover img {
   transform: scale(1.03);
@@ -8797,7 +8797,8 @@ body[data-locked] {
 
 /* A photo on its way: the placeholder laid over its box, data-state set by the page's script.
    hold: the first 300 ms, nothing shows; wait: the ground and the glyph, breathing as the dropdown's loading rows do;
-   done: the photo has come and fades in as the ground fades out; failed: the placeholder at rest with its words. */
+   done: the photo has come and fades in as the ground fades out; failed: the placeholder at rest with its words, unless
+   its tile carries a label of its own. */
 .placeholder[data-state],
 .placeholder-thumb[data-state] {
   position: absolute;
@@ -8825,11 +8826,8 @@ body[data-locked] {
 .placeholder-thumb[data-state="failed"] {
   opacity: 1;
 }
-.placeholder[data-state] .placeholder-note {
+.placeholder:is([data-state="hold"],[data-state="wait"],[data-state="done"]) .placeholder-note {
   display: none;
-}
-.placeholder[data-state="failed"] .placeholder-note {
-  display: block;
 }
 :where(:has(> :is(.placeholder,.placeholder-thumb)[data-state])) {
   position: relative;
@@ -15727,7 +15725,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .5s;
+  transition: transform .5s,opacity var(--d-slow) var(--ease);
 }
 .heromosaic-tile:hover img {
   transform: scale(1.03);
@@ -16357,6 +16355,15 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   border: 1px solid var(--line);
   border-radius: var(--r-s);
 }
+.credits-photo {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: var(--r-s);
+  background: var(--soft);
+}
 .credits-list img {
   width: 64px;
   height: 64px;
@@ -16521,7 +16528,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .3s;
+  transition: transform .3s,opacity var(--d-slow) var(--ease);
 }
 .expedition-photo:where([data-as="a"]):hover img {
   transform: scale(1.03);
