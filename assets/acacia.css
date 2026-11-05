@@ -60,6 +60,7 @@
 @import url('components/type-row.css') layer(components);
 @import url('components/pair-card.css') layer(components);
 @import url('components/map.css') layer(components);
+@import url('components/loading.css') layer(components);
 @import url('components/map-marker.css') layer(components);
 @import url('components/hero-view.css') layer(components);
 @import url('components/stay-kinds.css') layer(components);

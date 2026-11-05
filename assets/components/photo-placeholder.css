@@ -1,4 +1,4 @@
-/* components/photo-placeholder.css: .placeholder */
+/* components/photo-placeholder.css: .placeholder, .placeholder-thumb */
 .placeholder {
   display: flex;
   flex-direction: column;
@@ -58,6 +58,59 @@
 }
 .mapcard-media .placeholder {
   gap: 4px;
+}
+
+/* A photo on its way: the placeholder laid over its box, data-state set by the page's script.
+   hold: the first 300 ms, nothing shows; wait: the ground and the glyph, breathing as the dropdown's loading rows do;
+   done: the photo has come and fades in as the ground fades out; failed: the placeholder at rest with its words. */
+.placeholder[data-state],
+.placeholder-thumb[data-state] {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: opacity var(--d-slow) var(--ease);
+}
+.placeholder[data-state="hold"],
+.placeholder[data-state="done"],
+.placeholder-thumb[data-state="hold"],
+.placeholder-thumb[data-state="done"] {
+  opacity: 0;
+}
+.placeholder[data-state="wait"],
+.placeholder-thumb[data-state="wait"] {
+  background: radial-gradient(circle at 30% 20%,var(--tint),transparent 60%),var(--soft);
+  animation: dropdown-wait 1.2s ease-in-out infinite alternate;
+}
+.placeholder[data-state="failed"],
+.placeholder-thumb[data-state="failed"] {
+  opacity: 1;
+}
+.placeholder[data-state] .placeholder-note {
+  display: none;
+}
+.placeholder[data-state="failed"] .placeholder-note {
+  display: block;
+}
+:where(:has(> :is(.placeholder,.placeholder-thumb)[data-state])) {
+  position: relative;
+}
+:where(:has(> :is(.placeholder,.placeholder-thumb)[data-state])) img {
+  transition: opacity var(--d-slow) var(--ease);
+}
+:where(:has(> :is(.placeholder,.placeholder-thumb):is([data-state="wait"],[data-state="failed"]))) img {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .placeholder[data-state="wait"],
+  .placeholder-thumb[data-state="wait"] {
+    animation: none;
+  }
 }
 
 @media (max-width:600px) {
