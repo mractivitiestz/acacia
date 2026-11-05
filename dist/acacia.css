@@ -3781,6 +3781,11 @@ body[data-locked] {
   font-size: 15.5px;
   line-height: 1.25;
 }
+.suggest-match {
+  background: none;
+  color: inherit;
+  font: inherit;
+}
 .suggest-item .suggest-note {
   display: block;
   font-size: 13.5px;
