@@ -3756,6 +3756,15 @@ body[data-locked] {
   object-fit: cover;
   flex: none;
 }
+.suggest-thumb {
+  position: relative;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-s);
+  overflow: hidden;
+  background: var(--soft);
+}
 .suggest-icon {
   width: 44px;
   height: 44px;
@@ -9693,9 +9702,6 @@ body[data-locked] {
    data-waiting is set 300 ms into a re-render and removed when the answer lands; the old rows keep their size and
    become their own skeleton: each run of words (.loading-text) a soft pill its own length, the icons and the controls
    over the photo (.loading-icon) hidden, the photos on the placeholder's ground (components/photo-placeholder.css). */
-.loading {
-  position: relative;
-}
 .loading[data-waiting] {
   pointer-events: none;
 }
@@ -9714,6 +9720,15 @@ body[data-locked] {
   visibility: hidden;
 }
 
+:where(.loading[data-waiting]) :is(.placeholder,.placeholder-thumb)[data-state] {
+  opacity: 1;
+  background: radial-gradient(circle at 30% 20%,var(--tint),transparent 60%),var(--soft);
+  animation: dropdown-wait 1.2s ease-in-out infinite alternate;
+}
+:where(.loading[data-waiting]) :where(:has(> :is(.placeholder,.placeholder-thumb)[data-state])) img {
+  opacity: 0;
+}
+
 /* a map: its markers are data and come at once; until the first tile the map breathes on the placeholder's ground */
 .leaflet-container::before {
   content: "";
@@ -9728,6 +9743,7 @@ body[data-locked] {
 
 @media (prefers-reduced-motion:reduce) {
   .loading[data-waiting] .loading-text,
+  :where(.loading[data-waiting]) :is(.placeholder,.placeholder-thumb)[data-state],
   .leaflet-container:not(:has(.leaflet-tile-loaded))::before {
     animation: none;
   }

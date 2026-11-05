@@ -67,6 +67,12 @@ final class LoadingComponentTest extends TestCase
         self::assertMatchesRegularExpression('/\.loading\[data-waiting\] \.loading-text \{[^}]*color: transparent;[^}]*background: var\(--soft\);[^}]*border-radius: var\(--r-pill\);[^}]*box-decoration-break: clone;[^}]*animation: dropdown-wait 1\.2s ease-in-out infinite alternate;/', $css);
         self::assertMatchesRegularExpression('/\.loading\[data-waiting\] \.loading-icon[^{]*\{\s*visibility: hidden;/', $css);
         self::assertMatchesRegularExpression('/\.loading\[data-waiting\] \{[^}]*pointer-events: none;/', $css);
+        self::assertMatchesRegularExpression('/:where\(\.loading\[data-waiting\]\) :is\(\.placeholder,\.placeholder-thumb\)\[data-state\] \{[^}]*opacity: 1;[^}]*animation: dropdown-wait/', $css, 'its photos, come or not, back on the breathing ground');
+    }
+
+    public function testASuggestionsPhotoHasABoxOfItsOwn(): void
+    {
+        self::assertMatchesRegularExpression('/\.suggest-thumb \{[^}]*position: relative;[^}]*width: 44px;[^}]*height: 44px;[^}]*overflow: hidden;/', $this->reader->source('components/search.css'));
     }
 
     public function testAMapBreathesOnTheGroundUntilItsFirstTile(): void
