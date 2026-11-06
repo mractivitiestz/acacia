@@ -363,3 +363,10 @@
     background: transparent;
   }
 }
+/* A booking's reference in a list (the back office's Bookings). */
+.table-ref {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}

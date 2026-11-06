@@ -8087,6 +8087,15 @@ body[data-locked] {
   margin-top: 26px;
   background: var(--panel);
 }
+/* A screen's own tab strip (the back office's Bookings), the first thing of the page: full width under the top bar,
+   stuck under it, on the page's ground. */
+.shell-page > .tabs {
+  top: var(--top-h);
+  margin: -24px calc(-1 * var(--gut)) 16px;
+  padding-inline: var(--gut);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
 .tabs .tabs-list {
   display: flex;
   gap: 6px;
@@ -8109,6 +8118,12 @@ body[data-locked] {
   color: var(--muted);
   border-bottom: 3px solid transparent;
   white-space: nowrap;
+}
+.tabs-count {
+  font-style: normal;
+  margin-left: 6px;
+  color: var(--muted);
+  font-weight: 500;
 }
 .tabs .tabs-link:hover {
   color: var(--ink);
@@ -8207,6 +8222,11 @@ body[data-locked] {
 }
 .tabs {
   transition: top .25s ease;
+}
+@media (max-width: 700px) {
+  .shell-page > .tabs {
+    margin-top: -16px;
+  }
 }
 }
 
@@ -12839,6 +12859,13 @@ body[data-locked] {
     background: transparent;
   }
 }
+/* A booking's reference in a list (the back office's Bookings). */
+.table-ref {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
 }
 
 /* components/langs.css */
@@ -13079,6 +13106,14 @@ body[data-locked] {
 }
 :where(.plate-body) > .plate-lead.dep-sum {
   margin-top: 16px;
+}
+/* A number that leads to what it counts (Today's Bookings plate). */
+.plate-stat:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+:where(.plate-stat:any-link:hover) .plate-lbl {
+  text-decoration: underline;
 }
 }
 
