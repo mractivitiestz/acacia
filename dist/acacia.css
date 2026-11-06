@@ -7795,6 +7795,14 @@ body[data-locked] {
 .booking-facts .booking-link:hover {
   text-decoration-color: currentColor;
 }
+/* Pay on arrival (variants/checkout-arrival, option C): the time left counts in figures of one width, and the payment
+   block's Due now and Due on arrival sit in its gap with no margin of their own. */
+.arrival-hold .booking-bold {
+  font-variant-numeric: tabular-nums;
+}
+.pay > .booking-sum {
+  margin: 0;
+}
 }
 
 /* components/result-row.css */
@@ -16045,7 +16053,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* pages/checkout.css */
 @layer pages {
-/* pages/checkout.css: .checkout, .trip */
+/* pages/checkout.css: .checkout, .trip, .arrival */
 .checkout-summary {
   top: calc(var(--st) + 20px);
 }
@@ -16257,6 +16265,37 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   .checkout-actions {
     display: none;
   }
+}
+
+/* Pay on arrival (variants/checkout-arrival, option C): the hold's time left above the grid, the payment block's
+   Due now and Due on arrival, what is due on the confirmation, and the departure filled in the date field's month. */
+.arrival-hold {
+  margin: 0;
+}
+.arrival-hold[data-kind="band"] {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+}
+.arrival-hold[data-state="low"] {
+  color: var(--error);
+}
+.arrival-hold[data-kind="band"][data-state="low"] {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+.pay > .arrival-policy {
+  margin: 0;
+}
+.arrival-gets {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 8px;
+}
+.arrival-inpop {
+  margin: 0 0 12px;
 }
 }
 

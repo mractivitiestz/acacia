@@ -405,3 +405,11 @@
 .booking-facts .booking-link:hover {
   text-decoration-color: currentColor;
 }
+/* Pay on arrival (variants/checkout-arrival, option C): the time left counts in figures of one width, and the payment
+   block's Due now and Due on arrival sit in its gap with no margin of their own. */
+.arrival-hold .booking-bold {
+  font-variant-numeric: tabular-nums;
+}
+.pay > .booking-sum {
+  margin: 0;
+}
