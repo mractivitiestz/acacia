@@ -189,3 +189,16 @@
   color: var(--muted);
   font-weight: 400;
 }
+.dep-side .plate {
+  margin: 0;
+}
+/* a record's plates (the show screens, Departures): a lead line under the body's content, muted in the body size */
+:where(.plate-body) > .plate-lead {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 400;
+}
+:where(.plate-body) > .plate-lead.dep-sum {
+  margin-top: 16px;
+}

@@ -73,6 +73,7 @@
 @import url('components/two-days.css') layer(components);
 @import url('components/language-menu.css') layer(components);
 @import url('components/calendar.css') layer(components);
+@import url('components/departures.css') layer(components);
 @import url('components/payment.css') layer(components);
 @import url('components/voucher-pass.css') layer(components);
 @import url('components/day-by-day.css') layer(components);

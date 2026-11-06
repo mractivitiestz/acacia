@@ -2205,6 +2205,10 @@ body[data-locked] {
 :where(.dropdown-option[aria-selected="true"]) .dropdown-mark .icon {
   visibility: visible;
 }
+.dep-sum .icon {
+  flex: none;
+  margin-top: 2px;
+}
 }
 
 /* components/button.css */
@@ -5729,6 +5733,18 @@ body[data-locked] {
 }
 .mapfilters .select {
   min-width: 0;
+}
+/* the Departures screen's plates (departures.css): one column of fields, a help line in the muted body size */
+.dep-side .form, .plate .form {
+  grid-template-columns: minmax(0, 1fr);
+}
+.dep-remove .field-help {
+  margin: 0;
+}
+.dep-remove .field-help, .dep-field > .field-help {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
 }
 }
 
@@ -10796,7 +10812,7 @@ body[data-locked] {
 
 /* components/calendar.css */
 @layer components {
-/* components/calendar.css: .datefield, .calendar */
+/* components/calendar.css: .datefield, .calendar (data-size lg: the back office's month, each day with its places taken, .calendar-note, and its fill, .calendar-fill) */
 .datefield {
   position: relative;
   width: 100%;
@@ -10997,6 +11013,123 @@ body[data-locked] {
 .datefield-btn[aria-invalid="true"] {
   border-color: var(--error);
   background: var(--error-bg);
+}
+.calendar[data-size="lg"] .calendar-grid {
+  gap: 6px;
+}
+.calendar[data-size="lg"] .calendar-dow {
+  padding-bottom: 4px;
+}
+:where(.calendar[data-size="lg"]) .calendar-day {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+  min-height: 84px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+}
+:where(.calendar[data-size="lg"]) .calendar-day[data-state="departure"]::after {
+  display: none;
+}
+:where(.calendar[data-size="lg"]) .calendar-day:is([data-state="departure"], [data-state="full"]) {
+  background: var(--soft);
+  border-color: transparent;
+}
+:where(.calendar[data-size="lg"]) .calendar-day[data-state="full"] .calendar-label {
+  text-decoration: none;
+}
+:where(.calendar[data-size="lg"]) .calendar-day[aria-pressed="true"] {
+  background: var(--soft);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--brand);
+}
+.calendar-day[data-when="past"] {
+  opacity: .55;
+}
+.calendar-note {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.2;
+}
+.calendar-day[data-state="full"] .calendar-note {
+  color: var(--ink);
+  font-weight: 600;
+}
+.calendar-fill {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: auto;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--brand) var(--fill), var(--line) var(--fill));
+}
+@media (max-width: 1080px) {
+  .calendar[data-size="lg"] .calendar-day {
+    min-height: 64px;
+    padding: 6px;
+  }
+  .calendar[data-size="lg"] .calendar-grid {
+    gap: 3px;
+  }
+  .calendar[data-size="lg"] .calendar-note {
+    font-size: 11.5px;
+  }
+}
+}
+
+/* components/departures.css */
+@layer components {
+/* components/departures.css: .dep, the back office's Departures: the side column beside the month (.dep-side), a date's field and its help (.dep-field), the weekday pills (.dep-days, .dep-checks), the pattern's sentence (.dep-sum), the actions (.dep-actions, data-end at the end) and Remove the date under its line (.dep-remove) */
+.dep-side {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+.plates[data-variant="record"] > .dep-side {
+  grid-column: span 1;
+}
+.dep-actions,
+.dep-remove {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.dep-remove {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.dep-sum {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+.dep-days {
+  grid-column: 1 / -1;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.dep-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.dep-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.dep-actions[data-end] {
+  justify-content: flex-end;
 }
 }
 
@@ -12933,6 +13066,19 @@ body[data-locked] {
   font-size: 13.5px;
   color: var(--muted);
   font-weight: 400;
+}
+.dep-side .plate {
+  margin: 0;
+}
+/* a record's plates (the show screens, Departures): a lead line under the body's content, muted in the body size */
+:where(.plate-body) > .plate-lead {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 400;
+}
+:where(.plate-body) > .plate-lead.dep-sum {
+  margin-top: 16px;
 }
 }
 

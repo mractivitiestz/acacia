@@ -413,3 +413,7 @@
 :where(.dropdown-option[aria-selected="true"]) .dropdown-mark .icon {
   visibility: visible;
 }
+.dep-sum .icon {
+  flex: none;
+  margin-top: 2px;
+}

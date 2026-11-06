@@ -1,4 +1,4 @@
-/* components/calendar.css: .datefield, .calendar */
+/* components/calendar.css: .datefield, .calendar (data-size lg: the back office's month, each day with its places taken, .calendar-note, and its fill, .calendar-fill) */
 .datefield {
   position: relative;
   width: 100%;
@@ -199,4 +199,68 @@
 .datefield-btn[aria-invalid="true"] {
   border-color: var(--error);
   background: var(--error-bg);
+}
+.calendar[data-size="lg"] .calendar-grid {
+  gap: 6px;
+}
+.calendar[data-size="lg"] .calendar-dow {
+  padding-bottom: 4px;
+}
+:where(.calendar[data-size="lg"]) .calendar-day {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+  min-height: 84px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--panel);
+}
+:where(.calendar[data-size="lg"]) .calendar-day[data-state="departure"]::after {
+  display: none;
+}
+:where(.calendar[data-size="lg"]) .calendar-day:is([data-state="departure"], [data-state="full"]) {
+  background: var(--soft);
+  border-color: transparent;
+}
+:where(.calendar[data-size="lg"]) .calendar-day[data-state="full"] .calendar-label {
+  text-decoration: none;
+}
+:where(.calendar[data-size="lg"]) .calendar-day[aria-pressed="true"] {
+  background: var(--soft);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--brand);
+}
+.calendar-day[data-when="past"] {
+  opacity: .55;
+}
+.calendar-note {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.2;
+}
+.calendar-day[data-state="full"] .calendar-note {
+  color: var(--ink);
+  font-weight: 600;
+}
+.calendar-fill {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: auto;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--brand) var(--fill), var(--line) var(--fill));
+}
+@media (max-width: 1080px) {
+  .calendar[data-size="lg"] .calendar-day {
+    min-height: 64px;
+    padding: 6px;
+  }
+  .calendar[data-size="lg"] .calendar-grid {
+    gap: 3px;
+  }
+  .calendar[data-size="lg"] .calendar-note {
+    font-size: 11.5px;
+  }
 }
