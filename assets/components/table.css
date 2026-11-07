@@ -370,3 +370,98 @@
   letter-spacing: .02em;
   white-space: nowrap;
 }
+/* A booking's row on a phone (the back office's Bookings, the phone-rows study's R1): a .table with data-rows="r1" gives each row one more cell, data-col="row", hidden above 700px, holding a .bkrow, one link that is the whole row: .bkrow-top (the reference and its status) over .bkrow-line (.bkrow-who, data-state="missing" for Not given yet, .bkrow-when and .bkrow-ppl) beside .bkrow-chev; a booking expired or cancelled is data-state="dead". */
+.table-cell[data-col="row"] {
+  display: none;
+}
+@media (max-width: 700px) {
+  :where(.table[data-rows="r1"]) .table-row {
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+  :where(.table[data-rows="r1"]) .table-row:hover {
+    background: none;
+  }
+  :where(.table[data-rows="r1"]) .table-row + .table-row {
+    margin-top: 8px;
+  }
+  :where(.table[data-rows="r1"]) .table-cell:not([data-col="row"]) {
+    display: none;
+  }
+  :where(.table[data-rows="r1"]) .table-cell[data-col="row"] {
+    display: block;
+  }
+  .bkrow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20px;
+    grid-template-areas: "top chev" "line chev";
+    column-gap: 10px;
+    row-gap: 4px;
+    align-items: center;
+    min-height: 44px;
+    min-width: 0;
+    padding: 12px 10px 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--panel);
+    color: var(--ink);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bkrow > *, .bkrow-top > *, .bkrow-line > * {
+    min-width: 0;
+  }
+  .bkrow-top {
+    grid-area: top;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .bkrow-line {
+    grid-area: line;
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+  .bkrow-line > * + *::before {
+    content: "·";
+    padding-inline: 6px;
+  }
+  .bkrow-who {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .bkrow-who[data-state="missing"] {
+    font-style: italic;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .bkrow-when, .bkrow-ppl {
+    flex: none;
+  }
+  .bkrow-chev {
+    grid-area: chev;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+  }
+  .bkrow[data-state="dead"] .table-ref {
+    color: var(--muted);
+  }
+  .bkrow:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
