@@ -12463,6 +12463,9 @@ body[data-locked] {
     margin-inline: calc(-1 * var(--gut));
     padding-inline: var(--gut);
   }
+  .listbar-pills > * {
+    flex-shrink: 0;
+  }
   .listbar-end {
     margin-left: 0;
     width: 100%;
