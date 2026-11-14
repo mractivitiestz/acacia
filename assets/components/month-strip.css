@@ -154,3 +154,8 @@
     max-width: none;
   }
 }
+
+/* the months a community project starts in, under their label (projectedit.css) */
+:where(.projectedit-months) .months {
+  margin-top: 6px;
+}

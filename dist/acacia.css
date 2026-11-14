@@ -2209,6 +2209,11 @@ body[data-locked] {
   flex: none;
   margin-top: 2px;
 }
+
+/* a checklist row still to do keeps its icon muted */
+:where(.checks-item[data-state="todo"]) .icon {
+  color: var(--muted);
+}
 }
 
 /* components/button.css */
@@ -5788,6 +5793,33 @@ body[data-locked] {
 .options[data-size="compact"] .option {
   min-height: 52px;
 }
+
+/* an editor's errors and list labels: under a language field, in a section's body, in a community project's group (projectedit.css); a field in a list row's pair and in the prices by length */
+:where(.langfield, .formsec-body, .projectedit-group) > .error {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.error[hidden] {
+  display: none;
+}
+:where(.formsec-body, .projectedit-group) > .field-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+:where(.projectedit-pair) .field {
+  gap: 6px;
+  font-weight: 600;
+}
+:where(.projectedit-prices) .field {
+  margin: 0;
+}
+:where(.projectedit-prices) .field input {
+  min-height: 44px;
+  height: 44px;
+  max-width: 140px;
+}
 }
 
 /* components/dropdown.css */
@@ -7120,6 +7152,35 @@ body[data-locked] {
 }
 :where(.contact) .deflist .deflist-row:last-child {
   border-bottom: 0;
+}
+
+/* a section's checklist in an editor (a community project's Publish): one column, a row linking to its section (data-variant="link"), a row to fix (data-state="error") and a soft row (data-variant="soft") */
+:where(.formsec) .checks {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  margin: 0;
+}
+:where(.formsec) .checks .checks-item {
+  font-weight: 400;
+}
+.checks-label[data-variant="link"] {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.checks-label[data-variant="link"]:hover {
+  text-decoration-color: currentColor;
+}
+.checks .checks-item[data-state="error"] {
+  color: var(--error);
+  font-weight: 600;
+}
+:where(html[data-theme="dark"] .checks-item[data-state="error"]) .checks-label {
+  color: var(--ink);
+}
+.checks-item[data-variant="soft"] {
+  color: var(--muted);
 }
 }
 
@@ -9222,6 +9283,11 @@ body[data-locked] {
   .months[data-size="sm"] {
     max-width: none;
   }
+}
+
+/* the months a community project starts in, under their label (projectedit.css) */
+:where(.projectedit-months) .months {
+  margin-top: 6px;
 }
 }
 
@@ -13054,6 +13120,11 @@ body[data-locked] {
     outline-offset: 2px;
   }
 }
+
+/* the prices by length of a community project (projectedit.css) */
+:where(.projectedit-prices) .table-cell {
+  vertical-align: middle;
+}
 }
 
 /* components/langs.css */
@@ -14317,6 +14388,20 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 .langfield textarea[data-size="lg"] {
   min-height: 220px;
 }
+
+/* an invalid language field, as an invalid .field is drawn; a text in a list row's pair (projectedit.css) */
+.langfield :is(input, textarea)[aria-invalid="true"] {
+  border-color: var(--error);
+  border-style: solid;
+  background: var(--error-bg);
+}
+:where(html[data-theme="dark"]) .langfield :is(input, textarea)[aria-invalid="true"] {
+  background: color-mix(in srgb, var(--error) 22%, var(--panel));
+}
+:where(.projectedit-pair) .langfield textarea {
+  height: auto;
+  min-height: 72px;
+}
 }
 
 /* components/editor.css */
@@ -15131,6 +15216,11 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   font-weight: 600;
   font-size: 14px;
 }
+
+/* the share of a price by length (projectedit.css) */
+:where(.projectedit-prices) .meter-bar {
+  width: 80px;
+}
 }
 
 /* components/mapkey.css */
@@ -15205,6 +15295,70 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   display: grid;
   gap: 12px;
   min-width: 0;
+}
+}
+
+/* components/projectedit.css */
+@layer components {
+/* components/projectedit.css: .projectedit, a community project's sections in the Activity editor (the design's variants/community-projects/editor/e1.html): a group's fields under its switch (.projectedit-group), two fields in one list row (.projectedit-pair: a role and what it does, a day and what happens, a figure and what it counts, a question and its answer), an activity in a list row (.projectedit-act, its .projectedit-img and .projectedit-text), a plain list of the questions asked on every project (.projectedit-list), the months a project starts in (.projectedit-months) and the prices by length (.projectedit-prices) */
+.projectedit-group {
+  display: grid;
+  gap: 18px;
+}
+.projectedit-group[hidden] {
+  display: none;
+}
+.projectedit-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 10px;
+  align-self: center;
+  min-width: 0;
+}
+.projectedit-pair[data-variant="figure"] {
+  grid-template-columns: 120px minmax(0, 1fr);
+}
+.projectedit-pair[data-variant="faq"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+.projectedit-act {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 48px;
+}
+.projectedit-img {
+  flex: none;
+  width: 64px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--r-s);
+}
+.projectedit-text {
+  display: grid;
+  min-width: 0;
+}
+.projectedit-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.projectedit-months {
+  min-width: 0;
+}
+.projectedit-prices {
+  overflow: visible;
+}
+
+@media (max-width:760px) {
+  .projectedit-pair:not([data-variant="figure"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 }
 

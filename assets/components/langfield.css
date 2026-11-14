@@ -93,3 +93,17 @@
 .langfield textarea[data-size="lg"] {
   min-height: 220px;
 }
+
+/* an invalid language field, as an invalid .field is drawn; a text in a list row's pair (projectedit.css) */
+.langfield :is(input, textarea)[aria-invalid="true"] {
+  border-color: var(--error);
+  border-style: solid;
+  background: var(--error-bg);
+}
+:where(html[data-theme="dark"]) .langfield :is(input, textarea)[aria-invalid="true"] {
+  background: color-mix(in srgb, var(--error) 22%, var(--panel));
+}
+:where(.projectedit-pair) .langfield textarea {
+  height: auto;
+  min-height: 72px;
+}

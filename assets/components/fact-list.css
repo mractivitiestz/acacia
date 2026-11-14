@@ -143,3 +143,32 @@
 :where(.contact) .deflist .deflist-row:last-child {
   border-bottom: 0;
 }
+
+/* a section's checklist in an editor (a community project's Publish): one column, a row linking to its section (data-variant="link"), a row to fix (data-state="error") and a soft row (data-variant="soft") */
+:where(.formsec) .checks {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  margin: 0;
+}
+:where(.formsec) .checks .checks-item {
+  font-weight: 400;
+}
+.checks-label[data-variant="link"] {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+.checks-label[data-variant="link"]:hover {
+  text-decoration-color: currentColor;
+}
+.checks .checks-item[data-state="error"] {
+  color: var(--error);
+  font-weight: 600;
+}
+:where(html[data-theme="dark"] .checks-item[data-state="error"]) .checks-label {
+  color: var(--ink);
+}
+.checks-item[data-variant="soft"] {
+  color: var(--muted);
+}

@@ -113,6 +113,7 @@
 @import url('components/mapkey.css') layer(components);
 @import url('components/photostrip.css') layer(components);
 @import url('components/stayedit.css') layer(components);
+@import url('components/projectedit.css') layer(components);
 @import url('components/legend.css') layer(components);
 @import url('components/periods.css') layer(components);
 @import url('components/waysin.css') layer(components);

@@ -465,3 +465,8 @@
     outline-offset: 2px;
   }
 }
+
+/* the prices by length of a community project (projectedit.css) */
+:where(.projectedit-prices) .table-cell {
+  vertical-align: middle;
+}
