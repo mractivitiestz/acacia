@@ -1,4 +1,4 @@
-/* components/glance.css: .glance, a place at a glance as rows of a term with its icon over its value, hairlines between; the aside variant stacks them in a card, and .glance-note closes a section in a quiet line */
+/* components/glance.css: .glance, a place at a glance as rows of a term with its icon over its value, hairlines between; the aside variant stacks them in a card, .glance-cap sets a count over its capacity bar, and .glance-note closes a section in a quiet line */
 .glance-list {
   display: grid;
   width: 100%;
@@ -60,4 +60,10 @@
   .glance-row {
     grid-template-columns: minmax(0,1fr);
   }
+}
+/* a row whose value is a count over its capacity bar: the expedition's Vehicles (variants/expeditions/panel/p7.html) */
+.glance-cap {
+  display: grid;
+  gap: 6px;
+  width: 100%;
 }
