@@ -1,4 +1,4 @@
-/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages */
 .select {
   position: relative;
   display: inline-flex;
@@ -403,4 +403,18 @@
   font-size: 13.5px;
   font-weight: 400;
   color: var(--muted);
+}
+
+.booking-wholist .error {
+  margin-top: 0;
+}
+.booking-who .error {
+  margin-top: 8px;
+}
+.form.booking-ages {
+  width: 100%;
+  gap: 12px;
+}
+.booking-ages .field {
+  font-size: 14.5px;
 }

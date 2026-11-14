@@ -5341,7 +5341,7 @@ body[data-locked] {
 
 /* components/field.css */
 @layer components {
-/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages */
 .select {
   position: relative;
   display: inline-flex;
@@ -5746,6 +5746,20 @@ body[data-locked] {
   font-size: 13.5px;
   font-weight: 400;
   color: var(--muted);
+}
+
+.booking-wholist .error {
+  margin-top: 0;
+}
+.booking-who .error {
+  margin-top: 8px;
+}
+.form.booking-ages {
+  width: 100%;
+  gap: 12px;
+}
+.booking-ages .field {
+  font-size: 14.5px;
 }
 }
 
@@ -7405,7 +7419,7 @@ body[data-locked] {
 
 /* components/booking-card.css */
 @layer components {
-/* components/booking-card.css: .booking, .aside */
+/* components/booking-card.css: .booking, .aside; the travellers field (.booking-who, the people selector A3): its label (.booking-wholabel), the house dropdown's trigger opening a panel (.booking-whopanel, a bottom sheet up to 700px) of the adults and the children (.booking-wholist), each child's age (.booking-ages) and the running total beside Done (.booking-whofoot, .booking-whototal) */
 .aside .aside-heading {
   font-size: 22px;
   font-weight: 800;
@@ -7819,6 +7833,45 @@ body[data-locked] {
 }
 .pay > .booking-sum {
   margin: 0;
+}
+
+.booking-who {
+  width: 100%;
+}
+.booking-wholabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 800;
+}
+.dropdown:not([data-state="sheet"]) .booking-whopanel {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  max-height: none;
+}
+.booking-wholist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+.dropdown[data-state="sheet"] .booking-wholist {
+  padding: 12px 20px 16px;
+}
+.booking-whofoot {
+  display: flex;
+  align-items: center;
+}
+.booking-whototal {
+  margin-right: auto;
+  padding-left: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.dropdown[data-state="sheet"] .booking-whototal {
+  flex: none;
+  padding-left: 0;
 }
 }
 
