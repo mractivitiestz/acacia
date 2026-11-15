@@ -56,6 +56,7 @@
 @import url('components/photo-placeholder.css') layer(components);
 @import url('components/price.css') layer(components);
 @import url('components/month-strip.css') layer(components);
+@import url('components/yearcal.css') layer(components);
 @import url('components/ask-question.css') layer(components);
 @import url('components/type-row.css') layer(components);
 @import url('components/pair-card.css') layer(components);
