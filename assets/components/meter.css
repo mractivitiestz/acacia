@@ -32,3 +32,8 @@
   font-weight: 600;
   font-size: 14px;
 }
+
+/* the share of a price by length (projectedit.css) */
+:where(.projectedit-prices) .meter-bar {
+  width: 80px;
+}

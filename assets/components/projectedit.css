@@ -1,0 +1,60 @@
+/* components/projectedit.css: .projectedit, a community project's sections in the Activity editor (the design's variants/community-projects/editor/e1.html): a group's fields under its switch (.projectedit-group), two fields in one list row (.projectedit-pair: a role and what it does, a day and what happens, a figure and what it counts, a question and its answer), an activity in a list row (.projectedit-act, its .projectedit-img and .projectedit-text), a plain list of the questions asked on every project (.projectedit-list), the months a project starts in (.projectedit-months) and the prices by length (.projectedit-prices) */
+.projectedit-group {
+  display: grid;
+  gap: 18px;
+}
+.projectedit-group[hidden] {
+  display: none;
+}
+.projectedit-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 10px;
+  align-self: center;
+  min-width: 0;
+}
+.projectedit-pair[data-variant="figure"] {
+  grid-template-columns: 120px minmax(0, 1fr);
+}
+.projectedit-pair[data-variant="faq"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+.projectedit-act {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 48px;
+}
+.projectedit-img {
+  flex: none;
+  width: 64px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--r-s);
+}
+.projectedit-text {
+  display: grid;
+  min-width: 0;
+}
+.projectedit-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.projectedit-months {
+  min-width: 0;
+}
+.projectedit-prices {
+  overflow: visible;
+}
+
+@media (max-width:760px) {
+  .projectedit-pair:not([data-variant="figure"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

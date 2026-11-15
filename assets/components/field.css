@@ -435,3 +435,30 @@
 .options[data-size="compact"] .option {
   min-height: 52px;
 }
+
+/* an editor's errors and list labels: under a language field, in a section's body, in a community project's group (projectedit.css); a field in a list row's pair and in the prices by length */
+:where(.langfield, .formsec-body, .projectedit-group) > .error {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.error[hidden] {
+  display: none;
+}
+:where(.formsec-body, .projectedit-group) > .field-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+:where(.projectedit-pair) .field {
+  gap: 6px;
+  font-weight: 600;
+}
+:where(.projectedit-prices) .field {
+  margin: 0;
+}
+:where(.projectedit-prices) .field input {
+  min-height: 44px;
+  height: 44px;
+  max-width: 140px;
+}

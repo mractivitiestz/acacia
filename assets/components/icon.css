@@ -417,3 +417,8 @@
   flex: none;
   margin-top: 2px;
 }
+
+/* a checklist row still to do keeps its icon muted */
+:where(.checks-item[data-state="todo"]) .icon {
+  color: var(--muted);
+}
