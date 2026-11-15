@@ -452,3 +452,12 @@
   flex: none;
   padding-left: 0;
 }
+
+/* A step that is refused but still answers, saying why (nobody under a community project's minimum age). */
+.booking-step[aria-disabled="true"] {
+  border-color: var(--line);
+  color: var(--muted);
+}
+.booking-step[aria-disabled="true"]:hover {
+  background: var(--soft);
+}

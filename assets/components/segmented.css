@@ -70,3 +70,13 @@
 .listing-view .segmented-btn {
   min-height: 44px;
 }
+
+/* The buttons share the row's whole width (a community project's lengths in weeks). */
+.segmented[data-variant="fill"] {
+  display: flex;
+  width: 100%;
+}
+.segmented[data-variant="fill"] .segmented-btn {
+  flex: 1;
+  padding-inline: 6px;
+}

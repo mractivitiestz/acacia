@@ -134,4 +134,5 @@
 @import url('pages/expeditions.css') layer(pages);
 @import url('pages/expedition.css') layer(pages);
 @import url('pages/stays.css') layer(pages);
+@import url('pages/community-projects.css') layer(pages);
 @import url('utilities/utilities.css') layer(utilities);

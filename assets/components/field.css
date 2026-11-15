@@ -418,3 +418,20 @@
 .booking-ages .field {
   font-size: 14.5px;
 }
+
+/* An option that cannot be chosen here, greyed and dashed (a community project's place it does not take). */
+.option[data-state="off"] {
+  border-style: dashed;
+  background: transparent;
+  cursor: not-allowed;
+}
+.option[data-state="off"]:hover {
+  border-color: var(--line);
+}
+.option[data-state="off"] .option-bold,
+.option[data-state="off"] .option-note {
+  color: var(--muted);
+}
+.options[data-size="compact"] .option {
+  min-height: 52px;
+}
