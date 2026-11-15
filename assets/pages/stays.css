@@ -111,3 +111,8 @@
     display: none;
   }
 }
+
+/* The stay an activity includes, on the activity's page: its sub-headings, after the stay's card and after what it has. */
+.staysub {
+  margin-top: 24px;
+}
