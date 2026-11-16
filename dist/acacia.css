@@ -20602,6 +20602,119 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 }
 
+/* components/poster-sheet.css */
+@layer components {
+/* components/poster-sheet.css: .pst-sheet, a print poster's PDF page: the trim (--tw, --th) with 3 mm of bleed and a 7 mm slug round it. The poster is scaled by --k into the trim (.pst-scale); a copy behind it, stretched by --bx and --by from the trim's centre, carries its edges into the bleed. The crop marks stand in the slug on the lines of the trim, a hairline each, stopping at the bleed. */
+.pst-sheet {
+  --bleed: 3mm;
+  --slug: 7mm;
+  --edge: calc(var(--bleed) + var(--slug));
+  --hair: 0.1mm;
+  position: relative;
+  overflow: hidden;
+  width: calc(var(--tw) + 2 * var(--edge));
+  height: calc(var(--th) + 2 * var(--edge));
+  background: var(--white);
+}
+.pst-bleed {
+  position: absolute;
+  top: var(--slug);
+  left: var(--slug);
+  overflow: hidden;
+  width: calc(var(--tw) + 2 * var(--bleed));
+  height: calc(var(--th) + 2 * var(--bleed));
+}
+.pst-trim,
+.pst-back {
+  position: absolute;
+  top: var(--edge);
+  left: var(--edge);
+  width: var(--tw);
+  height: var(--th);
+}
+.pst-trim {
+  overflow: hidden;
+}
+.pst-back {
+  top: var(--bleed);
+  left: var(--bleed);
+  transform: scale(var(--bx), var(--by));
+}
+.pst-scale {
+  display: block;
+  width: max-content;
+  transform: scale(var(--k));
+  transform-origin: 0 0;
+}
+.pst-crop {
+  position: absolute;
+  width: var(--edge);
+  height: var(--edge);
+}
+.pst-crop::before,
+.pst-crop::after {
+  content: "";
+  position: absolute;
+  background: var(--dark);
+}
+.pst-crop::before {
+  width: var(--slug);
+  height: var(--hair);
+}
+.pst-crop::after {
+  width: var(--hair);
+  height: var(--slug);
+}
+.pst-crop[data-at="tl"] {
+  top: 0;
+  left: 0;
+}
+.pst-crop[data-at="tr"] {
+  top: 0;
+  right: 0;
+}
+.pst-crop[data-at="bl"] {
+  bottom: 0;
+  left: 0;
+}
+.pst-crop[data-at="br"] {
+  right: 0;
+  bottom: 0;
+}
+.pst-crop[data-at="tl"]::before,
+.pst-crop[data-at="bl"]::before {
+  left: 0;
+}
+.pst-crop[data-at="tr"]::before,
+.pst-crop[data-at="br"]::before {
+  right: 0;
+}
+.pst-crop[data-at="tl"]::before,
+.pst-crop[data-at="tr"]::before {
+  top: calc(100% - var(--hair) / 2);
+}
+.pst-crop[data-at="bl"]::before,
+.pst-crop[data-at="br"]::before {
+  top: calc(var(--hair) / -2);
+}
+.pst-crop[data-at="tl"]::after,
+.pst-crop[data-at="tr"]::after {
+  top: 0;
+}
+.pst-crop[data-at="bl"]::after,
+.pst-crop[data-at="br"]::after {
+  bottom: 0;
+}
+.pst-crop[data-at="tl"]::after,
+.pst-crop[data-at="bl"]::after {
+  left: calc(100% - var(--hair) / 2);
+}
+.pst-crop[data-at="tr"]::after,
+.pst-crop[data-at="br"]::after {
+  left: calc(var(--hair) / -2);
+}
+}
+
 /* components/posterflow.css */
 @layer components {
 /* components/posterflow.css: .pf, the New poster screens and a poster's page: platform cards, shapes, option links, template cards, a poster scaled into its box (.pf-thumb), previews, the crop marks of print, the set, the toggles, the warning */
