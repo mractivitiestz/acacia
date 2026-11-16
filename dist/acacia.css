@@ -1218,10 +1218,11 @@ html[data-theme="dark"] {
 
 /* tokens/radius.css */
 @layer tokens {
-/* tokens/radius.css: the only three radii */
+/* tokens/radius.css: the only four radii; --r-xs is a small thumbnail's, as an activity's in a list row */
 :root {
   --r: 16px;
   --r-s: 12px;
+  --r-xs: 8px;
   --r-pill: 999px;
 }
 }
@@ -15555,7 +15556,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   width: 64px;
   height: 44px;
   object-fit: cover;
-  border-radius: var(--r-s);
+  border-radius: var(--r-xs);
 }
 .projectedit-text {
   display: grid;

@@ -86,7 +86,7 @@ The C7 scheme:
 - **Specificity at most 0,3,0**; `:where()` keeps a selector's context without its weight.
 - **Colours only from tokens**: the palette, or `tokens/fixed.css` for what does not follow it (white and shades
   over photographs, the error red). The Apple Pay and Google Pay buttons keep their providers' literal colours.
-- **Radii**: `var(--r)` 16 px, `var(--r-s)` 12 px, `var(--r-pill)` 999 px, or `0`, `50%`, `inherit`.
+- **Radii**: `var(--r)` 16 px, `var(--r-s)` 12 px, `var(--r-xs)` 8 px (a small thumbnail's), `var(--r-pill)` 999 px, or `0`, `50%`, `inherit`.
 
 ## Adding a component
 
@@ -117,7 +117,7 @@ composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit, bin/ch
   engine's `app.js`, `expedition.js` and every page under its `site/`. Exits 1 on any undefined hook.
 
 - `tests/Unit/ConformanceTest.php`: the layer order declared once; every file imported once into the layer of its
-  directory; C7 selectors with specificity at most 0,3,0; literal colours only in tokens; the three radii; no
+  directory; C7 selectors with specificity at most 0,3,0; literal colours only in tokens; the four radii; no
   `!important` beyond the two Leaflet overrides; each class owned by one file; every class the docs use is defined;
   `dist/` equal to the concatenation of the sources.
 - `tests/Unit/PaletteServiceTest.php`: palettes 3 and 22 equal the engine's computed tones; the shipped palette file
