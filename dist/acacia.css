@@ -20627,7 +20627,11 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/poster-sheet.css */
 @layer components {
-/* components/poster-sheet.css: .pst-sheet, a print poster's PDF page: the trim (--tw, --th) with 3 mm of bleed and a 7 mm slug round it. The poster is scaled by --k into the trim (.pst-scale); a copy behind it, stretched by --bx and --by from the trim's centre, carries its edges into the bleed. The crop marks stand in the slug on the lines of the trim, a hairline each, stopping at the bleed. */
+/* components/poster-sheet.css: .pst-page, the page a poster's file is drawn from (its root and its body), which keeps no scrollbar gutter (base/elements.css keeps one on every page), so the poster meets the right edge of its window, and is white, the slug's colour, where a PDF's page runs a fraction of a millimetre past its sheet; and .pst-sheet, a print poster's PDF page: the trim (--tw, --th) with 3 mm of bleed and a 7 mm slug round it. The poster is scaled by --k into the trim (.pst-scale); a copy behind it, stretched by --bx and --by from the trim's centre, carries its edges into the bleed. The crop marks stand in the slug on the lines of the trim, a hairline each, stopping at the bleed. */
+.pst-page {
+  scrollbar-gutter: auto;
+  background: var(--white);
+}
 .pst-sheet {
   --bleed: 3mm;
   --slug: 7mm;
