@@ -8891,7 +8891,7 @@ body[data-locked] {
   letter-spacing: -.02em;
   line-height: 1.15;
 }
-.promise-text :is(.promise-label, .en, .sw) {
+.promise-text > :is(.promise-label, .en, .sw) {
   display: block;
   font-size: 17px;
   margin-top: 4px;
@@ -8920,7 +8920,7 @@ body[data-locked] {
   background: var(--soft);
   color: var(--brand-text);
 }
-.promise-text :is(.promise-label, .en, .sw) {
+.promise-text > :is(.promise-label, .en, .sw) {
   color: var(--muted);
   opacity: 1;
 }
