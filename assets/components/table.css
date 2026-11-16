@@ -1,4 +1,4 @@
-/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip */
+/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip; .table-clamp, a long text held to three lines; .table-source, a link's site name ending in an ellipsis */
 .table {
   overflow-x: auto;
   overflow-y: hidden;
@@ -486,4 +486,20 @@
 .pf .table {
   overflow-x: auto;
   min-width: 0;
+}
+.table-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-width: 100px;
+}
+.table-source {
+  display: inline-block;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
 }

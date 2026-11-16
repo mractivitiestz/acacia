@@ -1,4 +1,4 @@
-/* components/projectedit.css: .projectedit, a community project's sections in the Activity editor (the design's variants/community-projects/editor/e1.html): a group's fields under its switch (.projectedit-group), two fields in one list row (.projectedit-pair: a role and what it does, a day and what happens, a figure and what it counts, a question and its answer), an activity in a list row (.projectedit-act, its .projectedit-img and .projectedit-text), a plain list of the questions asked on every project (.projectedit-list), the months a project starts in (.projectedit-months) and the prices by length (.projectedit-prices) */
+/* components/projectedit.css: .projectedit, a community project's sections in the Activity editor (the design's variants/community-projects/editor/e1.html): a group's fields under its switch (.projectedit-group), two fields in one list row (.projectedit-pair: a role and what it does, a day and what happens, a figure and what it counts, a question and its answer), an activity in a list row (.projectedit-act, its .projectedit-img and .projectedit-text), a plain list of the questions asked on every project (.projectedit-list), the months a project starts in (.projectedit-months), the prices by length (.projectedit-prices) and the link under the partner card (.projectedit-edit) */
 .projectedit-group {
   display: grid;
   gap: 18px;
@@ -57,4 +57,7 @@
   .projectedit-pair:not([data-variant="figure"]) {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+.projectedit-edit {
+  justify-self: start;
 }
