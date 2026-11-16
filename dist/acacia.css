@@ -17278,13 +17278,13 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 .p14-nums .pst-num {
   display: contents;
 }
-.p14-nums > .pst-num > .pst-numv {
+:where(.p14-nums > .pst-num) > .pst-numv {
   display: flex;
   align-items: center;
   padding: calc(16 * var(--u)) 0;
   border-top: calc(1.6 * var(--u)) solid var(--light-26);
 }
-.p14-nums > .pst-num > .pst-numt {
+:where(.p14-nums > .pst-num) > .pst-numt {
   display: flex;
   align-items: center;
   padding: calc(16 * var(--u)) 0;
@@ -17300,7 +17300,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   color: var(--accent);
   font-size: calc(110 * var(--u));
 }
-.p14-nums > .pst-num > .pst-numt {
+:where(.p14-nums > .pst-num) > .pst-numt {
   font-size: calc(32 * var(--u));
 }
 .pst[data-tpl="p14"] .pst-qr {
