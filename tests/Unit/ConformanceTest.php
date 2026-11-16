@@ -33,7 +33,7 @@ final class ConformanceTest extends TestCase
     /** Apple Pay and Google Pay are drawn in the providers' own published white and black. */
     private const string LITERAL_COLOUR_ALLOWED_SELECTOR = '/^\.wallet\b/';
 
-    private const string RADIUS_TOKEN = '/^(var\(--r(-s|-pill)?\)|0|50%|inherit)$/';
+    private const string RADIUS_TOKEN = '/^(var\(--r(-s|-xs|-pill)?\)|0|50%|inherit)$/';
 
     private const string C7_CLASS = '/^([a-z][a-z0-9]*(-[a-z0-9]+)?|leaflet-[a-z-]+)$/';
 
@@ -121,7 +121,20 @@ final class ConformanceTest extends TestCase
         self::assertSame([], $violations);
     }
 
-    public function testRadiiUseTheThreeTokens(): void
+    public function testTheRadiusTokensAreTheFourTheDesignsUse(): void
+    {
+        $tokens = [];
+        foreach ($this->reader->rules('tokens/radius.css') as $rule) {
+            preg_match_all('/(--r[a-z-]*)\s*:\s*([^;]+);/', $rule['body'], $m, \PREG_SET_ORDER);
+            foreach ($m as [, $name, $value]) {
+                $tokens[$name] = trim($value);
+            }
+        }
+
+        self::assertSame(['--r' => '16px', '--r-s' => '12px', '--r-xs' => '8px', '--r-pill' => '999px'], $tokens);
+    }
+
+    public function testRadiiUseTheFourTokens(): void
     {
         $violations = [];
         foreach ($this->reader->files() as $file) {

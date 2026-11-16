@@ -1,4 +1,4 @@
-/* components/contents.css: .contents, an edit page's sticky index of its sections, each with a dot (data-state done or todo) and, where sections are marked done, its mark (data-done); its progress over the sections, its legend */
+/* components/contents.css: .contents, an edit page's sticky index of its sections, each with a dot (data-state done or todo, data-err when a field in it is marked) and, where sections are marked done, its mark (data-done); its progress over the sections, its legend */
 .contents {
   position: sticky;
   top: calc(var(--top-h) + 24px);
@@ -25,6 +25,10 @@
 }
 .contents-dot[data-state="done"] {
   background: var(--brand);
+  box-shadow: none;
+}
+.contents-dot[data-err] {
+  background: var(--error);
   box-shadow: none;
 }
 .contents-key {

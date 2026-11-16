@@ -1218,10 +1218,11 @@ html[data-theme="dark"] {
 
 /* tokens/radius.css */
 @layer tokens {
-/* tokens/radius.css: the only three radii */
+/* tokens/radius.css: the only four radii; --r-xs is a small thumbnail's, as an activity's in a list row */
 :root {
   --r: 16px;
   --r-s: 12px;
+  --r-xs: 8px;
   --r-pill: 999px;
 }
 }
@@ -12854,7 +12855,7 @@ body[data-locked] {
 
 /* components/table.css */
 @layer components {
-/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under; .table-clip */
+/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip; .table-clamp, a long text held to three lines; .table-source, a link's site name ending in an ellipsis */
 .table {
   overflow-x: auto;
   overflow-y: hidden;
@@ -13156,6 +13157,14 @@ body[data-locked] {
   .table-row + .table-row .table-cell {
     border-top: 0;
   }
+  .table-row:not(:has(.table-thumb, .avatar)) {
+    grid-template-columns: minmax(0, 1fr) 24px;
+    grid-template-areas: "name chev" "meta chev";
+  }
+  .table-row:not(:has(.table-thumb, .avatar, .table-cell[data-col="act"])) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "name" "meta";
+  }
   .table-cell, .table-cell:first-child, .table-cell:last-child {
     padding: 0;
   }
@@ -13334,6 +13343,22 @@ body[data-locked] {
 .pf .table {
   overflow-x: auto;
   min-width: 0;
+}
+.table-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-width: 100px;
+}
+.table-source {
+  display: inline-block;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 }
 
@@ -14640,7 +14665,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/contents.css */
 @layer components {
-/* components/contents.css: .contents, an edit page's sticky index of its sections, each with a dot (data-state done or todo) and, where sections are marked done, its mark (data-done); its progress over the sections, its legend */
+/* components/contents.css: .contents, an edit page's sticky index of its sections, each with a dot (data-state done or todo, data-err when a field in it is marked) and, where sections are marked done, its mark (data-done); its progress over the sections, its legend */
 .contents {
   position: sticky;
   top: calc(var(--top-h) + 24px);
@@ -14667,6 +14692,10 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .contents-dot[data-state="done"] {
   background: var(--brand);
+  box-shadow: none;
+}
+.contents-dot[data-err] {
+  background: var(--error);
   box-shadow: none;
 }
 .contents-key {
@@ -15522,7 +15551,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/projectedit.css */
 @layer components {
-/* components/projectedit.css: .projectedit, a community project's sections in the Activity editor (the design's variants/community-projects/editor/e1.html): a group's fields under its switch (.projectedit-group), two fields in one list row (.projectedit-pair: a role and what it does, a day and what happens, a figure and what it counts, a question and its answer), an activity in a list row (.projectedit-act, its .projectedit-img and .projectedit-text), a plain list of the questions asked on every project (.projectedit-list), the months a project starts in (.projectedit-months) and the prices by length (.projectedit-prices) */
+/* components/projectedit.css: .projectedit, a community project's sections in the Activity editor (the design's variants/community-projects/editor/e1.html): a group's fields under its switch (.projectedit-group), two fields in one list row (.projectedit-pair: a role and what it does, a day and what happens, a figure and what it counts, a question and its answer), an activity in a list row (.projectedit-act, its .projectedit-img and .projectedit-text), a plain list of the questions asked on every project (.projectedit-list), the months a project starts in (.projectedit-months), the prices by length (.projectedit-prices) and the link under the partner card (.projectedit-edit) */
 .projectedit-group {
   display: grid;
   gap: 18px;
@@ -15555,7 +15584,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   width: 64px;
   height: 44px;
   object-fit: cover;
-  border-radius: var(--r-s);
+  border-radius: var(--r-xs);
 }
 .projectedit-text {
   display: grid;
@@ -15581,6 +15610,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   .projectedit-pair:not([data-variant="figure"]) {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+.projectedit-edit {
+  justify-self: start;
 }
 }
 
