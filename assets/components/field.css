@@ -462,3 +462,11 @@
   height: 44px;
   max-width: 140px;
 }
+.pf-two .options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pf-two .options-legend {
+  margin-bottom: 4px;
+}

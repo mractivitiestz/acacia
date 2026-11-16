@@ -1,0 +1,91 @@
+/* components/poster-p1.css: .p1, the poster template P1 (Photo with band), its parts at each shape */
+.p1-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(200 * var(--u));
+}
+.p1-photo {
+  position: absolute;
+  inset: 0;
+}
+.p1-top {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+}
+.p1-band {
+  flex: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "text act" "addr addr";
+  gap: calc(28 * var(--u)) calc(48 * var(--u));
+  padding: calc(48 * var(--u)) var(--ss) var(--sb);
+  background: var(--brand);
+}
+.p1-text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: calc(22 * var(--u));
+  min-width: 0;
+}
+.p1-act {
+  grid-area: act;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(16 * var(--u));
+  width: calc(210 * var(--u));
+  align-self: end;
+  text-align: center;
+}
+.p1-addr {
+  grid-area: addr;
+  padding-top: calc(22 * var(--u));
+  border-top: calc(1.6 * var(--u)) solid var(--light-26);
+}
+:where(.pst)[data-tpl="p1"][data-shape="print"] .p1-band {
+  padding-top: calc(64 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="square"] .p1-band {
+  gap: calc(20 * var(--u)) calc(40 * var(--u));
+  padding-top: calc(36 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="square"] .p1-text {
+  gap: calc(16 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="square"] .p1-act {
+  width: calc(180 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="story"] .p1-pic {
+  position: absolute;
+  inset: 0;
+}
+:where(.pst)[data-tpl="p1"][data-shape="story"] .p1-band {
+  position: relative;
+  margin-bottom: calc(40 * var(--u));
+  padding: calc(44 * var(--u));
+  border-radius: var(--r);
+  grid-template-areas: "text text" "addr act";
+  align-items: end;
+  gap: calc(24 * var(--u)) calc(32 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="story"] .p1-addr {
+  border-top: 0;
+  padding: 0;
+}
+:where(.pst)[data-tpl="p1"][data-shape="story"] .p1-act {
+  width: calc(180 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="story"] .p1-text {
+  gap: calc(18 * var(--u));
+}
+:where(.pst)[data-tpl="p1"][data-shape="wide"] .p1-pic {
+  flex: 1 1 0;
+  min-height: 0;
+}
+:where(.pst)[data-tpl="p1"][data-shape="wide"] .p1-band {
+  width: 50%;
+  align-content: center;
+  padding: var(--st) var(--ss) var(--sb) calc(56 * var(--u));
+}

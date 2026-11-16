@@ -1,0 +1,29 @@
+/* components/poster-p19.css: .p19, the poster template P19 (Arch), its parts at each shape */
+.p19-arch {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(240 * var(--u));
+  width: 68%;
+  border-radius: var(--r-pill) var(--r-pill) var(--r-s) var(--r-s);
+  overflow: hidden;
+}
+.p19-photo {
+  position: absolute;
+  inset: 0;
+}
+.p19-words {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(16 * var(--u));
+}
+.p19-foot {
+  padding-top: calc(22 * var(--u));
+  border-top: calc(3 * var(--u)) solid var(--on-accent);
+}
+:where(.pst)[data-tpl="p19"][data-shape="square"] .p19-arch {
+  width: 52%;
+}
+.p19-head {
+  display: block;
+}

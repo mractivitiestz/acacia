@@ -470,3 +470,12 @@
 :where(.projectedit-prices) .table-cell {
   vertical-align: middle;
 }
+.table-thumb[data-fit] {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.pf .table {
+  overflow-x: auto;
+  min-width: 0;
+}

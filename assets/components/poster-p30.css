@@ -1,0 +1,48 @@
+/* components/poster-p30.css: .p30, the poster template P30 (Question), its parts at each shape */
+.p30-q {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(140 * var(--u));
+  line-height: .98;
+  letter-spacing: -.025em;
+  color: var(--accent);
+}
+.p30-ans {
+  display: flex;
+  gap: calc(28 * var(--u));
+  padding: calc(24 * var(--u));
+  border-radius: var(--r);
+  background: var(--panel);
+  color: var(--ink);
+}
+.p30-ph {
+  flex: 0 0 34%;
+  border-radius: var(--r-s);
+  min-height: calc(220 * var(--u));
+}
+.p30-words {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(10 * var(--u));
+}
+:where(.pst)[data-tpl="p30"][data-shape="square"] .p30-q {
+  font-size: calc(92 * var(--u));
+}
+:where(.pst)[data-tpl="p30"][data-shape="square"] .p30-ph {
+  min-height: calc(160 * var(--u));
+}
+:where(.pst)[data-tpl="p30"][data-shape="story"] .p30-q {
+  font-size: calc(108 * var(--u));
+}
+:where(.pst)[data-tpl="p30"][data-shape="story"] .p30-ph {
+  min-height: calc(180 * var(--u));
+}
+.p30-head {
+  display: block;
+}

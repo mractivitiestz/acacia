@@ -1,0 +1,54 @@
+/* components/poster-p23.css: .p23, the poster template P23 (Headline on top), its parts at each shape */
+.p23-photo {
+  position: absolute;
+  inset: 0;
+}
+.p23-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 58%;
+  background: linear-gradient(to bottom, var(--night) 0, var(--night) 30%, var(--shade-0) 100%);
+}
+.p23-top {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+  right: var(--ss);
+  display: flex;
+  flex-direction: column;
+  gap: calc(22 * var(--u));
+  color: var(--on-night);
+}
+.p23-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(20 * var(--u));
+  margin-bottom: calc(10 * var(--u));
+}
+.p23-card {
+  position: absolute;
+  left: var(--ss);
+  right: var(--ss);
+  bottom: var(--sb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  padding: calc(28 * var(--u)) calc(32 * var(--u));
+  border-radius: var(--r);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 calc(14 * var(--u)) calc(34 * var(--u)) var(--shade-30);
+}
+.p23-price {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(4 * var(--u));
+  min-width: 0;
+}
+:where(.pst)[data-tpl="p23"][data-shape="square"] .p23-shade {
+  height: 64%;
+}

@@ -1,0 +1,59 @@
+/* components/poster-p10.css: .p10, the poster template P10 (What's included), its parts at each shape */
+.p10-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(18 * var(--u));
+}
+.p10-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(14 * var(--u));
+}
+.p10-tile {
+  display: flex;
+  align-items: center;
+  gap: calc(20 * var(--u));
+  padding: calc(22 * var(--u));
+  border-radius: var(--r-s);
+  background: var(--light-14);
+}
+.p10-tile > .p10-tilet {
+  font-size: calc(30 * var(--u));
+  font-weight: 600;
+  line-height: 1.25;
+}
+.p10-strip {
+  flex: 1 1 0;
+  min-height: calc(160 * var(--u));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(14 * var(--u));
+}
+.p10-ph {
+  border-radius: var(--r-s);
+}
+.p10-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+}
+:where(.pst)[data-tpl="p10"][data-shape="square"] .p10-tile {
+  padding: calc(14 * var(--u));
+}
+:where(.pst[data-tpl="p10"][data-shape="square"]) .p10-tile > .p10-tilet {
+  font-size: calc(24 * var(--u));
+}
+:where(.pst)[data-tpl="p10"][data-shape="story"] .p10-tile {
+  padding: calc(16 * var(--u));
+}
+:where(.pst)[data-tpl="p10"][data-shape="story"] .p10-strip {
+  min-height: calc(100 * var(--u));
+}
+.p10-dates {
+  display: flex;
+}
+.p10-ph:only-child {
+  grid-column: 1 / 3;
+}

@@ -1,0 +1,108 @@
+/* components/poster-p3.css: .p3, the poster template P3 (Date-led), its parts at each shape */
+.p3-main {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(22 * var(--u));
+}
+.p3-lead {
+  display: flex;
+  flex-direction: column;
+}
+.p3-num {
+  display: block;
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(176 * var(--u));
+  line-height: .92;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.p3-lead .p3-mo {
+  color: var(--on-brand);
+}
+.p3-yr {
+  display: block;
+  margin-top: calc(10 * var(--u));
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(72 * var(--u));
+  line-height: 1;
+  color: var(--accent);
+}
+.p3-money .p3-small {
+  font-size: calc(40 * var(--u));
+  font-weight: 600;
+}
+.p3-money .p3-num {
+  text-transform: none;
+  font-size: calc(190 * var(--u));
+}
+.p3-left {
+  font-size: calc(30 * var(--u));
+  font-weight: 600;
+}
+.p3-foot {
+  display: flex;
+  gap: calc(28 * var(--u));
+  height: calc(230 * var(--u));
+  flex: none;
+}
+.p3-ph {
+  flex: 1;
+  border-radius: var(--r-s);
+}
+.p3-addr {
+  margin-top: calc(-8 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="square"] .p3-lead {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: calc(30 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="story"] .p3-lead {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: calc(30 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="square"] .p3-num {
+  font-size: calc(140 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="square"] .p3-yr {
+  width: 100%;
+  font-size: calc(60 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="square"] .p3-foot {
+  height: calc(190 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="square"] .p3-main {
+  gap: calc(14 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="story"] .p3-yr {
+  width: 100%;
+}
+:where(.pst)[data-tpl="p3"][data-shape="story"] .p3-num {
+  font-size: calc(150 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="story"] .p3-foot {
+  order: 5;
+  height: calc(var(--sb) + 220 * var(--u));
+  margin-bottom: calc(64 * var(--u) - var(--sb));
+}
+:where(.pst)[data-tpl="p3"][data-shape="story"] .p3-addr {
+  order: 3;
+  margin: 0;
+}
+:where(.pst)[data-tpl="p3"][data-shape="print"] .p3-num {
+  font-size: calc(200 * var(--u));
+}
+:where(.pst)[data-tpl="p3"][data-shape="print"] .p3-foot {
+  height: calc(300 * var(--u));
+}
+.p3-head {
+  display: block;
+}

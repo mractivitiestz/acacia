@@ -1,0 +1,89 @@
+/* components/poster-p11.css: .p11, the poster template P11 (Places left), its parts at each shape */
+.p11-main {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(20 * var(--u));
+}
+.p11-lead {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 calc(24 * var(--u));
+}
+.p11-num {
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(240 * var(--u));
+  line-height: .9;
+  color: var(--accent);
+}
+.p11-text {
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(60 * var(--u));
+}
+.p11-seats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(12 * var(--u));
+}
+.p11-seat {
+  display: grid;
+  place-items: center;
+  width: calc(96 * var(--u));
+  height: calc(96 * var(--u));
+  border-radius: var(--r-s);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.p11-seat[data-on] {
+  background: var(--light-14);
+  color: var(--light-45);
+}
+.p11-foot {
+  flex: none;
+  display: flex;
+  gap: calc(28 * var(--u));
+  height: calc(210 * var(--u));
+}
+.p11-ph {
+  flex: 1;
+  border-radius: var(--r-s);
+}
+.p11-addr {
+  margin-top: calc(-10 * var(--u));
+}
+:where(.pst)[data-tpl="p11"][data-shape="square"] .p11-num {
+  font-size: calc(170 * var(--u));
+}
+:where(.pst)[data-tpl="p11"][data-shape="square"] .p11-seat {
+  width: calc(76 * var(--u));
+  height: calc(76 * var(--u));
+}
+:where(.pst)[data-tpl="p11"][data-shape="square"] .p11-foot {
+  height: calc(170 * var(--u));
+}
+:where(.pst)[data-tpl="p11"][data-shape="story"] .p11-foot {
+  order: 5;
+  height: calc(var(--sb) + 220 * var(--u));
+  margin-bottom: calc(64 * var(--u) - var(--sb));
+}
+:where(.pst)[data-tpl="p11"][data-shape="story"] .p11-addr {
+  order: 3;
+  margin: 0;
+}
+:where(.pst)[data-tpl="p11"][data-shape="story"] .p11-num {
+  font-size: calc(190 * var(--u));
+}
+:where(.pst)[data-tpl="p11"][data-shape="story"] .p11-seat {
+  width: calc(80 * var(--u));
+  height: calc(80 * var(--u));
+}
+:where(.pst)[data-tpl="p11"][data-shape="story"] .p11-foot {
+  height: calc(var(--sb) + 190 * var(--u));
+}
+.p11-head {
+  display: block;
+}

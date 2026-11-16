@@ -357,3 +357,6 @@
 .formsec-head > .pill[aria-pressed="true"] {
   color: var(--brand-text);
 }
+.pf-recent .pill {
+  text-decoration: none;
+}

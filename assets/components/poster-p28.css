@@ -1,0 +1,73 @@
+/* components/poster-p28.css: .p28, the poster template P28 (Activity cards), its parts at each shape */
+.p28-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(24 * var(--u));
+}
+.p28-words {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+}
+.p28-cards {
+  flex: 1 1 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: calc(16 * var(--u));
+}
+.p28-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: var(--r-s);
+  background: var(--panel);
+  overflow: hidden;
+  box-shadow: 0 calc(2 * var(--u)) calc(6 * var(--u)) var(--shade-8);
+}
+.p28-ph {
+  flex: 1 1 0;
+  min-height: 0;
+}
+.p28-cap {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2 * var(--u));
+  padding: calc(14 * var(--u)) calc(18 * var(--u)) calc(16 * var(--u));
+}
+.p28-name {
+  font-size: calc(26 * var(--u));
+  font-weight: 700;
+  line-height: 1.2;
+}
+.p28-from {
+  font-size: calc(22 * var(--u));
+  font-weight: 700;
+  color: var(--brand-text);
+}
+.p28-cards .p28-price {
+  justify-content: center;
+  padding: calc(28 * var(--u));
+  background: var(--brand);
+  color: var(--on-brand);
+}
+:where(.pst)[data-tpl="p28"][data-shape="square"] .p28-head {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+:where(.pst)[data-tpl="p28"][data-shape="square"] .p28-cards {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+:where(.pst)[data-tpl="p28"][data-shape="square"] .p28-name {
+  font-size: calc(22 * var(--u));
+}
+:where(.pst[data-tpl="p28"][data-shape="square"]) .p28-cards .p28-price {
+  padding: calc(18 * var(--u));
+}
+:where(.pst)[data-tpl="p28"][data-shape="square"] .p28-words {
+  min-width: 0;
+}

@@ -1,0 +1,73 @@
+/* components/poster-p9.css: .p9, the poster template P9 (Price tag), its parts at each shape */
+.p9-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(320 * var(--u));
+}
+.p9-photo {
+  position: absolute;
+  inset: 0;
+}
+.p9-top {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+}
+.p9-disc {
+  position: absolute;
+  right: var(--ss);
+  bottom: calc(-110 * var(--u));
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(300 * var(--u));
+  height: calc(300 * var(--u));
+  padding: calc(20 * var(--u));
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  text-align: center;
+  box-shadow: 0 0 0 calc(10 * var(--u)) var(--panel);
+}
+.p9-small {
+  font-size: calc(26 * var(--u));
+  font-weight: 700;
+}
+.p9-big {
+  font-family: var(--fh);
+  font-size: calc(62 * var(--u));
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.p9-text {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--u));
+  padding: calc(56 * var(--u)) calc(var(--ss) + 330 * var(--u)) var(--sb) var(--ss);
+  position: relative;
+}
+:where(.pst)[data-tpl="p9"][data-shape="square"] .p9-lines {
+  display: none;
+}
+:where(.pst)[data-tpl="p9"][data-shape="story"] .p9-pic {
+  flex: none;
+  height: calc(var(--st) + 560 * var(--u));
+}
+:where(.pst)[data-tpl="p9"][data-shape="story"] .p9-text {
+  flex: 1;
+  padding-bottom: calc(var(--sb) + 0px);
+}
+:where(.pst)[data-tpl="p9"][data-shape="story"] .p9-pic {
+  height: calc(var(--st) + 300 * var(--u));
+}
+:where(.pst)[data-tpl="p9"][data-shape="story"] .p9-lines {
+  display: none;
+}
+.p9-big {
+  white-space: nowrap;
+  font-size: calc(54 * var(--u));
+}

@@ -1,0 +1,92 @@
+/* components/poster-p18.css: .p18, the poster template P18 (Mosaic), its parts at each shape */
+.p18-grid {
+  flex: 1 1 0;
+  min-height: 0;
+  display: grid;
+  gap: calc(14 * var(--u));
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.25fr 1fr .8fr;
+  grid-template-areas: "a a" "b c" "d e";
+}
+.p18-t {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border-radius: var(--r-s);
+  overflow: hidden;
+}
+.p18-ph {
+  position: absolute;
+  inset: 0;
+}
+.p18-a {
+  grid-area: a;
+}
+.p18-b {
+  grid-area: b;
+}
+.p18-c {
+  grid-area: c;
+}
+.p18-d {
+  grid-area: d;
+}
+.p18-e {
+  grid-area: e;
+}
+.p18-f {
+  display: none;
+}
+.p18-b {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: calc(14 * var(--u));
+  padding: calc(32 * var(--u));
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.p18-d {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(28 * var(--u)) calc(32 * var(--u));
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.p18-e {
+  display: flex;
+  align-items: center;
+  gap: calc(22 * var(--u));
+  padding: calc(24 * var(--u));
+  background: var(--panel);
+  color: var(--ink);
+}
+:where(.pst)[data-tpl="p18"][data-shape="print"] .p18-grid {
+  grid-template-rows: 1.2fr 1fr .9fr .9fr;
+  grid-template-areas: "a a" "b c" "f d" "f e";
+}
+:where(.pst)[data-tpl="p18"][data-shape="print"] .p18-f {
+  display: block;
+  grid-area: f;
+}
+:where(.pst)[data-tpl="p18"][data-shape="story"] .p18-grid {
+  grid-template-rows: 1fr .9fr .7fr;
+}
+:where(.pst)[data-tpl="p18"][data-shape="story"] .p18-f {
+  display: block;
+  position: absolute;
+  left: var(--ss);
+  right: var(--ss);
+  bottom: 0;
+  height: calc(var(--sb) - 64 * var(--u));
+  border-radius: var(--r-s) var(--r-s) 0 0;
+}
+:where(.pst)[data-tpl="p18"][data-shape="square"] .p18-grid {
+  grid-template-columns: 1.15fr 1fr;
+  grid-template-rows: 1fr 1fr .9fr;
+  grid-template-areas: "a b" "a c" "d e";
+}
+.p18-grid:not(:has(.p18-d)) .p18-e {
+  grid-area: d-start / d-start / e-end / e-end;
+}

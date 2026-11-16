@@ -1,0 +1,64 @@
+/* components/poster-p8.css: .p8, the poster template P8 (Full photo), its parts at each shape */
+.p8-photo {
+  position: absolute;
+  inset: 0;
+}
+.p8-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64%;
+  background: linear-gradient(to top, var(--night) 0, var(--night) 62%, var(--shade-0) 100%);
+}
+.p8-top {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+  right: var(--ss);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(20 * var(--u));
+}
+.p8-text {
+  position: absolute;
+  left: var(--ss);
+  right: var(--ss);
+  bottom: var(--sb);
+  display: flex;
+  flex-direction: column;
+  gap: calc(22 * var(--u));
+  color: var(--on-night);
+}
+.p8-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  margin-top: calc(8 * var(--u));
+}
+:where(.pst)[data-tpl="p8"][data-shape="square"] .p8-shade {
+  height: 78%;
+}
+:where(.pst)[data-tpl="p8"][data-shape="square"] .p8-lines {
+  display: none;
+}
+:where(.pst)[data-tpl="p8"][data-shape="story"] .p8-shade {
+  height: 70%;
+}
+:where(.pst)[data-tpl="p8"][data-shape="wide"] .p8-shade {
+  top: 0;
+  height: auto;
+  right: auto;
+  width: 62%;
+  background: linear-gradient(to right, var(--night) 0, var(--night) 70%, var(--shade-0) 100%);
+}
+:where(.pst)[data-tpl="p8"][data-shape="wide"] .p8-text {
+  right: 45%;
+  top: calc(var(--st) + 100 * var(--u));
+  justify-content: center;
+}
+:where(.pst)[data-tpl="p8"][data-shape="wide"] .p8-lines {
+  display: none;
+}
