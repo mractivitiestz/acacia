@@ -1353,6 +1353,10 @@ select {
   font: inherit;
   color: inherit;
 }
+textarea {
+  font: inherit;
+  color: inherit;
+}
 button {
   cursor: pointer;
 }
