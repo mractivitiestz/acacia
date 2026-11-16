@@ -1,0 +1,33 @@
+/* components/poster-p12.css: .p12, the poster template P12 (Sun headline), its parts at each shape */
+.p12-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(24 * var(--u));
+}
+.p12-main {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(28 * var(--u));
+}
+.p12-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  padding-top: calc(28 * var(--u));
+  border-top: calc(3 * var(--u)) solid var(--on-accent);
+}
+.p12-fl {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+  min-width: 0;
+}
+.p12-cta {
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(52 * var(--u));
+}

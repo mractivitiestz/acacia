@@ -1,0 +1,51 @@
+/* components/poster-p20.css: .p20, the poster template P20 (Band between photos), its parts at each shape */
+.p20-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(160 * var(--u));
+}
+.p20-photo {
+  position: absolute;
+  inset: 0;
+}
+.p20-top {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+}
+.p20-dn {
+  flex: .55 1 0;
+}
+.p20-band {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: calc(36 * var(--u));
+  padding: calc(44 * var(--u)) var(--ss);
+  background: var(--brand);
+}
+.p20-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 * var(--u));
+}
+.p20-acts {
+  flex: none;
+  flex-direction: column;
+  gap: calc(14 * var(--u));
+  width: calc(220 * var(--u));
+  text-align: center;
+}
+:where(.pst)[data-tpl="p20"][data-shape="square"] .p20-band {
+  padding-top: calc(32 * var(--u));
+  padding-bottom: calc(32 * var(--u));
+}
+:where(.pst)[data-tpl="p20"][data-shape="story"] .p20-dn {
+  flex: none;
+  height: var(--sb);
+}
+.p20-up {
+  display: block;
+}

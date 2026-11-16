@@ -1,0 +1,137 @@
+/* components/poster-p22.css: .p22, the poster template P22 (Month calendar), its parts at each shape */
+.p22-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(180 * var(--u));
+}
+.p22-photo {
+  position: absolute;
+  inset: 0;
+}
+.p22-top {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+}
+.p22-body {
+  flex: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(440 * var(--u));
+  gap: calc(40 * var(--u));
+  align-items: start;
+  padding: calc(44 * var(--u)) var(--ss) calc(28 * var(--u));
+}
+.p22-words {
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 * var(--u));
+}
+.p22-price {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(4 * var(--u));
+}
+.p22-cal {
+  padding: calc(24 * var(--u));
+  border-radius: var(--r-s);
+  background: var(--panel);
+  box-shadow: inset 0 0 0 calc(1.6 * var(--u)) var(--line);
+}
+.p22-mo {
+  margin-bottom: calc(12 * var(--u));
+  font-family: var(--fh);
+  font-weight: 800;
+  font-size: calc(36 * var(--u));
+}
+.p22-wd {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  row-gap: calc(6 * var(--u));
+  text-align: center;
+}
+.p22-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  row-gap: calc(6 * var(--u));
+  text-align: center;
+}
+.p22-wday {
+  font-size: calc(20 * var(--u));
+  font-weight: 800;
+  color: var(--muted);
+  padding-bottom: calc(6 * var(--u));
+}
+.p22-day {
+  display: grid;
+  place-items: center;
+  height: calc(50 * var(--u));
+  font-size: calc(24 * var(--u));
+  font-weight: 600;
+}
+.p22-day[data-on] {
+  background: var(--tint);
+  color: var(--brand-text);
+  font-weight: 800;
+}
+.p22-day[data-from] {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.p22-day[data-to] {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+.p22-day[data-from] {
+  border-radius: var(--r-pill) 0 0 var(--r-pill);
+}
+.p22-day[data-to] {
+  border-radius: 0 var(--r-pill) var(--r-pill) 0;
+}
+.p22-foot {
+  display: flex;
+  padding: calc(24 * var(--u)) var(--ss) var(--sb);
+}
+:where(.pst)[data-tpl="p22"][data-shape="square"] .p22-pic {
+  display: none;
+}
+:where(.pst)[data-tpl="p22"][data-shape="square"] .p22-top {
+  position: static;
+  padding: var(--st) var(--ss) 0;
+}
+:where(.pst)[data-tpl="p22"][data-shape="square"] .p22-body {
+  flex: 1;
+  padding-top: calc(32 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-pic {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--sb) - 32 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-body {
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  padding-top: calc(var(--st) + 80 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-foot {
+  padding-top: 0;
+  flex-direction: column;
+  gap: calc(16 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-body {
+  gap: calc(24 * var(--u));
+  padding-top: calc(var(--st) + 100 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-day {
+  height: calc(42 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-day {
+  height: calc(38 * var(--u));
+}
+:where(.pst)[data-tpl="p22"][data-shape="story"] .p22-body {
+  gap: calc(18 * var(--u));
+  padding-top: calc(var(--st) + 96 * var(--u));
+  padding-bottom: calc(16 * var(--u));
+}

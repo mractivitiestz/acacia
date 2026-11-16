@@ -1,0 +1,36 @@
+/* components/poster-p27.css: .p27, the poster template P27 (Big icon), its parts at each shape */
+.p27-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(24 * var(--u));
+}
+.p27-eye {
+  text-align: right;
+  font-size: calc(24 * var(--u));
+}
+.p27-main {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(24 * var(--u));
+}
+.p27-ic {
+  display: block;
+  color: var(--brand-text);
+}
+.p27-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  padding-top: calc(26 * var(--u));
+  border-top: calc(3 * var(--u)) solid var(--on-accent);
+}
+.p27-price {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(4 * var(--u));
+  min-width: 0;
+}

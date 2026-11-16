@@ -424,3 +424,6 @@
   flex: 1;
   min-height: 48px;
 }
+.pf-dd .dropdown-trigger {
+  width: 100%;
+}

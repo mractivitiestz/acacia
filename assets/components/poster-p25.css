@@ -1,0 +1,61 @@
+/* components/poster-p25.css: .p25, the poster template P25 (Place name), its parts at each shape */
+.p25-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(24 * var(--u));
+}
+.p25-eye {
+  text-align: right;
+  font-size: calc(24 * var(--u));
+  color: var(--light-70);
+}
+.p25-name {
+  font-family: var(--fh);
+  font-weight: 800;
+  line-height: .86;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-top: calc(16 * var(--u));
+}
+.p25-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(180 * var(--u));
+}
+.p25-photo {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-s);
+}
+.p25-foot {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(32 * var(--u));
+}
+.p25-words {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(14 * var(--u));
+}
+.p25-addr {
+  margin-top: calc(-6 * var(--u));
+}
+:where(.pst)[data-tpl="p25"][data-shape="story"] .p25-pic {
+  order: 9;
+  flex: none;
+  height: calc(var(--sb) + 120 * var(--u));
+  margin-bottom: calc(64 * var(--u) - var(--sb));
+}
+:where(.pst)[data-tpl="p25"][data-shape="story"] .p25-foot {
+  margin-top: auto;
+}
+:where(.pst)[data-tpl="p25"][data-shape="story"] .p25-name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}

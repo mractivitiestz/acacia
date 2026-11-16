@@ -1,0 +1,75 @@
+/* components/poster-p13.css: .p13, the poster template P13 (Polaroid trio), its parts at each shape */
+.p13-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(24 * var(--u));
+}
+.p13-eye {
+  color: var(--brand-text);
+  font-size: calc(24 * var(--u));
+  text-align: right;
+}
+.p13-pics {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(260 * var(--u));
+}
+.p13-pol {
+  position: absolute;
+  display: block;
+  width: 46%;
+  height: 88%;
+  padding: calc(16 * var(--u)) calc(16 * var(--u)) calc(56 * var(--u));
+  background: var(--panel);
+  box-shadow: 0 calc(2 * var(--u)) calc(6 * var(--u)) var(--shade-8), 0 calc(14 * var(--u)) calc(34 * var(--u)) var(--shade-16);
+}
+.p13-ph {
+  width: 100%;
+  height: 100%;
+}
+.p13-pol0 {
+  left: 0;
+  top: 8%;
+  transform: rotate(-5deg);
+}
+.p13-pol1 {
+  left: 27%;
+  top: 0;
+  z-index: 1;
+  transform: rotate(2deg);
+}
+.p13-pol2 {
+  right: 0;
+  top: 10%;
+  transform: rotate(6deg);
+}
+.p13-words {
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--u));
+}
+.p13-lines.pst-facts {
+  color: var(--muted);
+}
+.p13-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  padding-top: calc(24 * var(--u));
+  border-top: calc(1.6 * var(--u)) solid var(--line);
+}
+:where(.pst)[data-tpl="p13"][data-shape="story"] .p13-pics {
+  order: 9;
+  flex: none;
+  height: calc(var(--sb) + 40 * var(--u));
+  margin-bottom: calc(64 * var(--u) - var(--sb));
+}
+:where(.pst)[data-tpl="p13"][data-shape="story"] .p13-words {
+  flex: 1 1 0;
+  justify-content: center;
+}
+:where(.pst)[data-tpl="p13"][data-shape="story"] .p13-pol {
+  height: 100%;
+}

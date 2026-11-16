@@ -47,3 +47,7 @@
   font-weight: 400;
   color: var(--muted);
 }
+.pf-togs .switch {
+  text-decoration: none;
+  color: inherit;
+}

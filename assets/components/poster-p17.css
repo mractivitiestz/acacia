@@ -1,0 +1,68 @@
+/* components/poster-p17.css: .p17, the poster template P17 (Day by day), its parts at each shape */
+.p17-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(200 * var(--u));
+}
+.p17-photo {
+  position: absolute;
+  inset: 0;
+}
+.p17-head {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+}
+.p17-body {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--u));
+  padding: calc(40 * var(--u)) var(--ss) var(--sb);
+}
+.p17-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  padding-top: calc(22 * var(--u));
+  border-top: calc(1.6 * var(--u)) dashed var(--line);
+}
+:where(.pst)[data-tpl="p17"][data-shape="square"] .p17-pic {
+  display: none;
+}
+:where(.pst)[data-tpl="p17"][data-shape="square"] .p17-head {
+  position: static;
+  padding: var(--st) var(--ss) 0;
+}
+:where(.pst)[data-tpl="p17"][data-shape="square"] .p17-body {
+  flex: 1;
+  padding-top: calc(28 * var(--u));
+  gap: calc(14 * var(--u));
+}
+:where(.pst)[data-tpl="p17"][data-shape="square"] .p17-steps {
+  flex: 1;
+  justify-content: center;
+}
+:where(.pst)[data-tpl="p17"][data-shape="story"] .p17-body {
+  gap: calc(16 * var(--u));
+  padding-top: calc(24 * var(--u));
+}
+:where(.pst)[data-tpl="p17"][data-shape="square"] .p17-foot {
+  margin-top: auto;
+}
+:where(.pst)[data-tpl="p17"][data-shape="story"] .p17-pic {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--sb) - 32 * var(--u));
+}
+:where(.pst)[data-tpl="p17"][data-shape="story"] .p17-head {
+  position: static;
+  padding: var(--st) var(--ss) 0;
+}
+:where(.pst)[data-tpl="p17"][data-shape="story"] .p17-body {
+  flex: 1;
+  justify-content: center;
+}

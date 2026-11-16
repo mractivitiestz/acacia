@@ -1,0 +1,100 @@
+/* components/poster-p29.css: .p29, the poster template P29 (Scan me), its parts at each shape */
+.p29-words {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+}
+.p29-mid {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(22 * var(--u));
+}
+.p29-qr.pst-qr {
+  width: calc(440 * var(--u));
+  height: calc(440 * var(--u));
+  padding: calc(16 * var(--u));
+  border-radius: var(--r);
+  box-shadow: inset 0 0 0 calc(5 * var(--u)) var(--brand);
+}
+.p29-scan {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  font-size: calc(30 * var(--u));
+  font-weight: 700;
+  color: var(--brand-text);
+  text-align: center;
+}
+.p29-foot {
+  flex: none;
+  display: flex;
+  gap: calc(28 * var(--u));
+  height: calc(170 * var(--u));
+}
+.p29-ph {
+  flex: 0 0 38%;
+  border-radius: var(--r-s);
+}
+.p29-fr {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(10 * var(--u));
+}
+.p29-price {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+:where(.pst[data-tpl="p29"][data-shape="square"]) .p29-qr.pst-qr {
+  width: calc(330 * var(--u));
+  height: calc(330 * var(--u));
+}
+:where(.pst)[data-tpl="p29"][data-shape="square"] .p29-foot {
+  height: calc(140 * var(--u));
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-foot {
+  order: 5;
+  height: calc(var(--sb) + 170 * var(--u));
+  margin-bottom: calc(64 * var(--u) - var(--sb));
+  align-items: flex-start;
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-ph {
+  align-self: stretch;
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-fr {
+  height: calc(170 * var(--u));
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-mid {
+  flex: 1 1 auto;
+  min-height: auto;
+}
+:where(.pst[data-tpl="p29"][data-shape="story"]) .p29-qr.pst-qr {
+  width: calc(340 * var(--u));
+  height: calc(340 * var(--u));
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-foot {
+  flex-direction: column;
+  height: calc(var(--sb) + 150 * var(--u));
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-fr {
+  order: -1;
+  flex: none;
+  height: auto;
+}
+:where(.pst)[data-tpl="p29"][data-shape="story"] .p29-ph {
+  flex: 1 1 0;
+  border-radius: var(--r-s) var(--r-s) 0 0;
+}
+:where(.pst)[data-tpl="p29"][data-shape="square"] .p29-fr {
+  gap: calc(4 * var(--u));
+}
+.p29-head {
+  display: block;
+}

@@ -1,0 +1,41 @@
+/* components/poster-p6.css: .p6, the poster template P6 (Split), its parts at each shape */
+.p6-pic {
+  position: relative;
+  flex: 0 0 44%;
+}
+.p6-photo {
+  position: absolute;
+  inset: 0;
+}
+.p6-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(28 * var(--u));
+  padding: var(--st) var(--ss) var(--sb) calc(56 * var(--u));
+}
+.p6-mid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: calc(20 * var(--u));
+}
+.p6-lines.pst-dates {
+  flex-direction: column;
+  gap: calc(8 * var(--u));
+}
+:where(.pst)[data-tpl="p6"][data-shape="story"] .p6-pic {
+  flex: 1 1 0;
+}
+:where(.pst)[data-tpl="p6"][data-shape="story"] .p6-text {
+  flex: none;
+  padding: var(--st) var(--ss) calc(40 * var(--u));
+}
+:where(.pst)[data-tpl="p6"][data-shape="square"] .p6-text {
+  gap: calc(18 * var(--u));
+}
+:where(.pst)[data-tpl="p6"][data-shape="wide"] .p6-pic {
+  flex-basis: 50%;
+}

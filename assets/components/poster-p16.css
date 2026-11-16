@@ -1,0 +1,88 @@
+/* components/poster-p16.css: .p16, the poster template P16 (Thin rule), its parts at each shape */
+.p16-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(36 * var(--u));
+  padding: max(var(--st), calc(88 * var(--u))) calc(56 * var(--u)) max(var(--sb), calc(88 * var(--u))) max(var(--ss), calc(88 * var(--u)));
+}
+.p16-mid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: calc(20 * var(--u));
+}
+.p16-row {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 * var(--u));
+  padding: calc(18 * var(--u)) 0;
+  border-top: calc(1.6 * var(--u)) solid var(--ink);
+}
+.p16-term {
+  font-size: calc(22 * var(--u));
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.p16-value {
+  font-size: calc(30 * var(--u));
+  font-weight: 500;
+  line-height: 1.3;
+}
+.p16-foot {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(24 * var(--u));
+  padding-top: calc(24 * var(--u));
+  border-top: calc(1.6 * var(--u)) solid var(--ink);
+}
+.p16-pic {
+  position: relative;
+  flex: 0 0 34%;
+  margin: max(var(--st), calc(88 * var(--u))) max(var(--ss), calc(88 * var(--u))) max(var(--sb), calc(88 * var(--u))) 0;
+}
+.p16-photo {
+  position: absolute;
+  inset: 0;
+}
+:where(.pst)[data-tpl="p16"][data-shape="square"] .p16-text {
+  gap: calc(24 * var(--u));
+  padding-top: calc(72 * var(--u));
+  padding-bottom: calc(72 * var(--u));
+}
+:where(.pst)[data-tpl="p16"][data-shape="square"] .p16-pic {
+  margin-top: calc(72 * var(--u));
+  margin-bottom: calc(72 * var(--u));
+}
+:where(.pst)[data-tpl="p16"][data-shape="square"] .p16-row {
+  padding: calc(10 * var(--u)) 0;
+}
+:where(.pst)[data-tpl="p16"][data-shape="square"] .p16-value {
+  font-size: calc(24 * var(--u));
+}
+:where(.pst)[data-tpl="p16"][data-shape="story"] .p16-text {
+  flex: 1;
+  padding-bottom: calc(40 * var(--u));
+}
+:where(.pst)[data-tpl="p16"][data-shape="story"] .p16-pic {
+  flex: none;
+  height: calc(var(--sb) - 40 * var(--u));
+  margin: 0;
+}
+:where(.pst)[data-tpl="p16"][data-shape="story"] .p16-text {
+  padding-right: var(--ss);
+  padding-left: var(--ss);
+}
+:where(.pst)[data-tpl="p16"][data-shape="story"] .p16-text {
+  padding-bottom: calc(80 * var(--u));
+}
+.p16-head {
+  display: block;
+}
+.p16-rows {
+  display: block;
+}

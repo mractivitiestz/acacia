@@ -237,3 +237,8 @@
     display: none;
   }
 }
+.tile-img[data-fit] {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}

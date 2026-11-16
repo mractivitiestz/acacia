@@ -1,0 +1,62 @@
+/* components/poster-p14.css: .p14, the poster template P14 (Three figures), its parts at each shape */
+.p14-pic {
+  position: relative;
+  flex: 1 1 0;
+  min-height: calc(220 * var(--u));
+}
+.p14-photo {
+  position: absolute;
+  inset: 0;
+}
+.p14-head {
+  position: absolute;
+  top: var(--st);
+  left: var(--ss);
+}
+.p14-body {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(22 * var(--u));
+  padding: calc(44 * var(--u)) var(--ss) var(--sb);
+}
+.p14-nums {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: calc(36 * var(--u));
+}
+.p14-acts {
+  justify-content: flex-start;
+}
+:where(.pst)[data-tpl="p14"][data-shape="square"] .p14-pic {
+  display: none;
+}
+:where(.pst)[data-tpl="p14"][data-shape="square"] .p14-body {
+  flex: 1;
+  padding-top: var(--st);
+  gap: calc(18 * var(--u));
+}
+:where(.pst)[data-tpl="p14"][data-shape="square"] .p14-head {
+  position: static;
+  margin-bottom: calc(8 * var(--u));
+}
+:where(.pst)[data-tpl="p14"][data-shape="square"] .p14-acts {
+  margin-top: auto;
+}
+:where(.pst)[data-tpl="p14"][data-shape="story"] .p14-pic {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--sb) - 32 * var(--u));
+}
+:where(.pst)[data-tpl="p14"][data-shape="story"] .p14-body {
+  flex: 1;
+  padding-top: calc(var(--st) + 100 * var(--u));
+  justify-content: center;
+  gap: calc(16 * var(--u));
+}
+:where(.pst)[data-tpl="p14"][data-shape="square"] .p14-nums {
+  flex: 1;
+  align-content: center;
+}
