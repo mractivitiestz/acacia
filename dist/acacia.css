@@ -1289,6 +1289,94 @@ html[data-theme="dark"] {
 }
 }
 
+/* tokens/fonts.css */
+@layer tokens {
+/* tokens/fonts.css: the five heading and body pairings, served from the site (fonts/, SIL Open Font License 1.1, fonts/OFL.txt), the latin subset that holds the Kiswahili and German letters; <html data-fonts="…"> picks one, Bricolage Grotesque and Figtree (tokens/type.css) by default */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('../assets/fonts/bricolage-grotesque.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/figtree.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/figtree-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('../assets/fonts/fraunces.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/dm-serif-display.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/dm-sans.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('../assets/fonts/space-grotesk.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/inter.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/outfit.woff2') format('woff2');
+}
+[data-fonts="bricolage"] {
+  --fh: 'Bricolage Grotesque','Figtree',system-ui,sans-serif;
+  --f: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="fraunces"] {
+  --fh: 'Fraunces',Georgia,serif;
+  --f: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="dmserif"] {
+  --fh: 'DM Serif Display',Georgia,serif;
+  --f: 'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="space"] {
+  --fh: 'Space Grotesk',system-ui,sans-serif;
+  --f: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="outfit"] {
+  --fh: 'Outfit',system-ui,sans-serif;
+  --f: 'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+}
+
 /* tokens/z.css */
 @layer tokens {
 /* tokens/z.css: the stacking order, map panes < sticky bars < header < menus and sheets < skip link; the lightbox is a dialog in the top layer */
@@ -2218,6 +2306,15 @@ body[data-locked] {
 /* a checklist row still to do keeps its icon muted */
 :where(.checks-item[data-state="todo"]) .icon {
   color: var(--muted);
+}
+.settings-used .icon {
+  flex: none;
+  margin-top: 1px;
+  color: var(--muted);
+}
+.settings-saved .status .icon {
+  vertical-align: -2px;
+  margin-right: 4px;
 }
 }
 
@@ -5835,6 +5932,10 @@ body[data-locked] {
 }
 .pf-two .options-legend {
   margin-bottom: 4px;
+}
+.settings-palette .field {
+  flex: 1;
+  max-width: 420px;
 }
 }
 
@@ -14859,6 +14960,13 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 .pf-foot .formsec-note {
   margin-right: auto;
 }
+.settings .formsec-head .formsec-note {
+  flex-basis: 100%;
+  margin: 0;
+}
+.settings-bar .formsec-foot {
+  border-top: 0;
+}
 }
 
 /* components/langtabs.css */
@@ -21021,6 +21129,100 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   background: var(--tint);
   font-size: 14.5px;
   line-height: 1.5;
+}
+}
+
+/* components/settings.css */
+@layer components {
+/* components/settings.css: .settings, the back office's Settings page on .editor: its menu (.settings-menu) beside one form (.settings-pane) whose section dropdown (.settings-jump) takes the menu's place on a phone; where the mail is used (.settings-used), the saved note (.settings-saved), the save bar at the foot (.settings-bar), the palette's choice beside its three colours (.settings-palette, .settings-swatch, .settings-dot), and the fonts, each pairing in its own type (.settings-fonts, .settings-heading, .settings-body, on an option with data-fonts) */
+.settings {
+  grid-template-columns: 200px minmax(0, 1fr);
+}
+.settings > .settings-menu {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+}
+.settings-pane {
+  display: grid;
+  gap: 16px;
+  max-width: 840px;
+  min-width: 0;
+}
+.settings-jump {
+  display: none;
+}
+@media (max-width: 1080px) {
+  .settings {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-pane > .settings-jump {
+    display: flex;
+  }
+}
+.settings-used {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.settings-saved {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.settings-bar {
+  position: sticky;
+  bottom: 12px;
+  box-shadow: var(--sh);
+}
+.settings-palette {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  min-width: 0;
+}
+.settings-swatch {
+  display: inline-flex;
+  flex: none;
+  gap: 4px;
+  margin: 0 8px 34px 0;
+  vertical-align: -3px;
+}
+.settings-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.settings-fonts {
+  grid-template-columns: minmax(0, 1fr);
+}
+.settings-fonts .settings-heading {
+  font-family: var(--fh);
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+.settings-fonts .settings-body {
+  font-family: var(--f);
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .settings-palette {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .settings-swatch {
+    margin: 0;
+  }
 }
 }
 

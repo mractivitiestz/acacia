@@ -422,3 +422,12 @@
 :where(.checks-item[data-state="todo"]) .icon {
   color: var(--muted);
 }
+.settings-used .icon {
+  flex: none;
+  margin-top: 1px;
+  color: var(--muted);
+}
+.settings-saved .status .icon {
+  vertical-align: -2px;
+  margin-right: 4px;
+}

@@ -1,0 +1,90 @@
+/* components/settings.css: .settings, the back office's Settings page on .editor: its menu (.settings-menu) beside one form (.settings-pane) whose section dropdown (.settings-jump) takes the menu's place on a phone; where the mail is used (.settings-used), the saved note (.settings-saved), the save bar at the foot (.settings-bar), the palette's choice beside its three colours (.settings-palette, .settings-swatch, .settings-dot), and the fonts, each pairing in its own type (.settings-fonts, .settings-heading, .settings-body, on an option with data-fonts) */
+.settings {
+  grid-template-columns: 200px minmax(0, 1fr);
+}
+.settings > .settings-menu {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+}
+.settings-pane {
+  display: grid;
+  gap: 16px;
+  max-width: 840px;
+  min-width: 0;
+}
+.settings-jump {
+  display: none;
+}
+@media (max-width: 1080px) {
+  .settings {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-pane > .settings-jump {
+    display: flex;
+  }
+}
+.settings-used {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.settings-saved {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.settings-bar {
+  position: sticky;
+  bottom: 12px;
+  box-shadow: var(--sh);
+}
+.settings-palette {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  min-width: 0;
+}
+.settings-swatch {
+  display: inline-flex;
+  flex: none;
+  gap: 4px;
+  margin: 0 8px 34px 0;
+  vertical-align: -3px;
+}
+.settings-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.settings-fonts {
+  grid-template-columns: minmax(0, 1fr);
+}
+.settings-fonts .settings-heading {
+  font-family: var(--fh);
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+.settings-fonts .settings-body {
+  font-family: var(--f);
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .settings-palette {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .settings-swatch {
+    margin: 0;
+  }
+}

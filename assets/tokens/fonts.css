@@ -1,0 +1,84 @@
+/* tokens/fonts.css: the five heading and body pairings, served from the site (fonts/, SIL Open Font License 1.1, fonts/OFL.txt), the latin subset that holds the Kiswahili and German letters; <html data-fonts="…"> picks one, Bricolage Grotesque and Figtree (tokens/type.css) by default */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('../fonts/bricolage-grotesque.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/figtree.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Figtree';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/figtree-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('../fonts/fraunces.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/dm-sans.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('../fonts/space-grotesk.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/inter.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../fonts/outfit.woff2') format('woff2');
+}
+[data-fonts="bricolage"] {
+  --fh: 'Bricolage Grotesque','Figtree',system-ui,sans-serif;
+  --f: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="fraunces"] {
+  --fh: 'Fraunces',Georgia,serif;
+  --f: 'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="dmserif"] {
+  --fh: 'DM Serif Display',Georgia,serif;
+  --f: 'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="space"] {
+  --fh: 'Space Grotesk',system-ui,sans-serif;
+  --f: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+[data-fonts="outfit"] {
+  --fh: 'Outfit',system-ui,sans-serif;
+  --f: 'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+}

@@ -13,13 +13,15 @@ as a Composer package that is also a Symfony bundle exposing its files to AssetM
 - [Docs](#docs)
 - [Tests](#tests)
 - [Palettes](#palettes)
+- [Fonts](#fonts)
 - [The class mapping](#the-class-mapping)
 
 ## What it is
 
 - `assets/acacia.css`: the entry. It declares the layer order once and imports every file into its layer.
-- `assets/tokens/`: custom properties only (palette, fixed colours, type, space, radius, shadow, motion, z) and
+- `assets/tokens/`: custom properties only (palette, fixed colours, type, fonts, space, radius, shadow, motion, z) and
   `breakpoints.md`.
+- `assets/fonts/`: the web fonts of the five heading and body pairings, served from the site, with their licence.
 - `assets/base/`, `assets/layout/`, `assets/components/` (one file per component, with its states and sizes),
   `assets/pages/` (what belongs to one page kind), `assets/utilities/utilities.css`.
 - `assets/vendor/leaflet.css`: Leaflet 1.9.4's stylesheet (BSD 2-Clause, `assets/vendor/LEAFLET-LICENSE`), in the
@@ -133,6 +135,16 @@ composer check   # php-cs-fixer (dry run), PHPStan at level max, PHPUnit, bin/ch
 other tone a tone of the ink's hue, white or near-black text on brand and accent by contrast, and `--brand-text` /
 `--accent-text` falling back to ink below 4.5:1. Palette 3, Highland green and sun, is the default on `:root`;
 `<html data-palette="N">` switches to any other. `bin/concat.php` then rebuilds `dist/`.
+
+## Fonts
+
+The site's headings and body are one of five pairings, every font served from the site, never from Google:
+`assets/fonts/` holds the latin subset of each (the Kiswahili and German letters) as WOFF2, under the SIL Open Font
+License 1.1 (`assets/fonts/OFL.txt`), and `tokens/fonts.css` declares their `@font-face` and sets `--fh` and `--f` for
+each `[data-fonts="…"]`: `bricolage` (Bricolage Grotesque and Figtree, the default of `tokens/type.css`), `fraunces`
+(Fraunces and Figtree), `dmserif` (DM Serif Display and DM Sans), `space` (Space Grotesk and Inter) and `outfit` (Outfit
+throughout). `<html data-fonts="fraunces">` switches the page; the attribute on any element switches what is inside
+it, as the Settings page's options show each pairing in its own type. A browser downloads only the faces a page uses.
 
 ## The class mapping
 
