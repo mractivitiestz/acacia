@@ -431,6 +431,13 @@
   vertical-align: -2px;
   margin-right: 4px;
 }
+.questions-meta .icon {
+  flex: none;
+}
+.questions-note > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
 
 /* the Translations screen's note (split.css) */
 .split-note > .icon {

@@ -2316,6 +2316,13 @@ body[data-locked] {
   vertical-align: -2px;
   margin-right: 4px;
 }
+.questions-meta .icon {
+  flex: none;
+}
+.questions-note > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
 
 /* the Translations screen's note (split.css) */
 .split-note > .icon {
@@ -2924,6 +2931,9 @@ body[data-locked] {
 .segmented[data-variant="fill"] .segmented-btn {
   flex: 1;
   padding-inline: 6px;
+}
+.questions-show .segmented {
+  display: flex;
 }
 }
 
@@ -5947,6 +5957,16 @@ body[data-locked] {
 .settings-palette .field {
   flex: 1;
   max-width: 420px;
+}
+.questions-compose .field {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.questions-compose .field-help {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
 }
 }
 
@@ -21148,6 +21168,240 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   background: var(--tint);
   font-size: 14.5px;
   line-height: 1.5;
+}
+}
+
+/* components/questions.css */
+@layer components {
+/* components/questions.css: .questions, the back office's Questions, two panes like a mail program: the list (.questions-list) with its Show buttons (.questions-show), its search (.questions-find), its items (.questions-items, .questions-item, .questions-itemtop, .questions-name, .questions-time, .questions-itemsub, .questions-dot, .questions-snip) and its count (.questions-count), beside the question open (.questions-pane), its head (.questions-head, .questions-title, .questions-h, .questions-sub, .questions-back), its facts (.questions-meta, .questions-fact), its thread (.questions-thread, .questions-msg, .questions-from, .questions-who, .questions-when, .questions-text), the reply box (.questions-compose, .questions-acts) and a note (.questions-note, .questions-notetext); on a phone the list, then the question alone (data-open). Its rules that place other blocks live in their owners' files (segmented, icon, field) */
+.questions {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.questions-list {
+  display: grid;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  overflow: hidden;
+}
+.questions-show {
+  padding: 12px 12px 0;
+}
+.questions-find {
+  margin: 12px;
+}
+.questions-items {
+  display: grid;
+}
+.questions-item {
+  display: grid;
+  gap: 3px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.questions-item:hover .questions-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.questions-item[aria-current] {
+  background: var(--tint);
+}
+.questions-itemtop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.questions-name {
+  font-weight: 600;
+}
+.questions-time {
+  flex: none;
+  font-size: 13px;
+  color: var(--muted);
+}
+.questions-itemsub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.questions-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.questions-snip {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.questions-count {
+  margin: 0;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
+.questions-pane {
+  position: sticky;
+  top: calc(var(--top-h) + 16px);
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+}
+.questions-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.questions-title {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.questions-h {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.questions-sub {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.questions-back {
+  display: none;
+}
+.questions-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.questions-fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.questions-thread {
+  display: grid;
+  gap: 12px;
+}
+.questions-msg {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+}
+.questions-msg[data-variant="reply"] {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.questions-from {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin: 0;
+  font-size: 14px;
+}
+.questions-who {
+  font-weight: 600;
+}
+.questions-when {
+  color: var(--muted);
+}
+.questions-text {
+  margin: 0;
+  max-width: 72ch;
+  font-size: 15.5px;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.questions-compose {
+  display: grid;
+  gap: 12px;
+}
+.questions-compose textarea {
+  font-weight: 400;
+}
+.questions-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.questions-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: var(--r-s);
+  background: var(--soft);
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.questions-notetext {
+  flex: 1 1 240px;
+}
+.questions-pane .questions-note {
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .questions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .questions > .questions-pane {
+    display: none;
+    position: static;
+  }
+  .questions[data-open] > .questions-list {
+    display: none;
+  }
+  .questions[data-open] > .questions-pane {
+    display: grid;
+  }
+  .questions-back {
+    display: inline-flex;
+    margin-left: -10px;
+  }
+  .questions-head {
+    flex-wrap: wrap;
+  }
+  .questions-title {
+    flex-basis: 100%;
+    order: 2;
+  }
 }
 }
 
