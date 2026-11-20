@@ -109,3 +109,10 @@
 .pf-foot .formsec-note {
   margin-right: auto;
 }
+.settings .formsec-head .formsec-note {
+  flex-basis: 100%;
+  margin: 0;
+}
+.settings-bar .formsec-foot {
+  border-top: 0;
+}

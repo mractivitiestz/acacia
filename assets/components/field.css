@@ -470,3 +470,7 @@
 .pf-two .options-legend {
   margin-bottom: 4px;
 }
+.settings-palette .field {
+  flex: 1;
+  max-width: 420px;
+}
