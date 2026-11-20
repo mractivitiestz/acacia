@@ -431,3 +431,9 @@
   vertical-align: -2px;
   margin-right: 4px;
 }
+
+/* the Translations screen's note (split.css) */
+.split-note > .icon {
+  flex: none;
+  color: var(--brand-text);
+}
