@@ -107,3 +107,11 @@
   height: auto;
   min-height: 72px;
 }
+
+/* the Translations pane's fields keep their 40 px code on a phone (split.css) */
+.split-pane .langfield-row {
+  grid-template-columns: 40px minmax(0, 1fr);
+}
+.split-pane .langfield textarea {
+  font-weight: 400;
+}

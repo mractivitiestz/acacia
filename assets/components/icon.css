@@ -438,3 +438,9 @@
   flex: none;
   color: var(--brand-text);
 }
+
+/* the Translations screen's note (split.css) */
+.split-note > .icon {
+  flex: none;
+  color: var(--brand-text);
+}

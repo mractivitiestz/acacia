@@ -207,3 +207,8 @@
   margin-top: 6px;
   min-height: 44px;
 }
+
+/* Open in the editor, first in the Translations pane's actions (split.css) */
+.split-acts > .link {
+  margin-right: auto;
+}
