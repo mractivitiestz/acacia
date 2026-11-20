@@ -431,10 +431,10 @@
   vertical-align: -2px;
   margin-right: 4px;
 }
-.questions-meta .icon {
+.inbox-meta .icon {
   flex: none;
 }
-.questions-note > .icon {
+.inbox-note > .icon {
   flex: none;
   color: var(--brand-text);
 }
