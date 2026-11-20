@@ -80,6 +80,6 @@
   flex: 1;
   padding-inline: 6px;
 }
-.questions-show .segmented {
+.inbox-show .segmented {
   display: flex;
 }

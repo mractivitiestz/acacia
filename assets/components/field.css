@@ -474,12 +474,12 @@
   flex: 1;
   max-width: 420px;
 }
-.questions-compose .field {
+.inbox-compose .field {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
 }
-.questions-compose .field-help {
+.inbox-compose .field-help {
   font-size: 13.5px;
   font-weight: 400;
   color: var(--muted);

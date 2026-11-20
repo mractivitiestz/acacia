@@ -161,7 +161,7 @@
 @import url('components/poster-p31.css') layer(components);
 @import url('components/poster-sheet.css') layer(components);
 @import url('components/posterflow.css') layer(components);
-@import url('components/questions.css') layer(components);
+@import url('components/inbox.css') layer(components);
 @import url('components/settings.css') layer(components);
 @import url('pages/home.css') layer(pages);
 @import url('pages/suggest.css') layer(pages);
