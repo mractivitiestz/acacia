@@ -1,4 +1,4 @@
-/* components/rowcheck.css: .rowcheck, a 44px button of its own (role="checkbox", aria-checked) that selects a row of a list, as the photo library's table does */
+/* components/rowcheck.css: .rowcheck, a 44px button of its own (role="checkbox", aria-checked) that selects a row of a list, as the photo library's table does, or ticks a permission (perms.css); aria-disabled one that cannot change */
 .rowcheck {
   position: relative;
   display: grid;
@@ -32,4 +32,11 @@
 }
 :where(.table[data-variant="lib"]) .table-row[data-inset] .rowcheck {
   visibility: hidden;
+}
+.rowcheck[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .45;
+}
+.perm .rowcheck {
+  margin: -10px 0 0 -10px;
 }

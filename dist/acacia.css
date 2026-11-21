@@ -2329,6 +2329,15 @@ body[data-locked] {
   flex: none;
   color: var(--brand-text);
 }
+
+/* the sensitive mark (chip.css) and a tier's foot (tiers.css) */
+.status[data-variant="sensitive"] .icon {
+  flex: none;
+  color: var(--ink);
+}
+.tier-foot .icon {
+  flex: none;
+}
 }
 
 /* components/button.css */
@@ -5403,6 +5412,12 @@ body[data-locked] {
 .status[data-variant="draft"] {
   background: var(--soft);
   color: var(--muted);
+}
+.status[data-variant="sensitive"] {
+  gap: 5px;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--ink);
+  font-weight: 500;
 }
 .status[data-variant="off"] {
   background: transparent;
@@ -12987,7 +13002,7 @@ body[data-locked] {
 
 /* components/table.css */
 @layer components {
-/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip; .table-clamp, a long text held to three lines; .table-source, a link's site name ending in an ellipsis */
+/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="perms" a list of permissions whose rows open nothing, each name with its sentence; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip; .table-clamp, a long text held to three lines; .table-source, a link's site name ending in an ellipsis */
 .table {
   overflow-x: auto;
   overflow-y: hidden;
@@ -13157,6 +13172,19 @@ body[data-locked] {
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+}
+:where(.table[data-variant="perms"]) .table-cell[data-col="name"] {
+  min-width: 260px;
+}
+:where(.table[data-variant="perms"]) .table-cell[data-col="name"] .table-text {
+  display: grid;
+  gap: 3px;
+}
+:where(.table[data-variant="perms"]) .table-sub {
+  white-space: normal;
+}
+:where(.table[data-variant="perms"]) .table-row {
+  cursor: default;
 }
 .table-cell[data-variant="nowrap"] {
   white-space: nowrap;
@@ -13529,7 +13557,7 @@ body[data-locked] {
 
 /* components/plate.css */
 @layer components {
-/* components/plate.css: .plates and .plate, the dashboard of Today: a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
+/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
 .plates {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -13543,6 +13571,9 @@ body[data-locked] {
   border: 1px solid var(--line);
   border-radius: var(--r);
   background: var(--panel);
+}
+.plates[data-variant="person"] {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
 }
 .plate[data-width="wide"] {
   grid-column: span 2;
@@ -13697,6 +13728,11 @@ body[data-locked] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+@media (max-width: 900px) {
+  .plates[data-variant="person"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 @media (max-width: 700px) {
   .plates {
     grid-template-columns: minmax(0, 1fr);
@@ -13772,7 +13808,7 @@ body[data-locked] {
 
 /* components/rowcheck.css */
 @layer components {
-/* components/rowcheck.css: .rowcheck, a 44px button of its own (role="checkbox", aria-checked) that selects a row of a list, as the photo library's table does */
+/* components/rowcheck.css: .rowcheck, a 44px button of its own (role="checkbox", aria-checked) that selects a row of a list, as the photo library's table does, or ticks a permission (perms.css); aria-disabled one that cannot change */
 .rowcheck {
   position: relative;
   display: grid;
@@ -13806,6 +13842,13 @@ body[data-locked] {
 }
 :where(.table[data-variant="lib"]) .table-row[data-inset] .rowcheck {
   visibility: hidden;
+}
+.rowcheck[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .45;
+}
+.perm .rowcheck {
+  margin: -10px 0 0 -10px;
 }
 }
 
@@ -15272,7 +15315,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/dialog.css */
 @layer components {
-/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its form (.dialog-form, laid out as the dialog itself), its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint */
+/* components/dialog.css: .dialog, a small modal on a native dialog (new folder, rename, move, set the credit, delete): its form (.dialog-form, laid out as the dialog itself), its head and title, its body, the folders to move into (style="--depth:N"), its foot and hint; data-size="wide" for a dialog with a longer form, its buttons at the end of the foot */
 .dialog {
   width: min(520px, calc(100vw - 32px));
   max-height: min(720px, calc(100vh - 48px));
@@ -15282,6 +15325,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   background: var(--raised);
   color: var(--ink);
   box-shadow: var(--sh-h);
+}
+.dialog[data-size="wide"] {
+  width: min(640px, calc(100vw - 32px));
 }
 .dialog[open] {
   display: flex;
@@ -15320,6 +15366,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   gap: 12px;
   padding: 12px 16px 12px 24px;
   border-top: 1px solid var(--line);
+}
+.dialog[data-size="wide"] .dialog-foot {
+  justify-content: flex-end;
 }
 .dialog-hint {
   margin-right: auto;
@@ -21173,7 +21222,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/inbox.css */
 @layer components {
-/* components/inbox.css: .inbox, two panes like a mail program, the back office's Questions and Suggestions: the list (.inbox-list) with its Show buttons (.inbox-show), its search (.inbox-find), its items (.inbox-items, .inbox-item, .inbox-itemtop, .inbox-name, .inbox-time, .inbox-itemsub, .inbox-dot, .inbox-snip) and its count (.inbox-count), beside the one open (.inbox-pane), its head (.inbox-head, .inbox-title, .inbox-h, .inbox-sub, .inbox-back), its facts (.inbox-meta, .inbox-fact), its thread (.inbox-thread, .inbox-msg, .inbox-from, .inbox-who, .inbox-when, .inbox-text), the reply box (.inbox-compose, .inbox-acts) and a note (.inbox-note, .inbox-notetext); on a phone the list, then the one open alone (data-open). Its rules that place other blocks live in their owners' files (segmented, icon, field) */
+/* components/inbox.css: .inbox, two panes like a mail program, the back office's Questions and Suggestions: the list (.inbox-list) with its Show buttons (.inbox-show), its search (.inbox-find), its items (.inbox-items, .inbox-item, .inbox-itemtop, .inbox-name, .inbox-time, .inbox-itemsub, .inbox-dot, .inbox-snip) and its count (.inbox-count) or its foot (.inbox-foot, a count and an action), beside the one open (.inbox-pane), its head (.inbox-head, .inbox-title, .inbox-h, .inbox-sub, .inbox-back, its tools .inbox-tools), its facts (.inbox-meta, .inbox-fact), its thread (.inbox-thread, .inbox-msg, .inbox-from, .inbox-who, .inbox-when, .inbox-text), the reply box (.inbox-compose, .inbox-acts) a form whose fields stay in the pane's grid (.inbox-form), a note (.inbox-note, .inbox-notetext) and the last line saying when it was saved (.inbox-saved, its number .inbox-total); data-variant="positions" is the Users screen's positions, a narrower list beside a pane that scrolls with the page; on a phone the list, then the one open alone (data-open). Its rules that place other blocks live in their owners' files (segmented, icon, field) */
 .inbox {
   display: grid;
   grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
@@ -21255,6 +21304,17 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   font-size: 14px;
   color: var(--muted);
 }
+.inbox-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 8px 8px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
 .inbox-pane {
   position: sticky;
   top: calc(var(--top-h) + 16px);
@@ -21291,6 +21351,37 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .inbox-back {
   display: none;
+}
+.inbox-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.inbox-form {
+  display: contents;
+}
+.inbox-saved {
+  margin: 8px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
+.inbox-total {
+  font-weight: 600;
+  color: var(--ink);
+}
+.inbox[data-variant="positions"] {
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+}
+.inbox[data-variant="positions"] > .inbox-pane {
+  position: static;
+  gap: 8px;
+}
+.inbox[data-variant="positions"] .inbox-head {
+  flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 .inbox-meta {
   display: flex;
@@ -21401,6 +21492,12 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   .inbox-title {
     flex-basis: 100%;
     order: 2;
+  }
+  .inbox[data-variant="positions"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .inbox-tools {
+    order: 3;
   }
 }
 }
@@ -21673,6 +21770,148 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
     flex-basis: 100%;
     order: 2;
   }
+}
+}
+
+/* components/tiers.css */
+@layer components {
+/* components/tiers.css: .tiers, the back office's three tiers above the positions, a card each (.tier) with its head (.tier-head: the name .tier-name and how many hold it .tier-count), its sentence (.tier-text, left out on a phone) and its foot (.tier-foot, an icon and what limits it). The icon it places is styled in icon.css */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.tier {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+}
+.tier-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  font-size: 16px;
+}
+.tier-name {
+  font-weight: 600;
+}
+.tier-count {
+  font-size: 14px;
+  color: var(--muted);
+}
+.tier-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.tier-foot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: var(--brand-text);
+}
+@media (max-width: 900px) {
+  .tiers {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+@media (max-width: 700px) {
+  .tier {
+    padding: 12px 16px;
+    gap: 2px;
+  }
+  .tier-text {
+    display: none;
+  }
+  .tier-foot {
+    margin: 0;
+  }
+}
+}
+
+/* components/perms.css */
+@layer components {
+/* components/perms.css: .perms-title, the heading over one person's permissions; .perms, a heading's permissions in a position's pane (its head .perms-head, the heading .perms-h and how many are ticked .perms-count), each a .perm: a tick, then its text (.perm-text) with its title line (.perm-title: the name .perm-name, the id .perm-id and the sensitive mark) and its sentence (.perm-sub); data-state="locked" greys one its editor does not hold. The tick it places is styled in rowcheck.css */
+.perms {
+  padding: 4px 0 0;
+}
+.perms + .perms {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.perms-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 2px;
+}
+.perms-h {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.perms-count {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.perm {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 8px;
+  align-items: start;
+  padding: 12px 0;
+}
+.perm + .perm {
+  border-top: 1px dashed var(--line);
+}
+.perm-text {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.perm-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin: 0;
+  font-size: 15px;
+}
+.perm-name {
+  font-weight: 600;
+}
+.perm-id {
+  font: 400 12.5px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.perm-sub {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.perm[data-state="locked"] .perm-name {
+  color: var(--muted);
+}
+.perms-title {
+  margin: 24px 0 12px;
+  font: 600 20px/1.2 var(--fh);
 }
 }
 
