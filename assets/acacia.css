@@ -166,6 +166,7 @@
 @import url('components/split.css') layer(components);
 @import url('components/tiers.css') layer(components);
 @import url('components/perms.css') layer(components);
+@import url('components/verdict.css') layer(components);
 @import url('pages/home.css') layer(pages);
 @import url('pages/suggest.css') layer(pages);
 @import url('pages/plan.css') layer(pages);
