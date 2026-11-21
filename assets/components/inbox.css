@@ -1,4 +1,4 @@
-/* components/inbox.css: .inbox, two panes like a mail program, the back office's Questions and Suggestions: the list (.inbox-list) with its Show buttons (.inbox-show), its search (.inbox-find), its items (.inbox-items, .inbox-item, .inbox-itemtop, .inbox-name, .inbox-time, .inbox-itemsub, .inbox-dot, .inbox-snip) and its count (.inbox-count) or its foot (.inbox-foot, a count and an action), beside the one open (.inbox-pane), its head (.inbox-head, .inbox-title, .inbox-h, .inbox-sub, .inbox-back, its tools .inbox-tools), its facts (.inbox-meta, .inbox-fact), its thread (.inbox-thread, .inbox-msg, .inbox-from, .inbox-who, .inbox-when, .inbox-text), the reply box (.inbox-compose, .inbox-acts) a form whose fields stay in the pane's grid (.inbox-form), a note (.inbox-note, .inbox-notetext) and the last line saying when it was saved (.inbox-saved, its number .inbox-total); data-variant="positions" is the Users screen's positions, a narrower list beside a pane that scrolls with the page; on a phone the list, then the one open alone (data-open). Its rules that place other blocks live in their owners' files (segmented, icon, field) */
+/* components/inbox.css: .inbox, two panes like a mail program, the back office's Questions and Suggestions: the list (.inbox-list) with its Show buttons (.inbox-show), its search (.inbox-find), its items (.inbox-items, .inbox-item, .inbox-itemtop, .inbox-name, .inbox-time, .inbox-itemsub, .inbox-dot, .inbox-snip) and its count (.inbox-count) or its foot (.inbox-foot, a count and an action), beside the one open (.inbox-pane), its head (.inbox-head, .inbox-title, .inbox-h, .inbox-sub, .inbox-back, its tools .inbox-tools), its facts (.inbox-meta, .inbox-fact), its thread (.inbox-thread, .inbox-msg, .inbox-from, .inbox-who, .inbox-when, .inbox-text), the reply box (.inbox-compose, .inbox-acts) a form whose fields stay in the pane's grid (.inbox-form), a note (.inbox-note, .inbox-notetext; spaced from a .table[data-variant="check"] above it) and the last line saying when it was saved (.inbox-saved, its number .inbox-total); data-variant="positions" is the Users screen's positions, a narrower list beside a pane that scrolls with the page; on a phone the list, then the one open alone (data-open). Its rules that place other blocks live in their owners' files (segmented, icon, field) */
 .inbox {
   display: grid;
   grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
@@ -275,4 +275,7 @@
   .inbox-tools {
     order: 3;
   }
+}
+.table[data-variant="check"] + .inbox-note {
+  margin-top: 12px;
 }

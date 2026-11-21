@@ -1,26 +1,16 @@
-/* components/verdict.css: the permissions troubleshooting pages. .ask, a row of fields with its button at the end (a person and a permission, then Check); .plates[data-variant="verdict"], the voter's verdict beside what would change it, with .verdict-answer (the Yes or No and the sentence .verdict-said), .verdict-reason and the steps' heading .verdict-h; .permhead, one permission's title and sentence above its holders; .back, the line holding a Back button above a list; .table[data-variant="check"], a list whose second lines wrap */
-.ask {
+/* components/verdict.css: the permissions troubleshooting pages. .lookup, a row of fields with its buttons at the end (.lookup-acts: a person and a permission, then Check); the voter's verdict in .plates[data-variant="verdict"] (plate.css), with .verdict-answer (the Yes or No and the sentence .verdict-said, the name it gives in .verdict-name), .verdict-reason and the steps' heading .verdict-h; .permhead, one permission's title (.perm-title, perms.css) and sentence .permhead-sub above its holders; .back, the line holding a Back button above a list */
+.lookup {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   gap: 12px 16px;
   margin-bottom: 16px;
 }
-.ask .field {
-  flex: 1 1 260px;
-  min-width: 0;
-  max-width: 320px;
-  margin: 0;
-}
-.ask-acts {
+.lookup-acts {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-}
-.plates[data-variant="verdict"] {
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  margin-bottom: 8px;
 }
 .verdict-answer {
   display: flex;
@@ -38,7 +28,7 @@
   font-size: 17px;
   line-height: 1.35;
 }
-.verdict-said b {
+.verdict-name {
   font-weight: 600;
 }
 .verdict-reason {
@@ -58,9 +48,6 @@
   gap: 4px;
   margin: 0 0 12px;
 }
-.permhead .perm-title {
-  font-size: 18px;
-}
 .permhead-sub {
   margin: 0;
   font-size: 13.5px;
@@ -69,34 +56,4 @@
 }
 .back {
   margin: 0 0 12px;
-}
-.table[data-variant="check"] .table-sub {
-  white-space: normal;
-}
-.table[data-variant="check"] .table-cell[data-col="name"] .table-text {
-  display: grid;
-  gap: 3px;
-}
-.table[data-variant="check"] + .inbox-note {
-  margin-top: 12px;
-}
-@media (max-width: 900px) {
-  .plates[data-variant="verdict"] {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .ask .field {
-    max-width: none;
-  }
-}
-@media (max-width: 700px) {
-  .plates[data-variant="verdict"] .record-facts {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .plates[data-variant="verdict"] .record-term {
-    padding: 9px 0 2px;
-  }
-  .plates[data-variant="verdict"] .record-value {
-    padding-top: 0;
-    border-top: 0;
-  }
 }

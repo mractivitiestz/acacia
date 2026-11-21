@@ -1,4 +1,4 @@
-/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
+/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column; data-variant="verdict": the voter's verdict beside what would change it, the same columns, stacked at 900px and under): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
 .plates {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -15,6 +15,10 @@
 }
 .plates[data-variant="person"] {
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+.plates[data-variant="verdict"] {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  margin-bottom: 8px;
 }
 .plate[data-width="wide"] {
   grid-column: span 2;
@@ -170,7 +174,7 @@
   }
 }
 @media (max-width: 900px) {
-  .plates[data-variant="person"] {
+  .plates[data-variant="person"], .plates[data-variant="verdict"] {
     grid-template-columns: minmax(0, 1fr);
   }
 }

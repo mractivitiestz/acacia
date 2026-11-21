@@ -1,4 +1,4 @@
-/* components/perms.css: .perms-title, the heading over one person's permissions; .perms, a heading's permissions in a position's pane (its head .perms-head, the heading .perms-h and how many are ticked .perms-count), each a .perm: a tick, then its text (.perm-text) with its title line (.perm-title: the name .perm-name, the id .perm-id and the sensitive mark) and its sentence (.perm-sub); data-state="locked" greys one its editor does not hold. The tick it places is styled in rowcheck.css */
+/* components/perms.css: .perms-title, the heading over one person's permissions; .perms, a heading's permissions in a position's pane (its head .perms-head, the heading .perms-h and how many are ticked .perms-count), each a .perm: a tick, then its text (.perm-text) with its title line (.perm-title: the name .perm-name, the id .perm-id and the sensitive mark; larger over a permission's holders in .permhead) and its sentence (.perm-sub); data-state="locked" greys one its editor does not hold. The tick it places is styled in rowcheck.css */
 .perms {
   padding: 4px 0 0;
 }
@@ -67,4 +67,7 @@
 .perms-title {
   margin: 24px 0 12px;
   font: 600 20px/1.2 var(--fh);
+}
+.permhead .perm-title {
+  font-size: 18px;
 }
