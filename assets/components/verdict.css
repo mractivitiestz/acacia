@@ -1,0 +1,59 @@
+/* components/verdict.css: the permissions troubleshooting pages. .lookup, a row of fields with its buttons at the end (.lookup-acts: a person and a permission, then Check); the voter's verdict in .plates[data-variant="verdict"] (plate.css), with .verdict-answer (the Yes or No and the sentence .verdict-said, the name it gives in .verdict-name), .verdict-reason and the steps' heading .verdict-h; .permhead, one permission's title (.perm-title, perms.css) and sentence .permhead-sub above its holders; .back, the line holding a Back button above a list */
+.lookup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 16px;
+  margin-bottom: 16px;
+}
+.lookup-acts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.verdict-answer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0 0 6px;
+}
+.verdict-said {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.verdict-name {
+  font-weight: 600;
+}
+.verdict-reason {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.verdict-h {
+  margin: 16px 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.permhead {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 12px;
+}
+.permhead-sub {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.back {
+  margin: 0 0 12px;
+}

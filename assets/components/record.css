@@ -1,4 +1,4 @@
-/* components/record.css: .record's facts, a record's terms and values read in two columns: .record-facts with .record-term and .record-value, a value's quieter .record-note and its .record-link */
+/* components/record.css: .record's facts, a record's terms and values read in two columns: .record-facts with .record-term and .record-value, a value's quieter .record-note and its .record-link; in the verdict's plates (.plates[data-variant="verdict"]) they read term over value at 700px and under */
 .record-facts {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
@@ -32,4 +32,16 @@
 }
 .record-link:hover {
   text-decoration-color: currentColor;
+}
+@media (max-width: 700px) {
+  .plates[data-variant="verdict"] .record-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .plates[data-variant="verdict"] .record-term {
+    padding: 9px 0 2px;
+  }
+  .plates[data-variant="verdict"] .record-value {
+    padding-top: 0;
+    border-top: 0;
+  }
 }

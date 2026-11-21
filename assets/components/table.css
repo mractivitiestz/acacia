@@ -1,4 +1,4 @@
-/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip; .table-clamp, a long text held to three lines; .table-source, a link's site name ending in an ellipsis */
+/* components/table.css: .table, a data table whose rows open a record (the photo library's is data-variant="lib", its rows data-selected, data-open, data-inset; data-variant="perms" a list of permissions whose rows open nothing, each name with its sentence; data-variant="check" a list whose second lines wrap, each name over its line; data-variant="grouped" heads each tbody with a .table-group row, its rows dragged by .table-grip); a list of cards at 700px and under, a row without a .table-thumb or .avatar giving its name and line the thumbnail's column and one without an action cell the chevron's too; .table-clip; .table-clamp, a long text held to three lines; .table-source, a link's site name ending in an ellipsis */
 .table {
   overflow-x: auto;
   overflow-y: hidden;
@@ -168,6 +168,19 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+}
+:where(.table[data-variant="perms"]) .table-cell[data-col="name"] {
+  min-width: 260px;
+}
+:where(.table[data-variant="perms"]) .table-cell[data-col="name"] .table-text {
+  display: grid;
+  gap: 3px;
+}
+:where(.table[data-variant="perms"]) .table-sub {
+  white-space: normal;
+}
+:where(.table[data-variant="perms"]) .table-row {
+  cursor: default;
 }
 .table-cell[data-variant="nowrap"] {
   white-space: nowrap;
@@ -502,4 +515,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: middle;
+}
+.table[data-variant="check"] .table-sub {
+  white-space: normal;
+}
+:where(.table[data-variant="check"]) .table-cell[data-col="name"] .table-text {
+  display: grid;
+  gap: 3px;
 }

@@ -444,3 +444,12 @@
   flex: none;
   color: var(--brand-text);
 }
+
+/* the sensitive mark (chip.css) and a tier's foot (tiers.css) */
+.status[data-variant="sensitive"] .icon {
+  flex: none;
+  color: var(--ink);
+}
+.tier-foot .icon {
+  flex: none;
+}
