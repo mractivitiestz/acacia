@@ -1,4 +1,4 @@
-/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row; a hint under a table (.table + .field-help) */
 .select {
   position: relative;
   display: inline-flex;
@@ -398,6 +398,10 @@
 }
 .dep-remove .field-help {
   margin: 0;
+}
+/* a hint under a table, such as how its rows are dragged */
+.table + .field-help {
+  margin: 10px 2px 0;
 }
 .dep-remove .field-help, .dep-field > .field-help {
   font-size: 13.5px;

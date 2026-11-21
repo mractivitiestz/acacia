@@ -1,4 +1,4 @@
-/* layout/cluster.css: .btns, .pills, .typelinks */
+/* layout/cluster.css: .btns (a table foot's page size beside its pages), .pills, .typelinks */
 .pills {
   display: flex;
   gap: 8px;
@@ -37,6 +37,11 @@
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
+}
+/* the page size and the previous and next page in a table's foot, side by side */
+.table-foot .btns {
+  align-items: center;
+  gap: 4px;
 }
 .btns[data-align="center"] {
   justify-content: center;
