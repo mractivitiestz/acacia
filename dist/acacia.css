@@ -1629,7 +1629,7 @@ body[data-locked] {
 
 /* layout/cluster.css */
 @layer layout {
-/* layout/cluster.css: .btns, .pills, .typelinks */
+/* layout/cluster.css: .btns (a table foot's page size beside its pages), .pills, .typelinks */
 .pills {
   display: flex;
   gap: 8px;
@@ -1668,6 +1668,11 @@ body[data-locked] {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 22px;
+}
+/* the page size and the previous and next page in a table's foot, side by side */
+.table-foot .btns {
+  align-items: center;
+  gap: 4px;
 }
 .btns[data-align="center"] {
   justify-content: center;
@@ -5497,7 +5502,7 @@ body[data-locked] {
 
 /* components/field.css */
 @layer components {
-/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row; a hint under a table (.table + .field-help) */
 .select {
   position: relative;
   display: inline-flex;
@@ -5897,6 +5902,10 @@ body[data-locked] {
 }
 .dep-remove .field-help {
   margin: 0;
+}
+/* a hint under a table, such as how its rows are dragged */
+.table + .field-help {
+  margin: 10px 2px 0;
 }
 .dep-remove .field-help, .dep-field > .field-help {
   font-size: 13.5px;
@@ -11615,7 +11624,7 @@ body[data-locked] {
 
 /* components/departures.css */
 @layer components {
-/* components/departures.css: .dep, the back office's Departures: the side column beside the month (.dep-side), a date's field and its help (.dep-field), the weekday pills (.dep-days, .dep-checks), the pattern's sentence (.dep-sum), the actions (.dep-actions, data-end at the end) and Remove the date under its line (.dep-remove) */
+/* components/departures.css: .dep, the back office's Departures: the side column beside the month (.dep-side), a date's field and its help (.dep-field), the weekday pills (.dep-days, .dep-checks), the pattern's sentence (.dep-sum), the actions (.dep-actions, data-end at the end) and Remove the date under its line (.dep-remove), which closes an editor's last section as its Delete under a dashed line (.formsec .dep-remove) */
 .dep-side {
   display: grid;
   gap: 16px;
@@ -11636,6 +11645,11 @@ body[data-locked] {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
+}
+/* Delete at the end of an editor's last section: a dashed line above it, closer to what it follows */
+.formsec .dep-remove {
+  margin-top: 8px;
+  border-top-style: dashed;
 }
 .dep-sum {
   display: flex;

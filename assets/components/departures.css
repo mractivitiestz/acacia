@@ -1,4 +1,4 @@
-/* components/departures.css: .dep, the back office's Departures: the side column beside the month (.dep-side), a date's field and its help (.dep-field), the weekday pills (.dep-days, .dep-checks), the pattern's sentence (.dep-sum), the actions (.dep-actions, data-end at the end) and Remove the date under its line (.dep-remove) */
+/* components/departures.css: .dep, the back office's Departures: the side column beside the month (.dep-side), a date's field and its help (.dep-field), the weekday pills (.dep-days, .dep-checks), the pattern's sentence (.dep-sum), the actions (.dep-actions, data-end at the end) and Remove the date under its line (.dep-remove), which closes an editor's last section as its Delete under a dashed line (.formsec .dep-remove) */
 .dep-side {
   display: grid;
   gap: 16px;
@@ -19,6 +19,11 @@
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
+}
+/* Delete at the end of an editor's last section: a dashed line above it, closer to what it follows */
+.formsec .dep-remove {
+  margin-top: 8px;
+  border-top-style: dashed;
 }
 .dep-sum {
   display: flex;
