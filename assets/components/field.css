@@ -499,3 +499,18 @@
     max-width: none;
   }
 }
+.field-label[data-variant="used"] {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin: 14px 0 4px;
+  font-weight: 600;
+}
+.field-label[data-variant="used"]:first-child {
+  margin-top: 0;
+}
+.dialog-body .field-help {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+}

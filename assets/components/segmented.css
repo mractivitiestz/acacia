@@ -1,4 +1,4 @@
-/* components/segmented.css: .segmented */
+/* components/segmented.css: .segmented; raised off a section's map (.formsec-map), where it switches Map and Satellite */
 .segmented {
   display: inline-flex;
   gap: 1.5px;
@@ -82,4 +82,7 @@
 }
 .inbox-show .segmented {
   display: flex;
+}
+.formsec-map .segmented {
+  box-shadow: var(--sh);
 }

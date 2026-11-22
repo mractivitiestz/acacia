@@ -42,3 +42,6 @@
 .listedit-row[data-variant="stay"] {
   padding-block: 12px;
 }
+.readlist-row > .listedit-grip {
+  flex: none;
+}

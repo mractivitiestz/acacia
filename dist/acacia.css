@@ -2864,7 +2864,7 @@ body[data-locked] {
 
 /* components/segmented.css */
 @layer components {
-/* components/segmented.css: .segmented */
+/* components/segmented.css: .segmented; raised off a section's map (.formsec-map), where it switches Map and Satellite */
 .segmented {
   display: inline-flex;
   gap: 1.5px;
@@ -2948,6 +2948,9 @@ body[data-locked] {
 }
 .inbox-show .segmented {
   display: flex;
+}
+.formsec-map .segmented {
+  box-shadow: var(--sh);
 }
 }
 
@@ -6002,6 +6005,21 @@ body[data-locked] {
   .lookup .field {
     max-width: none;
   }
+}
+.field-label[data-variant="used"] {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin: 14px 0 4px;
+  font-weight: 600;
+}
+.field-label[data-variant="used"]:first-child {
+  margin-top: 0;
+}
+.dialog-body .field-help {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
 }
 }
 
@@ -9887,7 +9905,7 @@ body[data-locked] {
 
 /* components/map.css */
 @layer components {
-/* components/map.css: .map, .popup, .mapcard */
+/* components/map.css: .map, .popup, .mapcard; the zoom buttons and credits of a .map-canvas, and of a section's .formsec-map, in the house's map links */
 .map {
   position: relative;
   margin: 0;
@@ -9908,13 +9926,13 @@ body[data-locked] {
   font: 500 13px/1.4 var(--f);
   background: color-mix(in srgb,var(--brand) 5%,var(--panel));
 }
-.map-canvas .leaflet-bar {
+:is(.map-canvas,.formsec-map) .leaflet-bar {
   border: 1.5px solid var(--line);
   border-radius: var(--r-s);
   box-shadow: var(--sh);
   overflow: hidden;
 }
-.map-canvas .leaflet-bar .map-link {
+:is(.map-canvas,.formsec-map) .leaflet-bar .map-link {
   width: 44px;
   height: 44px;
   line-height: 42px;
@@ -9923,10 +9941,10 @@ body[data-locked] {
   background: var(--panel);
   border-bottom-color: var(--line);
 }
-:where(.map-canvas) .leaflet-bar .map-link:hover {
+:where(.map-canvas,.formsec-map) .leaflet-bar .map-link:hover {
   background: color-mix(in srgb,var(--brand) 8%,var(--panel));
 }
-:where(.map-canvas) .leaflet-bar a.leaflet-disabled {
+:where(.map-canvas,.formsec-map) .leaflet-bar a.leaflet-disabled {
   color: color-mix(in srgb,var(--muted) 55%,var(--panel));
   background: var(--panel);
 }
@@ -9936,12 +9954,12 @@ body[data-locked] {
   background: color-mix(in srgb,var(--panel) 80%,transparent);
   font: 700 11px var(--f);
 }
-.map-canvas .leaflet-control-attribution {
+:is(.map-canvas,.formsec-map) .leaflet-control-attribution {
   font-size: 11px;
   color: var(--muted);
   background: color-mix(in srgb,var(--panel) 85%,transparent);
 }
-.map-canvas .leaflet-control-attribution .map-link {
+:is(.map-canvas,.formsec-map) .leaflet-control-attribution .map-link {
   color: inherit;
   text-decoration: underline;
 }
@@ -14967,7 +14985,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/formsec.css */
 @layer components {
-/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot; .mapdot and .maplabel, a section map's dots and the names of its places */
+/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot; .formsec-map, a section's map, data-size list (a list page's, in a .mapblock above its table) | pin (a dialog's small map) | edit (a record's one point); .mapdot and .maplabel, a section map's dots and the names of its places */
 .formsecs {
   display: grid;
   gap: 16px;
@@ -15017,10 +15035,30 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   margin-right: auto;
 }
 .formsec-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
   height: 300px;
   border-radius: var(--r-s);
   overflow: hidden;
   border: 1px solid var(--line);
+}
+.formsec-map.leaflet-container {
+  font: 500 13px/1.4 var(--f);
+  background: color-mix(in srgb,var(--brand) 5%,var(--panel));
+}
+.formsec-map[data-size="list"] {
+  height: 280px;
+}
+.formsec-map[data-size="pin"] {
+  height: 220px;
+  margin-top: 6px;
+}
+.formsec-map[data-size="edit"] {
+  height: 260px;
+}
+.mapblock {
+  margin: 0 0 16px;
 }
 .mapdot {
   display: block;
@@ -15032,6 +15070,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   cursor: grab;
 }
 @media (max-width: 700px) {
+  .formsec-map[data-size="list"] {
+    height: 220px;
+  }
   .formsec-head {
     padding: 16px 16px 0;
   }
@@ -15084,6 +15125,14 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .settings-bar .formsec-foot {
   border-top: 0;
+}
+.formsec-note[data-variant="dialog"] {
+  margin-right: auto;
+}
+@media (max-width: 700px) {
+  .formsec-note[data-variant="dialog"] {
+    flex: 1 0 100%;
+  }
 }
 }
 
@@ -15205,6 +15254,9 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .listedit-row[data-variant="stay"] {
   padding-block: 12px;
+}
+.readlist-row > .listedit-grip {
+  flex: none;
 }
 }
 
@@ -15450,6 +15502,11 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
     padding-inline: 16px;
   }
 }
+@media (max-width: 700px) {
+  .dialog-foot:has(> .formsec-note[data-variant="dialog"]) {
+    flex-wrap: wrap;
+  }
+}
 }
 
 /* components/menu.css */
@@ -15557,7 +15614,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/readlist.css */
 @layer components {
-/* components/readlist.css: .readlist, a list read on a record (places, seasons, ways in, questions): each item a row under a rule, a dot before it when the list has no variant; data-variant seasons | ways (an icon beside each) | faq (.readlist-pair, a question and its answer) | places */
+/* components/readlist.css: .readlist, a list read on a record (places, seasons, ways in, questions): each item a row under a rule, a dot before it when the list has no variant; data-variant seasons | ways (an icon beside each) | faq (.readlist-pair, a question and its answer) | places | order (.readlist-row, a row dragged on its grip, with .readlist-body, its name and note, and .readlist-end, its marks and its Edit) */
 .readlist {
   display: grid;
   gap: 0;
@@ -15621,6 +15678,40 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .readlist[data-variant="faq"] .readlist-text {
   color: var(--ink);
+}
+.readlist[data-variant="order"] > .readlist-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.readlist-body {
+  display: grid;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.readlist-body > .readlist-what {
+  color: var(--ink);
+  text-decoration: none;
+}
+.readlist-body > .readlist-what:hover {
+  color: var(--brand-text);
+}
+.readlist-end {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 10px;
+}
+@media (max-width: 700px) {
+  .readlist[data-variant="order"] > .readlist-row {
+    flex-wrap: wrap;
+  }
+  .readlist-end {
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
 }
 }
 

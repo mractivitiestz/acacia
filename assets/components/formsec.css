@@ -1,4 +1,4 @@
-/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot; .mapdot and .maplabel, a section map's dots and the names of its places */
+/* components/formsec.css: .formsecs, the sections of a form; .formsec, one section: its head (title, note, link), body and foot; .formsec-map, a section's map, data-size list (a list page's, in a .mapblock above its table) | pin (a dialog's small map) | edit (a record's one point); .mapdot and .maplabel, a section map's dots and the names of its places */
 .formsecs {
   display: grid;
   gap: 16px;
@@ -48,10 +48,30 @@
   margin-right: auto;
 }
 .formsec-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
   height: 300px;
   border-radius: var(--r-s);
   overflow: hidden;
   border: 1px solid var(--line);
+}
+.formsec-map.leaflet-container {
+  font: 500 13px/1.4 var(--f);
+  background: color-mix(in srgb,var(--brand) 5%,var(--panel));
+}
+.formsec-map[data-size="list"] {
+  height: 280px;
+}
+.formsec-map[data-size="pin"] {
+  height: 220px;
+  margin-top: 6px;
+}
+.formsec-map[data-size="edit"] {
+  height: 260px;
+}
+.mapblock {
+  margin: 0 0 16px;
 }
 .mapdot {
   display: block;
@@ -63,6 +83,9 @@
   cursor: grab;
 }
 @media (max-width: 700px) {
+  .formsec-map[data-size="list"] {
+    height: 220px;
+  }
   .formsec-head {
     padding: 16px 16px 0;
   }
@@ -115,4 +138,12 @@
 }
 .settings-bar .formsec-foot {
   border-top: 0;
+}
+.formsec-note[data-variant="dialog"] {
+  margin-right: auto;
+}
+@media (max-width: 700px) {
+  .formsec-note[data-variant="dialog"] {
+    flex: 1 0 100%;
+  }
 }
