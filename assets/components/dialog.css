@@ -97,3 +97,8 @@
     padding-inline: 16px;
   }
 }
+@media (max-width: 700px) {
+  .dialog-foot:has(> .formsec-note[data-variant="dialog"]) {
+    flex-wrap: wrap;
+  }
+}

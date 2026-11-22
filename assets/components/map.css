@@ -1,4 +1,4 @@
-/* components/map.css: .map, .popup, .mapcard */
+/* components/map.css: .map, .popup, .mapcard; the zoom buttons and credits of a .map-canvas, and of a section's .formsec-map, in the house's map links */
 .map {
   position: relative;
   margin: 0;
@@ -19,13 +19,13 @@
   font: 500 13px/1.4 var(--f);
   background: color-mix(in srgb,var(--brand) 5%,var(--panel));
 }
-.map-canvas .leaflet-bar {
+:is(.map-canvas,.formsec-map) .leaflet-bar {
   border: 1.5px solid var(--line);
   border-radius: var(--r-s);
   box-shadow: var(--sh);
   overflow: hidden;
 }
-.map-canvas .leaflet-bar .map-link {
+:is(.map-canvas,.formsec-map) .leaflet-bar .map-link {
   width: 44px;
   height: 44px;
   line-height: 42px;
@@ -34,10 +34,10 @@
   background: var(--panel);
   border-bottom-color: var(--line);
 }
-:where(.map-canvas) .leaflet-bar .map-link:hover {
+:where(.map-canvas,.formsec-map) .leaflet-bar .map-link:hover {
   background: color-mix(in srgb,var(--brand) 8%,var(--panel));
 }
-:where(.map-canvas) .leaflet-bar a.leaflet-disabled {
+:where(.map-canvas,.formsec-map) .leaflet-bar a.leaflet-disabled {
   color: color-mix(in srgb,var(--muted) 55%,var(--panel));
   background: var(--panel);
 }
@@ -47,12 +47,12 @@
   background: color-mix(in srgb,var(--panel) 80%,transparent);
   font: 700 11px var(--f);
 }
-.map-canvas .leaflet-control-attribution {
+:is(.map-canvas,.formsec-map) .leaflet-control-attribution {
   font-size: 11px;
   color: var(--muted);
   background: color-mix(in srgb,var(--panel) 85%,transparent);
 }
-.map-canvas .leaflet-control-attribution .map-link {
+:is(.map-canvas,.formsec-map) .leaflet-control-attribution .map-link {
   color: inherit;
   text-decoration: underline;
 }

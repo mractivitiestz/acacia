@@ -1,4 +1,4 @@
-/* components/readlist.css: .readlist, a list read on a record (places, seasons, ways in, questions): each item a row under a rule, a dot before it when the list has no variant; data-variant seasons | ways (an icon beside each) | faq (.readlist-pair, a question and its answer) | places */
+/* components/readlist.css: .readlist, a list read on a record (places, seasons, ways in, questions): each item a row under a rule, a dot before it when the list has no variant; data-variant seasons | ways (an icon beside each) | faq (.readlist-pair, a question and its answer) | places | order (.readlist-row, a row dragged on its grip, with .readlist-body, its name and note, and .readlist-end, its marks and its Edit) */
 .readlist {
   display: grid;
   gap: 0;
@@ -62,4 +62,38 @@
 }
 .readlist[data-variant="faq"] .readlist-text {
   color: var(--ink);
+}
+.readlist[data-variant="order"] > .readlist-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.readlist-body {
+  display: grid;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.readlist-body > .readlist-what {
+  color: var(--ink);
+  text-decoration: none;
+}
+.readlist-body > .readlist-what:hover {
+  color: var(--brand-text);
+}
+.readlist-end {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 10px;
+}
+@media (max-width: 700px) {
+  .readlist[data-variant="order"] > .readlist-row {
+    flex-wrap: wrap;
+  }
+  .readlist-end {
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
 }
