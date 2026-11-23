@@ -1816,6 +1816,22 @@
   grid-template-columns: minmax(0, .9fr) minmax(0, 1fr) calc(620 * var(--u));
   grid-template-areas: "head head ." "a b .";
 }
+/* P32's landmark at each shape: its width (--p32-pic), and the depth, as a share of the poster's height, that the number
+   and its shadow reach at most (--p32-low), which components/poster-p32.css sizes the number's column from */
+.pst[data-tpl="p32"] {
+  --p32-pic: calc(520 * var(--u));
+  --p32-low: .48;
+}
+.pst[data-tpl="p32"][data-shape="story"] {
+  --p32-low: .45;
+}
+.pst[data-tpl="p32"][data-shape="print"] {
+  --p32-pic: calc(560 * var(--u));
+  --p32-low: .38;
+}
+.pst[data-tpl="p32"][data-shape="wide"] {
+  --p32-pic: calc(760 * var(--u));
+}
 :where(.pst[data-tpl="p32"], .pst[data-tpl="p33"]) .pst-qr {
   width: calc(140 * var(--u));
   height: calc(140 * var(--u));

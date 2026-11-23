@@ -21,21 +21,29 @@
   text-transform: uppercase;
   color: var(--brand-text);
 }
+/* The number never runs past the ticket's main part into the stub: the row is a query container ("container-type:
+   inline-size: Establishes a query container for dimensional queries on the inline axis of the container",
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/container-type), the number is at most what
+   three digits fill in it (Bricolage Grotesque's widest three at 800 with -.04em between them reach 1.73em of ink;
+   "cqi: 1% of a query container's inline size",
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries#container_query_length_units),
+   and the unit beside it breaks between its words. */
 .p33-n {
   display: flex;
   align-items: baseline;
   gap: calc(20 * var(--u));
+  container-type: inline-size;
 }
 .p33-num {
   font-family: var(--fh);
-  font-size: calc(200 * var(--u));
+  font-size: min(calc(200 * var(--u)), calc(100cqi / 1.73));
   font-weight: 800;
   line-height: .85;
   letter-spacing: -.04em;
   color: var(--brand);
 }
 :where(.pst[data-shape="print"]) .p33-num {
-  font-size: calc(240 * var(--u));
+  font-size: min(calc(240 * var(--u)), calc(100cqi / 1.73));
 }
 .p33-unit {
   font-family: var(--fh);
