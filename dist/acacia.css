@@ -5137,7 +5137,7 @@ body[data-locked] {
 
 /* components/chip.css */
 @layer components {
-/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note; chips side by side in a top bar's meta and a table cell, and a chip in a record's value */
+/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note; chips side by side in a top bar's meta and a table cell, and a chip in a record's value; a price row's audience chip with its icon (.listedit-head .status) */
 .pills > .pill:last-child {
   margin-right: 40px;
 }
@@ -5510,6 +5510,11 @@ body[data-locked] {
 }
 .record-value .status {
   vertical-align: baseline;
+}
+.listedit-head .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 }
 
@@ -6053,7 +6058,7 @@ body[data-locked] {
 
 /* components/dropdown.css */
 @layer components {
-/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier; the application's controller shows the panel in the top layer (popover) beside its trigger, so margin and padding are set against the popover's own */
+/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier; the application's controller shows the panel in the top layer (popover) beside its trigger, so margin and padding are set against the popover's own; data-variant menu, a link's menu of actions (Add a price row), its options buttons with a note after the text (.dropdown-note) */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -6482,6 +6487,25 @@ body[data-locked] {
 .pf-dd .dropdown-trigger {
   width: 100%;
 }
+.dropdown[data-variant="menu"] {
+  display: inline-block;
+}
+.dropdown[data-variant="menu"] .dropdown-panel {
+  top: calc(100% + 6px);
+  min-width: 320px;
+  z-index: 5;
+}
+.dropdown-note {
+  color: var(--muted);
+  font-weight: 400;
+}
+:where(button.dropdown-option) {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
 }
 
 /* components/results-bar.css */
@@ -6574,7 +6598,7 @@ body[data-locked] {
 
 /* components/empty.css */
 @layer components {
-/* components/empty.css: .empty, .nothing, .none, .soon */
+/* components/empty.css: .empty, .nothing, .none, .soon; .soon[data-variant="lead"] above a section's rows */
 .empty {
   padding: 34px;
   text-align: center;
@@ -6641,6 +6665,9 @@ body[data-locked] {
 }
 .soon:focus {
   outline: none;
+}
+.soon[data-variant="lead"] {
+  margin: 0 0 12px;
 }
 }
 
@@ -7739,7 +7766,7 @@ body[data-locked] {
 
 /* components/booking-card.css */
 @layer components {
-/* components/booking-card.css: .booking, .aside; the travellers field (.booking-who, the people selector A3): its label (.booking-wholabel), the house dropdown's trigger opening a panel (.booking-whopanel, a bottom sheet up to 700px) of the adults and the children (.booking-wholist), each child's age (.booking-ages) and the running total beside Done (.booking-whofoot, .booking-whototal); East African residents: a group's heading in the travellers' panel (.booking-label2[data-variant="group"]), a price's sum (.booking-sum[data-variant="price"]) with its subtotals, charges and conversion (.booking-line[data-variant="sub" | "charge" | "conv"]), the plus between two amounts (.booking-plus) and a hint's lead (.booking-key) */
+/* components/booking-card.css: .booking, .aside; the travellers field (.booking-who, the people selector A3): its label (.booking-wholabel), the house dropdown's trigger opening a panel (.booking-whopanel, a bottom sheet up to 700px) of the adults and the children (.booking-wholist), each child's age (.booking-ages) and the running total beside Done (.booking-whofoot, .booking-whototal); East African residents: a group's heading in the travellers' panel (.booking-label2[data-variant="group"]), a price's sum (.booking-sum[data-variant="price"]) with its subtotals, charges and conversion (.booking-line[data-variant="sub" | "charge" | "conv"]), the plus between two amounts (.booking-plus) and a hint's lead (.booking-key); a hint above a section's rows (.booking-hint[data-variant="lead"]) and a page's saved or refused message (.booking-hint, .booking-alert [data-variant="flash"]) */
 .aside .aside-heading {
   font-size: 22px;
   font-weight: 800;
@@ -8251,6 +8278,12 @@ body[data-locked] {
 }
 .checkout-names .booking-label2 {
   margin: 0 0 var(--s-2);
+}
+.booking-hint[data-variant="lead"] {
+  margin: 0 0 12px;
+}
+:is(.booking-hint, .booking-alert)[data-variant="flash"] {
+  margin: 0 0 16px;
 }
 }
 
@@ -15294,7 +15327,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/listedit.css */
 @layer components {
-/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start */
+/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start; data-variant price, an activity's price row (the audience's chip and the row's sum in .listedit-head, .listedit-sum), the rows a dashed line apart, in a .listedit[data-variant="prices"], with Add a price row's menu in .listedit-foot */
 .listedit {
   display: grid;
   gap: 10px;
@@ -15340,6 +15373,33 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .readlist-row > .listedit-grip {
   flex: none;
+}
+.listedit[data-variant="prices"] {
+  gap: 12px;
+}
+.listedit-row[data-variant="price"] {
+  align-items: flex-start;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--line);
+}
+.listedit-row[data-variant="price"]:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.listedit-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+.listedit-sum {
+  font-size: var(--t-sm);
+  color: var(--muted);
+}
+.listedit-foot {
+  position: relative;
+  margin: 12px 0 0;
 }
 }
 

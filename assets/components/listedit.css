@@ -1,4 +1,4 @@
-/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start */
+/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start; data-variant price, an activity's price row (the audience's chip and the row's sum in .listedit-head, .listedit-sum), the rows a dashed line apart, in a .listedit[data-variant="prices"], with Add a price row's menu in .listedit-foot */
 .listedit {
   display: grid;
   gap: 10px;
@@ -44,4 +44,31 @@
 }
 .readlist-row > .listedit-grip {
   flex: none;
+}
+.listedit[data-variant="prices"] {
+  gap: 12px;
+}
+.listedit-row[data-variant="price"] {
+  align-items: flex-start;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--line);
+}
+.listedit-row[data-variant="price"]:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.listedit-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+.listedit-sum {
+  font-size: var(--t-sm);
+  color: var(--muted);
+}
+.listedit-foot {
+  position: relative;
+  margin: 12px 0 0;
 }

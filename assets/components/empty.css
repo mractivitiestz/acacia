@@ -1,4 +1,4 @@
-/* components/empty.css: .empty, .nothing, .none, .soon */
+/* components/empty.css: .empty, .nothing, .none, .soon; .soon[data-variant="lead"] above a section's rows */
 .empty {
   padding: 34px;
   text-align: center;
@@ -65,4 +65,7 @@
 }
 .soon:focus {
   outline: none;
+}
+.soon[data-variant="lead"] {
+  margin: 0 0 12px;
 }

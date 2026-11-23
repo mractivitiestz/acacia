@@ -1,4 +1,4 @@
-/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note; chips side by side in a top bar's meta and a table cell, and a chip in a record's value */
+/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note; chips side by side in a top bar's meta and a table cell, and a chip in a record's value; a price row's audience chip with its icon (.listedit-head .status) */
 .pills > .pill:last-child {
   margin-right: 40px;
 }
@@ -371,4 +371,9 @@
 }
 .record-value .status {
   vertical-align: baseline;
+}
+.listedit-head .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
