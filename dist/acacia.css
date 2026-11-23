@@ -5137,7 +5137,7 @@ body[data-locked] {
 
 /* components/chip.css */
 @layer components {
-/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note */
+/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note; chips side by side in a top bar's meta and a table cell, and a chip in a record's value; a price row's audience chip with its icon (.listedit-head .status) */
 .pills > .pill:last-child {
   margin-right: 40px;
 }
@@ -5505,11 +5505,22 @@ body[data-locked] {
 .pf-recent .pill {
   text-decoration: none;
 }
+:where(.topbar-meta, .table-cell) .status + .status {
+  margin-left: 6px;
+}
+.record-value .status {
+  vertical-align: baseline;
+}
+.listedit-head .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
 }
 
 /* components/field.css */
 @layer components {
-/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row; a hint under a table (.table + .field-help) */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row; a hint under a table (.table + .field-help); an option's amount at its right (.option-amount), the option then aligned to its top */
 .select {
   position: relative;
   display: inline-flex;
@@ -6025,11 +6036,29 @@ body[data-locked] {
   font-weight: 400;
   color: var(--muted);
 }
+.option .option-amount {
+  flex: none;
+  margin-left: var(--s-2);
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.option:has(.option-amount) {
+  align-items: flex-start;
+}
+@media (max-width: 420px) {
+  .option .option-amount {
+    margin-left: var(--s-1);
+  }
+}
+.pay > .options {
+  margin: 0 0 var(--s-3);
+}
 }
 
 /* components/dropdown.css */
 @layer components {
-/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier; the application's controller shows the panel in the top layer (popover) beside its trigger, so margin and padding are set against the popover's own */
+/* components/dropdown.css: .dropdown, the house dropdown (D4, search first): a pill trigger with an icon at its left, a panel that opens on a search field, rows with an icon at the left and the count at the right, the chosen rows tinted with an inset bar and a check, Clear and Done (or Show N stays) for a multiple choice, the bottom sheet up to 700px; the form size in a .field. The native select stays inside the block, hidden, as the value carrier; the application's controller shows the panel in the top layer (popover) beside its trigger, so margin and padding are set against the popover's own; data-variant menu, a link's menu of actions (Add a price row), its options buttons with a note after the text (.dropdown-note) */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -6458,6 +6487,25 @@ body[data-locked] {
 .pf-dd .dropdown-trigger {
   width: 100%;
 }
+.dropdown[data-variant="menu"] {
+  display: inline-block;
+}
+.dropdown[data-variant="menu"] .dropdown-panel {
+  top: calc(100% + 6px);
+  min-width: 320px;
+  z-index: 5;
+}
+.dropdown-note {
+  color: var(--muted);
+  font-weight: 400;
+}
+:where(button.dropdown-option) {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
 }
 
 /* components/results-bar.css */
@@ -6550,7 +6598,7 @@ body[data-locked] {
 
 /* components/empty.css */
 @layer components {
-/* components/empty.css: .empty, .nothing, .none, .soon */
+/* components/empty.css: .empty, .nothing, .none, .soon; .soon[data-variant="lead"] above a section's rows */
 .empty {
   padding: 34px;
   text-align: center;
@@ -6617,6 +6665,9 @@ body[data-locked] {
 }
 .soon:focus {
   outline: none;
+}
+.soon[data-variant="lead"] {
+  margin: 0 0 12px;
 }
 }
 
@@ -7715,7 +7766,7 @@ body[data-locked] {
 
 /* components/booking-card.css */
 @layer components {
-/* components/booking-card.css: .booking, .aside; the travellers field (.booking-who, the people selector A3): its label (.booking-wholabel), the house dropdown's trigger opening a panel (.booking-whopanel, a bottom sheet up to 700px) of the adults and the children (.booking-wholist), each child's age (.booking-ages) and the running total beside Done (.booking-whofoot, .booking-whototal) */
+/* components/booking-card.css: .booking, .aside; the travellers field (.booking-who, the people selector A3): its label (.booking-wholabel), the house dropdown's trigger opening a panel (.booking-whopanel, a bottom sheet up to 700px) of the adults and the children (.booking-wholist), each child's age (.booking-ages) and the running total beside Done (.booking-whofoot, .booking-whototal); price audiences: a group's heading in the travellers' panel (.booking-label2[data-variant="group"]), a price's sum (.booking-sum[data-variant="price"]) with its subtotals, charges and conversion (.booking-line[data-variant="sub" | "charge" | "conv"]), the plus between two amounts (.booking-plus) and a hint's lead (.booking-key); a hint above a section's rows (.booking-hint[data-variant="lead"]) and a page's saved or refused message (.booking-hint, .booking-alert [data-variant="flash"]) */
 .aside .aside-heading {
   font-size: 22px;
   font-weight: 800;
@@ -8177,6 +8228,62 @@ body[data-locked] {
 }
 .booking-step[aria-disabled="true"]:hover {
   background: var(--soft);
+}
+.booking-wholist > .booking-label2[data-variant="group"] {
+  margin: 4px 0 -4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+:where(.booking-wholist) > .booking-label2[data-variant="group"]:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.booking-wholist > .booking-hint {
+  margin: 0;
+}
+.booking-wholist .booking-label .booking-note {
+  font-weight: 400;
+}
+.booking-sum[data-variant="price"] .booking-note {
+  font-weight: 400;
+}
+:where(.booking-sum[data-variant="price"]) .booking-total .booking-note {
+  max-width: 28ch;
+}
+.booking-line[data-variant="sub"] {
+  margin-top: -1px;
+  border-top: 1px solid var(--line);
+}
+.booking-line:is([data-variant="sub"], [data-variant="charge"], [data-variant="conv"]) .booking-bold {
+  font-weight: 600;
+}
+.booking-line:is([data-variant="sub"], [data-variant="conv"]) .booking-amount {
+  font-weight: 600;
+}
+.booking-line[data-variant="charge"] .booking-amount {
+  font-weight: 500;
+  color: var(--muted);
+}
+.booking-plus {
+  font-weight: 400;
+  color: var(--muted);
+}
+.booking-hint .booking-key {
+  font-weight: 600;
+}
+.arrival-due .booking-total .booking-bold {
+  white-space: normal;
+  text-align: right;
+}
+.checkout-names .booking-label2 {
+  margin: 0 0 var(--s-2);
+}
+.booking-hint[data-variant="lead"] {
+  margin: 0 0 12px;
+}
+:is(.booking-hint, .booking-alert)[data-variant="flash"] {
+  margin: 0 0 16px;
 }
 }
 
@@ -13611,7 +13718,7 @@ body[data-locked] {
 
 /* components/plate.css */
 @layer components {
-/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column; data-variant="verdict": the voter's verdict beside what would change it, the same columns, stacked at 900px and under): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
+/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column; data-variant="verdict": the voter's verdict beside what would change it, the same columns, stacked at 900px and under): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot; a count of several chips (.plate-count with .status beside .status) */
 .plates {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -13834,6 +13941,11 @@ body[data-locked] {
 }
 :where(.plate-stat:any-link:hover) .plate-lbl {
   text-decoration: underline;
+}
+.plate-count:has(> .status + .status) {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
 }
 }
 
@@ -15215,7 +15327,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/listedit.css */
 @layer components {
-/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start */
+/* components/listedit.css: .listedit, an ordered list of rows edited in place (highlights, included, starts, sources): the grip, the fields, Remove; data-variant start; data-variant price, an activity's price row (the audience's chip and the row's sum in .listedit-head, .listedit-sum), the rows a dashed line apart, in a .listedit[data-variant="prices"], with Add a price row's menu in .listedit-foot */
 .listedit {
   display: grid;
   gap: 10px;
@@ -15261,6 +15373,33 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .readlist-row > .listedit-grip {
   flex: none;
+}
+.listedit[data-variant="prices"] {
+  gap: 12px;
+}
+.listedit-row[data-variant="price"] {
+  align-items: flex-start;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--line);
+}
+.listedit-row[data-variant="price"]:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.listedit-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+.listedit-sum {
+  font-size: var(--t-sm);
+  color: var(--muted);
+}
+.listedit-foot {
+  position: relative;
+  margin: 12px 0 0;
 }
 }
 
@@ -23039,7 +23178,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* pages/checkout.css */
 @layer pages {
-/* pages/checkout.css: .checkout, .trip, .arrival */
+/* pages/checkout.css: .checkout, .trip, .arrival; the residents' names under the details (.checkout-names) and the choice of how to pay above Due now */
 .checkout-summary {
   top: calc(var(--st) + 20px);
 }
@@ -23282,6 +23421,11 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .arrival-inpop {
   margin: 0 0 12px;
+}
+.checkout-names {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
 }
 }
 
