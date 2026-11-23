@@ -159,6 +159,9 @@
 @import url('components/poster-p29.css') layer(components);
 @import url('components/poster-p30.css') layer(components);
 @import url('components/poster-p31.css') layer(components);
+@import url('components/poster-afc.css') layer(components);
+@import url('components/poster-p32.css') layer(components);
+@import url('components/poster-p33.css') layer(components);
 @import url('components/poster-sheet.css') layer(components);
 @import url('components/posterflow.css') layer(components);
 @import url('components/inbox.css') layer(components);

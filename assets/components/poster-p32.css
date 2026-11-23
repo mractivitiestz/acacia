@@ -1,0 +1,84 @@
+/* components/poster-p32.css: .p32, the poster template P32 (AFCON countdown: match-day graphic), its parts at each shape: the landmark cut out on the right behind Tanzania's diagonal stripe, the kicker, the slanted number with its hard shadow, the unit on its yellow band (above the number in Kiswahili), the kick-off line */
+.p32-pic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(520 * var(--u));
+  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+}
+.p32-pic::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(105deg, var(--tz-yellow) 0 calc(14 * var(--u)), var(--dark) calc(14 * var(--u)) calc(40 * var(--u)), var(--tz-yellow) calc(40 * var(--u)) calc(54 * var(--u)), transparent calc(54 * var(--u)));
+  clip-path: polygon(34% 0, 46% 0, 12% 100%, 0 100%);
+}
+:where(.pst[data-shape="print"]) .p32-pic {
+  width: calc(560 * var(--u));
+}
+:where(.pst[data-shape="wide"]) .p32-pic {
+  width: calc(760 * var(--u));
+}
+.p32-photo {
+  position: absolute;
+  inset: 0;
+}
+.p32-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(600 * var(--u));
+}
+.p32-kick {
+  font-family: var(--fh);
+  font-size: calc(46 * var(--u));
+  font-weight: 800;
+  line-height: .95;
+  text-transform: uppercase;
+  color: var(--sun);
+  transform: skewX(-8deg);
+}
+.p32-num {
+  font-family: var(--fh);
+  font-size: calc(330 * var(--u));
+  font-weight: 800;
+  line-height: .85;
+  letter-spacing: -.05em;
+  transform: skewX(-8deg);
+  text-shadow: calc(10 * var(--u)) calc(10 * var(--u)) 0 var(--dark);
+}
+:where(.pst[data-shape="square"]) .p32-num {
+  font-size: calc(270 * var(--u));
+}
+:where(.pst[data-shape="print"]) .p32-num {
+  font-size: calc(440 * var(--u));
+}
+.p32-unit {
+  align-self: flex-start;
+  font-family: var(--fh);
+  font-size: calc(40 * var(--u));
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--sun);
+  transform: skewX(-8deg);
+}
+:where(.pst:lang(sw)) .p32-unit {
+  margin-top: calc(14 * var(--u));
+  margin-bottom: calc(10 * var(--u));
+}
+.p32-date {
+  width: fit-content;
+  margin-top: calc(14 * var(--u));
+  margin-bottom: calc(10 * var(--u));
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--white);
+  opacity: .92;
+}
+:where(.pst:lang(sw)) .p32-date {
+  margin-top: calc(18 * var(--u));
+}

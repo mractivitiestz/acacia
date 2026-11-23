@@ -1,0 +1,99 @@
+/* components/poster-p33.css: .p33, the poster template P33 (AFCON countdown: ticket stub), its parts at each shape: the admission ticket with the number, the bar from the campaign's start to kick-off with today's marker, and the stub behind a dashed tear line with the QR, the length and the price */
+.p33-ticket {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(250 * var(--u));
+  overflow: hidden;
+  border-radius: var(--r);
+  color: var(--ink);
+  background: var(--panel);
+  box-shadow: 0 calc(20 * var(--u)) calc(44 * var(--u)) var(--shade-30);
+}
+.p33-main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 * var(--u));
+  padding: calc(30 * var(--u)) calc(34 * var(--u)) calc(28 * var(--u));
+}
+.p33-admit {
+  font-size: calc(20 * var(--u));
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--brand-text);
+}
+.p33-n {
+  display: flex;
+  align-items: baseline;
+  gap: calc(20 * var(--u));
+}
+.p33-num {
+  font-family: var(--fh);
+  font-size: calc(200 * var(--u));
+  font-weight: 800;
+  line-height: .85;
+  letter-spacing: -.04em;
+  color: var(--brand);
+}
+:where(.pst[data-shape="print"]) .p33-num {
+  font-size: calc(240 * var(--u));
+}
+.p33-unit {
+  font-family: var(--fh);
+  font-size: calc(40 * var(--u));
+  font-weight: 800;
+}
+.p33-bar {
+  position: relative;
+  height: calc(16 * var(--u));
+  border-radius: var(--r-pill);
+  background: var(--line);
+}
+.p33-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--tz-green), var(--tz-yellow));
+}
+.p33-now {
+  position: absolute;
+  top: 50%;
+  width: calc(30 * var(--u));
+  height: calc(30 * var(--u));
+  border: calc(5 * var(--u)) solid var(--tz-yellow);
+  border-radius: 50%;
+  background: var(--dark);
+  transform: translate(-50%, -50%);
+}
+.p33-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(20 * var(--u));
+  font-weight: 700;
+  color: var(--muted);
+}
+.p33-end {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+}
+.p33-ball {
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+}
+.p33-stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(14 * var(--u));
+  padding: calc(20 * var(--u));
+  border-left: calc(4 * var(--u)) dashed var(--line);
+  font-size: calc(22 * var(--u));
+  text-align: center;
+}
+.p33-price {
+  font-family: var(--fh);
+  font-size: calc(28 * var(--u));
+}
