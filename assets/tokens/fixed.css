@@ -1,4 +1,4 @@
-/* tokens/fixed.css: colours that do not follow the palette: white and the shades over photographs, the error red, the card mark */
+/* tokens/fixed.css: colours that do not follow the palette: white and the shades over photographs, the error red, the card mark, the yellow and Tanzania's flag colours of the countdown posters */
 :root {
   color-scheme: light;
   --error: #b42318;
@@ -6,6 +6,7 @@
   --dark: #141414;
   --light-14: rgba(255,255,255,.14);
   --light-26: rgba(255,255,255,.26);
+  --light-30: rgba(255,255,255,.3);
   --light-45: rgba(255,255,255,.45);
   --light-51: rgba(255,255,255,.51);
   --light-55: rgba(255,255,255,.55);
@@ -30,6 +31,9 @@
   --shade-8: rgba(0,0,0,.08);
   --shade-82: rgba(0,0,0,.82);
   --shade-95: rgba(0,0,0,.95);
+  --sun: #f2c200;
+  --tz-green: #1f9d47;
+  --tz-yellow: #f1c21b;
   --white: #fff;
   --white-hover: #f2f2f2;
 }

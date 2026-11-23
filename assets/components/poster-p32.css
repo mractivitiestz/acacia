@@ -1,0 +1,96 @@
+/* components/poster-p32.css: .p32, the poster template P32 (AFCON countdown: match-day graphic), its parts at each shape: the landmark cut out on the right behind Tanzania's diagonal stripe, the kicker, the slanted number with its hard shadow, the unit on its yellow band (above the number in Kiswahili), the kick-off line; the number never runs into the landmark */
+.p32-pic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--p32-pic);
+  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+}
+.p32-pic::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(105deg, var(--tz-yellow) 0 calc(14 * var(--u)), var(--dark) calc(14 * var(--u)) calc(40 * var(--u)), var(--tz-yellow) calc(40 * var(--u)) calc(54 * var(--u)), transparent calc(54 * var(--u)));
+  clip-path: polygon(34% 0, 46% 0, 12% 100%, 0 100%);
+}
+.p32-photo {
+  position: absolute;
+  inset: 0;
+}
+/* The landmark's left edge runs from 34% of its width at the top to its left side at the bottom, so at a depth of
+   --p32-low of the poster's height (the lowest the number and its shadow reach, in Kiswahili) it stands
+   --p32-pic * (1 - .34 * (1 - --p32-low)) from the poster's right edge. The column ends 16 units short of that point:
+   its containing block is the poster's width less both side margins, so 100% + --afs reaches the right edge. In the
+   wide shape the landmark is beyond the offer's column and the number keeps its size.
+   "container-type: inline-size: Establishes a query container for dimensional queries on the inline axis of the
+   container" (https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/container-type) */
+.p32-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  container-type: inline-size;
+  max-width: min(calc(600 * var(--u)), calc(100% + var(--afs) - var(--p32-pic) * (1 - .34 * (1 - var(--p32-low))) - 16 * var(--u)));
+}
+:where(.pst[data-shape="wide"]) .p32-main {
+  max-width: none;
+}
+.p32-kick {
+  font-family: var(--fh);
+  font-size: calc(46 * var(--u));
+  font-weight: 800;
+  line-height: .95;
+  text-transform: uppercase;
+  color: var(--sun);
+  transform: skewX(-8deg);
+}
+/* At most what three digits fill in the column, less the 10-unit shadow: Bricolage Grotesque's widest three at 800
+   with -.05em between them reach 1.71em of ink, and the slant draws their foot back as far as it pushes their top
+   forward, so 1.7em of the column holds them.
+   "cqi: 1% of a query container's inline size" (https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries#container_query_length_units) */
+.p32-num {
+  font-family: var(--fh);
+  font-size: min(calc(330 * var(--u)), calc((100cqi - 10 * var(--u)) / 1.7));
+  font-weight: 800;
+  line-height: .85;
+  letter-spacing: -.05em;
+  transform: skewX(-8deg);
+  text-shadow: calc(10 * var(--u)) calc(10 * var(--u)) 0 var(--dark);
+}
+:where(.pst[data-shape="square"]) .p32-num {
+  font-size: min(calc(270 * var(--u)), calc((100cqi - 10 * var(--u)) / 1.7));
+}
+:where(.pst[data-shape="print"]) .p32-num {
+  font-size: min(calc(440 * var(--u)), calc((100cqi - 10 * var(--u)) / 1.7));
+}
+:where(.pst[data-shape="wide"]) .p32-num {
+  font-size: calc(330 * var(--u));
+}
+.p32-unit {
+  align-self: flex-start;
+  font-family: var(--fh);
+  font-size: calc(40 * var(--u));
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--sun);
+  transform: skewX(-8deg);
+}
+:where(.pst:lang(sw)) .p32-unit {
+  margin-top: calc(14 * var(--u));
+  margin-bottom: calc(10 * var(--u));
+}
+.p32-date {
+  width: fit-content;
+  margin-top: calc(14 * var(--u));
+  margin-bottom: calc(10 * var(--u));
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--white);
+  opacity: .92;
+}
+:where(.pst:lang(sw)) .p32-date {
+  margin-top: calc(18 * var(--u));
+}

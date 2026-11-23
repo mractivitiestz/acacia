@@ -1,0 +1,186 @@
+/* components/poster-afc.css: .afc, the parts both countdown posters to the Africa Cup of Nations 2027 share (P32, P33): the head with the city tag as a dark tab from the right edge, the ball, the offer, the item, the promise, the foot, the address breaking only at its slashes, and the line that it is not CAF's alone at the very bottom; their layout in the wide shape */
+.afc-head {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(24 * var(--u));
+}
+.afc-tag {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .45em;
+  font-size: calc(24 * var(--u));
+  text-align: right;
+  color: var(--sun);
+}
+:where(.pst:not([data-shape="wide"])) .afc-tag {
+  margin-right: calc(-1 * var(--afs));
+  padding: calc(8 * var(--u)) calc(var(--afs) + 4 * var(--u)) calc(8 * var(--u)) calc(20 * var(--u));
+  border-radius: var(--r-pill) 0 0 var(--r-pill);
+  background: var(--dark);
+  box-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) var(--shade-35);
+}
+:where(.pst[data-tpl="p32"][data-shape="wide"]) .afc-tag {
+  padding: calc(8 * var(--u)) calc(16 * var(--u));
+  border-radius: var(--r-pill);
+  background: var(--dark);
+}
+.afc-ball {
+  display: block;
+  flex: none;
+}
+.afc-tagball {
+  width: 1.25em;
+  height: 1.25em;
+}
+.afc-offer {
+  font-family: var(--fh);
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+.afc-item {
+  position: relative;
+  max-width: calc(540 * var(--u));
+  font-size: calc(24 * var(--u));
+  opacity: .82;
+}
+.afc-promise {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  padding: calc(10 * var(--u)) calc(24 * var(--u)) calc(10 * var(--u)) calc(16 * var(--u));
+  border-radius: var(--r-pill);
+  font-size: calc(26 * var(--u));
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark);
+  background: var(--sun);
+}
+:where(.pst[data-shape="wide"]) .afc-promise {
+  font-size: calc(24 * var(--u));
+}
+.afc-foot {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(28 * var(--u));
+  padding-top: calc(20 * var(--u));
+  border-top: calc(2 * var(--u)) solid var(--light-30);
+}
+.afc-fl {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+  min-width: 0;
+}
+.afc-nw {
+  white-space: nowrap;
+}
+.afc-disc {
+  position: absolute;
+  z-index: 3;
+  left: var(--afs);
+  bottom: calc(22 * var(--u));
+  font-size: calc(17 * var(--u));
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--white);
+  opacity: .7;
+}
+:where(.pst[data-tpl="p33"]:is([data-shape="print"], [data-shape="wide"])) .afc-offer {
+  font-size: calc(48 * var(--u));
+}
+:where(.pst[data-tpl="p33"][data-shape="story"]) .afc-offer {
+  font-size: calc(42 * var(--u));
+}
+:where(.pst[data-tpl="p32"]) .afc-offer {
+  position: relative;
+  max-width: calc(448 * var(--u));
+  font-size: calc(50 * var(--u));
+  line-height: 1.08;
+}
+:where(.pst[data-tpl="p32"][data-shape="story"]) .afc-offer {
+  font-size: calc(54 * var(--u));
+}
+:where(.pst[data-tpl="p32"][data-shape="print"]) .afc-offer {
+  max-width: calc(400 * var(--u));
+  font-size: calc(60 * var(--u));
+}
+:where(.pst[data-tpl="p32"][data-shape="wide"]) .afc-offer {
+  max-width: calc(540 * var(--u));
+  font-size: calc(60 * var(--u));
+}
+:where(.pst[data-tpl="p32"]:lang(sw)) .afc-offer {
+  font-size: calc(42 * var(--u));
+}
+:where(.pst[data-tpl="p32"][data-shape="story"]:lang(sw)) .afc-offer {
+  font-size: calc(50 * var(--u));
+}
+:where(.pst[data-tpl="p32"][data-shape="print"]:lang(sw)) .afc-offer {
+  font-size: calc(52 * var(--u));
+}
+:where(.pst[data-shape="print"]) .afc-item {
+  max-width: calc(400 * var(--u));
+  font-size: calc(28 * var(--u));
+}
+:where(.pst[data-shape="wide"]) .afc-item {
+  max-width: none;
+}
+:where(.pst[data-tpl="p32"]) .afc-promise {
+  position: relative;
+}
+:where(.pst[data-tpl="p32"]:not([data-shape="wide"])) .afc-promise {
+  z-index: 2;
+  box-sizing: border-box;
+  min-width: calc(740 * var(--u) - var(--afs));
+  margin-top: calc(18 * var(--u));
+  margin-bottom: calc(8 * var(--u));
+  border-radius: 0 var(--r-pill) var(--r-pill) 0;
+  white-space: nowrap;
+  box-shadow: 0 calc(10 * var(--u)) calc(24 * var(--u)) var(--shade-35);
+}
+:where(.pst[data-tpl="p32"]) .afc-foot {
+  position: relative;
+  border-top: 0;
+}
+:where(.pst[data-tpl="p32"]:not([data-shape="wide"])) .afc-fl {
+  max-width: calc(448 * var(--u));
+}
+:where(.pst[data-tpl="p32"][data-shape="print"]) .afc-fl {
+  max-width: calc(400 * var(--u));
+}
+:where(.pst[data-tpl="p32"][data-shape="wide"]) .afc-head {
+  margin-right: calc(-200 * var(--u));
+}
+:where(.pst[data-shape="wide"]) .afc-head {
+  grid-area: head;
+}
+:where(.pst[data-shape="wide"]) .afc-a {
+  grid-area: a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+:where(.pst[data-shape="wide"]) .afc-b {
+  grid-area: b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: calc(22 * var(--u));
+  min-height: 0;
+}
+:where(.pst[data-shape="wide"]) .afc-foot {
+  margin-top: 0;
+}
+:where(.pst[data-shape="wide"]) .afc-fl {
+  gap: calc(8 * var(--u));
+}
