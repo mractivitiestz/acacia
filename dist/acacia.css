@@ -9388,6 +9388,12 @@ body[data-locked] {
 .price-label {
   font-weight: 700;
 }
+.price[data-variant="audience"] {
+  margin-top: 2px;
+}
+.price[data-variant="audience"] .price-label {
+  font-weight: 500;
+}
 .price[data-size="lg"] .price-bold {
   font-size: 28px;
   font-family: var(--fh);
