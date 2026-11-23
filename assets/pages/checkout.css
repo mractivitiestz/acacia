@@ -1,4 +1,4 @@
-/* pages/checkout.css: .checkout, .trip, .arrival */
+/* pages/checkout.css: .checkout, .trip, .arrival; the residents' names under the details (.checkout-names) and the choice of how to pay above Due now */
 .checkout-summary {
   top: calc(var(--st) + 20px);
 }
@@ -241,4 +241,9 @@
 }
 .arrival-inpop {
   margin: 0 0 12px;
+}
+.checkout-names {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
 }

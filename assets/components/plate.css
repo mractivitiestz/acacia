@@ -1,4 +1,4 @@
-/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column; data-variant="verdict": the voter's verdict beside what would change it, the same columns, stacked at 900px and under): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot */
+/* components/plate.css: .plates and .plate, the dashboard of Today (data-variant="person": one person's plate on the Users screen, a wider first column; data-variant="verdict": the voter's verdict beside what would change it, the same columns, stacked at 900px and under): a plate's head (icon, title, its number), its list of rows (who, what, a note, when), its stats, its empty state and its foot; a count of several chips (.plate-count with .status beside .status) */
 .plates {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -221,4 +221,9 @@
 }
 :where(.plate-stat:any-link:hover) .plate-lbl {
   text-decoration: underline;
+}
+.plate-count:has(> .status + .status) {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
 }

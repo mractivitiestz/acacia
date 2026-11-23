@@ -1,4 +1,4 @@
-/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row; a hint under a table (.table + .field-help) */
+/* components/field.css: .field, .field-label (the label of a field whose control is not inside it, the dropdown's), .field-help, .form, .select, .fieldset, .option, .options, .error; in the booking card's travellers field, the errors and the children's ages; a .lookup's fields share its row; a hint under a table (.table + .field-help); an option's amount at its right (.option-amount), the option then aligned to its top */
 .select {
   position: relative;
   display: inline-flex;
@@ -513,4 +513,22 @@
   font-size: 13.5px;
   font-weight: 400;
   color: var(--muted);
+}
+.option .option-amount {
+  flex: none;
+  margin-left: var(--s-2);
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.option:has(.option-amount) {
+  align-items: flex-start;
+}
+@media (max-width: 420px) {
+  .option .option-amount {
+    margin-left: var(--s-1);
+  }
+}
+.pay > .options {
+  margin: 0 0 var(--s-3);
 }

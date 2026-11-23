@@ -1,4 +1,4 @@
-/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note */
+/* components/chip.css: .pill, .chip, .chips, .badge, .grade, .distance, .status, .tag, .tags, .sample, .note; chips side by side in a top bar's meta and a table cell, and a chip in a record's value */
 .pills > .pill:last-child {
   margin-right: 40px;
 }
@@ -365,4 +365,10 @@
 }
 .pf-recent .pill {
   text-decoration: none;
+}
+:where(.topbar-meta, .table-cell) .status + .status {
+  margin-left: 6px;
+}
+.record-value .status {
+  vertical-align: baseline;
 }
