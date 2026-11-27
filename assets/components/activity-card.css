@@ -200,6 +200,15 @@
   color: var(--panel);
 }
 
+/* A headline's type is a grid item of its head from 701px (components/detail-tabs.css): it keeps its own width and
+   the 5px of the line it sat on as an inline box. */
+@media (min-width:701px) {
+  .headline-title > .activity-type {
+    justify-self: start;
+    margin-bottom: 5px;
+  }
+}
+
 @media (max-width:600px) {
   .popup .activity-type {
     padding-right: 30px;

@@ -5083,6 +5083,15 @@ body[data-locked] {
   color: var(--panel);
 }
 
+/* A headline's type is a grid item of its head from 701px (components/detail-tabs.css): it keeps its own width and
+   the 5px of the line it sat on as an inline box. */
+@media (min-width:701px) {
+  .headline-title > .activity-type {
+    justify-self: start;
+    margin-bottom: 5px;
+  }
+}
+
 @media (max-width:600px) {
   .popup .activity-type {
     padding-right: 30px;
@@ -8613,7 +8622,6 @@ body[data-locked] {
 }
 .headline-places[data-variant="line"] {
   display: block;
-  max-width: 60ch;
 }
 .headline-place {
   color: inherit;
@@ -8625,6 +8633,32 @@ body[data-locked] {
 }
 .headline-sep {
   margin: 0 .45em;
+}
+/* From 701px the title's parts are the head's own grid items: the title in the first column, the actions beside it,
+   centred on it, and the places, the facts and the tags across the full width below.
+   (components/activity-card.css keeps the type's place in it.) */
+@media (min-width:701px) {
+  .headline-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 20px;
+    align-items: start;
+  }
+  .headline-title {
+    display: contents;
+  }
+  .headline-title > * {
+    grid-column: 1;
+  }
+  .headline-title > :is(.headline-places, .headline-meta, .tags) {
+    grid-column: 1 / -1;
+  }
+  .headline-actions {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    margin: -2px 0 2px;
+  }
 }
 @media (max-width:700px) {
   .headline {
