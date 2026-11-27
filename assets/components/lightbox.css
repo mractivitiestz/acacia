@@ -1,4 +1,4 @@
-/* components/lightbox.css: .lightbox */
+/* components/lightbox.css: .lightbox; the photo's credit in the top bar (.lightbox-credit), its licence linked (.lightbox-link) */
 .lightbox {
   width: 100vw;
   height: 100vh;
@@ -33,6 +33,19 @@
   font-size: 13.5px;
   opacity: .8;
   font-weight: 700;
+}
+.lightbox-credit {
+  font-weight: 700;
+}
+.lightbox-link {
+  color: inherit;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: var(--light-45);
+  text-underline-offset: 3px;
+}
+.lightbox-link:hover {
+  text-decoration-color: currentColor;
 }
 .lightbox-stage {
   display: grid;
