@@ -1,4 +1,4 @@
-/* components/credit.css: .credit, the photos' authors as one quiet line under a gallery, with the link to the photo credits */
+/* components/credit.css: .credit, the photos' authors as one quiet line under a gallery, with the link to the photo credits; the link in the drawer's On the site line */
 .credit {
   display: flex;
   align-items: flex-start;
@@ -17,4 +17,7 @@
 }
 .credit-link:hover {
   text-decoration-color: currentColor;
+}
+.inspector-line .credit-link {
+  white-space: nowrap;
 }

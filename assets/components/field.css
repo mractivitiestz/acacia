@@ -290,6 +290,9 @@
   font-weight: 400;
   color: var(--muted);
 }
+.inspector-sec .field > .field-help {
+  margin-top: 2px;
+}
 
 @media (max-width:700px) {
   .fieldset {

@@ -5812,6 +5812,9 @@ body[data-locked] {
   font-weight: 400;
   color: var(--muted);
 }
+.inspector-sec .field > .field-help {
+  margin-top: 2px;
+}
 
 @media (max-width:700px) {
   .fieldset {
@@ -8698,7 +8701,7 @@ body[data-locked] {
 
 /* components/gallery.css */
 @layer components {
-/* components/gallery.css: .gallery */
+/* components/gallery.css: .gallery; a photo's credit on it (.gallery-credit), the small tiles' shown on hover or focus */
 .gallery {
   position: relative;
 }
@@ -8848,6 +8851,39 @@ body[data-locked] {
   color: var(--white);
   font-size: 12.5px;
   font-weight: 800;
+}
+.gallery-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  max-width: calc(100% - 24px);
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  background: var(--shade-60);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.gallery-item:where(:not([data-size="big"])) .gallery-credit {
+  opacity: 0;
+  transition: opacity var(--d-fast) var(--ease);
+}
+.gallery-item:is(:hover, :focus-visible) .gallery-credit {
+  opacity: 1;
+}
+.gallery-slide .gallery-credit {
+  right: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 16px);
+  white-space: normal;
+  text-align: right;
+  border-radius: var(--r-s);
 }
 .gallery-slide {
   position: relative;
@@ -9006,7 +9042,7 @@ body[data-locked] {
 
 /* components/lightbox.css */
 @layer components {
-/* components/lightbox.css: .lightbox */
+/* components/lightbox.css: .lightbox; the photo's credit in the top bar (.lightbox-credit), its licence linked (.lightbox-link) */
 .lightbox {
   width: 100vw;
   height: 100vh;
@@ -9041,6 +9077,19 @@ body[data-locked] {
   font-size: 13.5px;
   opacity: .8;
   font-weight: 700;
+}
+.lightbox-credit {
+  font-weight: 700;
+}
+.lightbox-link {
+  color: inherit;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: var(--light-45);
+  text-underline-offset: 3px;
+}
+.lightbox-link:hover {
+  text-decoration-color: currentColor;
 }
 .lightbox-stage {
   display: grid;
@@ -11119,7 +11168,7 @@ body[data-locked] {
 
 /* components/credit.css */
 @layer components {
-/* components/credit.css: .credit, the photos' authors as one quiet line under a gallery, with the link to the photo credits */
+/* components/credit.css: .credit, the photos' authors as one quiet line under a gallery, with the link to the photo credits; the link in the drawer's On the site line */
 .credit {
   display: flex;
   align-items: flex-start;
@@ -11138,6 +11187,9 @@ body[data-locked] {
 }
 .credit-link:hover {
   text-decoration-color: currentColor;
+}
+.inspector-line .credit-link {
+  white-space: nowrap;
 }
 }
 
@@ -12162,7 +12214,7 @@ body[data-locked] {
 
 /* components/day-by-day.css */
 @layer components {
-/* components/day-by-day.css: .days, .day, .itinerary */
+/* components/day-by-day.css: .days, .day, .itinerary; an opened day's photo carries its credit (.day-credit) */
 .days-summary {
   margin: -4px 0 14px;
 }
@@ -12205,6 +12257,27 @@ body[data-locked] {
 }
 .day-body .days-row {
   margin-top: 0;
+}
+.day-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  max-width: calc(100% - 24px);
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  background: var(--shade-60);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.day-head .day-credit {
+  display: none;
 }
 .rows.days > .day {
   display: block;
@@ -14760,7 +14833,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/inspector.css */
 @layer components {
-/* components/inspector.css: .inspector, the open photo's details beside the photos, or over the page from the right (data-variant="drawer"): its head, the photo, its facts, its sections and their labels, the actions at the foot */
+/* components/inspector.css: .inspector, the open photo's details beside the photos, or over the page from the right (data-variant="drawer"): its head, the photo, its facts, its sections and their labels, the actions at the foot; the credit line the site prints (.inspector-credit, .inspector-line) */
 .inspector {
   position: sticky;
   top: calc(var(--top-h) + 24px);
@@ -14879,6 +14952,17 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   .inspector[data-variant="drawer"] {
     border-left: 0;
   }
+}
+.inspector-credit {
+  display: grid;
+  gap: 4px;
+  margin-top: 16px;
+}
+.inspector-line {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 }
 

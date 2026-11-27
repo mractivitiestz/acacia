@@ -1,4 +1,4 @@
-/* components/gallery.css: .gallery */
+/* components/gallery.css: .gallery; a photo's credit on it (.gallery-credit), the small tiles' shown on hover or focus */
 .gallery {
   position: relative;
 }
@@ -148,6 +148,39 @@
   color: var(--white);
   font-size: 12.5px;
   font-weight: 800;
+}
+.gallery-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  max-width: calc(100% - 24px);
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  background: var(--shade-60);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.gallery-item:where(:not([data-size="big"])) .gallery-credit {
+  opacity: 0;
+  transition: opacity var(--d-fast) var(--ease);
+}
+.gallery-item:is(:hover, :focus-visible) .gallery-credit {
+  opacity: 1;
+}
+.gallery-slide .gallery-credit {
+  right: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 16px);
+  white-space: normal;
+  text-align: right;
+  border-radius: var(--r-s);
 }
 .gallery-slide {
   position: relative;

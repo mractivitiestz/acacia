@@ -1,4 +1,4 @@
-/* components/inspector.css: .inspector, the open photo's details beside the photos, or over the page from the right (data-variant="drawer"): its head, the photo, its facts, its sections and their labels, the actions at the foot */
+/* components/inspector.css: .inspector, the open photo's details beside the photos, or over the page from the right (data-variant="drawer"): its head, the photo, its facts, its sections and their labels, the actions at the foot; the credit line the site prints (.inspector-credit, .inspector-line) */
 .inspector {
   position: sticky;
   top: calc(var(--top-h) + 24px);
@@ -117,4 +117,15 @@
   .inspector[data-variant="drawer"] {
     border-left: 0;
   }
+}
+.inspector-credit {
+  display: grid;
+  gap: 4px;
+  margin-top: 16px;
+}
+.inspector-line {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
 }
