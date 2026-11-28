@@ -2426,6 +2426,10 @@ body[data-locked] {
   margin-top: 12px;
 }
 
+/* a place's page: the link to the region's stays after its stays */
+.detail-sec :where(.staylist) + .link {
+  margin-top: 16px;
+}
 @media (max-width:1080px) {
   .filters-foot .btn {
     flex: 1;
@@ -8936,6 +8940,10 @@ body[data-locked] {
     top: auto;
     bottom: 64px;
   }
+  .view-switch[data-variant="place"] .gallery-count {
+    top: 10px;
+    bottom: auto;
+  }
 }
 
 .gallery[data-variant="expedition"] .gallery-item {
@@ -8985,6 +8993,10 @@ body[data-locked] {
   color: var(--muted);
 }
 
+/* a place's page: its region's card after its ways in */
+.detail-sec :where(.waysin) + .location {
+  margin-top: 16px;
+}
 @media (max-width:700px) {
   .location {
     grid-template-columns: 96px 1fr;
@@ -9368,6 +9380,8 @@ body[data-locked] {
 .region > .placeholder {
   position: absolute;
   inset: 0;
+  justify-content: flex-start;
+  padding-top: 32px;
 }
 .gallery .placeholder[data-size="big"] {
   border-radius: 0;
@@ -11124,7 +11138,7 @@ body[data-locked] {
 
 /* components/glance.css */
 @layer components {
-/* components/glance.css: .glance, a place at a glance as rows of a term with its icon over its value, hairlines between; the aside variant stacks them in a card, .glance-cap sets a count over its capacity bar, and .glance-note closes a section in a quiet line */
+/* components/glance.css: .glance, a place at a glance as rows of a term with its icon over its value, hairlines between, a value that leads on underlined as .glance-link; the aside variant stacks them in a card, the band variant sets them in two columns under a place's hero where the aside falls below the sections, .glance-cap sets a count over its capacity bar, and .glance-note closes a section in a quiet line */
 .glance-list {
   display: grid;
   width: 100%;
@@ -11151,6 +11165,14 @@ body[data-locked] {
   font-size: 15px;
   line-height: 1.45;
   min-width: 0;
+}
+.glance .glance-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+.glance .glance-link:hover {
+  text-decoration-color: currentColor;
 }
 .glance-note {
   margin: 14px 0 0;
@@ -11180,6 +11202,32 @@ body[data-locked] {
   font-size: 13px;
   letter-spacing: .01em;
   text-transform: uppercase;
+}
+/* a place's page (variants/place-page/final.html): the side card's facts in a band under the hero, only where the side card falls below the sections (the detail's 1080px break) */
+.glance[data-variant="band"] {
+  display: none;
+  margin-top: 24px;
+}
+.glance[data-variant="band"] .glance-list {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  column-gap: 40px;
+}
+.glance[data-variant="band"] .glance-note {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width:1080px) {
+  .glance[data-variant="band"] {
+    display: block;
+  }
+}
+
+@media (max-width:860px) {
+  .glance[data-variant="band"] .glance-list {
+    grid-template-columns: minmax(0,1fr);
+  }
 }
 
 @media (max-width:700px) {

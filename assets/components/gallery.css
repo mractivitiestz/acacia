@@ -199,6 +199,10 @@
     top: auto;
     bottom: 64px;
   }
+  .view-switch[data-variant="place"] .gallery-count {
+    top: 10px;
+    bottom: auto;
+  }
 }
 
 .gallery[data-variant="expedition"] .gallery-item {
