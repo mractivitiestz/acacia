@@ -9641,7 +9641,6 @@ body[data-locked] {
 }
 .months-caption {
   padding: 18px 20px 14px;
-  max-width: 760px;
 }
 
 @media (max-width:700px) {
