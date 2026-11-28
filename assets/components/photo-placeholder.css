@@ -40,6 +40,8 @@
 .region > .placeholder {
   position: absolute;
   inset: 0;
+  justify-content: flex-start;
+  padding-top: 32px;
 }
 .gallery .placeholder[data-size="big"] {
   border-radius: 0;

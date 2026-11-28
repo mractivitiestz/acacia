@@ -73,6 +73,10 @@
   margin-top: 12px;
 }
 
+/* a place's page: the link to the region's stays after its stays */
+.detail-sec :where(.staylist) + .link {
+  margin-top: 16px;
+}
 @media (max-width:1080px) {
   .filters-foot .btn {
     flex: 1;

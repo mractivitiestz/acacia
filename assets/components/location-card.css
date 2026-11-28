@@ -35,6 +35,10 @@
   color: var(--muted);
 }
 
+/* a place's page: its region's card after its ways in */
+.detail-sec :where(.waysin) + .location {
+  margin-top: 16px;
+}
 @media (max-width:700px) {
   .location {
     grid-template-columns: 96px 1fr;
