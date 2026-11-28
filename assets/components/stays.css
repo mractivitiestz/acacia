@@ -55,7 +55,7 @@
   font: 800 13px/1 var(--f);
   transition: transform .15s;
 }
-.staypin-letter {
+.staypin-number {
   padding-top: 1px;
 }
 .staypin[data-variant="stay"] {

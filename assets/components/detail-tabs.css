@@ -1,4 +1,4 @@
-/* components/detail-tabs.css: .headline (with a destination's other places under its title), .tabs, .share */
+/* components/detail-tabs.css: .headline (with a destination's other places under its title, a line of links set apart by middle dots in the body's face, each in the link colour; a stay's one-sentence line, data-variant="line", in the heading face), .tabs, .share */
 .headline {
   padding-top: 22px;
 }
@@ -85,23 +85,24 @@
   flex-wrap: wrap;
   align-items: baseline;
   margin: -4px 0 12px;
-  font: 600 clamp(17px, 1.5vw, 20px)/1.35 var(--fh);
-  letter-spacing: -.01em;
+  font: 500 15px/1.7 var(--f);
   color: var(--muted);
 }
 .headline-places[data-variant="line"] {
   display: block;
+  font: 600 clamp(17px, 1.5vw, 20px)/1.35 var(--fh);
+  letter-spacing: -.01em;
 }
 .headline-place {
-  color: inherit;
+  color: var(--brand-text);
 }
-.headline-place:hover {
-  color: var(--ink);
+.headline-place:is(:hover, :focus-visible) {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 3px;
 }
 .headline-sep {
-  margin: 0 .45em;
+  margin: 0 .5em;
+  color: var(--muted);
 }
 /* From 701px the title's parts are the head's own grid items: the title in the first column, the actions beside it,
    centred on it, and the places, the facts and the tags across the full width below.
@@ -196,6 +197,12 @@
   transition: top .25s ease;
 }
 @media (max-width: 700px) {
+  .headline-places:not([data-variant="line"]) {
+    font-size: 16px;
+  }
+  .headline-place {
+    padding-block: 7px;
+  }
   .shell-page > .tabs {
     margin-top: -16px;
   }

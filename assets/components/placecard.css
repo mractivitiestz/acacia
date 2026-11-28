@@ -1,4 +1,4 @@
-/* components/placecard.css: .placecard, the card a place's marker opens: its letter (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
+/* components/placecard.css: .placecard, the card a place's marker opens: its number (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
 .placecard {
   display: flex;
   gap: 12px;
