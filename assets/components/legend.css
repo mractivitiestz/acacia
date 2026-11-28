@@ -1,4 +1,4 @@
-/* components/legend.css: .legend, a map's key as lists by kind (a destination's numbered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near; a 20px disc centred on the first line of the name, 18px beside smaller text (data-size s), a two-figure number (data-wide) a step smaller), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
+/* components/legend.css: .legend, a map's key as lists by kind (a destination's numbered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near; centred on the name's first line, a two-figure number (data-wide) a step smaller), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
 .legend {
   display: grid;
   gap: 24px;
@@ -33,7 +33,7 @@
 }
 .legend-item {
   display: grid;
-  grid-template-columns: 20px minmax(0, 1fr);
+  grid-template-columns: 24px minmax(0, 1fr);
   gap: 12px;
   align-items: start;
   min-width: 0;
@@ -43,28 +43,35 @@
   flex: none;
   display: inline-grid;
   place-items: center;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   padding-top: 1px;
   border-radius: var(--r-pill);
-  font: 800 11px/1 var(--f);
+  font: 800 12px/1 var(--f);
   font-variant-numeric: tabular-nums;
 }
 .legend-item > .legend-mark {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .legend-mark[data-wide] {
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: -.02em;
 }
 .legend-mark[data-size="s"] {
-  width: 18px;
-  height: 18px;
-  font-size: 10px;
+  width: 22px;
+  height: 22px;
+  font-size: 11.5px;
+}
+.legend-mark[data-size="xs"] {
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
 }
 .legend-mark[data-size="s"][data-wide] {
-  font-size: 9px;
-  letter-spacing: -.04em;
+  font-size: 10px;
+}
+.legend-mark[data-size="xs"][data-wide] {
+  font-size: 9.5px;
 }
 .legend-mark[data-kind="here"] {
   background: var(--brand);
@@ -79,7 +86,7 @@
   color: var(--ink);
 }
 .legend-mark[data-kind="place"] {
-  box-shadow: inset 0 0 0 2px var(--ink);
+  box-shadow: inset 0 0 0 2.5px var(--ink);
   color: var(--ink);
   background: var(--panel);
 }

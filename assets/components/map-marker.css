@@ -1,4 +1,4 @@
-/* components/map-marker.css: .marker, .pin; a pin that carries its row's mark (data-mark: a place's or an activity's number) draws it in an 18px disc, a two-figure number (data-wide) a step smaller, in its kind's colours, as the list beside the map does (.legend-mark), its label set off by the disc's size (--pin-size) */
+/* components/map-marker.css: .marker, .pin; a pin that carries its row's mark (data-mark: a place's or an activity's number) draws it in a 20px disc, a two-figure number (data-wide) a step smaller, in its kind's colours, as the list beside the map does (.legend-mark), its label set off by the disc's size (--pin-size) */
 .marker {
   background: none;
   border: 0;
@@ -177,7 +177,7 @@
   font-size: 12.5px;
 }
 .pin[data-mark] {
-  --pin-size: 18px;
+  --pin-size: 20px;
 }
 .pin-mark {
   position: absolute;
@@ -189,12 +189,8 @@
   background: var(--brand);
   color: var(--on-brand);
   box-shadow: 0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-35);
-  font: 800 10px/1 var(--f);
+  font: 800 11px/1 var(--f);
   font-variant-numeric: tabular-nums;
-}
-.pin-mark[data-wide] {
-  font-size: 9px;
-  letter-spacing: -.04em;
 }
 .pin[data-kind="off"] .pin-mark {
   background: var(--accent);
@@ -208,5 +204,9 @@
 .pin[data-kind="place"] .pin-mark {
   background: var(--panel);
   color: var(--ink);
-  box-shadow: inset 0 0 0 2px var(--ink),0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-30);
+  box-shadow: inset 0 0 0 2.5px var(--ink),0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-30);
+}
+.pin-mark[data-wide] {
+  font-size: 9.5px;
+  letter-spacing: -.04em;
 }
