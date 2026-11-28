@@ -10541,7 +10541,7 @@ body[data-locked] {
 
 /* components/map-marker.css */
 @layer components {
-/* components/map-marker.css: .marker, .pin; a pin that carries its row's mark (data-mark: a place's letter, an activity's number) draws it in a 20px disc in its kind's colours, as the list beside the map does (.legend-mark), its label set off by the disc's size (--pin-size) */
+/* components/map-marker.css: .marker, .pin; a pin that carries its row's mark (data-mark: a place's or an activity's number) draws it in an 18px disc, a two-figure number (data-wide) a step smaller, in its kind's colours, as the list beside the map does (.legend-mark), its label set off by the disc's size (--pin-size) */
 .marker {
   background: none;
   border: 0;
@@ -10720,7 +10720,7 @@ body[data-locked] {
   font-size: 12.5px;
 }
 .pin[data-mark] {
-  --pin-size: 20px;
+  --pin-size: 18px;
 }
 .pin-mark {
   position: absolute;
@@ -10732,8 +10732,12 @@ body[data-locked] {
   background: var(--brand);
   color: var(--on-brand);
   box-shadow: 0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-35);
-  font: 800 11px/1 var(--f);
+  font: 800 10px/1 var(--f);
   font-variant-numeric: tabular-nums;
+}
+.pin-mark[data-wide] {
+  font-size: 9px;
+  letter-spacing: -.04em;
 }
 .pin[data-kind="off"] .pin-mark {
   background: var(--accent);
@@ -10747,7 +10751,7 @@ body[data-locked] {
 .pin[data-kind="place"] .pin-mark {
   background: var(--panel);
   color: var(--ink);
-  box-shadow: inset 0 0 0 2.5px var(--ink),0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-30);
+  box-shadow: inset 0 0 0 2px var(--ink),0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-30);
 }
 }
 
@@ -10931,7 +10935,7 @@ body[data-locked] {
   font: 800 13px/1 var(--f);
   transition: transform .15s;
 }
-.staypin-letter {
+.staypin-number {
   padding-top: 1px;
 }
 .staypin[data-variant="stay"] {
@@ -16297,7 +16301,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/legend.css */
 @layer components {
-/* components/legend.css: .legend, a map's key as lists by kind (a destination's lettered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
+/* components/legend.css: .legend, a map's key as lists by kind (a destination's numbered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near; a 20px disc centred on the first line of the name, 18px beside smaller text (data-size s), a two-figure number (data-wide) a step smaller), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
 .legend {
   display: grid;
   gap: 24px;
@@ -16332,7 +16336,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 }
 .legend-item {
   display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
+  grid-template-columns: 20px minmax(0, 1fr);
   gap: 12px;
   align-items: start;
   min-width: 0;
@@ -16342,22 +16346,28 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   flex: none;
   display: inline-grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
-  padding-top: 1px;
-  border-radius: var(--r-pill);
-  font: 800 12px/1 var(--f);
-  font-variant-numeric: tabular-nums;
-}
-.legend-mark[data-size="s"] {
-  width: 22px;
-  height: 22px;
-  font-size: 11.5px;
-}
-.legend-mark[data-size="xs"] {
   width: 20px;
   height: 20px;
-  font-size: 11px;
+  padding-top: 1px;
+  border-radius: var(--r-pill);
+  font: 800 11px/1 var(--f);
+  font-variant-numeric: tabular-nums;
+}
+.legend-item > .legend-mark {
+  margin-top: 4px;
+}
+.legend-mark[data-wide] {
+  font-size: 9.5px;
+  letter-spacing: -.02em;
+}
+.legend-mark[data-size="s"] {
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+}
+.legend-mark[data-size="s"][data-wide] {
+  font-size: 9px;
+  letter-spacing: -.04em;
 }
 .legend-mark[data-kind="here"] {
   background: var(--brand);
@@ -16372,7 +16382,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   color: var(--ink);
 }
 .legend-mark[data-kind="place"] {
-  box-shadow: inset 0 0 0 2.5px var(--ink);
+  box-shadow: inset 0 0 0 2px var(--ink);
   color: var(--ink);
   background: var(--panel);
 }
@@ -16645,7 +16655,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/placecard.css */
 @layer components {
-/* components/placecard.css: .placecard, the card a place's marker opens: its letter (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
+/* components/placecard.css: .placecard, the card a place's marker opens: its number (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
 .placecard {
   display: flex;
   gap: 12px;
