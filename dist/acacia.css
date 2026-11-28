@@ -8533,7 +8533,7 @@ body[data-locked] {
 
 /* components/detail-tabs.css */
 @layer components {
-/* components/detail-tabs.css: .headline (with a destination's other places under its title), .tabs, .share */
+/* components/detail-tabs.css: .headline (with a destination's other places under its title, a line of links set apart by middle dots in the body's face, each in the link colour; a stay's one-sentence line, data-variant="line", in the heading face), .tabs, .share */
 .headline {
   padding-top: 22px;
 }
@@ -8620,23 +8620,24 @@ body[data-locked] {
   flex-wrap: wrap;
   align-items: baseline;
   margin: -4px 0 12px;
-  font: 600 clamp(17px, 1.5vw, 20px)/1.35 var(--fh);
-  letter-spacing: -.01em;
+  font: 500 15px/1.7 var(--f);
   color: var(--muted);
 }
 .headline-places[data-variant="line"] {
   display: block;
+  font: 600 clamp(17px, 1.5vw, 20px)/1.35 var(--fh);
+  letter-spacing: -.01em;
 }
 .headline-place {
-  color: inherit;
+  color: var(--brand-text);
 }
-.headline-place:hover {
-  color: var(--ink);
+.headline-place:is(:hover, :focus-visible) {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 3px;
 }
 .headline-sep {
-  margin: 0 .45em;
+  margin: 0 .5em;
+  color: var(--muted);
 }
 /* From 701px the title's parts are the head's own grid items: the title in the first column, the actions beside it,
    centred on it, and the places, the facts and the tags across the full width below.
@@ -8731,6 +8732,12 @@ body[data-locked] {
   transition: top .25s ease;
 }
 @media (max-width: 700px) {
+  .headline-places:not([data-variant="line"]) {
+    font-size: 16px;
+  }
+  .headline-place {
+    padding-block: 7px;
+  }
   .shell-page > .tabs {
     margin-top: -16px;
   }
@@ -10541,7 +10548,7 @@ body[data-locked] {
 
 /* components/map-marker.css */
 @layer components {
-/* components/map-marker.css: .marker, .pin; a pin that carries its row's mark (data-mark: a place's letter, an activity's number) draws it in a 20px disc in its kind's colours, as the list beside the map does (.legend-mark), its label set off by the disc's size (--pin-size) */
+/* components/map-marker.css: .marker, .pin; a pin that carries its row's mark (data-mark: a place's or an activity's number) draws it in a 20px disc, a two-figure number (data-wide) a step smaller, in its kind's colours, as the list beside the map does (.legend-mark), its label set off by the disc's size (--pin-size) */
 .marker {
   background: none;
   border: 0;
@@ -10749,6 +10756,10 @@ body[data-locked] {
   color: var(--ink);
   box-shadow: inset 0 0 0 2.5px var(--ink),0 0 0 2px var(--panel),0 1px 3px 1px var(--shade-30);
 }
+.pin-mark[data-wide] {
+  font-size: 9.5px;
+  letter-spacing: -.04em;
+}
 }
 
 /* components/hero-view.css */
@@ -10931,7 +10942,7 @@ body[data-locked] {
   font: 800 13px/1 var(--f);
   transition: transform .15s;
 }
-.staypin-letter {
+.staypin-number {
   padding-top: 1px;
 }
 .staypin[data-variant="stay"] {
@@ -16297,7 +16308,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/legend.css */
 @layer components {
-/* components/legend.css: .legend, a map's key as lists by kind (a destination's lettered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
+/* components/legend.css: .legend, a map's key as lists by kind (a destination's numbered places, the activities here, those close by): its intro and action, a group per kind with its heading, an item per place with its mark (data-kind place | here | off | near; centred on the name's first line, a two-figure number (data-wide) a step smaller), name or link, kind and note; an item reached by its anchor (:target) underlines its name */
 .legend {
   display: grid;
   gap: 24px;
@@ -16349,6 +16360,13 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   font: 800 12px/1 var(--f);
   font-variant-numeric: tabular-nums;
 }
+.legend-item > .legend-mark {
+  margin-top: 2px;
+}
+.legend-mark[data-wide] {
+  font-size: 11px;
+  letter-spacing: -.02em;
+}
 .legend-mark[data-size="s"] {
   width: 22px;
   height: 22px;
@@ -16358,6 +16376,12 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
   width: 20px;
   height: 20px;
   font-size: 11px;
+}
+.legend-mark[data-size="s"][data-wide] {
+  font-size: 10px;
+}
+.legend-mark[data-size="xs"][data-wide] {
+  font-size: 9.5px;
 }
 .legend-mark[data-kind="here"] {
   background: var(--brand);
@@ -16645,7 +16669,7 @@ body[data-mode="pick"] [data-only="library"], body[data-mode="library"] [data-on
 
 /* components/placecard.css */
 @layer components {
-/* components/placecard.css: .placecard, the card a place's marker opens: its letter (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
+/* components/placecard.css: .placecard, the card a place's marker opens: its number (.legend-mark) beside its name, kind and line; inside the map's .popup, whose content has no margin, it keeps the study's inset */
 .placecard {
   display: flex;
   gap: 12px;
